@@ -908,6 +908,9 @@
         }
       },
       "Project.Domain/1.0.0": {
+        "dependencies": {
+          "Project.Application": "1.0.0"
+        },
         "runtime": {
           "Project.Domain.dll": {
             "assemblyVersion": "1.0.0",
@@ -931,7 +934,8 @@
       },
       "Project.Infra.IoC/1.0.0": {
         "dependencies": {
-          "Microsoft.Extensions.DependencyInjection": "8.0.0"
+          "Microsoft.Extensions.DependencyInjection": "8.0.0",
+          "Project.Infra.Data": "1.0.0"
         },
         "runtime": {
           "Project.Infra.IoC.dll": {

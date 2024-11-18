@@ -100,6 +100,11 @@ namespace Project.Infra.Data.Contexts
                 .HasForeignKey(ur => ur.RoleId)
                 .OnDelete(DeleteBehavior.Cascade);  // وقتی یک نقش حذف شود، کاربران مربوط به آن نقش نیز حذف شوند
 
+            modelBuilder.Entity<Office>()
+                .Property(c => c.Id)
+                .ValueGeneratedNever();
+
+
             //SeedData 
             SeedData(modelBuilder);
 

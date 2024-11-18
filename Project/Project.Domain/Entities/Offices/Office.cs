@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Project.Application.Common.Province;
 using Project.Domain.Entities.Citizens;
 
 
@@ -11,6 +12,10 @@ namespace Project.Domain.Entities.Offices
     public class Office:BaseEntity.BaseEntity
     {
         public string Name { get; set; }
+
+        public string Address { get; set; }
+
+        public Province Province { get; set; }
 
         public ICollection<OfficePlan> OfficePlans { get; set; }
 

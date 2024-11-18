@@ -31,7 +31,11 @@
         "frameworks": {
           "net8.0": {
             "targetAlias": "net8.0",
-            "projectReferences": {}
+            "projectReferences": {
+              "C:\\Users\\Asus\\Desktop\\WebApi\\WebApi\\Project\\Project.Domain\\Project.Domain.csproj": {
+                "projectPath": "C:\\Users\\Asus\\Desktop\\WebApi\\WebApi\\Project\\Project.Domain\\Project.Domain.csproj"
+              }
+            }
           }
         },
         "warningProperties": {
@@ -260,7 +264,11 @@
         "frameworks": {
           "net8.0": {
             "targetAlias": "net8.0",
-            "projectReferences": {}
+            "projectReferences": {
+              "C:\\Users\\Asus\\Desktop\\WebApi\\WebApi\\Project\\Project.Infra.Data\\Project.Infra.Data.csproj": {
+                "projectPath": "C:\\Users\\Asus\\Desktop\\WebApi\\WebApi\\Project\\Project.Infra.Data\\Project.Infra.Data.csproj"
+              }
+            }
           }
         },
         "warningProperties": {

@@ -12,3 +12,4 @@ C:\Users\Asus\Desktop\WebApi\WebApi\Project\Project.Application\obj\Debug\net8.0
 C:\Users\Asus\Desktop\WebApi\WebApi\Project\Project.Application\obj\Debug\net8.0\Project.Application.pdb
 C:\Users\Asus\Desktop\WebApi\WebApi\Project\Project.Application\obj\Debug\net8.0\Project.Application.genruntimeconfig.cache
 C:\Users\Asus\Desktop\WebApi\WebApi\Project\Project.Application\obj\Debug\net8.0\ref\Project.Application.dll
+C:\Users\Asus\Desktop\WebApi\WebApi\Project\Project.Application\obj\Debug\net8.0\Project.Application.csproj.AssemblyReference.cache

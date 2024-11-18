@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Microsoft.Extensions.DependencyInjection;
+using Project.Infra.Data.Contexts;
 
 namespace Project.Infra.IoC
 {
@@ -13,7 +14,9 @@ namespace Project.Infra.IoC
         {
             //Application Layer
 
+
             //Infra.Data Layer
+            services.AddScoped<DataBaseContext>();
         }
     }
 }
