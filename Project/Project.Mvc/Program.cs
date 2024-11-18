@@ -1,5 +1,6 @@
 using Microsoft.EntityFrameworkCore;
 using Project.Infra.Data.Contexts;
+using Project.Infra.IoC;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -7,6 +8,9 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddDbContext<DataBaseContext>(options => 
     options.UseSqlServer(builder.Configuration.GetConnectionString("DataBaseContext"))
 );
+
+RegisterServices(builder.Services);
+
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
@@ -28,3 +32,8 @@ app.UseAuthorization();
 app.MapControllers();
 
 app.Run();
+
+static void RegisterServices(IServiceCollection services)
+{
+    DependencyContainer.RegisterServices(services);
+}

@@ -1,6 +1,7 @@
 C:\Users\Asus\Desktop\WebApi\WebApi\Project\Project.Infra.IoC\bin\Debug\net8.0\Project.Infra.IoC.deps.json
 C:\Users\Asus\Desktop\WebApi\WebApi\Project\Project.Infra.IoC\bin\Debug\net8.0\Project.Infra.IoC.dll
 C:\Users\Asus\Desktop\WebApi\WebApi\Project\Project.Infra.IoC\bin\Debug\net8.0\Project.Infra.IoC.pdb
+C:\Users\Asus\Desktop\WebApi\WebApi\Project\Project.Infra.IoC\obj\Debug\net8.0\Project.Infra.IoC.csproj.AssemblyReference.cache
 C:\Users\Asus\Desktop\WebApi\WebApi\Project\Project.Infra.IoC\obj\Debug\net8.0\Project.Infra.IoC.GeneratedMSBuildEditorConfig.editorconfig
 C:\Users\Asus\Desktop\WebApi\WebApi\Project\Project.Infra.IoC\obj\Debug\net8.0\Project.Infra.IoC.AssemblyInfoInputs.cache
 C:\Users\Asus\Desktop\WebApi\WebApi\Project\Project.Infra.IoC\obj\Debug\net8.0\Project.Infra.IoC.AssemblyInfo.cs

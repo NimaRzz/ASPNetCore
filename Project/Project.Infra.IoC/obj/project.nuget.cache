@@ -1,8 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "92iHleb69cI=",
+  "dgSpecHash": "TWMFWu89LO0=",
   "success": true,
   "projectFilePath": "C:\\Users\\Asus\\Desktop\\WebApi\\WebApi\\Project\\Project.Infra.IoC\\Project.Infra.IoC.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\Asus\\.nuget\\packages\\microsoft.extensions.dependencyinjection\\8.0.0\\microsoft.extensions.dependencyinjection.8.0.0.nupkg.sha512",
+    "C:\\Users\\Asus\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\8.0.0\\microsoft.extensions.dependencyinjection.abstractions.8.0.0.nupkg.sha512"
+  ],
   "logs": []
 }

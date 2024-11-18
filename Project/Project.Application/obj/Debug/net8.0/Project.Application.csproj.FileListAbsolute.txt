@@ -1,4 +1,5 @@
 C:\Users\Asus\Desktop\WebApi\WebApi\Project\Project.Application\bin\Debug\net8.0\Project.Application.deps.json
+C:\Users\Asus\Desktop\WebApi\WebApi\Project\Project.Application\bin\Debug\net8.0\Project.Application.runtimeconfig.json
 C:\Users\Asus\Desktop\WebApi\WebApi\Project\Project.Application\bin\Debug\net8.0\Project.Application.dll
 C:\Users\Asus\Desktop\WebApi\WebApi\Project\Project.Application\bin\Debug\net8.0\Project.Application.pdb
 C:\Users\Asus\Desktop\WebApi\WebApi\Project\Project.Application\obj\Debug\net8.0\Project.Application.GeneratedMSBuildEditorConfig.editorconfig
@@ -9,6 +10,5 @@ C:\Users\Asus\Desktop\WebApi\WebApi\Project\Project.Application\obj\Debug\net8.0
 C:\Users\Asus\Desktop\WebApi\WebApi\Project\Project.Application\obj\Debug\net8.0\Project.Application.dll
 C:\Users\Asus\Desktop\WebApi\WebApi\Project\Project.Application\obj\Debug\net8.0\refint\Project.Application.dll
 C:\Users\Asus\Desktop\WebApi\WebApi\Project\Project.Application\obj\Debug\net8.0\Project.Application.pdb
-C:\Users\Asus\Desktop\WebApi\WebApi\Project\Project.Application\obj\Debug\net8.0\ref\Project.Application.dll
-C:\Users\Asus\Desktop\WebApi\WebApi\Project\Project.Application\bin\Debug\net8.0\Project.Application.runtimeconfig.json
 C:\Users\Asus\Desktop\WebApi\WebApi\Project\Project.Application\obj\Debug\net8.0\Project.Application.genruntimeconfig.cache
+C:\Users\Asus\Desktop\WebApi\WebApi\Project\Project.Application\obj\Debug\net8.0\ref\Project.Application.dll

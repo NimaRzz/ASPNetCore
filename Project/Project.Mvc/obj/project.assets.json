@@ -1600,6 +1600,19 @@
         "runtime": {
           "bin/placeholder/Project.Infra.Data.dll": {}
         }
+      },
+      "Project.Infra.IoC/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v8.0",
+        "dependencies": {
+          "Microsoft.Extensions.DependencyInjection": "8.0.0"
+        },
+        "compile": {
+          "bin/placeholder/Project.Infra.IoC.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Project.Infra.IoC.dll": {}
+        }
       }
     }
   },
@@ -4473,6 +4486,11 @@
       "type": "project",
       "path": "../Project.Infra.Data/Project.Infra.Data.csproj",
       "msbuildProject": "../Project.Infra.Data/Project.Infra.Data.csproj"
+    },
+    "Project.Infra.IoC/1.0.0": {
+      "type": "project",
+      "path": "../Project.Infra.IoC/Project.Infra.IoC.csproj",
+      "msbuildProject": "../Project.Infra.IoC/Project.Infra.IoC.csproj"
     }
   },
   "projectFileDependencyGroups": {
@@ -4481,6 +4499,7 @@
       "Microsoft.EntityFrameworkCore.SqlServer >= 8.0.0",
       "Microsoft.EntityFrameworkCore.Tools >= 8.0.0",
       "Project.Infra.Data >= 1.0.0",
+      "Project.Infra.IoC >= 1.0.0",
       "Swashbuckle.AspNetCore >= 6.4.0"
     ]
   },
@@ -4518,6 +4537,9 @@
           "projectReferences": {
             "C:\\Users\\Asus\\Desktop\\WebApi\\WebApi\\Project\\Project.Infra.Data\\Project.Infra.Data.csproj": {
               "projectPath": "C:\\Users\\Asus\\Desktop\\WebApi\\WebApi\\Project\\Project.Infra.Data\\Project.Infra.Data.csproj"
+            },
+            "C:\\Users\\Asus\\Desktop\\WebApi\\WebApi\\Project\\Project.Infra.IoC\\Project.Infra.IoC.csproj": {
+              "projectPath": "C:\\Users\\Asus\\Desktop\\WebApi\\WebApi\\Project\\Project.Infra.IoC\\Project.Infra.IoC.csproj"
             }
           }
         }
