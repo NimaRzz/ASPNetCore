@@ -1,4 +1,5 @@
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.DependencyInjection;
 using Project.Infra.Data.Contexts;
 using Project.Infra.IoC;
 
@@ -32,6 +33,14 @@ app.UseAuthorization();
 app.MapControllers();
 
 app.Run();
+
+app.UseEndpoints(endpoints =>
+{
+    endpoints.MapControllerRoute(
+          name:"areas",
+          pattern:"{area=exists}/{controller=Home}/{action=Index}/{id?}"
+    );
+});
 
 static void RegisterServices(IServiceCollection services)
 {

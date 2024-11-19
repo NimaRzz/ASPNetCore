@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Microsoft.EntityFrameworkCore;
+using Project.Domain.Entities.Province;
 using Project.Domain.Repository.Office;
 using Project.Infra.Data.Contexts;
 
@@ -18,9 +20,9 @@ namespace Project.Infra.Data.Repositories.Office
             _context = context;
         }
 
-        public bool IsUnique(long Id)
+        public async Task<bool> IsUnique(long Id)
         {
-            var office = _context.Offices.Find(Id);
+            var office = await _context.Offices.FirstOrDefaultAsync(x => x.Id == Id);
             if (office != null)
             {
                 return false;
@@ -28,15 +30,22 @@ namespace Project.Infra.Data.Repositories.Office
             return true;
         }
 
-        public void AddOffice(Domain.Entities.Offices.Office office)
+
+        public async Task AddOffice(Domain.Entities.Offices.Office office)
         {
-            _context.Add(office);
-            SaveOffice();
+           await _context.AddAsync(office);
         }
 
-        public void SaveOffice()
+        public async Task UpdateOffice(Domain.Entities.Offices.Office office)
         {
-             _context.SaveChanges();
+
+
         }
+
+        public async Task SaveOfficeAsync()
+        {
+            await _context.SaveChangesAsync();
+        }
+
     }
 }

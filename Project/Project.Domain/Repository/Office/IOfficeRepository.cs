@@ -3,15 +3,21 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Project.Domain.Entities.Province;
 
 namespace Project.Domain.Repository.Office
 {
     public interface IOfficeRepository
     {
-        bool IsUnique(long Id);
+        Task<bool> IsUnique(long Id);
 
-        void AddOffice(Entities.Offices.Office office);
+        //Task<Province> SearchProvince(long Id);
 
-        void SaveOffice();
+        Task AddOffice(Entities.Offices.Office office);
+
+        Task UpdateOffice(Entities.Offices.Office office);
+
+        Task SaveOfficeAsync();
+
     }
 }

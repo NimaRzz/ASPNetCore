@@ -10,7 +10,7 @@ namespace Project.Domain.Entities.BaseEntity
     {
         public TKey Id { get; set; }
 
-        public DateTime InsertTime { get; set; }
+        public DateTime? InsertTime { get; set; }
 
         public DateTime? UpdateTime { get; set; }
 

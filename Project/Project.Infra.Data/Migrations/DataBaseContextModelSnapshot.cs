@@ -33,7 +33,7 @@ namespace Project.Infra.Data.Migrations
                     b.Property<long?>("HouseholdCode")
                         .HasColumnType("bigint");
 
-                    b.Property<DateTime>("InsertTime")
+                    b.Property<DateTime?>("InsertTime")
                         .HasColumnType("datetime2");
 
                     b.Property<bool>("IsRemoved")
@@ -71,13 +71,16 @@ namespace Project.Infra.Data.Migrations
             modelBuilder.Entity("Project.Domain.Entities.Offices.Office", b =>
                 {
                     b.Property<long>("Id")
-                        .ValueGeneratedOnAdd()
                         .HasColumnType("bigint");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<long>("Id"));
+                    b.Property<string>("Address")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
-                    b.Property<DateTime>("InsertTime")
-                        .HasColumnType("datetime2");
+                    b.Property<DateTime?>("InsertTime")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("datetime2")
+                        .HasDefaultValueSql("GETDATE()");
 
                     b.Property<bool>("IsRemoved")
                         .HasColumnType("bit");
@@ -86,6 +89,9 @@ namespace Project.Infra.Data.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<long>("ProvinceId")
+                        .HasColumnType("bigint");
+
                     b.Property<DateTime?>("RemoveTime")
                         .HasColumnType("datetime2");
 
@@ -93,6 +99,8 @@ namespace Project.Infra.Data.Migrations
                         .HasColumnType("datetime2");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("ProvinceId");
 
                     b.ToTable("Offices");
                 });
@@ -108,7 +116,7 @@ namespace Project.Infra.Data.Migrations
                     b.Property<int>("Capacity")
                         .HasColumnType("int");
 
-                    b.Property<DateTime>("InsertTime")
+                    b.Property<DateTime?>("InsertTime")
                         .HasColumnType("datetime2");
 
                     b.Property<bool>("IsRemoved")
@@ -152,7 +160,7 @@ namespace Project.Infra.Data.Migrations
                     b.Property<TimeSpan>("EndTime")
                         .HasColumnType("time");
 
-                    b.Property<DateTime>("InsertTime")
+                    b.Property<DateTime?>("InsertTime")
                         .HasColumnType("datetime2");
 
                     b.Property<bool>("IsRemoved")
@@ -189,7 +197,7 @@ namespace Project.Infra.Data.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<DateTime>("InsertTime")
+                    b.Property<DateTime?>("InsertTime")
                         .HasColumnType("datetime2");
 
                     b.Property<bool>("IsRemoved")
@@ -225,7 +233,7 @@ namespace Project.Infra.Data.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<long>("Id"));
 
-                    b.Property<DateTime>("InsertTime")
+                    b.Property<DateTime?>("InsertTime")
                         .HasColumnType("datetime2");
 
                     b.Property<bool>("IsRemoved")
@@ -246,6 +254,223 @@ namespace Project.Infra.Data.Migrations
                     b.ToTable("Plans");
                 });
 
+            modelBuilder.Entity("Project.Domain.Entities.Province.Province", b =>
+                {
+                    b.Property<long>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bigint");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<long>("Id"));
+
+                    b.Property<DateTime?>("InsertTime")
+                        .HasColumnType("datetime2");
+
+                    b.Property<bool>("IsRemoved")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime?>("RemoveTime")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime?>("UpdateTime")
+                        .HasColumnType("datetime2");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Provinces");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1L,
+                            IsRemoved = false,
+                            Name = "AzarbaijanSharghi"
+                        },
+                        new
+                        {
+                            Id = 2L,
+                            IsRemoved = false,
+                            Name = "AzarbaijanGharbi"
+                        },
+                        new
+                        {
+                            Id = 3L,
+                            IsRemoved = false,
+                            Name = "Ardabil"
+                        },
+                        new
+                        {
+                            Id = 4L,
+                            IsRemoved = false,
+                            Name = "Isfahan"
+                        },
+                        new
+                        {
+                            Id = 5L,
+                            IsRemoved = false,
+                            Name = "Alborz"
+                        },
+                        new
+                        {
+                            Id = 6L,
+                            IsRemoved = false,
+                            Name = "Ilam"
+                        },
+                        new
+                        {
+                            Id = 7L,
+                            IsRemoved = false,
+                            Name = "Bushehr"
+                        },
+                        new
+                        {
+                            Id = 8L,
+                            IsRemoved = false,
+                            Name = "Tehran"
+                        },
+                        new
+                        {
+                            Id = 9L,
+                            IsRemoved = false,
+                            Name = "ChaharmahaloBakhtiari"
+                        },
+                        new
+                        {
+                            Id = 10L,
+                            IsRemoved = false,
+                            Name = "KhorasanJonubi"
+                        },
+                        new
+                        {
+                            Id = 11L,
+                            IsRemoved = false,
+                            Name = "KhorasanRazavi"
+                        },
+                        new
+                        {
+                            Id = 12L,
+                            IsRemoved = false,
+                            Name = "KhorasanShomali"
+                        },
+                        new
+                        {
+                            Id = 13L,
+                            IsRemoved = false,
+                            Name = "Khuzestan"
+                        },
+                        new
+                        {
+                            Id = 14L,
+                            IsRemoved = false,
+                            Name = "Zanjan"
+                        },
+                        new
+                        {
+                            Id = 15L,
+                            IsRemoved = false,
+                            Name = "Semnan"
+                        },
+                        new
+                        {
+                            Id = 16L,
+                            IsRemoved = false,
+                            Name = "SistanoBaluchestan"
+                        },
+                        new
+                        {
+                            Id = 17L,
+                            IsRemoved = false,
+                            Name = "Fars"
+                        },
+                        new
+                        {
+                            Id = 18L,
+                            IsRemoved = false,
+                            Name = "Qazvin"
+                        },
+                        new
+                        {
+                            Id = 19L,
+                            IsRemoved = false,
+                            Name = "Qom"
+                        },
+                        new
+                        {
+                            Id = 20L,
+                            IsRemoved = false,
+                            Name = "Kurdistan"
+                        },
+                        new
+                        {
+                            Id = 21L,
+                            IsRemoved = false,
+                            Name = "Kerman"
+                        },
+                        new
+                        {
+                            Id = 22L,
+                            IsRemoved = false,
+                            Name = "Kermanshah"
+                        },
+                        new
+                        {
+                            Id = 23L,
+                            IsRemoved = false,
+                            Name = "KohgiluyehoBoyerahmad"
+                        },
+                        new
+                        {
+                            Id = 24L,
+                            IsRemoved = false,
+                            Name = "Golestan"
+                        },
+                        new
+                        {
+                            Id = 25L,
+                            IsRemoved = false,
+                            Name = "Gilan"
+                        },
+                        new
+                        {
+                            Id = 26L,
+                            IsRemoved = false,
+                            Name = "Lorestan"
+                        },
+                        new
+                        {
+                            Id = 27L,
+                            IsRemoved = false,
+                            Name = "Mazandaran"
+                        },
+                        new
+                        {
+                            Id = 28L,
+                            IsRemoved = false,
+                            Name = "Markazi"
+                        },
+                        new
+                        {
+                            Id = 29L,
+                            IsRemoved = false,
+                            Name = "Hormozgan"
+                        },
+                        new
+                        {
+                            Id = 30L,
+                            IsRemoved = false,
+                            Name = "Hamadan"
+                        },
+                        new
+                        {
+                            Id = 31L,
+                            IsRemoved = false,
+                            Name = "Yazd"
+                        });
+                });
+
             modelBuilder.Entity("Project.Domain.Entities.Turns.Appointment", b =>
                 {
                     b.Property<long>("Id")
@@ -260,7 +485,7 @@ namespace Project.Infra.Data.Migrations
                     b.Property<long>("CitizenId")
                         .HasColumnType("bigint");
 
-                    b.Property<DateTime>("InsertTime")
+                    b.Property<DateTime?>("InsertTime")
                         .HasColumnType("datetime2");
 
                     b.Property<bool>("IsRemoved")
@@ -295,7 +520,7 @@ namespace Project.Infra.Data.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<long>("Id"));
 
-                    b.Property<DateTime>("InsertTime")
+                    b.Property<DateTime?>("InsertTime")
                         .HasColumnType("datetime2");
 
                     b.Property<bool>("IsRemoved")
@@ -313,27 +538,24 @@ namespace Project.Infra.Data.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Role");
+                    b.ToTable("Roles");
 
                     b.HasData(
                         new
                         {
                             Id = 1L,
-                            InsertTime = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             IsRemoved = false,
                             Name = "Citizen"
                         },
                         new
                         {
                             Id = 2L,
-                            InsertTime = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             IsRemoved = false,
                             Name = "Admin"
                         },
                         new
                         {
                             Id = 3L,
-                            InsertTime = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             IsRemoved = false,
                             Name = "Operator"
                         });
@@ -347,7 +569,7 @@ namespace Project.Infra.Data.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<long>("Id"));
 
-                    b.Property<DateTime>("InsertTime")
+                    b.Property<DateTime?>("InsertTime")
                         .HasColumnType("datetime2");
 
                     b.Property<bool>("IsRemoved")
@@ -369,7 +591,7 @@ namespace Project.Infra.Data.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("User");
+                    b.ToTable("Users");
                 });
 
             modelBuilder.Entity("Project.Domain.Entities.Users.UserInRole", b =>
@@ -380,7 +602,7 @@ namespace Project.Infra.Data.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<long>("Id"));
 
-                    b.Property<DateTime>("InsertTime")
+                    b.Property<DateTime?>("InsertTime")
                         .HasColumnType("datetime2");
 
                     b.Property<bool>("IsRemoved")
@@ -418,18 +640,29 @@ namespace Project.Infra.Data.Migrations
                     b.Navigation("Office");
                 });
 
+            modelBuilder.Entity("Project.Domain.Entities.Offices.Office", b =>
+                {
+                    b.HasOne("Project.Domain.Entities.Province.Province", "Province")
+                        .WithMany("Offices")
+                        .HasForeignKey("ProvinceId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Province");
+                });
+
             modelBuilder.Entity("Project.Domain.Entities.Offices.OfficePlan", b =>
                 {
                     b.HasOne("Project.Domain.Entities.Offices.Office", "Office")
                         .WithMany("OfficePlans")
                         .HasForeignKey("OfficeId")
-                        .OnDelete(DeleteBehavior.Restrict)
+                        .OnDelete(DeleteBehavior.NoAction)
                         .IsRequired();
 
                     b.HasOne("Project.Domain.Entities.Plans.Plan", "Plan")
                         .WithMany("OfficePlans")
                         .HasForeignKey("PlanId")
-                        .OnDelete(DeleteBehavior.Restrict)
+                        .OnDelete(DeleteBehavior.NoAction)
                         .IsRequired();
 
                     b.Navigation("Office");
@@ -442,7 +675,7 @@ namespace Project.Infra.Data.Migrations
                     b.HasOne("Project.Domain.Entities.Offices.WorkCalendar", "WorkCalendar")
                         .WithMany("Shifts")
                         .HasForeignKey("WorkCalendarId")
-                        .OnDelete(DeleteBehavior.Restrict)
+                        .OnDelete(DeleteBehavior.NoAction)
                         .IsRequired();
 
                     b.Navigation("WorkCalendar");
@@ -521,6 +754,11 @@ namespace Project.Infra.Data.Migrations
                     b.Navigation("Appointments");
 
                     b.Navigation("OfficePlans");
+                });
+
+            modelBuilder.Entity("Project.Domain.Entities.Province.Province", b =>
+                {
+                    b.Navigation("Offices");
                 });
 
             modelBuilder.Entity("Project.Domain.Entities.Users.Role", b =>

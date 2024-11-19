@@ -1,5 +1,37 @@
 [
   {
+    "ContainingType": "Project.Mvc.Areas.Admin.Controllers.OfficesController",
+    "Method": "Add",
+    "RelativePath": "api/Offices/add",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "officeDto",
+        "Type": "Project.Mvc.Areas.Admin.Models.DTOs.Office.OfficeDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Project.Mvc.Areas.Admin.Controllers.OfficesController",
+    "Method": "Update",
+    "RelativePath": "api/Offices/update",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "officeDto",
+        "Type": "Project.Mvc.Areas.Admin.Models.DTOs.Office.OfficeDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "Project.Mvc.Controllers.WeatherForecastController",
     "Method": "Get",
     "RelativePath": "WeatherForecast",

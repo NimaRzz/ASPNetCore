@@ -2,12 +2,15 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using Project.Application.Common.Dto;
+using Project.Application.Common.Validations.Office;
 using Project.Application.Interfaces.Offices;
 using Project.Domain.Entities.Offices;
 using Project.Domain.Repository.Office;
-
+using Project.Application.Services.Offices.Commands.AddOffice;
+using Project.Domain.Entities.Province;
 
 namespace Project.Application.Services.Offices.Commands.AddOffice
 {
@@ -20,44 +23,39 @@ namespace Project.Application.Services.Offices.Commands.AddOffice
             _repository = repository;
         }
 
-        public ResultDto AddOffice(RequestAddOfficeDto request)
+        public async Task<ResultDto> Execute(RequestAddOfficeDto request)
         {
+            
+         var validationResult = await OfficeValidator.ValidateOfficeRequest(request, _repository);
 
-            if (string.IsNullOrEmpty(request.Name))
-            {
-                return new ResultDto()
-                {
-                    IsSuccess = false,
-                    Message = "نام دفتر را وارد کنید"
-                };
-            }
+         if (!validationResult.IsSuccess)
+         {
+             return validationResult;
+         }
 
-            if (request.Id == null)
-            {
-                return new ResultDto()
-                {
-                    IsSuccess = false,
-                    Message = "شماره دفتر را وارد کنید"
-                };
-            }
+         // بررسی یکتایی شماره دفتر
+         if (!await _repository.IsUnique(request.Id))
+         {
+             return new ResultDto
+             {
+                 IsSuccess = false,
+                 Message = "این شماره قبلا ثبت شده"
+             };
+         }
 
-            if (_repository.IsUnique(request.Id))
-            {
-                return new ResultDto()
-                {
-                    IsSuccess = false,
-                    Message = "این ایدی قبلا ثبت شده"
-                };
-            }
+            //var province = (Province)request.Province;
 
             Office office = new()
             {
                 Id = request.Id,
                 Name = request.Name,
-                Province = request.Province
+                ProvinceId = request.ProvinceId,
+                Address = request.Address,
             };
 
-            _repository.AddOffice(office);
+           await _repository.AddOffice(office); 
+           await _repository.SaveOfficeAsync();
+
 
             return new ResultDto()
             {

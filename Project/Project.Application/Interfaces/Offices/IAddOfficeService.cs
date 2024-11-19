@@ -10,6 +10,6 @@ namespace Project.Application.Interfaces.Offices
 {
     public interface IAddOfficeService
     {
-        ResultDto AddOffice(RequestAddOfficeDto request);
+      Task<ResultDto> Execute(RequestAddOfficeDto request);
     }
 }

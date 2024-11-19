@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Project.Application.Common.Province;
 using Project.Domain.Entities.Citizens;
 
 
@@ -15,7 +14,9 @@ namespace Project.Domain.Entities.Offices
 
         public string Address { get; set; }
 
-        public Province Province { get; set; }
+        public Province.Province Province { get; set; }
+        
+        public long ProvinceId { get; set; }
 
         public ICollection<OfficePlan> OfficePlans { get; set; }
 
