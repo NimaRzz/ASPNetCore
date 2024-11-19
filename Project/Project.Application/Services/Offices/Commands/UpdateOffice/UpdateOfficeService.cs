@@ -25,9 +25,12 @@ namespace Project.Application.Services.Offices.Commands.UpdateOffice
 
         public async Task<ResultDto> Execute(RequestUpdateOfficeDto request)
         {
-            OfficeValidator.ValidateOfficeRequest(request, _repository);
+            var validationResult = await OfficeValidator.ValidateOfficeRequest(request, _repository);
 
-            //var province = await _repository.SearchProvince(request.ProvinceId);
+            if (!validationResult.IsSuccess)
+            {
+                return validationResult;
+            }
 
             Office office = new()
             {

@@ -12,5 +12,7 @@ namespace Project.Application.Interfaces.FacadPatterns
         IAddOfficeService AddOfficeService { get; }
 
         IUpdateOfficeService UpdateOfficeService { get; }
+    
+        IDeleteOfficeService DeleteOfficeService { get; }
     }
 }

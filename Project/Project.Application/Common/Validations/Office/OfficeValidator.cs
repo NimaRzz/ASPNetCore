@@ -37,7 +37,7 @@ namespace Project.Application.Common.Validations.Office
         private static async Task<ResultDto> ValidateRequest(long id, string name, long province, string address, IOfficeRepository repository)
         {
             // بررسی اینکه شماره دفتر وارد شده باشد
-            if (id == 0)
+            if (id == null)
             {
                 return new ResultDto
                 {

@@ -50,6 +50,15 @@ namespace Project.Mvc.Areas.Admin.Controllers
 
             return Ok(result);
         }
+
+        [HttpPost("delete")]
+        public async Task<IActionResult> Delete([FromBody] long Id)
+        {
+
+            var result = await _officeFacad.DeleteOfficeService.Execute(Id);
+
+            return Ok(result);
+        }
     }
 }
 

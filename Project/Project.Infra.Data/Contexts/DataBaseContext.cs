@@ -67,7 +67,9 @@ namespace Project.Infra.Data.Contexts
 
         }
 
-        public override int SaveChanges()
+     
+
+        public override async Task<int> SaveChangesAsync(CancellationToken cancellationToken = default)
         {
             var entries = ChangeTracker.Entries()
                 .Where(e => e.State == EntityState.Modified);
@@ -81,9 +83,11 @@ namespace Project.Infra.Data.Contexts
                 }
             }
 
-            return base.SaveChanges();
+            // فراخوانی SaveChangesAsync اصلی
+            return await base.SaveChangesAsync(cancellationToken);
         }
 
+        
         private void ConfigureFluentApi(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<OfficePlan>()
@@ -148,6 +152,7 @@ namespace Project.Infra.Data.Contexts
                 .Property(c => c.InsertTime)
                 .HasDefaultValueSql("GETDATE()");
 
+
         }
 
         private void ApplyQueryFilter(ModelBuilder modelBuilder)
@@ -157,6 +162,7 @@ namespace Project.Infra.Data.Contexts
             modelBuilder.Entity<Office>().HasQueryFilter(p => !p.IsRemoved);
             modelBuilder.Entity<Plan>().HasQueryFilter(p => !p.IsRemoved);
             modelBuilder.Entity<Appointment>().HasQueryFilter(p => !p.IsRemoved);
+            modelBuilder.Entity<Province>().HasQueryFilter(p => !p.IsRemoved);
 
         }
 
@@ -168,37 +174,37 @@ namespace Project.Infra.Data.Contexts
             modelBuilder.Entity<Role>().HasData(new Role { Id = 3, Name = nameof(UserRoles.Operator) });
 
             //Provinces
-            modelBuilder.Entity<Province>().HasData(new Province { Id = 1, Name = nameof(ProvinceNames.AzarbaijanSharghi) });
-            modelBuilder.Entity<Province>().HasData(new Province { Id = 2, Name = nameof(ProvinceNames.AzarbaijanGharbi) });
-            modelBuilder.Entity<Province>().HasData(new Province { Id = 3, Name = nameof(ProvinceNames.Ardabil) });
-            modelBuilder.Entity<Province>().HasData(new Province { Id = 4, Name = nameof(ProvinceNames.Isfahan) });
-            modelBuilder.Entity<Province>().HasData(new Province { Id = 5, Name = nameof(ProvinceNames.Alborz) });
-            modelBuilder.Entity<Province>().HasData(new Province { Id = 6, Name = nameof(ProvinceNames.Ilam) });
-            modelBuilder.Entity<Province>().HasData(new Province { Id = 7, Name = nameof(ProvinceNames.Bushehr) });
-            modelBuilder.Entity<Province>().HasData(new Province { Id = 8, Name = nameof(ProvinceNames.Tehran) });
-            modelBuilder.Entity<Province>().HasData(new Province { Id = 9, Name = nameof(ProvinceNames.ChaharmahaloBakhtiari) });
-            modelBuilder.Entity<Province>().HasData(new Province { Id = 10, Name = nameof(ProvinceNames.KhorasanJonubi) });
-            modelBuilder.Entity<Province>().HasData(new Province { Id = 11, Name = nameof(ProvinceNames.KhorasanRazavi) });
-            modelBuilder.Entity<Province>().HasData(new Province { Id = 12, Name = nameof(ProvinceNames.KhorasanShomali) });
-            modelBuilder.Entity<Province>().HasData(new Province { Id = 13, Name = nameof(ProvinceNames.Khuzestan) });
-            modelBuilder.Entity<Province>().HasData(new Province { Id = 14, Name = nameof(ProvinceNames.Zanjan) });
-            modelBuilder.Entity<Province>().HasData(new Province { Id = 15, Name = nameof(ProvinceNames.Semnan) });
-            modelBuilder.Entity<Province>().HasData(new Province { Id = 16, Name = nameof(ProvinceNames.SistanoBaluchestan) });
-            modelBuilder.Entity<Province>().HasData(new Province { Id = 17, Name = nameof(ProvinceNames.Fars) });
-            modelBuilder.Entity<Province>().HasData(new Province { Id = 18, Name = nameof(ProvinceNames.Qazvin) });
-            modelBuilder.Entity<Province>().HasData(new Province { Id = 19, Name = nameof(ProvinceNames.Qom) });
-            modelBuilder.Entity<Province>().HasData(new Province { Id = 20, Name = nameof(ProvinceNames.Kurdistan) });
-            modelBuilder.Entity<Province>().HasData(new Province { Id = 21, Name = nameof(ProvinceNames.Kerman) });
-            modelBuilder.Entity<Province>().HasData(new Province { Id = 22, Name = nameof(ProvinceNames.Kermanshah) });
-            modelBuilder.Entity<Province>().HasData(new Province { Id = 23, Name = nameof(ProvinceNames.KohgiluyehoBoyerahmad) });
-            modelBuilder.Entity<Province>().HasData(new Province { Id = 24, Name = nameof(ProvinceNames.Golestan) });
-            modelBuilder.Entity<Province>().HasData(new Province { Id = 25, Name = nameof(ProvinceNames.Gilan) });
-            modelBuilder.Entity<Province>().HasData(new Province { Id = 26, Name = nameof(ProvinceNames.Lorestan) });
-            modelBuilder.Entity<Province>().HasData(new Province { Id = 27, Name = nameof(ProvinceNames.Mazandaran) });
-            modelBuilder.Entity<Province>().HasData(new Province { Id = 28, Name = nameof(ProvinceNames.Markazi) });
-            modelBuilder.Entity<Province>().HasData(new Province { Id = 29, Name = nameof(ProvinceNames.Hormozgan) });
-            modelBuilder.Entity<Province>().HasData(new Province { Id = 30, Name = nameof(ProvinceNames.Hamadan) });
-            modelBuilder.Entity<Province>().HasData(new Province { Id = 31, Name = nameof(ProvinceNames.Yazd) });
+            modelBuilder.Entity<Province>().HasData(new Province { Id = 1, Name = nameof(ProvinceNames.AzarbaijanSharghi), InsertTime = DateTime.Now});
+            modelBuilder.Entity<Province>().HasData(new Province { Id = 2, Name = nameof(ProvinceNames.AzarbaijanGharbi), InsertTime = DateTime.Now });
+            modelBuilder.Entity<Province>().HasData(new Province { Id = 3, Name = nameof(ProvinceNames.Ardabil), InsertTime = DateTime.Now });
+            modelBuilder.Entity<Province>().HasData(new Province { Id = 4, Name = nameof(ProvinceNames.Isfahan), InsertTime = DateTime.Now });
+            modelBuilder.Entity<Province>().HasData(new Province { Id = 5, Name = nameof(ProvinceNames.Alborz), InsertTime = DateTime.Now });
+            modelBuilder.Entity<Province>().HasData(new Province { Id = 6, Name = nameof(ProvinceNames.Ilam), InsertTime = DateTime.Now });
+            modelBuilder.Entity<Province>().HasData(new Province { Id = 7, Name = nameof(ProvinceNames.Bushehr), InsertTime = DateTime.Now });
+            modelBuilder.Entity<Province>().HasData(new Province { Id = 8, Name = nameof(ProvinceNames.Tehran), InsertTime = DateTime.Now });
+            modelBuilder.Entity<Province>().HasData(new Province { Id = 9, Name = nameof(ProvinceNames.ChaharmahaloBakhtiari), InsertTime = DateTime.Now });
+            modelBuilder.Entity<Province>().HasData(new Province { Id = 10, Name = nameof(ProvinceNames.KhorasanJonubi), InsertTime = DateTime.Now });
+            modelBuilder.Entity<Province>().HasData(new Province { Id = 11, Name = nameof(ProvinceNames.KhorasanRazavi), InsertTime = DateTime.Now });
+            modelBuilder.Entity<Province>().HasData(new Province { Id = 12, Name = nameof(ProvinceNames.KhorasanShomali), InsertTime = DateTime.Now });
+            modelBuilder.Entity<Province>().HasData(new Province { Id = 13, Name = nameof(ProvinceNames.Khuzestan), InsertTime = DateTime.Now });
+            modelBuilder.Entity<Province>().HasData(new Province { Id = 14, Name = nameof(ProvinceNames.Zanjan), InsertTime = DateTime.Now });
+            modelBuilder.Entity<Province>().HasData(new Province { Id = 15, Name = nameof(ProvinceNames.Semnan), InsertTime = DateTime.Now });
+            modelBuilder.Entity<Province>().HasData(new Province { Id = 16, Name = nameof(ProvinceNames.SistanoBaluchestan), InsertTime = DateTime.Now });
+            modelBuilder.Entity<Province>().HasData(new Province { Id = 17, Name = nameof(ProvinceNames.Fars), InsertTime = DateTime.Now });
+            modelBuilder.Entity<Province>().HasData(new Province { Id = 18, Name = nameof(ProvinceNames.Qazvin), InsertTime = DateTime.Now });
+            modelBuilder.Entity<Province>().HasData(new Province { Id = 19, Name = nameof(ProvinceNames.Qom), InsertTime = DateTime.Now });
+            modelBuilder.Entity<Province>().HasData(new Province { Id = 20, Name = nameof(ProvinceNames.Kurdistan), InsertTime = DateTime.Now });
+            modelBuilder.Entity<Province>().HasData(new Province { Id = 21, Name = nameof(ProvinceNames.Kerman), InsertTime = DateTime.Now });
+            modelBuilder.Entity<Province>().HasData(new Province { Id = 22, Name = nameof(ProvinceNames.Kermanshah), InsertTime = DateTime.Now });
+            modelBuilder.Entity<Province>().HasData(new Province { Id = 23, Name = nameof(ProvinceNames.KohgiluyehoBoyerahmad), InsertTime = DateTime.Now });
+            modelBuilder.Entity<Province>().HasData(new Province { Id = 24, Name = nameof(ProvinceNames.Golestan), InsertTime = DateTime.Now });
+            modelBuilder.Entity<Province>().HasData(new Province { Id = 25, Name = nameof(ProvinceNames.Gilan), InsertTime = DateTime.Now });
+            modelBuilder.Entity<Province>().HasData(new Province { Id = 26, Name = nameof(ProvinceNames.Lorestan), InsertTime = DateTime.Now });
+            modelBuilder.Entity<Province>().HasData(new Province { Id = 27, Name = nameof(ProvinceNames.Mazandaran), InsertTime = DateTime.Now });
+            modelBuilder.Entity<Province>().HasData(new Province { Id = 28, Name = nameof(ProvinceNames.Markazi), InsertTime = DateTime.Now });
+            modelBuilder.Entity<Province>().HasData(new Province { Id = 29, Name = nameof(ProvinceNames.Hormozgan), InsertTime = DateTime.Now });
+            modelBuilder.Entity<Province>().HasData(new Province { Id = 30, Name = nameof(ProvinceNames.Hamadan), InsertTime = DateTime.Now });
+            modelBuilder.Entity<Province>().HasData(new Province { Id = 31, Name = nameof(ProvinceNames.Yazd), InsertTime = DateTime.Now });
         }
 
         #endregion

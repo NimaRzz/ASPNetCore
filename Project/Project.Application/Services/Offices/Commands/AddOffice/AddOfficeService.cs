@@ -33,15 +33,17 @@ namespace Project.Application.Services.Offices.Commands.AddOffice
              return validationResult;
          }
 
-         // بررسی یکتایی شماره دفتر
-         if (!await _repository.IsUnique(request.Id))
-         {
-             return new ResultDto
-             {
-                 IsSuccess = false,
-                 Message = "این شماره قبلا ثبت شده"
-             };
-         }
+           var existsOffice = await OfficeExistsChecker.ExistsOffice(request.Id, _repository);
+         
+           if (existsOffice)
+           {
+
+               return new ResultDto()
+               {
+                   IsSuccess = true,
+                   Message = "دفتری با این شماره وجود دارد"
+               };
+            }
 
             //var province = (Province)request.Province;
 
