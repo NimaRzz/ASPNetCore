@@ -9,5 +9,9 @@ namespace Project.Domain.Repository.BaseRepository
     public interface IBaseRepository
     {
         Task<bool> IsExists<T>(long Id) where T : class;
+
+        Task Add(object Object);
+        
+        Task Update<T>(object Object) where T : class;
     }
 }

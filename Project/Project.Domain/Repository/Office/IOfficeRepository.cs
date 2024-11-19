@@ -10,9 +10,6 @@ namespace Project.Domain.Repository.Office
 {
     public interface IOfficeRepository:IBaseRepository{
 
-        Task AddOffice(Entities.Offices.Office office);
-
-        Task UpdateOffice(Entities.Offices.Office office);
       
         Task DeleteOffice(long Id);
 

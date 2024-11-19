@@ -26,20 +26,15 @@ namespace Project.Infra.Data.Repositories.Office
         }
 
 
-        public async Task AddOffice(Domain.Entities.Offices.Office office)
+        public async Task Add(Domain.Entities.Offices.Office office)
         {
-           await _context.AddAsync(office);
+            await base.Add(office);
         }
 
-        public async Task UpdateOffice(Domain.Entities.Offices.Office office)
+        public async Task Update<T>(Domain.Entities.Offices.Office office) where T : class
         {
 
-            var resultOffice = await _context.Offices.FirstOrDefaultAsync();
-            resultOffice.Name = office.Name;
-            resultOffice.ProvinceId = office.ProvinceId;
-            resultOffice.Address = office.Address;
-            resultOffice.Id = office.Id;
-
+            await base.Update<T>(office);
             
         }
 

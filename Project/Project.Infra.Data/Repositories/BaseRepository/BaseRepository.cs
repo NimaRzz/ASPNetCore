@@ -19,7 +19,7 @@ namespace Project.Infra.Data.Repositories.BaseRepository
             _context = context;
         }
 
-        public virtual async Task<bool> IsExists<T>(long Id) where T : class
+        public async Task<bool> IsExists<T>(long Id) where T : class
         {
             // استفاده از یک DbSet عمومی
             var entity = await _context.Set<T>().FirstOrDefaultAsync(e => EF.Property<long>(e, "Id") == Id);
@@ -29,6 +29,25 @@ namespace Project.Infra.Data.Repositories.BaseRepository
                 return true;
             }
             return false;
+        }
+
+        public async Task Add(object Object)
+        {
+            await _context.AddAsync(Object);
+        }
+
+        public virtual async Task Update<T>(object Object) where T : class
+        {
+            var setValue = await _context.Set<T>().FirstOrDefaultAsync(e => EF.Property<long>(e, "Id") == (long)Object.GetType().GetProperty("Id").GetValue(Object));
+
+            if (setValue != null)
+            { 
+               
+                _context.Entry(setValue).CurrentValues.SetValues(Object);
+
+                _context.Entry(setValue).Property("InsertTime").IsModified = false;
+            }
+            
         }
     }
 }

@@ -25,27 +25,25 @@ namespace Project.Application.Services.Offices.Commands.AddOffice
 
         public async Task<ResultDto> Execute(RequestAddOfficeDto request)
         {
-            
-         var validationResult = await OfficeValidator.ValidateOfficeRequest(request, _repository);
+
+            var existsOffice = await OfficeExistsChecker.ExistsOffice(request.Id, _repository);
+
+            if (existsOffice)
+            {
+
+                return new ResultDto()
+                {
+                    IsSuccess = true,
+                    Message = "دفتری با این شماره وجود دارد"
+                };
+            }
+
+            var validationResult = await OfficeValidator.ValidateOfficeRequest(request, _repository);
 
          if (!validationResult.IsSuccess)
          {
              return validationResult;
          }
-
-           var existsOffice = await OfficeExistsChecker.ExistsOffice(request.Id, _repository);
-         
-           if (existsOffice)
-           {
-
-               return new ResultDto()
-               {
-                   IsSuccess = true,
-                   Message = "دفتری با این شماره وجود دارد"
-               };
-            }
-
-            //var province = (Province)request.Province;
 
             Office office = new()
             {
@@ -55,7 +53,7 @@ namespace Project.Application.Services.Offices.Commands.AddOffice
                 Address = request.Address,
             };
 
-           await _repository.AddOffice(office); 
+           await _repository.Add(office); 
            await _repository.SaveOfficeAsync();
 
 

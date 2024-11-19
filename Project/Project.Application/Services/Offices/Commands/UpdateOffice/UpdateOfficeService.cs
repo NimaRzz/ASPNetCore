@@ -25,6 +25,19 @@ namespace Project.Application.Services.Offices.Commands.UpdateOffice
 
         public async Task<ResultDto> Execute(RequestUpdateOfficeDto request)
         {
+
+            var existsOffice = await OfficeExistsChecker.ExistsOffice(request.Id, _repository);
+
+            if (!existsOffice)
+            {
+
+                return new ResultDto()
+                {
+                    IsSuccess = false,
+                    Message = "دفتری با این شماره وجود ندارد"
+                };
+            }
+        
             var validationResult = await OfficeValidator.ValidateOfficeRequest(request, _repository);
 
             if (!validationResult.IsSuccess)
@@ -40,7 +53,7 @@ namespace Project.Application.Services.Offices.Commands.UpdateOffice
                 Address = request.Address,
             };
 
-            await _repository.UpdateOffice(office);
+            await _repository.Update<Office>(office);
             await _repository.SaveOfficeAsync();
 
             return new ResultDto()
