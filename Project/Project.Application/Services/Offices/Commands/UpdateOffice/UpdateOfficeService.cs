@@ -4,10 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
-using Project.Application.Common.Dto;
 using Project.Application.Common.Validations.Office;
 using Project.Application.Interfaces.Offices;
 using Project.Application.Services.Offices.Commands.UpdateOffice;
+using Project.Domain.Common.Dto;
 using Project.Domain.Entities.Offices;
 using Project.Domain.Repository.Office;
 
@@ -26,9 +26,9 @@ namespace Project.Application.Services.Offices.Commands.UpdateOffice
         public async Task<ResultDto> Execute(RequestUpdateOfficeDto request)
         {
 
-            var existsOffice = await OfficeExistsChecker.ExistsOffice(request.Id, _repository);
+            var existsResult = await _repository.IsExists<Office>(request.Id);
 
-            if (!existsOffice)
+            if (!existsResult)
             {
 
                 return new ResultDto()
@@ -45,6 +45,7 @@ namespace Project.Application.Services.Offices.Commands.UpdateOffice
                 return validationResult;
             }
 
+
             Office office = new()
             {
                 Id = request.Id,
@@ -53,8 +54,9 @@ namespace Project.Application.Services.Offices.Commands.UpdateOffice
                 Address = request.Address,
             };
 
+
             await _repository.Update<Office>(office);
-            await _repository.SaveOfficeAsync();
+            await _repository.SaveAsync();
 
             return new ResultDto()
             {

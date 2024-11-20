@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
+using Project.Domain.Common.Dto;
 using Project.Domain.Entities.Province;
 using Project.Domain.Repository.BaseRepository;
 using Project.Domain.Repository.Office;
@@ -25,6 +26,10 @@ namespace Project.Infra.Data.Repositories.Office
             return await base.IsExists<T>(Id);
         }
 
+        public async Task<ResultDto<T>> Get<T>(long Id) where T : class
+        {
+            return await base.Get<T>(Id);
+        }
 
         public async Task Add(Domain.Entities.Offices.Office office)
         {
@@ -33,21 +38,17 @@ namespace Project.Infra.Data.Repositories.Office
 
         public async Task Update<T>(Domain.Entities.Offices.Office office) where T : class
         {
-
             await base.Update<T>(office);
-            
         }
 
-        public async Task DeleteOffice(long Id)
+        public async Task Delete<T>(object Object) where T : class
         {
-          var office = await _context.Offices.FirstOrDefaultAsync(c => c.Id == Id);
-          office.IsRemoved = true;
-          office.RemoveTime = DateTime.Now;
+          await base.Delete<T>(Object);
         }
 
-        public async Task SaveOfficeAsync()
+        public async Task SaveAsync()
         {
-            await _context.SaveChangesAsync();
+            await base.SaveAsync();
         }
 
     }

@@ -13,13 +13,13 @@ namespace Project.Domain.Entities.Citizens
 
         public string Name { get; set; }
 
-        public long? HouseholdCode { get; set; }
+        public long HouseholdCode { get; set; }
 
-        public long? UniqueCode { get; set; }
+        public long UniqueCode { get; set; }
 
-        public long? PassportCode { get; set; }
+        public long PassportCode { get; set; }
 
-        public long? PersonalizedCode { get; set; }
+        public long PersonalizedCode { get; set; }
 
         public Office Office { get; set; }
 

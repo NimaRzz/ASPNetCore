@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
-using Project.Application.Common.Dto;
+using Project.Domain.Common.Dto;
 using Project.Application.Common.Validations.Office;
 using Project.Application.Interfaces.Offices;
 using Project.Domain.Entities.Offices;
@@ -26,14 +26,14 @@ namespace Project.Application.Services.Offices.Commands.AddOffice
         public async Task<ResultDto> Execute(RequestAddOfficeDto request)
         {
 
-            var existsOffice = await OfficeExistsChecker.ExistsOffice(request.Id, _repository);
+            var existsResult = await _repository.IsExists<Office>(request.Id);
 
-            if (existsOffice)
+            if (existsResult)
             {
 
                 return new ResultDto()
                 {
-                    IsSuccess = true,
+                    IsSuccess = false,
                     Message = "دفتری با این شماره وجود دارد"
                 };
             }
@@ -53,8 +53,8 @@ namespace Project.Application.Services.Offices.Commands.AddOffice
                 Address = request.Address,
             };
 
-           await _repository.Add(office); 
-           await _repository.SaveOfficeAsync();
+           await _repository.Add(office);
+           await _repository.SaveAsync();
 
 
             return new ResultDto()

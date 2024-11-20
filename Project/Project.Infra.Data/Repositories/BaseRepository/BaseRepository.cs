@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 using Project.Domain.Entities.Offices;
 using Project.Domain.Repository.BaseRepository;
+using Project.Domain.Common.Dto;
 
 namespace Project.Infra.Data.Repositories.BaseRepository
 {
@@ -22,7 +23,7 @@ namespace Project.Infra.Data.Repositories.BaseRepository
         public async Task<bool> IsExists<T>(long Id) where T : class
         {
             // استفاده از یک DbSet عمومی
-            var entity = await _context.Set<T>().FirstOrDefaultAsync(e => EF.Property<long>(e, "Id") == Id);
+            var entity = await _context.Set<T>().AsNoTracking().FirstOrDefaultAsync(e => EF.Property<long>(e, "Id") == Id);
            
             if (entity != null)
             {
@@ -31,23 +32,65 @@ namespace Project.Infra.Data.Repositories.BaseRepository
             return false;
         }
 
+        public async Task<ResultDto<T>> Get<T>(long Id) where T : class
+        {
+
+            var entity = await _context.Set<T>().AsNoTracking().FirstOrDefaultAsync(e => EF.Property<long>(e, "Id") == Id);
+
+            if (entity != null)
+            {
+                return new ResultDto<T>()
+                {
+                    Data = entity,
+                    IsSuccess = true
+                };
+            }
+            return new ResultDto<T>()
+            {
+                Data = entity,
+            };
+        }
+
         public async Task Add(object Object)
         {
             await _context.AddAsync(Object);
         }
 
-        public virtual async Task Update<T>(object Object) where T : class
+        public async Task Update<T>(object Object) where T : class
         {
-            var setValue = await _context.Set<T>().FirstOrDefaultAsync(e => EF.Property<long>(e, "Id") == (long)Object.GetType().GetProperty("Id").GetValue(Object));
 
-            if (setValue != null)
-            { 
-               
-                _context.Entry(setValue).CurrentValues.SetValues(Object);
+            if (Object != null)
+            {
+                
+                var entry = _context.Entry(Object);
 
-                _context.Entry(setValue).Property("InsertTime").IsModified = false;
+                entry.CurrentValues.SetValues(Object);
+
+                entry.State = EntityState.Modified;
+
+                entry.Property("InsertTime").IsModified = false;
+
             }
             
+        }
+
+        public async Task Delete<T>(object Object) where T : class
+        {
+
+            if (Object != null)
+            {
+                var property = Object.GetType().GetProperty("IsRemoved");
+                if (property != null)
+                {
+                    property.SetValue(Object, true);
+                    _context.Entry(Object).State = EntityState.Modified;
+                }
+            }
+        }
+
+        public async Task SaveAsync()
+        {
+            await _context.SaveChangesAsync();
         }
     }
 }

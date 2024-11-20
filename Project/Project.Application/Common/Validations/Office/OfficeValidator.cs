@@ -1,4 +1,4 @@
-﻿using Project.Application.Common.Dto;
+﻿using Project.Domain.Common.Dto;
 using Project.Application.Services.Offices.Commands.AddOffice;
 using System;
 using System.Collections.Generic;

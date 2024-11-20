@@ -3,9 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Project.Application.Common.Dto;
+using Project.Domain.Common.Dto;
 using Project.Application.Common.Validations.Office;
 using Project.Application.Interfaces.Offices;
+using Project.Domain.Entities.Offices;
 using Project.Domain.Repository.Office;
 
 namespace Project.Application.Services.Offices.Commands.DeleteOffice
@@ -22,9 +23,9 @@ namespace Project.Application.Services.Offices.Commands.DeleteOffice
 
         public async Task<ResultDto> Execute(long Id)
         {
-            var existsOffice = await OfficeExistsChecker.ExistsOffice(Id, _repository);
+            var existsResult = await _repository.IsExists<Office>(Id);
 
-            if (!existsOffice)
+            if (!existsResult)
             {
 
                 return new ResultDto()
@@ -34,10 +35,11 @@ namespace Project.Application.Services.Offices.Commands.DeleteOffice
                 };
             }
 
-                await _repository.DeleteOffice(Id);
-                await _repository.SaveOfficeAsync();
+            var entity = await _repository.Get<Office>(Id);
+                await _repository.Delete<Office>(entity.Data);
+                await _repository.SaveAsync();
 
-                return new ResultDto()
+            return new ResultDto()
                 {
                     IsSuccess = true,
                     Message = "دفتر با موفقیت حذف شد"

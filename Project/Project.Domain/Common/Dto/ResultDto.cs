@@ -4,15 +4,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Project.Application.Common.Dto
+namespace Project.Domain.Common.Dto
 {
-    public class ResultDto<T>
+    public class ResultDto<T>:ResultDto
     {
         public T Data { get; set; }
 
-        public bool IsSuccess { get; set; }
-
-        public string Message { get; set; }
     }
 
     public class ResultDto
