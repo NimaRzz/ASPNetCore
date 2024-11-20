@@ -12,8 +12,8 @@ using Project.Infra.Data.Contexts;
 namespace Project.Infra.Data.Migrations
 {
     [DbContext(typeof(DataBaseContext))]
-    [Migration("20241118154923_InitDb_And_Add_Entities")]
-    partial class InitDb_And_Add_Entities
+    [Migration("20241120110142_Fix4")]
+    partial class Fix4
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -33,10 +33,10 @@ namespace Project.Infra.Data.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<long>("Id"));
 
-                    b.Property<long?>("HouseholdCode")
+                    b.Property<long>("HouseholdCode")
                         .HasColumnType("bigint");
 
-                    b.Property<DateTime>("InsertTime")
+                    b.Property<DateTime?>("InsertTime")
                         .HasColumnType("datetime2");
 
                     b.Property<bool>("IsRemoved")
@@ -46,19 +46,20 @@ namespace Project.Infra.Data.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<long>("OfficeId")
+                    b.Property<string>("OfficeId")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<long>("PassportCode")
                         .HasColumnType("bigint");
 
-                    b.Property<long?>("PassportCode")
-                        .HasColumnType("bigint");
-
-                    b.Property<long?>("PersonalizedCode")
+                    b.Property<long>("PersonalizedCode")
                         .HasColumnType("bigint");
 
                     b.Property<DateTime?>("RemoveTime")
                         .HasColumnType("datetime2");
 
-                    b.Property<long?>("UniqueCode")
+                    b.Property<long>("UniqueCode")
                         .HasColumnType("bigint");
 
                     b.Property<DateTime?>("UpdateTime")
@@ -73,15 +74,17 @@ namespace Project.Infra.Data.Migrations
 
             modelBuilder.Entity("Project.Domain.Entities.Offices.Office", b =>
                 {
-                    b.Property<long>("Id")
-                        .HasColumnType("bigint");
+                    b.Property<string>("Id")
+                        .HasColumnType("nvarchar(450)");
 
                     b.Property<string>("Address")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<DateTime>("InsertTime")
-                        .HasColumnType("datetime2");
+                    b.Property<DateTime?>("InsertTime")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("datetime2")
+                        .HasDefaultValueSql("GETDATE()");
 
                     b.Property<bool>("IsRemoved")
                         .HasColumnType("bit");
@@ -90,8 +93,11 @@ namespace Project.Infra.Data.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("Province")
-                        .HasColumnType("int");
+                    b.Property<string>("NewId")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<long>("ProvinceId")
+                        .HasColumnType("bigint");
 
                     b.Property<DateTime?>("RemoveTime")
                         .HasColumnType("datetime2");
@@ -100,6 +106,8 @@ namespace Project.Infra.Data.Migrations
                         .HasColumnType("datetime2");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("ProvinceId");
 
                     b.ToTable("Offices");
                 });
@@ -115,14 +123,15 @@ namespace Project.Infra.Data.Migrations
                     b.Property<int>("Capacity")
                         .HasColumnType("int");
 
-                    b.Property<DateTime>("InsertTime")
+                    b.Property<DateTime?>("InsertTime")
                         .HasColumnType("datetime2");
 
                     b.Property<bool>("IsRemoved")
                         .HasColumnType("bit");
 
-                    b.Property<long>("OfficeId")
-                        .HasColumnType("bigint");
+                    b.Property<string>("OfficeId")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(450)");
 
                     b.Property<long>("PlanId")
                         .HasColumnType("bigint");
@@ -159,7 +168,7 @@ namespace Project.Infra.Data.Migrations
                     b.Property<TimeSpan>("EndTime")
                         .HasColumnType("time");
 
-                    b.Property<DateTime>("InsertTime")
+                    b.Property<DateTime?>("InsertTime")
                         .HasColumnType("datetime2");
 
                     b.Property<bool>("IsRemoved")
@@ -196,14 +205,15 @@ namespace Project.Infra.Data.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<DateTime>("InsertTime")
+                    b.Property<DateTime?>("InsertTime")
                         .HasColumnType("datetime2");
 
                     b.Property<bool>("IsRemoved")
                         .HasColumnType("bit");
 
-                    b.Property<long>("OfficeId")
-                        .HasColumnType("bigint");
+                    b.Property<string>("OfficeId")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(450)");
 
                     b.Property<DateTime?>("RemoveTime")
                         .HasColumnType("datetime2");
@@ -232,7 +242,7 @@ namespace Project.Infra.Data.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<long>("Id"));
 
-                    b.Property<DateTime>("InsertTime")
+                    b.Property<DateTime?>("InsertTime")
                         .HasColumnType("datetime2");
 
                     b.Property<bool>("IsRemoved")
@@ -253,6 +263,254 @@ namespace Project.Infra.Data.Migrations
                     b.ToTable("Plans");
                 });
 
+            modelBuilder.Entity("Project.Domain.Entities.Province.Province", b =>
+                {
+                    b.Property<long>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bigint");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<long>("Id"));
+
+                    b.Property<DateTime?>("InsertTime")
+                        .HasColumnType("datetime2");
+
+                    b.Property<bool>("IsRemoved")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime?>("RemoveTime")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime?>("UpdateTime")
+                        .HasColumnType("datetime2");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Provinces");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1L,
+                            InsertTime = new DateTime(2024, 11, 20, 14, 31, 41, 490, DateTimeKind.Local).AddTicks(2975),
+                            IsRemoved = false,
+                            Name = "AzarbaijanSharghi"
+                        },
+                        new
+                        {
+                            Id = 2L,
+                            InsertTime = new DateTime(2024, 11, 20, 14, 31, 41, 490, DateTimeKind.Local).AddTicks(3076),
+                            IsRemoved = false,
+                            Name = "AzarbaijanGharbi"
+                        },
+                        new
+                        {
+                            Id = 3L,
+                            InsertTime = new DateTime(2024, 11, 20, 14, 31, 41, 490, DateTimeKind.Local).AddTicks(3091),
+                            IsRemoved = false,
+                            Name = "Ardabil"
+                        },
+                        new
+                        {
+                            Id = 4L,
+                            InsertTime = new DateTime(2024, 11, 20, 14, 31, 41, 490, DateTimeKind.Local).AddTicks(3111),
+                            IsRemoved = false,
+                            Name = "Isfahan"
+                        },
+                        new
+                        {
+                            Id = 5L,
+                            InsertTime = new DateTime(2024, 11, 20, 14, 31, 41, 490, DateTimeKind.Local).AddTicks(3122),
+                            IsRemoved = false,
+                            Name = "Alborz"
+                        },
+                        new
+                        {
+                            Id = 6L,
+                            InsertTime = new DateTime(2024, 11, 20, 14, 31, 41, 490, DateTimeKind.Local).AddTicks(3135),
+                            IsRemoved = false,
+                            Name = "Ilam"
+                        },
+                        new
+                        {
+                            Id = 7L,
+                            InsertTime = new DateTime(2024, 11, 20, 14, 31, 41, 490, DateTimeKind.Local).AddTicks(3145),
+                            IsRemoved = false,
+                            Name = "Bushehr"
+                        },
+                        new
+                        {
+                            Id = 8L,
+                            InsertTime = new DateTime(2024, 11, 20, 14, 31, 41, 490, DateTimeKind.Local).AddTicks(3156),
+                            IsRemoved = false,
+                            Name = "Tehran"
+                        },
+                        new
+                        {
+                            Id = 9L,
+                            InsertTime = new DateTime(2024, 11, 20, 14, 31, 41, 490, DateTimeKind.Local).AddTicks(3166),
+                            IsRemoved = false,
+                            Name = "ChaharmahaloBakhtiari"
+                        },
+                        new
+                        {
+                            Id = 10L,
+                            InsertTime = new DateTime(2024, 11, 20, 14, 31, 41, 490, DateTimeKind.Local).AddTicks(3178),
+                            IsRemoved = false,
+                            Name = "KhorasanJonubi"
+                        },
+                        new
+                        {
+                            Id = 11L,
+                            InsertTime = new DateTime(2024, 11, 20, 14, 31, 41, 490, DateTimeKind.Local).AddTicks(3190),
+                            IsRemoved = false,
+                            Name = "KhorasanRazavi"
+                        },
+                        new
+                        {
+                            Id = 12L,
+                            InsertTime = new DateTime(2024, 11, 20, 14, 31, 41, 490, DateTimeKind.Local).AddTicks(3200),
+                            IsRemoved = false,
+                            Name = "KhorasanShomali"
+                        },
+                        new
+                        {
+                            Id = 13L,
+                            InsertTime = new DateTime(2024, 11, 20, 14, 31, 41, 490, DateTimeKind.Local).AddTicks(3210),
+                            IsRemoved = false,
+                            Name = "Khuzestan"
+                        },
+                        new
+                        {
+                            Id = 14L,
+                            InsertTime = new DateTime(2024, 11, 20, 14, 31, 41, 490, DateTimeKind.Local).AddTicks(3334),
+                            IsRemoved = false,
+                            Name = "Zanjan"
+                        },
+                        new
+                        {
+                            Id = 15L,
+                            InsertTime = new DateTime(2024, 11, 20, 14, 31, 41, 490, DateTimeKind.Local).AddTicks(3346),
+                            IsRemoved = false,
+                            Name = "Semnan"
+                        },
+                        new
+                        {
+                            Id = 16L,
+                            InsertTime = new DateTime(2024, 11, 20, 14, 31, 41, 490, DateTimeKind.Local).AddTicks(3356),
+                            IsRemoved = false,
+                            Name = "SistanoBaluchestan"
+                        },
+                        new
+                        {
+                            Id = 17L,
+                            InsertTime = new DateTime(2024, 11, 20, 14, 31, 41, 490, DateTimeKind.Local).AddTicks(3367),
+                            IsRemoved = false,
+                            Name = "Fars"
+                        },
+                        new
+                        {
+                            Id = 18L,
+                            InsertTime = new DateTime(2024, 11, 20, 14, 31, 41, 490, DateTimeKind.Local).AddTicks(3404),
+                            IsRemoved = false,
+                            Name = "Qazvin"
+                        },
+                        new
+                        {
+                            Id = 19L,
+                            InsertTime = new DateTime(2024, 11, 20, 14, 31, 41, 490, DateTimeKind.Local).AddTicks(3461),
+                            IsRemoved = false,
+                            Name = "Qom"
+                        },
+                        new
+                        {
+                            Id = 20L,
+                            InsertTime = new DateTime(2024, 11, 20, 14, 31, 41, 490, DateTimeKind.Local).AddTicks(3472),
+                            IsRemoved = false,
+                            Name = "Kurdistan"
+                        },
+                        new
+                        {
+                            Id = 21L,
+                            InsertTime = new DateTime(2024, 11, 20, 14, 31, 41, 490, DateTimeKind.Local).AddTicks(3483),
+                            IsRemoved = false,
+                            Name = "Kerman"
+                        },
+                        new
+                        {
+                            Id = 22L,
+                            InsertTime = new DateTime(2024, 11, 20, 14, 31, 41, 490, DateTimeKind.Local).AddTicks(3494),
+                            IsRemoved = false,
+                            Name = "Kermanshah"
+                        },
+                        new
+                        {
+                            Id = 23L,
+                            InsertTime = new DateTime(2024, 11, 20, 14, 31, 41, 490, DateTimeKind.Local).AddTicks(3504),
+                            IsRemoved = false,
+                            Name = "KohgiluyehoBoyerahmad"
+                        },
+                        new
+                        {
+                            Id = 24L,
+                            InsertTime = new DateTime(2024, 11, 20, 14, 31, 41, 490, DateTimeKind.Local).AddTicks(3515),
+                            IsRemoved = false,
+                            Name = "Golestan"
+                        },
+                        new
+                        {
+                            Id = 25L,
+                            InsertTime = new DateTime(2024, 11, 20, 14, 31, 41, 490, DateTimeKind.Local).AddTicks(3525),
+                            IsRemoved = false,
+                            Name = "Gilan"
+                        },
+                        new
+                        {
+                            Id = 26L,
+                            InsertTime = new DateTime(2024, 11, 20, 14, 31, 41, 490, DateTimeKind.Local).AddTicks(3536),
+                            IsRemoved = false,
+                            Name = "Lorestan"
+                        },
+                        new
+                        {
+                            Id = 27L,
+                            InsertTime = new DateTime(2024, 11, 20, 14, 31, 41, 490, DateTimeKind.Local).AddTicks(3546),
+                            IsRemoved = false,
+                            Name = "Mazandaran"
+                        },
+                        new
+                        {
+                            Id = 28L,
+                            InsertTime = new DateTime(2024, 11, 20, 14, 31, 41, 490, DateTimeKind.Local).AddTicks(3556),
+                            IsRemoved = false,
+                            Name = "Markazi"
+                        },
+                        new
+                        {
+                            Id = 29L,
+                            InsertTime = new DateTime(2024, 11, 20, 14, 31, 41, 490, DateTimeKind.Local).AddTicks(3567),
+                            IsRemoved = false,
+                            Name = "Hormozgan"
+                        },
+                        new
+                        {
+                            Id = 30L,
+                            InsertTime = new DateTime(2024, 11, 20, 14, 31, 41, 490, DateTimeKind.Local).AddTicks(3578),
+                            IsRemoved = false,
+                            Name = "Hamadan"
+                        },
+                        new
+                        {
+                            Id = 31L,
+                            InsertTime = new DateTime(2024, 11, 20, 14, 31, 41, 490, DateTimeKind.Local).AddTicks(3587),
+                            IsRemoved = false,
+                            Name = "Yazd"
+                        });
+                });
+
             modelBuilder.Entity("Project.Domain.Entities.Turns.Appointment", b =>
                 {
                     b.Property<long>("Id")
@@ -267,7 +525,7 @@ namespace Project.Infra.Data.Migrations
                     b.Property<long>("CitizenId")
                         .HasColumnType("bigint");
 
-                    b.Property<DateTime>("InsertTime")
+                    b.Property<DateTime?>("InsertTime")
                         .HasColumnType("datetime2");
 
                     b.Property<bool>("IsRemoved")
@@ -302,7 +560,7 @@ namespace Project.Infra.Data.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<long>("Id"));
 
-                    b.Property<DateTime>("InsertTime")
+                    b.Property<DateTime?>("InsertTime")
                         .HasColumnType("datetime2");
 
                     b.Property<bool>("IsRemoved")
@@ -326,21 +584,18 @@ namespace Project.Infra.Data.Migrations
                         new
                         {
                             Id = 1L,
-                            InsertTime = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             IsRemoved = false,
                             Name = "Citizen"
                         },
                         new
                         {
                             Id = 2L,
-                            InsertTime = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             IsRemoved = false,
                             Name = "Admin"
                         },
                         new
                         {
                             Id = 3L,
-                            InsertTime = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             IsRemoved = false,
                             Name = "Operator"
                         });
@@ -354,7 +609,7 @@ namespace Project.Infra.Data.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<long>("Id"));
 
-                    b.Property<DateTime>("InsertTime")
+                    b.Property<DateTime?>("InsertTime")
                         .HasColumnType("datetime2");
 
                     b.Property<bool>("IsRemoved")
@@ -387,7 +642,7 @@ namespace Project.Infra.Data.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<long>("Id"));
 
-                    b.Property<DateTime>("InsertTime")
+                    b.Property<DateTime?>("InsertTime")
                         .HasColumnType("datetime2");
 
                     b.Property<bool>("IsRemoved")
@@ -423,6 +678,17 @@ namespace Project.Infra.Data.Migrations
                         .IsRequired();
 
                     b.Navigation("Office");
+                });
+
+            modelBuilder.Entity("Project.Domain.Entities.Offices.Office", b =>
+                {
+                    b.HasOne("Project.Domain.Entities.Province.Province", "Province")
+                        .WithMany("Offices")
+                        .HasForeignKey("ProvinceId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Province");
                 });
 
             modelBuilder.Entity("Project.Domain.Entities.Offices.OfficePlan", b =>
@@ -528,6 +794,11 @@ namespace Project.Infra.Data.Migrations
                     b.Navigation("Appointments");
 
                     b.Navigation("OfficePlans");
+                });
+
+            modelBuilder.Entity("Project.Domain.Entities.Province.Province", b =>
+                {
+                    b.Navigation("Offices");
                 });
 
             modelBuilder.Entity("Project.Domain.Entities.Users.Role", b =>

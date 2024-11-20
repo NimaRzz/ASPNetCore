@@ -36,9 +36,9 @@ namespace Project.Infra.Data.Repositories.Office
             await base.Add(office);
         }
 
-        public async Task Update<T>(Domain.Entities.Offices.Office office) where T : class
+        public async Task Update<T>(T Object) where T : class
         {
-            await base.Update<T>(office);
+            await base.Update<T>(Object);
         }
 
         public async Task Delete<T>(object Object) where T : class

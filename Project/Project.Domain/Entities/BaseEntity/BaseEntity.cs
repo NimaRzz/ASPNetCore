@@ -20,4 +20,6 @@ namespace Project.Domain.Entities.BaseEntity
     }
 
     public class BaseEntity:BaseEntity<long>{}
+
+
 }

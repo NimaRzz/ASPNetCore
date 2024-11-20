@@ -9,13 +9,13 @@ namespace Project.Domain.Repository.BaseRepository
 {
     public interface IBaseRepository
     {
-        Task<bool> IsExists<T>(long Id) where T : class;
+        Task<bool> IsExists<T>(object Id) where T : class;
 
-        Task<ResultDto<T>> Get<T>(long Id) where T : class;
+        Task<ResultDto<T>> Get<T>(object Id) where T : class;
 
         Task Add(object Object);
         
-        Task Update<T>(object Object) where T : class;
+        Task Update<T>(T Object) where T : class;
 
         Task Delete<T>(object Object) where T : class;
 

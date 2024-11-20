@@ -34,10 +34,10 @@ namespace Project.Application.Common.Validations.Office
             return result;
         }
 
-        private static async Task<ResultDto> ValidateRequest(long id, string name, long province, string address, IOfficeRepository repository)
+        private static async Task<ResultDto> ValidateRequest(string id, string name, long province, string address, IOfficeRepository repository)
         {
             // بررسی اینکه شماره دفتر وارد شده باشد
-            if (id == null)
+            if (string.IsNullOrEmpty(id))
             {
                 return new ResultDto
                 {

@@ -20,11 +20,19 @@ namespace Project.Infra.Data.Repositories.BaseRepository
             _context = context;
         }
 
-        public async Task<bool> IsExists<T>(long Id) where T : class
+        public async Task<bool> IsExists<T>(object Id) where T : class
         {
-            // استفاده از یک DbSet عمومی
-            var entity = await _context.Set<T>().AsNoTracking().FirstOrDefaultAsync(e => EF.Property<long>(e, "Id") == Id);
-           
+            T entity = null;
+            if (Id is long longId)
+            {
+                entity = await _context.Set<T>().AsNoTracking().FirstOrDefaultAsync(e => EF.Property<long>(e, "Id") == longId);
+            }
+
+            if (Id is string stringId)
+            {
+                entity = await _context.Set<T>().AsNoTracking().FirstOrDefaultAsync(e => EF.Property<string>(e, "Id") == stringId);
+            }
+
             if (entity != null)
             {
                 return true;
@@ -32,10 +40,20 @@ namespace Project.Infra.Data.Repositories.BaseRepository
             return false;
         }
 
-        public async Task<ResultDto<T>> Get<T>(long Id) where T : class
+        public async Task<ResultDto<T>> Get<T>(object Id) where T : class
         {
 
-            var entity = await _context.Set<T>().AsNoTracking().FirstOrDefaultAsync(e => EF.Property<long>(e, "Id") == Id);
+            T entity = null;
+            if (Id is long longId)
+            {
+                entity = await _context.Set<T>().AsNoTracking().FirstOrDefaultAsync(e => EF.Property<long>(e, "Id") == longId);
+            }
+
+            if (Id is string stringId)
+            {
+                entity = await _context.Set<T>().AsNoTracking().FirstOrDefaultAsync(e => EF.Property<string>(e, "Id") == stringId);
+            }
+
 
             if (entity != null)
             {
@@ -56,20 +74,52 @@ namespace Project.Infra.Data.Repositories.BaseRepository
             await _context.AddAsync(Object);
         }
 
-        public async Task Update<T>(object Object) where T : class
+        public async Task Update<T>(T Object) where T : class
         {
-
             if (Object != null)
             {
-                
+
                 var entry = _context.Entry(Object);
 
-                entry.CurrentValues.SetValues(Object);
+                // استخراج RowVersion از رکورد قدیمی
+                var rowVersion = entry.Property("RowVersion").CurrentValue;
 
-                entry.State = EntityState.Modified;
+               
 
-                entry.Property("InsertTime").IsModified = false;
 
+                if (Object is Domain.Entities.Offices.Office office)
+                {
+                     var pkValue = entry.Property("Id").CurrentValue;
+                     var InsertTime = entry.Property("InsertTime").CurrentValue;
+ 
+                     var oldEntity = await _context.Set<T>().FindAsync(pkValue);
+
+                     if (oldEntity != null)
+                     {
+                      _context.Set<T>().Remove(oldEntity);
+
+                      await _context.SaveChangesAsync();
+                     }
+
+                     entry.Property("Id").CurrentValue = entry.Property("NewId").CurrentValue;
+                     entry.Property("UpdateTime").CurrentValue = DateTime.Now;
+                     
+                     await _context.Set<T>().AddAsync(Object);
+                    
+                     entry.Property("InsertTime").CurrentValue = InsertTime;
+                }
+                else
+                {
+                    entry.CurrentValues.SetValues(Object);
+
+                    entry.State = EntityState.Modified;
+                    
+                    
+                }
+entry.Property("InsertTime").IsModified = false;
+              entry.Property("NewId").IsModified = false;
+
+              entry.Property("RowVersion").CurrentValue = rowVersion;
             }
             
         }

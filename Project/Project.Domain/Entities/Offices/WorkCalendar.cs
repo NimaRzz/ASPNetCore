@@ -13,7 +13,7 @@ public class WorkCalendar:BaseEntity.BaseEntity
     public ICollection<Shift> Shifts { get; set; }
 
     public Office Office { get; set; }
-    
-    public long OfficeId { get; set; }
+
+    public string OfficeId { get; set; }
 
 }

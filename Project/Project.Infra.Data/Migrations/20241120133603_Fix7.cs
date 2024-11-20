@@ -6,520 +6,466 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace Project.Infra.Data.Migrations
 {
     /// <inheritdoc />
-    public partial class Fix_Citizen : Migration
+    public partial class Fix7 : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
         {
-            migrationBuilder.AlterColumn<long>(
-                name: "UniqueCode",
-                table: "Citizens",
-                type: "bigint",
-                nullable: false,
-                defaultValue: 0L,
-                oldClrType: typeof(long),
-                oldType: "bigint",
-                oldNullable: true);
-
-            migrationBuilder.AlterColumn<long>(
-                name: "PersonalizedCode",
-                table: "Citizens",
-                type: "bigint",
-                nullable: false,
-                defaultValue: 0L,
-                oldClrType: typeof(long),
-                oldType: "bigint",
-                oldNullable: true);
-
-            migrationBuilder.AlterColumn<long>(
-                name: "PassportCode",
-                table: "Citizens",
-                type: "bigint",
-                nullable: false,
-                defaultValue: 0L,
-                oldClrType: typeof(long),
-                oldType: "bigint",
-                oldNullable: true);
-
-            migrationBuilder.AlterColumn<long>(
-                name: "HouseholdCode",
-                table: "Citizens",
-                type: "bigint",
-                nullable: false,
-                defaultValue: 0L,
-                oldClrType: typeof(long),
-                oldType: "bigint",
-                oldNullable: true);
+            migrationBuilder.AlterColumn<string>(
+                name: "NewId",
+                table: "Offices",
+                type: "nvarchar(max)",
+                nullable: true,
+                oldClrType: typeof(string),
+                oldType: "nvarchar(max)");
 
             migrationBuilder.UpdateData(
                 table: "Provinces",
                 keyColumn: "Id",
                 keyValue: 1L,
                 column: "InsertTime",
-                value: new DateTime(2024, 11, 20, 8, 1, 30, 903, DateTimeKind.Local).AddTicks(387));
+                value: new DateTime(2024, 11, 20, 17, 6, 1, 651, DateTimeKind.Local).AddTicks(1341));
 
             migrationBuilder.UpdateData(
                 table: "Provinces",
                 keyColumn: "Id",
                 keyValue: 2L,
                 column: "InsertTime",
-                value: new DateTime(2024, 11, 20, 8, 1, 30, 903, DateTimeKind.Local).AddTicks(434));
+                value: new DateTime(2024, 11, 20, 17, 6, 1, 651, DateTimeKind.Local).AddTicks(1373));
 
             migrationBuilder.UpdateData(
                 table: "Provinces",
                 keyColumn: "Id",
                 keyValue: 3L,
                 column: "InsertTime",
-                value: new DateTime(2024, 11, 20, 8, 1, 30, 903, DateTimeKind.Local).AddTicks(456));
+                value: new DateTime(2024, 11, 20, 17, 6, 1, 651, DateTimeKind.Local).AddTicks(1387));
 
             migrationBuilder.UpdateData(
                 table: "Provinces",
                 keyColumn: "Id",
                 keyValue: 4L,
                 column: "InsertTime",
-                value: new DateTime(2024, 11, 20, 8, 1, 30, 903, DateTimeKind.Local).AddTicks(477));
+                value: new DateTime(2024, 11, 20, 17, 6, 1, 651, DateTimeKind.Local).AddTicks(1399));
 
             migrationBuilder.UpdateData(
                 table: "Provinces",
                 keyColumn: "Id",
                 keyValue: 5L,
                 column: "InsertTime",
-                value: new DateTime(2024, 11, 20, 8, 1, 30, 903, DateTimeKind.Local).AddTicks(499));
+                value: new DateTime(2024, 11, 20, 17, 6, 1, 651, DateTimeKind.Local).AddTicks(1413));
 
             migrationBuilder.UpdateData(
                 table: "Provinces",
                 keyColumn: "Id",
                 keyValue: 6L,
                 column: "InsertTime",
-                value: new DateTime(2024, 11, 20, 8, 1, 30, 903, DateTimeKind.Local).AddTicks(524));
+                value: new DateTime(2024, 11, 20, 17, 6, 1, 651, DateTimeKind.Local).AddTicks(1428));
 
             migrationBuilder.UpdateData(
                 table: "Provinces",
                 keyColumn: "Id",
                 keyValue: 7L,
                 column: "InsertTime",
-                value: new DateTime(2024, 11, 20, 8, 1, 30, 903, DateTimeKind.Local).AddTicks(545));
+                value: new DateTime(2024, 11, 20, 17, 6, 1, 651, DateTimeKind.Local).AddTicks(1441));
 
             migrationBuilder.UpdateData(
                 table: "Provinces",
                 keyColumn: "Id",
                 keyValue: 8L,
                 column: "InsertTime",
-                value: new DateTime(2024, 11, 20, 8, 1, 30, 903, DateTimeKind.Local).AddTicks(565));
+                value: new DateTime(2024, 11, 20, 17, 6, 1, 651, DateTimeKind.Local).AddTicks(1454));
 
             migrationBuilder.UpdateData(
                 table: "Provinces",
                 keyColumn: "Id",
                 keyValue: 9L,
                 column: "InsertTime",
-                value: new DateTime(2024, 11, 20, 8, 1, 30, 903, DateTimeKind.Local).AddTicks(587));
+                value: new DateTime(2024, 11, 20, 17, 6, 1, 651, DateTimeKind.Local).AddTicks(1467));
 
             migrationBuilder.UpdateData(
                 table: "Provinces",
                 keyColumn: "Id",
                 keyValue: 10L,
                 column: "InsertTime",
-                value: new DateTime(2024, 11, 20, 8, 1, 30, 903, DateTimeKind.Local).AddTicks(612));
+                value: new DateTime(2024, 11, 20, 17, 6, 1, 651, DateTimeKind.Local).AddTicks(1483));
 
             migrationBuilder.UpdateData(
                 table: "Provinces",
                 keyColumn: "Id",
                 keyValue: 11L,
                 column: "InsertTime",
-                value: new DateTime(2024, 11, 20, 8, 1, 30, 903, DateTimeKind.Local).AddTicks(633));
+                value: new DateTime(2024, 11, 20, 17, 6, 1, 651, DateTimeKind.Local).AddTicks(1496));
 
             migrationBuilder.UpdateData(
                 table: "Provinces",
                 keyColumn: "Id",
                 keyValue: 12L,
                 column: "InsertTime",
-                value: new DateTime(2024, 11, 20, 8, 1, 30, 903, DateTimeKind.Local).AddTicks(691));
+                value: new DateTime(2024, 11, 20, 17, 6, 1, 651, DateTimeKind.Local).AddTicks(1561));
 
             migrationBuilder.UpdateData(
                 table: "Provinces",
                 keyColumn: "Id",
                 keyValue: 13L,
                 column: "InsertTime",
-                value: new DateTime(2024, 11, 20, 8, 1, 30, 903, DateTimeKind.Local).AddTicks(713));
+                value: new DateTime(2024, 11, 20, 17, 6, 1, 651, DateTimeKind.Local).AddTicks(1577));
 
             migrationBuilder.UpdateData(
                 table: "Provinces",
                 keyColumn: "Id",
                 keyValue: 14L,
                 column: "InsertTime",
-                value: new DateTime(2024, 11, 20, 8, 1, 30, 903, DateTimeKind.Local).AddTicks(734));
+                value: new DateTime(2024, 11, 20, 17, 6, 1, 651, DateTimeKind.Local).AddTicks(1590));
 
             migrationBuilder.UpdateData(
                 table: "Provinces",
                 keyColumn: "Id",
                 keyValue: 15L,
                 column: "InsertTime",
-                value: new DateTime(2024, 11, 20, 8, 1, 30, 903, DateTimeKind.Local).AddTicks(756));
+                value: new DateTime(2024, 11, 20, 17, 6, 1, 651, DateTimeKind.Local).AddTicks(1604));
 
             migrationBuilder.UpdateData(
                 table: "Provinces",
                 keyColumn: "Id",
                 keyValue: 16L,
                 column: "InsertTime",
-                value: new DateTime(2024, 11, 20, 8, 1, 30, 903, DateTimeKind.Local).AddTicks(779));
+                value: new DateTime(2024, 11, 20, 17, 6, 1, 651, DateTimeKind.Local).AddTicks(1616));
 
             migrationBuilder.UpdateData(
                 table: "Provinces",
                 keyColumn: "Id",
                 keyValue: 17L,
                 column: "InsertTime",
-                value: new DateTime(2024, 11, 20, 8, 1, 30, 903, DateTimeKind.Local).AddTicks(800));
+                value: new DateTime(2024, 11, 20, 17, 6, 1, 651, DateTimeKind.Local).AddTicks(1630));
 
             migrationBuilder.UpdateData(
                 table: "Provinces",
                 keyColumn: "Id",
                 keyValue: 18L,
                 column: "InsertTime",
-                value: new DateTime(2024, 11, 20, 8, 1, 30, 903, DateTimeKind.Local).AddTicks(824));
+                value: new DateTime(2024, 11, 20, 17, 6, 1, 651, DateTimeKind.Local).AddTicks(1645));
 
             migrationBuilder.UpdateData(
                 table: "Provinces",
                 keyColumn: "Id",
                 keyValue: 19L,
                 column: "InsertTime",
-                value: new DateTime(2024, 11, 20, 8, 1, 30, 903, DateTimeKind.Local).AddTicks(846));
+                value: new DateTime(2024, 11, 20, 17, 6, 1, 651, DateTimeKind.Local).AddTicks(1659));
 
             migrationBuilder.UpdateData(
                 table: "Provinces",
                 keyColumn: "Id",
                 keyValue: 20L,
                 column: "InsertTime",
-                value: new DateTime(2024, 11, 20, 8, 1, 30, 903, DateTimeKind.Local).AddTicks(866));
+                value: new DateTime(2024, 11, 20, 17, 6, 1, 651, DateTimeKind.Local).AddTicks(1672));
 
             migrationBuilder.UpdateData(
                 table: "Provinces",
                 keyColumn: "Id",
                 keyValue: 21L,
                 column: "InsertTime",
-                value: new DateTime(2024, 11, 20, 8, 1, 30, 903, DateTimeKind.Local).AddTicks(887));
+                value: new DateTime(2024, 11, 20, 17, 6, 1, 651, DateTimeKind.Local).AddTicks(1685));
 
             migrationBuilder.UpdateData(
                 table: "Provinces",
                 keyColumn: "Id",
                 keyValue: 22L,
                 column: "InsertTime",
-                value: new DateTime(2024, 11, 20, 8, 1, 30, 903, DateTimeKind.Local).AddTicks(908));
+                value: new DateTime(2024, 11, 20, 17, 6, 1, 651, DateTimeKind.Local).AddTicks(1698));
 
             migrationBuilder.UpdateData(
                 table: "Provinces",
                 keyColumn: "Id",
                 keyValue: 23L,
                 column: "InsertTime",
-                value: new DateTime(2024, 11, 20, 8, 1, 30, 903, DateTimeKind.Local).AddTicks(928));
+                value: new DateTime(2024, 11, 20, 17, 6, 1, 651, DateTimeKind.Local).AddTicks(1711));
 
             migrationBuilder.UpdateData(
                 table: "Provinces",
                 keyColumn: "Id",
                 keyValue: 24L,
                 column: "InsertTime",
-                value: new DateTime(2024, 11, 20, 8, 1, 30, 903, DateTimeKind.Local).AddTicks(950));
+                value: new DateTime(2024, 11, 20, 17, 6, 1, 651, DateTimeKind.Local).AddTicks(1724));
 
             migrationBuilder.UpdateData(
                 table: "Provinces",
                 keyColumn: "Id",
                 keyValue: 25L,
                 column: "InsertTime",
-                value: new DateTime(2024, 11, 20, 8, 1, 30, 903, DateTimeKind.Local).AddTicks(970));
+                value: new DateTime(2024, 11, 20, 17, 6, 1, 651, DateTimeKind.Local).AddTicks(1738));
 
             migrationBuilder.UpdateData(
                 table: "Provinces",
                 keyColumn: "Id",
                 keyValue: 26L,
                 column: "InsertTime",
-                value: new DateTime(2024, 11, 20, 8, 1, 30, 903, DateTimeKind.Local).AddTicks(1004));
+                value: new DateTime(2024, 11, 20, 17, 6, 1, 651, DateTimeKind.Local).AddTicks(1751));
 
             migrationBuilder.UpdateData(
                 table: "Provinces",
                 keyColumn: "Id",
                 keyValue: 27L,
                 column: "InsertTime",
-                value: new DateTime(2024, 11, 20, 8, 1, 30, 903, DateTimeKind.Local).AddTicks(1106));
+                value: new DateTime(2024, 11, 20, 17, 6, 1, 651, DateTimeKind.Local).AddTicks(1763));
 
             migrationBuilder.UpdateData(
                 table: "Provinces",
                 keyColumn: "Id",
                 keyValue: 28L,
                 column: "InsertTime",
-                value: new DateTime(2024, 11, 20, 8, 1, 30, 903, DateTimeKind.Local).AddTicks(1128));
+                value: new DateTime(2024, 11, 20, 17, 6, 1, 651, DateTimeKind.Local).AddTicks(1777));
 
             migrationBuilder.UpdateData(
                 table: "Provinces",
                 keyColumn: "Id",
                 keyValue: 29L,
                 column: "InsertTime",
-                value: new DateTime(2024, 11, 20, 8, 1, 30, 903, DateTimeKind.Local).AddTicks(1149));
+                value: new DateTime(2024, 11, 20, 17, 6, 1, 651, DateTimeKind.Local).AddTicks(1790));
 
             migrationBuilder.UpdateData(
                 table: "Provinces",
                 keyColumn: "Id",
                 keyValue: 30L,
                 column: "InsertTime",
-                value: new DateTime(2024, 11, 20, 8, 1, 30, 903, DateTimeKind.Local).AddTicks(1170));
+                value: new DateTime(2024, 11, 20, 17, 6, 1, 651, DateTimeKind.Local).AddTicks(1803));
 
             migrationBuilder.UpdateData(
                 table: "Provinces",
                 keyColumn: "Id",
                 keyValue: 31L,
                 column: "InsertTime",
-                value: new DateTime(2024, 11, 20, 8, 1, 30, 903, DateTimeKind.Local).AddTicks(1191));
+                value: new DateTime(2024, 11, 20, 17, 6, 1, 651, DateTimeKind.Local).AddTicks(1815));
         }
 
         /// <inheritdoc />
         protected override void Down(MigrationBuilder migrationBuilder)
         {
-            migrationBuilder.AlterColumn<long>(
-                name: "UniqueCode",
-                table: "Citizens",
-                type: "bigint",
-                nullable: true,
-                oldClrType: typeof(long),
-                oldType: "bigint");
-
-            migrationBuilder.AlterColumn<long>(
-                name: "PersonalizedCode",
-                table: "Citizens",
-                type: "bigint",
-                nullable: true,
-                oldClrType: typeof(long),
-                oldType: "bigint");
-
-            migrationBuilder.AlterColumn<long>(
-                name: "PassportCode",
-                table: "Citizens",
-                type: "bigint",
-                nullable: true,
-                oldClrType: typeof(long),
-                oldType: "bigint");
-
-            migrationBuilder.AlterColumn<long>(
-                name: "HouseholdCode",
-                table: "Citizens",
-                type: "bigint",
-                nullable: true,
-                oldClrType: typeof(long),
-                oldType: "bigint");
+            migrationBuilder.AlterColumn<string>(
+                name: "NewId",
+                table: "Offices",
+                type: "nvarchar(max)",
+                nullable: false,
+                defaultValue: "",
+                oldClrType: typeof(string),
+                oldType: "nvarchar(max)",
+                oldNullable: true);
 
             migrationBuilder.UpdateData(
                 table: "Provinces",
                 keyColumn: "Id",
                 keyValue: 1L,
                 column: "InsertTime",
-                value: new DateTime(2024, 11, 19, 15, 2, 32, 95, DateTimeKind.Local).AddTicks(1250));
+                value: new DateTime(2024, 11, 20, 15, 29, 41, 203, DateTimeKind.Local).AddTicks(9364));
 
             migrationBuilder.UpdateData(
                 table: "Provinces",
                 keyColumn: "Id",
                 keyValue: 2L,
                 column: "InsertTime",
-                value: new DateTime(2024, 11, 19, 15, 2, 32, 95, DateTimeKind.Local).AddTicks(1276));
+                value: new DateTime(2024, 11, 20, 15, 29, 41, 203, DateTimeKind.Local).AddTicks(9406));
 
             migrationBuilder.UpdateData(
                 table: "Provinces",
                 keyColumn: "Id",
                 keyValue: 3L,
                 column: "InsertTime",
-                value: new DateTime(2024, 11, 19, 15, 2, 32, 95, DateTimeKind.Local).AddTicks(1287));
+                value: new DateTime(2024, 11, 20, 15, 29, 41, 203, DateTimeKind.Local).AddTicks(9428));
 
             migrationBuilder.UpdateData(
                 table: "Provinces",
                 keyColumn: "Id",
                 keyValue: 4L,
                 column: "InsertTime",
-                value: new DateTime(2024, 11, 19, 15, 2, 32, 95, DateTimeKind.Local).AddTicks(1305));
+                value: new DateTime(2024, 11, 20, 15, 29, 41, 203, DateTimeKind.Local).AddTicks(9450));
 
             migrationBuilder.UpdateData(
                 table: "Provinces",
                 keyColumn: "Id",
                 keyValue: 5L,
                 column: "InsertTime",
-                value: new DateTime(2024, 11, 19, 15, 2, 32, 95, DateTimeKind.Local).AddTicks(1319));
+                value: new DateTime(2024, 11, 20, 15, 29, 41, 203, DateTimeKind.Local).AddTicks(9471));
 
             migrationBuilder.UpdateData(
                 table: "Provinces",
                 keyColumn: "Id",
                 keyValue: 6L,
                 column: "InsertTime",
-                value: new DateTime(2024, 11, 19, 15, 2, 32, 95, DateTimeKind.Local).AddTicks(1331));
+                value: new DateTime(2024, 11, 20, 15, 29, 41, 203, DateTimeKind.Local).AddTicks(9497));
 
             migrationBuilder.UpdateData(
                 table: "Provinces",
                 keyColumn: "Id",
                 keyValue: 7L,
                 column: "InsertTime",
-                value: new DateTime(2024, 11, 19, 15, 2, 32, 95, DateTimeKind.Local).AddTicks(1341));
+                value: new DateTime(2024, 11, 20, 15, 29, 41, 203, DateTimeKind.Local).AddTicks(9518));
 
             migrationBuilder.UpdateData(
                 table: "Provinces",
                 keyColumn: "Id",
                 keyValue: 8L,
                 column: "InsertTime",
-                value: new DateTime(2024, 11, 19, 15, 2, 32, 95, DateTimeKind.Local).AddTicks(1352));
+                value: new DateTime(2024, 11, 20, 15, 29, 41, 203, DateTimeKind.Local).AddTicks(9539));
 
             migrationBuilder.UpdateData(
                 table: "Provinces",
                 keyColumn: "Id",
                 keyValue: 9L,
                 column: "InsertTime",
-                value: new DateTime(2024, 11, 19, 15, 2, 32, 95, DateTimeKind.Local).AddTicks(1362));
+                value: new DateTime(2024, 11, 20, 15, 29, 41, 203, DateTimeKind.Local).AddTicks(9560));
 
             migrationBuilder.UpdateData(
                 table: "Provinces",
                 keyColumn: "Id",
                 keyValue: 10L,
                 column: "InsertTime",
-                value: new DateTime(2024, 11, 19, 15, 2, 32, 95, DateTimeKind.Local).AddTicks(1375));
+                value: new DateTime(2024, 11, 20, 15, 29, 41, 203, DateTimeKind.Local).AddTicks(9584));
 
             migrationBuilder.UpdateData(
                 table: "Provinces",
                 keyColumn: "Id",
                 keyValue: 11L,
                 column: "InsertTime",
-                value: new DateTime(2024, 11, 19, 15, 2, 32, 95, DateTimeKind.Local).AddTicks(1386));
+                value: new DateTime(2024, 11, 20, 15, 29, 41, 203, DateTimeKind.Local).AddTicks(9670));
 
             migrationBuilder.UpdateData(
                 table: "Provinces",
                 keyColumn: "Id",
                 keyValue: 12L,
                 column: "InsertTime",
-                value: new DateTime(2024, 11, 19, 15, 2, 32, 95, DateTimeKind.Local).AddTicks(1396));
+                value: new DateTime(2024, 11, 20, 15, 29, 41, 203, DateTimeKind.Local).AddTicks(9692));
 
             migrationBuilder.UpdateData(
                 table: "Provinces",
                 keyColumn: "Id",
                 keyValue: 13L,
                 column: "InsertTime",
-                value: new DateTime(2024, 11, 19, 15, 2, 32, 95, DateTimeKind.Local).AddTicks(1407));
+                value: new DateTime(2024, 11, 20, 15, 29, 41, 203, DateTimeKind.Local).AddTicks(9713));
 
             migrationBuilder.UpdateData(
                 table: "Provinces",
                 keyColumn: "Id",
                 keyValue: 14L,
                 column: "InsertTime",
-                value: new DateTime(2024, 11, 19, 15, 2, 32, 95, DateTimeKind.Local).AddTicks(1417));
+                value: new DateTime(2024, 11, 20, 15, 29, 41, 203, DateTimeKind.Local).AddTicks(9734));
 
             migrationBuilder.UpdateData(
                 table: "Provinces",
                 keyColumn: "Id",
                 keyValue: 15L,
                 column: "InsertTime",
-                value: new DateTime(2024, 11, 19, 15, 2, 32, 95, DateTimeKind.Local).AddTicks(1483));
+                value: new DateTime(2024, 11, 20, 15, 29, 41, 203, DateTimeKind.Local).AddTicks(9756));
 
             migrationBuilder.UpdateData(
                 table: "Provinces",
                 keyColumn: "Id",
                 keyValue: 16L,
                 column: "InsertTime",
-                value: new DateTime(2024, 11, 19, 15, 2, 32, 95, DateTimeKind.Local).AddTicks(1494));
+                value: new DateTime(2024, 11, 20, 15, 29, 41, 203, DateTimeKind.Local).AddTicks(9778));
 
             migrationBuilder.UpdateData(
                 table: "Provinces",
                 keyColumn: "Id",
                 keyValue: 17L,
                 column: "InsertTime",
-                value: new DateTime(2024, 11, 19, 15, 2, 32, 95, DateTimeKind.Local).AddTicks(1505));
+                value: new DateTime(2024, 11, 20, 15, 29, 41, 203, DateTimeKind.Local).AddTicks(9800));
 
             migrationBuilder.UpdateData(
                 table: "Provinces",
                 keyColumn: "Id",
                 keyValue: 18L,
                 column: "InsertTime",
-                value: new DateTime(2024, 11, 19, 15, 2, 32, 95, DateTimeKind.Local).AddTicks(1516));
+                value: new DateTime(2024, 11, 20, 15, 29, 41, 203, DateTimeKind.Local).AddTicks(9829));
 
             migrationBuilder.UpdateData(
                 table: "Provinces",
                 keyColumn: "Id",
                 keyValue: 19L,
                 column: "InsertTime",
-                value: new DateTime(2024, 11, 19, 15, 2, 32, 95, DateTimeKind.Local).AddTicks(1527));
+                value: new DateTime(2024, 11, 20, 15, 29, 41, 203, DateTimeKind.Local).AddTicks(9852));
 
             migrationBuilder.UpdateData(
                 table: "Provinces",
                 keyColumn: "Id",
                 keyValue: 20L,
                 column: "InsertTime",
-                value: new DateTime(2024, 11, 19, 15, 2, 32, 95, DateTimeKind.Local).AddTicks(1537));
+                value: new DateTime(2024, 11, 20, 15, 29, 41, 203, DateTimeKind.Local).AddTicks(9874));
 
             migrationBuilder.UpdateData(
                 table: "Provinces",
                 keyColumn: "Id",
                 keyValue: 21L,
                 column: "InsertTime",
-                value: new DateTime(2024, 11, 19, 15, 2, 32, 95, DateTimeKind.Local).AddTicks(1549));
+                value: new DateTime(2024, 11, 20, 15, 29, 41, 203, DateTimeKind.Local).AddTicks(9897));
 
             migrationBuilder.UpdateData(
                 table: "Provinces",
                 keyColumn: "Id",
                 keyValue: 22L,
                 column: "InsertTime",
-                value: new DateTime(2024, 11, 19, 15, 2, 32, 95, DateTimeKind.Local).AddTicks(1559));
+                value: new DateTime(2024, 11, 20, 15, 29, 41, 203, DateTimeKind.Local).AddTicks(9982));
 
             migrationBuilder.UpdateData(
                 table: "Provinces",
                 keyColumn: "Id",
                 keyValue: 23L,
                 column: "InsertTime",
-                value: new DateTime(2024, 11, 19, 15, 2, 32, 95, DateTimeKind.Local).AddTicks(1570));
+                value: new DateTime(2024, 11, 20, 15, 29, 41, 204, DateTimeKind.Local).AddTicks(69));
 
             migrationBuilder.UpdateData(
                 table: "Provinces",
                 keyColumn: "Id",
                 keyValue: 24L,
                 column: "InsertTime",
-                value: new DateTime(2024, 11, 19, 15, 2, 32, 95, DateTimeKind.Local).AddTicks(1581));
+                value: new DateTime(2024, 11, 20, 15, 29, 41, 204, DateTimeKind.Local).AddTicks(91));
 
             migrationBuilder.UpdateData(
                 table: "Provinces",
                 keyColumn: "Id",
                 keyValue: 25L,
                 column: "InsertTime",
-                value: new DateTime(2024, 11, 19, 15, 2, 32, 95, DateTimeKind.Local).AddTicks(1592));
+                value: new DateTime(2024, 11, 20, 15, 29, 41, 204, DateTimeKind.Local).AddTicks(214));
 
             migrationBuilder.UpdateData(
                 table: "Provinces",
                 keyColumn: "Id",
                 keyValue: 26L,
                 column: "InsertTime",
-                value: new DateTime(2024, 11, 19, 15, 2, 32, 95, DateTimeKind.Local).AddTicks(1602));
+                value: new DateTime(2024, 11, 20, 15, 29, 41, 204, DateTimeKind.Local).AddTicks(238));
 
             migrationBuilder.UpdateData(
                 table: "Provinces",
                 keyColumn: "Id",
                 keyValue: 27L,
                 column: "InsertTime",
-                value: new DateTime(2024, 11, 19, 15, 2, 32, 95, DateTimeKind.Local).AddTicks(1613));
+                value: new DateTime(2024, 11, 20, 15, 29, 41, 204, DateTimeKind.Local).AddTicks(260));
 
             migrationBuilder.UpdateData(
                 table: "Provinces",
                 keyColumn: "Id",
                 keyValue: 28L,
                 column: "InsertTime",
-                value: new DateTime(2024, 11, 19, 15, 2, 32, 95, DateTimeKind.Local).AddTicks(1624));
+                value: new DateTime(2024, 11, 20, 15, 29, 41, 204, DateTimeKind.Local).AddTicks(282));
 
             migrationBuilder.UpdateData(
                 table: "Provinces",
                 keyColumn: "Id",
                 keyValue: 29L,
                 column: "InsertTime",
-                value: new DateTime(2024, 11, 19, 15, 2, 32, 95, DateTimeKind.Local).AddTicks(1634));
+                value: new DateTime(2024, 11, 20, 15, 29, 41, 204, DateTimeKind.Local).AddTicks(304));
 
             migrationBuilder.UpdateData(
                 table: "Provinces",
                 keyColumn: "Id",
                 keyValue: 30L,
                 column: "InsertTime",
-                value: new DateTime(2024, 11, 19, 15, 2, 32, 95, DateTimeKind.Local).AddTicks(1644));
+                value: new DateTime(2024, 11, 20, 15, 29, 41, 204, DateTimeKind.Local).AddTicks(326));
 
             migrationBuilder.UpdateData(
                 table: "Provinces",
                 keyColumn: "Id",
                 keyValue: 31L,
                 column: "InsertTime",
-                value: new DateTime(2024, 11, 19, 15, 2, 32, 95, DateTimeKind.Local).AddTicks(1655));
+                value: new DateTime(2024, 11, 20, 15, 29, 41, 204, DateTimeKind.Local).AddTicks(347));
         }
     }
 }

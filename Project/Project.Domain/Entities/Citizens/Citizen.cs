@@ -23,7 +23,7 @@ namespace Project.Domain.Entities.Citizens
 
         public Office Office { get; set; }
 
-        public long OfficeId { get; set; }
+        public string OfficeId { get; set; }
 
         public ICollection<Appointment> Appointments { get; set; }
 

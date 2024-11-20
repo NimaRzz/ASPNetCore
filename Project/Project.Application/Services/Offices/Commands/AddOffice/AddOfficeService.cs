@@ -11,6 +11,7 @@ using Project.Domain.Entities.Offices;
 using Project.Domain.Repository.Office;
 using Project.Application.Services.Offices.Commands.AddOffice;
 using Project.Domain.Entities.Province;
+using Project.Application.Common.Validations.Common;
 
 namespace Project.Application.Services.Offices.Commands.AddOffice
 {
@@ -25,6 +26,18 @@ namespace Project.Application.Services.Offices.Commands.AddOffice
 
         public async Task<ResultDto> Execute(RequestAddOfficeDto request)
         {
+            long id = Convert.ToInt64(request.Id);
+          
+            var idCheckerResult = await BigIdChecker.IsBig(id);
+
+           if (idCheckerResult)
+           {
+               return new ResultDto()
+               {
+                   IsSuccess = false,
+                   Message = "شماره دفتر باید کوچک تر از 100 باشد"
+               };
+            }
 
             var existsResult = await _repository.IsExists<Office>(request.Id);
 
@@ -45,9 +58,29 @@ namespace Project.Application.Services.Offices.Commands.AddOffice
              return validationResult;
          }
 
+         string Id = null;
+
+         if (request.ProvinceId < 10 && id < 10)
+         {
+             Id = $"0{request.ProvinceId}0{id}";
+         }
+         else if (request.ProvinceId >= 10 && id >= 10)
+         {
+             Id = $"{request.ProvinceId}{id}";
+         }
+         else if (request.ProvinceId < 10 && id >= 10)
+         {
+             Id = $"0{request.ProvinceId}{id}";
+         }
+         else if (request.ProvinceId >= 10 && id < 10)
+         {
+             Id = $"{request.ProvinceId}0{id}";
+         }
+
+
             Office office = new()
             {
-                Id = request.Id,
+                Id = Id,
                 Name = request.Name,
                 ProvinceId = request.ProvinceId,
                 Address = request.Address,

@@ -9,6 +9,6 @@ namespace Project.Application.Interfaces.Offices
 {
     public interface IDeleteOfficeService
     {
-        Task<ResultDto> Execute(long Id);
+        Task<ResultDto> Execute(string Id);
     }
 }

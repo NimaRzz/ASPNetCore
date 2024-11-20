@@ -6,6 +6,7 @@ public class Shift:BaseEntity.BaseEntity
     public TimeSpan EndTime { get; set; }
 
     public long WorkCalendarId { get; set; }
+
     public WorkCalendar WorkCalendar { get; set; }
 
 }

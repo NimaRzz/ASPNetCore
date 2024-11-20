@@ -152,7 +152,9 @@ namespace Project.Infra.Data.Contexts
                 .Property(c => c.InsertTime)
                 .HasDefaultValueSql("GETDATE()");
 
-
+            modelBuilder.Entity<Office>()
+                .Property(o => o.RowVersion)
+                .IsRowVersion(); // پیکربندی فیلد RowVersion برای همزمانی
         }
 
         private void ApplyQueryFilter(ModelBuilder modelBuilder)

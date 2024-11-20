@@ -7,7 +7,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Services\Offices\Queries\" />
     <Folder Include="Services\Plans\FacadPattern\" />
     <Folder Include="Services\Plans\Queries\" />
   </ItemGroup>

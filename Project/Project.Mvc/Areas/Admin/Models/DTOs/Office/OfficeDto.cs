@@ -1,10 +1,8 @@
-﻿using Project.Domain.Entities.Province;
-
-namespace Project.Mvc.Areas.Admin.Models.DTOs.Office
+﻿namespace Project.Mvc.Areas.Admin.Models.DTOs.Office
 {
     public class OfficeDto
     {
-        public long Id { get; set; }
+        public string Id { get; set; }
 
         public string Name { get; set; }
 

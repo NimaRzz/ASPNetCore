@@ -52,7 +52,7 @@ namespace Project.Mvc.Areas.Admin.Controllers
         }
 
         [HttpPost("delete")]
-        public async Task<IActionResult> Delete([FromBody] long Id)
+        public async Task<IActionResult> Delete([FromBody] string Id)
         {
 
             var result = await _officeFacad.DeleteOfficeService.Execute(Id);

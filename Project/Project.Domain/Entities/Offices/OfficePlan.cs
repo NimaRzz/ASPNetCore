@@ -17,8 +17,8 @@ namespace Project.Domain.Entities.Offices
         public TimeSpan WorkEnd { get; set; }
 
         public Office Office { get; set; }
-        
-        public long OfficeId { get; set; }
+
+        public string OfficeId { get; set; }
 
         public Plan Plan { get; set; }
 

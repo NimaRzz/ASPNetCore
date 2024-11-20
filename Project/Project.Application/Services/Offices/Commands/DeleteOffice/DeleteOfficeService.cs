@@ -21,7 +21,7 @@ namespace Project.Application.Services.Offices.Commands.DeleteOffice
             _repository = repository;
         }
 
-        public async Task<ResultDto> Execute(long Id)
+        public async Task<ResultDto> Execute(string Id)
         {
             var existsResult = await _repository.IsExists<Office>(Id);
 
