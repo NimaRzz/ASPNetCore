@@ -59,6 +59,15 @@ namespace Project.Mvc.Areas.Admin.Controllers
 
             return Ok(result);
         }
+
+        [HttpPost("get")]
+        public async Task<IActionResult> Get([FromBody] string Id)
+        {
+
+            var result = await _officeFacad.GetOfficeService.Execute(Id);
+
+            return Ok(result);
+        }
     }
 }
 

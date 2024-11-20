@@ -39,7 +39,26 @@ namespace Project.Application.Services.Offices.Commands.AddOffice
                };
             }
 
-            var existsResult = await _repository.IsExists<Office>(request.Id);
+           string Id = null;
+
+           if (request.ProvinceId < 10 && id < 10)
+           {
+               Id = $"0{request.ProvinceId}0{id}";
+           }
+           else if (request.ProvinceId >= 10 && id >= 10)
+           {
+               Id = $"{request.ProvinceId}{id}";
+           }
+           else if (request.ProvinceId < 10 && id >= 10)
+           {
+               Id = $"0{request.ProvinceId}{id}";
+           }
+           else if (request.ProvinceId >= 10 && id < 10)
+           {
+               Id = $"{request.ProvinceId}0{id}";
+           }
+
+            var existsResult = await _repository.IsExists<Office>(Id);
 
             if (existsResult)
             {
@@ -57,26 +76,6 @@ namespace Project.Application.Services.Offices.Commands.AddOffice
          {
              return validationResult;
          }
-
-         string Id = null;
-
-         if (request.ProvinceId < 10 && id < 10)
-         {
-             Id = $"0{request.ProvinceId}0{id}";
-         }
-         else if (request.ProvinceId >= 10 && id >= 10)
-         {
-             Id = $"{request.ProvinceId}{id}";
-         }
-         else if (request.ProvinceId < 10 && id >= 10)
-         {
-             Id = $"0{request.ProvinceId}{id}";
-         }
-         else if (request.ProvinceId >= 10 && id < 10)
-         {
-             Id = $"{request.ProvinceId}0{id}";
-         }
-
 
             Office office = new()
             {

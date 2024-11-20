@@ -8,6 +8,7 @@ using Project.Application.Interfaces.Offices;
 using Project.Application.Services.Offices.Commands.AddOffice;
 using Project.Application.Services.Offices.Commands.DeleteOffice;
 using Project.Application.Services.Offices.Commands.UpdateOffice;
+using Project.Application.Services.Offices.Queries.GetOffice;
 using Project.Domain.Repository.Office;
 
 namespace Project.Application.Services.Offices.FacadPattern
@@ -48,6 +49,16 @@ namespace Project.Application.Services.Offices.FacadPattern
             get
             {
                 return _deleteOfficeService = _deleteOfficeService ?? new DeleteOfficeService(_repository);
+            }
+        }
+
+        private IGetOfficeService _getOfficeService;
+
+        public IGetOfficeService GetOfficeService
+        {
+            get
+            {
+                return _getOfficeService = _getOfficeService ?? new GetOfficeService(_repository);
             }
         }
     }

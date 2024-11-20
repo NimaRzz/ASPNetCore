@@ -8,7 +8,7 @@ namespace Project.Application.Services.Offices.Queries.GetOffice
 {
     public class ResponseGetOfficeDto
     {
-        public long Id { get; set; }
+        public string Id { get; set; }
         
         public string Name { get; set; }
 

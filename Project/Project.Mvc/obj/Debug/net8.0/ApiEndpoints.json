@@ -33,6 +33,22 @@
   },
   {
     "ContainingType": "Project.Mvc.Areas.Admin.Controllers.OfficesController",
+    "Method": "Get",
+    "RelativePath": "api/Offices/get",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "Id",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Project.Mvc.Areas.Admin.Controllers.OfficesController",
     "Method": "Update",
     "RelativePath": "api/Offices/update",
     "HttpMethod": "POST",

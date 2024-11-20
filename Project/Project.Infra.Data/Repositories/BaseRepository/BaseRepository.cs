@@ -65,7 +65,6 @@ namespace Project.Infra.Data.Repositories.BaseRepository
             }
             return new ResultDto<T>()
             {
-                Data = entity,
             };
         }
 
@@ -84,29 +83,30 @@ namespace Project.Infra.Data.Repositories.BaseRepository
                 // استخراج RowVersion از رکورد قدیمی
                 var rowVersion = entry.Property("RowVersion").CurrentValue;
 
-               
-
-
                 if (Object is Domain.Entities.Offices.Office office)
                 {
-                     var pkValue = entry.Property("Id").CurrentValue;
-                     var InsertTime = entry.Property("InsertTime").CurrentValue;
- 
-                     var oldEntity = await _context.Set<T>().FindAsync(pkValue);
 
-                     if (oldEntity != null)
-                     {
-                      _context.Set<T>().Remove(oldEntity);
+                    if (entry.Property("NewId").CurrentValue != null)
+                    {
+                        var pkValue = entry.Property("Id").CurrentValue;
 
-                      await _context.SaveChangesAsync();
-                     }
+                        var oldEntity = await _context.Set<T>().FindAsync(pkValue);
 
-                     entry.Property("Id").CurrentValue = entry.Property("NewId").CurrentValue;
-                     entry.Property("UpdateTime").CurrentValue = DateTime.Now;
-                     
-                     await _context.Set<T>().AddAsync(Object);
+                        var InsertTime = _context.Entry(oldEntity).Property("InsertTime").CurrentValue;
+                       
+                        if (oldEntity != null)
+                        {
+                            _context.Set<T>().Remove(oldEntity);
+
+                            await _context.SaveChangesAsync();
+                        }
+
+                        entry.Property("Id").CurrentValue = entry.Property("NewId").CurrentValue;
+                        entry.Property("UpdateTime").CurrentValue = DateTime.Now;
+                        entry.Property("InsertTime").CurrentValue = InsertTime;
+                        await _context.Set<T>().AddAsync(Object);
+                    }
                     
-                     entry.Property("InsertTime").CurrentValue = InsertTime;
                 }
                 else
                 {
@@ -116,7 +116,8 @@ namespace Project.Infra.Data.Repositories.BaseRepository
                     
                     
                 }
-entry.Property("InsertTime").IsModified = false;
+              entry.Property("InsertTime").IsModified = false;
+             
               entry.Property("NewId").IsModified = false;
 
               entry.Property("RowVersion").CurrentValue = rowVersion;
@@ -129,10 +130,12 @@ entry.Property("InsertTime").IsModified = false;
 
             if (Object != null)
             {
-                var property = Object.GetType().GetProperty("IsRemoved");
-                if (property != null)
+                var isRemoved = Object.GetType().GetProperty("IsRemoved");
+                var removeTime = Object.GetType().GetProperty("RemoveTime");
+                if (isRemoved != null && removeTime != null)
                 {
-                    property.SetValue(Object, true);
+                    isRemoved.SetValue(Object, true);
+                    removeTime.SetValue(Object, DateTime.Now);
                     _context.Entry(Object).State = EntityState.Modified;
                 }
             }
