@@ -49,6 +49,22 @@
   },
   {
     "ContainingType": "Project.Mvc.Areas.Admin.Controllers.OfficesController",
+    "Method": "Get",
+    "RelativePath": "api/Offices/getall",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "Project.Mvc.Areas.Admin.Models.DTOs.Common.Pagination.Pagination",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Project.Mvc.Areas.Admin.Controllers.OfficesController",
     "Method": "Update",
     "RelativePath": "api/Offices/update",
     "HttpMethod": "POST",

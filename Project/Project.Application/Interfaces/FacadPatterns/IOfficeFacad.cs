@@ -17,6 +17,8 @@ namespace Project.Application.Interfaces.FacadPatterns
       
         IGetOfficeService GetOfficeService { get; }
 
+        IGetOfficesService GetOfficesService { get; }
+
 
     }
 }

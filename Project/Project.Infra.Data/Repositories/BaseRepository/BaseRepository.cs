@@ -68,7 +68,26 @@ namespace Project.Infra.Data.Repositories.BaseRepository
             };
         }
 
-        public async Task Add(object Object)
+        public async Task<ResultDto<List<T>>> GetAll<T>() where T : class
+        {
+            var entity = await _context.Set<T>().AsNoTracking().ToListAsync();
+
+            if (entity == null)
+            {
+                return new ResultDto<List<T>>()
+                {
+                    IsSuccess = false
+                };
+            }
+
+            return new ResultDto<List<T>>()
+            {
+                Data = entity,
+                IsSuccess = true,
+            };
+        }
+
+        public async Task Add<T>(T Object) where T : class
         {
             await _context.AddAsync(Object);
         }
@@ -125,7 +144,7 @@ namespace Project.Infra.Data.Repositories.BaseRepository
             
         }
 
-        public async Task Delete<T>(object Object) where T : class
+        public async Task Delete<T>(T Object) where T : class
         {
 
             if (Object != null)

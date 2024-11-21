@@ -26,15 +26,14 @@ namespace Project.Infra.Data.Repositories.Office
             return await base.IsExists<T>(Id);
         }
 
-        public async Task<Province> SearchProvince(long Id)
-        {
-            var province = await _context.Provinces.FindAsync(Id);
-            return province;
-        }
-        
         public async Task<ResultDto<T>> Get<T>(long Id) where T : class
         {
             return await base.Get<T>(Id);
+        }
+
+        public async Task<ResultDto<List<T>>> GetAll<T>() where T : class
+        {
+            return await base.GetAll<T>();
         }
 
         public async Task Add(Domain.Entities.Offices.Office office)
@@ -47,7 +46,7 @@ namespace Project.Infra.Data.Repositories.Office
             await base.Update<T>(Object);
         }
 
-        public async Task Delete<T>(object Object) where T : class
+        public async Task Delete<T>(T Object) where T : class
         {
           await base.Delete<T>(Object);
         }

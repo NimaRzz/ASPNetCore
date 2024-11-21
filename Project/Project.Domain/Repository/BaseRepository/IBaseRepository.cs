@@ -13,11 +13,13 @@ namespace Project.Domain.Repository.BaseRepository
 
         Task<ResultDto<T>> Get<T>(object Id) where T : class;
 
-        Task Add(object Object);
+        Task<ResultDto<List<T>>> GetAll<T>() where T : class;
+
+        Task Add<T>(T Object) where T : class;
         
         Task Update<T>(T Object) where T : class;
 
-        Task Delete<T>(object Object) where T : class;
+        Task Delete<T>(T Object) where T : class;
 
         Task SaveAsync();
     }

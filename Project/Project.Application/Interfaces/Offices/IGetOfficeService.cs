@@ -11,6 +11,6 @@ namespace Project.Application.Interfaces.Offices
 {
     public interface IGetOfficeService
     {
-        Task<ResultDto<ResponseGetOfficeDto>> Execute(string Id);
+        Task<ResultDto<ResultGetOfficeDto>> Execute(string Id);
     }
 }

@@ -3,7 +3,9 @@ using Microsoft.AspNetCore.Mvc;
 using Project.Application.Interfaces.FacadPatterns;
 using Project.Application.Services.Offices.Commands.AddOffice;
 using Project.Application.Services.Offices.Commands.UpdateOffice;
+using Project.Application.Services.Offices.Queries.GetOffices;
 using Project.Domain.Entities.Offices;
+using Project.Mvc.Areas.Admin.Models.DTOs.Common.Pagination;
 using Project.Mvc.Areas.Admin.Models.DTOs.Office;
 
 namespace Project.Mvc.Areas.Admin.Controllers
@@ -65,6 +67,19 @@ namespace Project.Mvc.Areas.Admin.Controllers
         {
 
             var result = await _officeFacad.GetOfficeService.Execute(Id);
+
+            return Ok(result);
+        }
+
+        [HttpPost("getall")]
+        public async Task<IActionResult> Get([FromBody] Pagination request)
+        {
+
+            var result = await _officeFacad.GetOfficesService.Execute(new RequestGetOffices
+            {
+                PageSize = request.PageSize,
+                Page = request.Page,
+            });
 
             return Ok(result);
         }
