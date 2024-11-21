@@ -8,7 +8,7 @@ namespace Project.Application.Services.Offices.Queries.GetOffices
 {
     public class ResultGetOfficesDto
     {
-       public List<GetOffices> Offices { get; set; }
+       public List<GetOfficesDto> Offices { get; set; }
 
        public int TotalPages { get; set; }
     }

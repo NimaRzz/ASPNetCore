@@ -46,7 +46,7 @@ namespace Project.Application.Services.Offices.Queries.GetOffices
                 };
             }
 
-            var returnResult = offices.Data.Skip((request.Page -1) * request.PageSize).Take(request.PageSize).Select((p, index) =>  new GetOffices
+            var returnResult = offices.Data.Skip((request.Page -1) * request.PageSize).Take(request.PageSize).Select((p, index) =>  new GetOfficesDto
             {
                 Id = p.Id,
                 Name = p.Name,

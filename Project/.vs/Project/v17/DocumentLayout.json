@@ -1,32 +1,7 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "C:\\Users\\Asus\\Desktop\\WebApi\\WebApi\\Project\\",
-  "Documents": [
-    {
-      "AbsoluteMoniker": "D:0:0:{20B127D4-593E-48D3-A4C1-EE82DD59CF10}|Project.Application\\Project.Application.csproj|c:\\users\\asus\\desktop\\webapi\\webapi\\project\\project.application\\services\\offices\\queries\\getoffices\\getofficesservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{20B127D4-593E-48D3-A4C1-EE82DD59CF10}|Project.Application\\Project.Application.csproj|solutionrelative:project.application\\services\\offices\\queries\\getoffices\\getofficesservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{4933E939-437D-47D5-AB86-256F713B707D}|Project.Infra.Data\\Project.Infra.Data.csproj|c:\\users\\asus\\desktop\\webapi\\webapi\\project\\project.infra.data\\repositories\\baserepository\\baserepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4933E939-437D-47D5-AB86-256F713B707D}|Project.Infra.Data\\Project.Infra.Data.csproj|solutionrelative:project.infra.data\\repositories\\baserepository\\baserepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{4933E939-437D-47D5-AB86-256F713B707D}|Project.Infra.Data\\Project.Infra.Data.csproj|c:\\users\\asus\\desktop\\webapi\\webapi\\project\\project.infra.data\\repositories\\office\\officerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4933E939-437D-47D5-AB86-256F713B707D}|Project.Infra.Data\\Project.Infra.Data.csproj|solutionrelative:project.infra.data\\repositories\\office\\officerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{FFE2E485-38CB-4BB4-A758-D7C9A4EBA275}|Project.Domain\\Project.Domain.csproj|c:\\users\\asus\\desktop\\webapi\\webapi\\project\\project.domain\\repository\\baserepository\\ibaserepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{FFE2E485-38CB-4BB4-A758-D7C9A4EBA275}|Project.Domain\\Project.Domain.csproj|solutionrelative:project.domain\\repository\\baserepository\\ibaserepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{20B127D4-593E-48D3-A4C1-EE82DD59CF10}|Project.Application\\Project.Application.csproj|c:\\users\\asus\\desktop\\webapi\\webapi\\project\\project.application\\services\\offices\\queries\\getoffice\\getofficeservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{20B127D4-593E-48D3-A4C1-EE82DD59CF10}|Project.Application\\Project.Application.csproj|solutionrelative:project.application\\services\\offices\\queries\\getoffice\\getofficeservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{FFE2E485-38CB-4BB4-A758-D7C9A4EBA275}|Project.Domain\\Project.Domain.csproj|c:\\users\\asus\\desktop\\webapi\\webapi\\project\\project.domain\\repository\\office\\iofficerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{FFE2E485-38CB-4BB4-A758-D7C9A4EBA275}|Project.Domain\\Project.Domain.csproj|solutionrelative:project.domain\\repository\\office\\iofficerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    }
-  ],
+  "Documents": [],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
@@ -34,89 +9,11 @@
       "DocumentGroups": [
         {
           "DockedWidth": 389,
-          "SelectedChildIndex": 6,
+          "SelectedChildIndex": -1,
           "Children": [
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "GetOfficeService.cs",
-              "DocumentMoniker": "C:\\Users\\Asus\\Desktop\\WebApi\\WebApi\\Project\\Project.Application\\Services\\Offices\\Queries\\GetOffice\\GetOfficeService.cs",
-              "RelativeDocumentMoniker": "Project.Application\\Services\\Offices\\Queries\\GetOffice\\GetOfficeService.cs",
-              "ToolTip": "C:\\Users\\Asus\\Desktop\\WebApi\\WebApi\\Project\\Project.Application\\Services\\Offices\\Queries\\GetOffice\\GetOfficeService.cs",
-              "RelativeToolTip": "Project.Application\\Services\\Offices\\Queries\\GetOffice\\GetOfficeService.cs",
-              "ViewState": "AgIAAA0AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-21T08:07:16.666Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "IBaseRepository.cs",
-              "DocumentMoniker": "C:\\Users\\Asus\\Desktop\\WebApi\\WebApi\\Project\\Project.Domain\\Repository\\BaseRepository\\IBaseRepository.cs",
-              "RelativeDocumentMoniker": "Project.Domain\\Repository\\BaseRepository\\IBaseRepository.cs",
-              "ToolTip": "C:\\Users\\Asus\\Desktop\\WebApi\\WebApi\\Project\\Project.Domain\\Repository\\BaseRepository\\IBaseRepository.cs",
-              "RelativeToolTip": "Project.Domain\\Repository\\BaseRepository\\IBaseRepository.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAuAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-21T08:06:38.326Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "IOfficeRepository.cs",
-              "DocumentMoniker": "C:\\Users\\Asus\\Desktop\\WebApi\\WebApi\\Project\\Project.Domain\\Repository\\Office\\IOfficeRepository.cs",
-              "RelativeDocumentMoniker": "Project.Domain\\Repository\\Office\\IOfficeRepository.cs",
-              "ToolTip": "C:\\Users\\Asus\\Desktop\\WebApi\\WebApi\\Project\\Project.Domain\\Repository\\Office\\IOfficeRepository.cs",
-              "RelativeToolTip": "Project.Domain\\Repository\\Office\\IOfficeRepository.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-21T08:05:27.53Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "OfficeRepository.cs",
-              "DocumentMoniker": "C:\\Users\\Asus\\Desktop\\WebApi\\WebApi\\Project\\Project.Infra.Data\\Repositories\\Office\\OfficeRepository.cs",
-              "RelativeDocumentMoniker": "Project.Infra.Data\\Repositories\\Office\\OfficeRepository.cs",
-              "ToolTip": "C:\\Users\\Asus\\Desktop\\WebApi\\WebApi\\Project\\Project.Infra.Data\\Repositories\\Office\\OfficeRepository.cs",
-              "RelativeToolTip": "Project.Infra.Data\\Repositories\\Office\\OfficeRepository.cs",
-              "ViewState": "AgIAABEAAAAAAAAAAADgvyUAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-21T08:05:20.116Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "BaseRepository.cs",
-              "DocumentMoniker": "C:\\Users\\Asus\\Desktop\\WebApi\\WebApi\\Project\\Project.Infra.Data\\Repositories\\BaseRepository\\BaseRepository.cs",
-              "RelativeDocumentMoniker": "Project.Infra.Data\\Repositories\\BaseRepository\\BaseRepository.cs",
-              "ToolTip": "C:\\Users\\Asus\\Desktop\\WebApi\\WebApi\\Project\\Project.Infra.Data\\Repositories\\BaseRepository\\BaseRepository.cs",
-              "RelativeToolTip": "Project.Infra.Data\\Repositories\\BaseRepository\\BaseRepository.cs",
-              "ViewState": "AgIAABYAAAAAAAAAAAAAAEkAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-21T08:05:00.148Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "GetOfficesService.cs",
-              "DocumentMoniker": "C:\\Users\\Asus\\Desktop\\WebApi\\WebApi\\Project\\Project.Application\\Services\\Offices\\Queries\\GetOffices\\GetOfficesService.cs",
-              "RelativeDocumentMoniker": "Project.Application\\Services\\Offices\\Queries\\GetOffices\\GetOfficesService.cs",
-              "ToolTip": "C:\\Users\\Asus\\Desktop\\WebApi\\WebApi\\Project\\Project.Application\\Services\\Offices\\Queries\\GetOffices\\GetOfficesService.cs",
-              "RelativeToolTip": "Project.Application\\Services\\Offices\\Queries\\GetOffices\\GetOfficesService.cs",
-              "ViewState": "AgIAACYAAAAAAAAAAAAAAC8AAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-21T08:03:14.319Z",
-              "EditorCaption": ""
             }
           ]
         },

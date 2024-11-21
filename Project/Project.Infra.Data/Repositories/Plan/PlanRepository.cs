@@ -1,22 +1,19 @@
-﻿using System;
+﻿using Project.Domain.Common.Dto;
+using Project.Infra.Data.Contexts;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Microsoft.EntityFrameworkCore;
-using Project.Domain.Common.Dto;
-using Project.Domain.Entities.Province;
-using Project.Domain.Repository.BaseRepository;
-using Project.Domain.Repository.Office;
-using Project.Infra.Data.Contexts;
+using Project.Domain.Repository.Plan;
 
-namespace Project.Infra.Data.Repositories.Office
+namespace Project.Infra.Data.Repositories.Plan
 {
-    public class OfficeRepository: BaseRepository.BaseRepository, IOfficeRepository
+    public class PlanRepository:BaseRepository.BaseRepository, IPlanRepository
     {
         private readonly DataBaseContext _context;
 
-        public OfficeRepository(DataBaseContext context):base(context)
+        public PlanRepository(DataBaseContext context) : base(context)
         {
             _context = context;
         }
@@ -38,7 +35,7 @@ namespace Project.Infra.Data.Repositories.Office
 
         public async Task Add<T>(T Object) where T : class
         {
-            await base.Add<T>(Object);
+            await base.Add(Object);
         }
 
         public async Task Update<T>(T Object) where T : class
@@ -48,9 +45,9 @@ namespace Project.Infra.Data.Repositories.Office
 
         public async Task Delete<T>(T Object) where T : class
         {
-          await base.Delete<T>(Object);
+            await base.Delete<T>(Object);
         }
-        
+
         public async Task SaveAsync()
         {
             await base.SaveAsync();

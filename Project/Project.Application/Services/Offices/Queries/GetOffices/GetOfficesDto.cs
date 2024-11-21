@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Project.Application.Services.Offices.Queries.GetOffices
 {
-    public class GetOffices
+    public class GetOfficesDto
     {
         public string Id { get; set; }
 

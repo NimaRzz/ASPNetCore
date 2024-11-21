@@ -10,6 +10,6 @@ namespace Project.Application.Interfaces.Plans
 {
     public interface IAddPlanService
     {
-        ResultDto AddPlan(RequestAddPlanDto request);
+        Task<ResultDto> Execute(RequestAddPlanDto request);
     }
 }

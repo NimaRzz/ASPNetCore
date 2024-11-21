@@ -8,9 +8,13 @@ using Project.Domain.Entities.Turns;
 
 namespace Project.Domain.Entities.Plans
 {
-    public class Plan:BaseEntity.BaseEntity
+    public class Plan:BaseEntity.BaseEntity<string>
     {
         public string Name { get; set; }
+
+        public DateTime StartPlan { get; set; }
+      
+        public DateTime EndPlan { get; set; }
 
         public ICollection<OfficePlan> OfficePlans { get; set; }
 
