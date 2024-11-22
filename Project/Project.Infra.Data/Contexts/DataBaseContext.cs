@@ -15,7 +15,7 @@ using ProvinceNames = Project.Application.Common.Provinces.Province;
 
 namespace Project.Infra.Data.Contexts
 {
-    public class DataBaseContext:DbContext
+    public class DataBaseContext : DbContext
     {
         #region ctor
 
@@ -29,11 +29,11 @@ namespace Project.Infra.Data.Contexts
         #region Properties
 
         public DbSet<Office> Offices { get; set; }
-      
+
         public DbSet<OfficePlan> OfficePlans { get; set; }
-      
+
         public DbSet<Shift> Shifts { get; set; }
-       
+
         public DbSet<WorkCalendar> WorkCalendars { get; set; }
 
         public DbSet<Citizen> Citizens { get; set; }
@@ -41,11 +41,11 @@ namespace Project.Infra.Data.Contexts
         public DbSet<Appointment> Appointments { get; set; }
 
         public DbSet<Plan> Plans { get; set; }
-       
+
         public DbSet<User> Users { get; set; }
-      
+
         public DbSet<Role> Roles { get; set; }
-     
+
         public DbSet<Province> Provinces { get; set; }
 
         #endregion
@@ -67,14 +67,15 @@ namespace Project.Infra.Data.Contexts
 
         }
 
-     
+
 
         public override async Task<int> SaveChangesAsync(CancellationToken cancellationToken = default)
         {
-            var entries = ChangeTracker.Entries()
+            #region Modified Entries
+            var Modifiedentries = ChangeTracker.Entries()
                 .Where(e => e.State == EntityState.Modified);
 
-            foreach (var entry in entries)
+            foreach (var entry in Modifiedentries)
             {
                 if (entry.Entity is Office office)
                 {
@@ -82,16 +83,39 @@ namespace Project.Infra.Data.Contexts
                     office.UpdateTime = DateTime.Now;  // یا DateTime.Now به دلخواه
                 }
             }
+            #endregion
+
+            #region Added Entries
+            var Addeddentries = ChangeTracker.Entries<OfficePlan>()
+                .Where(e => e.State == EntityState.Added);
+
+            foreach (var entry in Addeddentries)
+            {
+                var entity = entry.Entity;
+
+                if (entity.Id == 0)
+                {
+                    entity.Id = GenerateNewId();
+                }
+            }
+            #endregion
+
 
             // فراخوانی SaveChangesAsync اصلی
             return await base.SaveChangesAsync(cancellationToken);
         }
 
-        
+        private int GenerateNewId()
+        {
+           
+                var maxId = this.OfficePlans.Max(op => (int?)op.Id) ?? 0;
+                return maxId + 1;
+            
+        }
         private void ConfigureFluentApi(ModelBuilder modelBuilder)
         {
 
-         
+
             modelBuilder.Entity<OfficePlan>()
                 .HasOne(op => op.Office)
                 .WithMany(o => o.OfficePlans)
@@ -163,6 +187,12 @@ namespace Project.Infra.Data.Contexts
             modelBuilder.Entity<Office>()
                 .Property(o => o.RowVersion)
                 .IsRowVersion(); // پیکربندی فیلد RowVersion برای همزمانی
+
+            modelBuilder.Entity<OfficePlan>(entity =>
+            {
+                entity.Property(o => o.Id)
+                 .ValueGeneratedNever();
+            });
         }
 
         private void ApplyQueryFilter(ModelBuilder modelBuilder)
@@ -184,7 +214,7 @@ namespace Project.Infra.Data.Contexts
             modelBuilder.Entity<Role>().HasData(new Role { Id = 3, Name = nameof(UserRoles.Operator) });
 
             //Provinces
-            modelBuilder.Entity<Province>().HasData(new Province { Id = 1, Name = nameof(ProvinceNames.AzarbaijanSharghi), InsertTime = DateTime.Now});
+            modelBuilder.Entity<Province>().HasData(new Province { Id = 1, Name = nameof(ProvinceNames.AzarbaijanSharghi), InsertTime = DateTime.Now });
             modelBuilder.Entity<Province>().HasData(new Province { Id = 2, Name = nameof(ProvinceNames.AzarbaijanGharbi), InsertTime = DateTime.Now });
             modelBuilder.Entity<Province>().HasData(new Province { Id = 3, Name = nameof(ProvinceNames.Ardabil), InsertTime = DateTime.Now });
             modelBuilder.Entity<Province>().HasData(new Province { Id = 4, Name = nameof(ProvinceNames.Isfahan), InsertTime = DateTime.Now });

@@ -106,18 +106,39 @@ namespace Project.Infra.Data.Repositories.BaseRepository
 
                 // استخراج RowVersion از رکورد قدیمی
                 var rowVersion = entry.Property("RowVersion").CurrentValue;
-
+             
+                var NewId = entry.Property("NewId");
+                
                 if (Object is Domain.Entities.Offices.Office office)
                 {
 
-                    if (entry.Property("NewId").CurrentValue != null)
+                    if (NewId.CurrentValue != null)
                     {
                         var pkValue = entry.Property("Id").CurrentValue;
 
                         var oldEntity = await _context.Set<T>().FindAsync(pkValue);
 
-                        var InsertTime = _context.Entry(oldEntity).Property("InsertTime").CurrentValue;
-                       
+                        var officePlan = await _context.OfficePlans.Where(p => p.OfficeId == pkValue).FirstOrDefaultAsync();
+
+                        if (officePlan != null)
+                        {
+                            OfficePlan officePlanUpdate = new()
+                            {
+                                Id = officePlan.Id,
+                                Plan = officePlan.Plan,
+                                PlanId = officePlan.PlanId,
+                                Office = officePlan.Office,
+                                OfficeId = officePlan.OfficeId,
+                                InsertTime = officePlan.InsertTime,
+                            };
+                             _context.OfficePlans.Remove(officePlan);
+
+                             await _context.SaveChangesAsync();
+
+                            await _context.OfficePlans.AddAsync(officePlanUpdate);
+                            
+                        }
+
                         if (oldEntity != null)
                         {
                             _context.Set<T>().Remove(oldEntity);
@@ -125,9 +146,12 @@ namespace Project.Infra.Data.Repositories.BaseRepository
                             await _context.SaveChangesAsync();
                         }
 
-                        entry.Property("Id").CurrentValue = entry.Property("NewId").CurrentValue;
+                        var InsertTime = _context.Entry(oldEntity).Property("InsertTime").CurrentValue;
+                        entry.Property("Id").CurrentValue = NewId.CurrentValue;
                         entry.Property("UpdateTime").CurrentValue = DateTime.Now;
                         entry.Property("InsertTime").CurrentValue = InsertTime;
+                        NewId.IsModified = false;
+
                         await _context.Set<T>().AddAsync(Object);
                     }
                     
@@ -141,8 +165,8 @@ namespace Project.Infra.Data.Repositories.BaseRepository
                     
                 }
               entry.Property("InsertTime").IsModified = false;
-             
-              entry.Property("NewId").IsModified = false;
+
+              NewId.IsModified = false;
 
               entry.Property("RowVersion").CurrentValue = rowVersion;
             }
