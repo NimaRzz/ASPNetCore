@@ -16,6 +16,10 @@ namespace Project.Domain.Entities.Offices
 
         public string? NewId { get; set; }
 
+        public TimeSpan WorkStart { get; set; }
+
+        public TimeSpan WorkEnd { get; set; }
+
         public byte[] RowVersion { get; set; } // فیلد همزمانی
 
         public Province.Province Province { get; set; }

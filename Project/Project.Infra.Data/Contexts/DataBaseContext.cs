@@ -90,6 +90,8 @@ namespace Project.Infra.Data.Contexts
         
         private void ConfigureFluentApi(ModelBuilder modelBuilder)
         {
+
+         
             modelBuilder.Entity<OfficePlan>()
                 .HasOne(op => op.Office)
                 .WithMany(o => o.OfficePlans)
@@ -144,10 +146,16 @@ namespace Project.Infra.Data.Contexts
                 .HasForeignKey(o => o.ProvinceId) // کلید خارجی دفتر به استان
                 .OnDelete(DeleteBehavior.Cascade); // حذف دفاتر هنگام حذف استان (در صورت نیاز)
 
+            //برای تنظیم ایدی به صورت دستی
             modelBuilder.Entity<Office>()
                 .Property(c => c.Id)
                 .ValueGeneratedNever();
 
+            modelBuilder.Entity<Plan>()
+                .Property(c => c.Id)
+                .ValueGeneratedNever();
+
+            //برایه مقدار دهی خودکار فیلد InsertTime
             modelBuilder.Entity<Office>()
                 .Property(c => c.InsertTime)
                 .HasDefaultValueSql("GETDATE()");

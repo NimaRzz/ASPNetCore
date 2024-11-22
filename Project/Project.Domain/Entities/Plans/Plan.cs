@@ -10,6 +10,8 @@ namespace Project.Domain.Entities.Plans
 {
     public class Plan:BaseEntity.BaseEntity<string>
     {
+        public int Capacity { get; set; }
+
         public string Name { get; set; }
 
         public DateTime StartPlan { get; set; }

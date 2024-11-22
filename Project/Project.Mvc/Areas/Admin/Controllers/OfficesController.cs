@@ -23,15 +23,17 @@ namespace Project.Mvc.Areas.Admin.Controllers
         }
 
         [HttpPost("add")]
-        public async Task<IActionResult> Add([FromBody] OfficeDto officeDto)
+        public async Task<IActionResult> Add([FromBody] OfficeDto request)
         {
 
             var result = await _officeFacad.AddOfficeService.Execute(new RequestAddOfficeDto()
             {
-                Id = officeDto.Id,
-                Name = officeDto.Name,
-                ProvinceId = officeDto.ProvinceId,
-                Address = officeDto.Address
+                Id = request.Id,
+                Name = request.Name,
+                ProvinceId = request.ProvinceId,
+                Address = request.Address,
+                WorkStart = request.WorkStart,
+                WorkEnd = request.WorkEnd,
             });
          
 
@@ -39,15 +41,17 @@ namespace Project.Mvc.Areas.Admin.Controllers
         }
 
         [HttpPost("update")]
-        public async Task<IActionResult> Update([FromBody] OfficeDto officeDto)
+        public async Task<IActionResult> Update([FromBody] OfficeDto request)
         {
 
             var result = await _officeFacad.UpdateOfficeService.Execute(new RequestUpdateOfficeDto()
             {
-                Id = officeDto.Id,
-                Name = officeDto.Name,
-                ProvinceId = officeDto.ProvinceId,
-                Address = officeDto.Address
+                Id = request.Id,
+                Name = request.Name,
+                ProvinceId = request.ProvinceId,
+                Address = request.Address,
+                WorkStart = request.WorkStart,
+                WorkEnd = request.WorkEnd,
             });
 
             return Ok(result);

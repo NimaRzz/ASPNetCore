@@ -9,6 +9,5 @@ namespace Project.Domain.Repository.Plan
 {
     public interface IPlanRepository:IBaseRepository
     {
-
     }
 }

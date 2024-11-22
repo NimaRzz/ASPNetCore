@@ -10,6 +10,7 @@ using Project.Application.Services.Offices.Commands.UpdateOffice;
 using Project.Domain.Common.Dto;
 using Project.Domain.Entities.Offices;
 using Project.Domain.Repository.Office;
+using Project.Application.Common.Converter;
 
 namespace Project.Application.Services.Offices.Commands.UpdateOffice
 {
@@ -37,8 +38,21 @@ namespace Project.Application.Services.Offices.Commands.UpdateOffice
                     Message = "دفتری با این شماره وجود ندارد"
                 };
             }
-        
-            var validationResult = await OfficeValidator.ValidateOfficeRequest(request, _repository);
+
+            var workStart = await ConvertToTimeSpan.Converter(request.WorkStart);
+            var workEnd = await ConvertToTimeSpan.Converter(request.WorkEnd);
+
+            if (!workStart.IsSuccess)
+            {
+                return workStart;
+            }
+
+            if (!workEnd.IsSuccess)
+            {
+                return workEnd;
+            }
+
+            var validationResult = await OfficeValidator.ValidateOfficeRequest(request);
 
             if (!validationResult.IsSuccess)
             {
@@ -56,6 +70,19 @@ namespace Project.Application.Services.Offices.Commands.UpdateOffice
                 Id = $"{request.ProvinceId}{Id}";
             }
 
+
+            var existsResult2 = await _repository.IsExists<Office>(Id);
+
+            if (existsResult2)
+            {
+
+                return new ResultDto()
+                {
+                    IsSuccess = false,
+                    Message = "دفتری در این استان وجود دارد"
+                };
+            }
+
             Office office = new()
             {
                 Id = request.Id,
@@ -63,6 +90,8 @@ namespace Project.Application.Services.Offices.Commands.UpdateOffice
                 Name = request.Name,
                 ProvinceId = request.ProvinceId,
                 Address = request.Address,
+                WorkStart = workStart.Data,
+                WorkEnd = workEnd.Data,
             };
 
             await _repository.Update<Office>(office);

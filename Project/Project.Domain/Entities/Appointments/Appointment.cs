@@ -24,7 +24,7 @@ namespace Project.Domain.Entities.Turns
         public Citizen Citizen { get; set; }
 
         // اطلاعات سرویس یا کاری که برای آن نوبت رزرو شده
-        public long PlanId { get; set; }
+        public string PlanId { get; set; }
 
         public Plan Plan { get; set; }
 

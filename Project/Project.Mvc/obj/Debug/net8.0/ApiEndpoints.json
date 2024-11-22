@@ -8,7 +8,7 @@
     "Order": 0,
     "Parameters": [
       {
-        "Name": "officeDto",
+        "Name": "request",
         "Type": "Project.Mvc.Areas.Admin.Models.DTOs.Office.OfficeDto",
         "IsRequired": true
       }
@@ -72,8 +72,24 @@
     "Order": 0,
     "Parameters": [
       {
-        "Name": "officeDto",
+        "Name": "request",
         "Type": "Project.Mvc.Areas.Admin.Models.DTOs.Office.OfficeDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Project.Mvc.Areas.Admin.Controllers.PlansController",
+    "Method": "Add",
+    "RelativePath": "api/Plans/add",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "Project.Mvc.Areas.Admin.Models.DTOs.Plan.PlanDto",
         "IsRequired": true
       }
     ],

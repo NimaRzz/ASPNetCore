@@ -9,5 +9,9 @@
         public long ProvinceId { get; set; }
 
         public string Address { get; set; }
+
+        public string WorkStart { get; set; }
+
+        public string WorkEnd { get; set; }
     }
 }

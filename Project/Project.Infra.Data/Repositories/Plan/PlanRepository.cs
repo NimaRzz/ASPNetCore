@@ -38,6 +38,11 @@ namespace Project.Infra.Data.Repositories.Plan
             await base.Add(Object);
         }
 
+        public async Task AddRange<T>(List<T> Object) where T : class
+        {
+            await base.AddRange(Object);
+        }
+
         public async Task Update<T>(T Object) where T : class
         {
             await base.Update<T>(Object);

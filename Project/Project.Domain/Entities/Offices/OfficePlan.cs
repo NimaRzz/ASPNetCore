@@ -10,11 +10,6 @@ namespace Project.Domain.Entities.Offices
     public class OfficePlan:BaseEntity.BaseEntity
     {
 
-        public int Capacity { get; set; }
-        
-        public TimeSpan WorkStart { get; set; }
-       
-        public TimeSpan WorkEnd { get; set; }
 
         public Office Office { get; set; }
 
@@ -22,7 +17,7 @@ namespace Project.Domain.Entities.Offices
 
         public Plan Plan { get; set; }
 
-        public long PlanId { get; set; }
+        public string PlanId { get; set; }
 
 
     }

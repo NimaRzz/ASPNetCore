@@ -9,9 +9,6 @@ namespace Project.Application.Services.Plans.Commands.AddPlan
 {
     public class OfficePlanDto
     {
-
-        public int Capacity { get; set; }
-
         public string OfficeId { get; set; }
     }
 }

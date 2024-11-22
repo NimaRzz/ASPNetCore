@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
+using Project.Application.Common.Converter;
 using Project.Domain.Common.Dto;
 using Project.Application.Common.Validations.Office;
 using Project.Application.Interfaces.Offices;
@@ -12,10 +13,11 @@ using Project.Domain.Repository.Office;
 using Project.Application.Services.Offices.Commands.AddOffice;
 using Project.Domain.Entities.Province;
 using Project.Application.Common.Validations.Common;
+using Project.Application.Common.GenerateId;
 
 namespace Project.Application.Services.Offices.Commands.AddOffice
 {
-    public class AddOfficeService:IAddOfficeService
+    public class AddOfficeService : IAddOfficeService
     {
         private readonly IOfficeRepository _repository;
 
@@ -26,37 +28,22 @@ namespace Project.Application.Services.Offices.Commands.AddOffice
 
         public async Task<ResultDto> Execute(RequestAddOfficeDto request)
         {
-            long id = Convert.ToInt64(request.Id);
-          
-            var idCheckerResult = await BigIdChecker.IsBig(id);
 
-           if (idCheckerResult)
-           {
-               return new ResultDto()
-               {
-                   IsSuccess = false,
-                   Message = "شماره دفتر باید کوچک تر از 100 باشد"
-               };
+            var idChecker = await BigIdChecker.IsBig<string>(request.Id);
+
+            long id = 0;
+            if (idChecker.IsSuccess)
+            {
+                id = Convert.ToInt64(request.Id);
+            }
+            else
+            {
+                return idChecker;
             }
 
-           string Id = null;
 
-           if (request.ProvinceId < 10 && id < 10)
-           {
-               Id = $"0{request.ProvinceId}0{id}";
-           }
-           else if (request.ProvinceId >= 10 && id >= 10)
-           {
-               Id = $"{request.ProvinceId}{id}";
-           }
-           else if (request.ProvinceId < 10 && id >= 10)
-           {
-               Id = $"0{request.ProvinceId}{id}";
-           }
-           else if (request.ProvinceId >= 10 && id < 10)
-           {
-               Id = $"{request.ProvinceId}0{id}";
-           }
+
+           var Id = await CustomIdGenerator.GenerateId<long, long>(request.ProvinceId, id);
 
             var existsResult = await _repository.IsExists<Office>(Id);
 
@@ -69,13 +56,23 @@ namespace Project.Application.Services.Offices.Commands.AddOffice
                     Message = "دفتری با این شماره وجود دارد"
                 };
             }
+            var workStart = await ConvertToTimeSpan.Converter(request.WorkStart);
+            var workEnd = await ConvertToTimeSpan.Converter(request.WorkEnd);
+            if (!workStart.IsSuccess)
+            {
+                return workStart;
+            }
+            if (!workEnd.IsSuccess)
+            {
+                return workStart;
+            }
 
-            var validationResult = await OfficeValidator.ValidateOfficeRequest(request, _repository);
+            var validationResult = await OfficeValidator.ValidateOfficeRequest(request);
 
-         if (!validationResult.IsSuccess)
-         {
-             return validationResult;
-         }
+            if (!validationResult.IsSuccess)
+            {
+                return validationResult;
+            }
 
             Office office = new()
             {
@@ -83,10 +80,12 @@ namespace Project.Application.Services.Offices.Commands.AddOffice
                 Name = request.Name,
                 ProvinceId = request.ProvinceId,
                 Address = request.Address,
+                WorkStart = workStart.Data,
+                WorkEnd = workEnd.Data,
             };
 
-           await _repository.Add(office);
-           await _repository.SaveAsync();
+            await _repository.Add(office);
+            await _repository.SaveAsync();
 
 
             return new ResultDto()

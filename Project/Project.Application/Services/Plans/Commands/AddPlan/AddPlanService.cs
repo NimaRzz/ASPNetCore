@@ -12,10 +12,12 @@ using Project.Domain.Entities.Offices;
 using Project.Application.Common.Validations.Common;
 using System.Text.RegularExpressions;
 using System.Xml.Linq;
+using Project.Application.Common.Validations.Plan;
+using Project.Application.Common.GenerateId;
 
 namespace Project.Application.Services.Plans.Commands.AddPlan
 {
-    public class AddPlanService:IAddPlanService
+    public class AddPlanService : IAddPlanService
     {
 
         private readonly IPlanRepository _repository;
@@ -28,58 +30,72 @@ namespace Project.Application.Services.Plans.Commands.AddPlan
         public async Task<ResultDto> Execute(RequestAddPlanDto request)
         {
 
-            long id = Convert.ToInt64(request.Id);
+            var idChecker = await BigIdChecker.IsBig<string>(request.Id);
 
-            var idCheckerResult = await BigIdChecker.IsBig(id);
+            if (!idChecker.IsSuccess)
+            {
+                return idChecker;
+            }
 
-            if (idCheckerResult)
+            var existsResult = await _repository.IsExists<Plan>(request.Id);
+            if (existsResult)
             {
                 return new ResultDto()
                 {
                     IsSuccess = false,
-                    Message = "شناسه طرح باید کوچک تر از 100 باشد"
+                    Message = "این طرح قبلا ثبت شده"
                 };
             }
 
-            string pattern = @"^[\u0600-\u06FF0-9]+$";
-            if (!Regex.IsMatch(request.Name, pattern))
+            var planValidateResult = await PlanValidator.ValidateRequest(request);
+
+            if (!planValidateResult.IsSuccess)
             {
-                return new ResultDto
-                {
-                    IsSuccess = false,
-                    Message = "فقط حروف فارسی و اعداد مجاز هستند."
-                };
+                return planValidateResult;
             }
 
-            if (request.StartPlan >= request.EndPlan)
-            {
-                return new ResultDto()
-                {
-                    IsSuccess = false,
-                    Message = "تاریخ پایان طرح باید بعد از تاریخ شروع طرح باشد"
-                };
-            }
+            string officeIdValue = request.OfficePlan.FirstOrDefault().OfficeId;
+           
 
-
-            if (string.IsNullOrEmpty(request.Id))
-            {
-                return new ResultDto
-                {
-                    IsSuccess = false,
-                    Message = "شناسه پلن را وارد کنید"
-                };
-            }
-
-
+            var planId = await CustomIdGenerator.GenerateId<string, string>(officeIdValue.Substring(2,4), request.Id);
+           
             Plan plan = new()
             {
-                Id = request.Id,
+                Id = planId,
                 Name = request.Name,
-                OfficePlans = request.OfficePlans,
+                Capacity = request.Capacity,
+                StartPlan = request.StartPlan,
+                EndPlan = request.EndPlan
             };
 
-            _repository.Add<Plan>(plan);
-            _repository.SaveAsync();
+            await _repository.Add<Plan>(plan);
+            await _repository.SaveAsync();
+
+            List<OfficePlan> officePlan = new();
+            var officeId = request.OfficePlan.FirstOrDefault();
+                var officePlanValidatorResult = await OfficePlanValidator.ValidateRequest(officeId, _repository);
+                if (!officePlanValidatorResult.IsSuccess)
+                {
+                    return officePlanValidatorResult;
+                }
+                var office = await _repository.Get<Office>(officeId.OfficeId);
+
+                if (office != null)
+                {
+                    officePlan.Add(new OfficePlan()
+                    {
+                        OfficeId = officeId.OfficeId,
+                        Plan = plan,
+                        PlanId = planId
+
+                    });
+                }
+
+            plan.OfficePlans = officePlan;
+            await _repository.Add<OfficePlan>(officePlan.FirstOrDefault());
+            await _repository.SaveAsync();
+
+
 
             return new ResultDto()
             {

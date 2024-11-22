@@ -16,7 +16,9 @@ namespace Project.Domain.Repository.BaseRepository
         Task<ResultDto<List<T>>> GetAll<T>() where T : class;
 
         Task Add<T>(T Object) where T : class;
-        
+
+        Task AddRange<T>(List<T> Object) where T : class;
+
         Task Update<T>(T Object) where T : class;
 
         Task Delete<T>(T Object) where T : class;

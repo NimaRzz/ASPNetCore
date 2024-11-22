@@ -1,44 +1,41 @@
-﻿//using System;
-//using System.Collections.Generic;
-//using System.Linq;
-//using System.Text;
-//using System.Threading.Tasks;
-
-
-using Project.Domain.Common.Dto;
-using System.Text.RegularExpressions;
+﻿using Project.Domain.Common.Dto;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 using Project.Application.Services.Plans.Commands.AddPlan;
-using Project.Domain.Repository.Plan;
+using Project.Application.Common.Validations.Common;
+using System.Text.RegularExpressions;
 
 namespace Project.Application.Common.Validations.Plan
 {
     public class PlanValidator
     {
-        public static async Task<ResultDto> ValidateOfficeRequest(object request, IPlanRepository repository)
+        public static async Task<ResultDto> ValidateRequest(RequestAddPlanDto request)
         {
-            ResultDto result = new ResultDto()
+            if (string.IsNullOrEmpty(request.Id))
             {
-                IsSuccess = true
-            };
-
-            // بررسی اینکه آیا شماره دفتر وارد شده است یا نه
-            //if (request is  )
-            //{
-                //result = await ValidateRequest(updateRequest.Id, updateRequest.Name, updateRequest.ProvinceId, updateRequest.Address, repository);
-            //}
-            if (request is OfficePlanDto addRequest2)
-            {
-                result = await ValidateRequest(addRequest2.Capacity, addRequest2.OfficeId, repository);
+                return new ResultDto
+                {
+                    IsSuccess = false,
+                    Message = "شناسه طرح را وارد کنید"
+                };
             }
-            return result;
-        }
 
-        private static async Task<ResultDto> ValidateRequest(int capacity, string officeId, IPlanRepository repository)
-        {
-            // بررسی اینکه شماره دفتر وارد شده باشد
+                await BigIdChecker.IsBig(request.Id);
+                
+            string pattern = @"^[\u0600-\u06FF0-9]+$";
+            if (!Regex.IsMatch(request.Name, pattern))
+            {
+                return new ResultDto
+                {
+                    IsSuccess = false,
+                    Message = "فقط حروف فارسی و اعداد مجاز هستند."
+                };
+            }
 
-            
-            if (capacity<= 0)
+            if (request.Capacity <= 0)
             {
                 return new ResultDto
                 {
@@ -47,12 +44,12 @@ namespace Project.Application.Common.Validations.Plan
                 };
             }
 
-            if (!await repository.IsExists<Domain.Entities.Offices.Office>(officeId))
+            if (request.StartPlan >= request.EndPlan)
             {
-                return new ResultDto
+                return new ResultDto()
                 {
                     IsSuccess = false,
-                    Message = "این دفتر ثبت نشده "
+                    Message = "تاریخ پایان طرح باید بعد از تاریخ شروع طرح باشد"
                 };
             }
 

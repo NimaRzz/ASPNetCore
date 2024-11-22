@@ -89,7 +89,12 @@ namespace Project.Infra.Data.Repositories.BaseRepository
 
         public async Task Add<T>(T Object) where T : class
         {
-            await _context.AddAsync(Object);
+            await _context.Set<T>().AddAsync(Object);
+        }
+
+        public async Task AddRange<T>(List<T> Object) where T : class
+        {
+            await _context.Set<T>().AddRangeAsync(Object);
         }
 
         public async Task Update<T>(T Object) where T : class

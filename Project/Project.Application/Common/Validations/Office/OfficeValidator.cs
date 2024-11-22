@@ -8,13 +8,14 @@ using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using Project.Application.Services.Offices.Commands.UpdateOffice;
 using Project.Domain.Repository.Office;
+using Project.Application.Common.Converter;
 
 namespace Project.Application.Common.Validations.Office
 {
     public class OfficeValidator
     {
 
-        public static async Task<ResultDto> ValidateOfficeRequest(object request, IOfficeRepository repository)
+        public static async Task<ResultDto> ValidateOfficeRequest(object request)
         {
             ResultDto result = new ResultDto()
             {
@@ -24,17 +25,17 @@ namespace Project.Application.Common.Validations.Office
             // بررسی اینکه آیا شماره دفتر وارد شده است یا نه
             if (request is RequestUpdateOfficeDto updateRequest)
             {
-                result = await ValidateRequest(updateRequest.Id, updateRequest.Name, updateRequest.ProvinceId, updateRequest.Address, repository);
+                result = await ValidateRequest(updateRequest.Id, updateRequest.Name, updateRequest.ProvinceId, updateRequest.Address, updateRequest.WorkStart, updateRequest.WorkEnd);
             }
             else if (request is RequestAddOfficeDto addRequest)
             {
-                result = await ValidateRequest(addRequest.Id, addRequest.Name, addRequest.ProvinceId, addRequest.Address, repository);
+                result = await ValidateRequest(addRequest.Id, addRequest.Name, addRequest.ProvinceId, addRequest.Address, addRequest.WorkStart, addRequest.WorkEnd);
             }
 
             return result;
         }
 
-        private static async Task<ResultDto> ValidateRequest(string id, string name, long province, string address, IOfficeRepository repository)
+        private static async Task<ResultDto> ValidateRequest(string id, string name, long province, string address, string workStart, string workEnd)
         {
             // بررسی اینکه شماره دفتر وارد شده باشد
             if (string.IsNullOrEmpty(id))
@@ -83,6 +84,28 @@ namespace Project.Application.Common.Validations.Office
                 {
                     IsSuccess = false,
                     Message = "ادرس را وارد کنید"
+                };
+            }
+
+             var workStartResult = await ConvertToTimeSpan.Converter(workStart);
+            var workEndResult = await ConvertToTimeSpan.Converter(workEnd);
+          
+            if (!workStartResult.IsSuccess)
+            {
+                return workStartResult;
+            }
+           
+            if (!workEndResult.IsSuccess)
+            {
+                return workEndResult;
+            }
+
+            if (workStartResult.Data >= workEndResult.Data)
+            {
+                return new ResultDto
+                {
+                    IsSuccess = false,
+                    Message = "ساعت پایان کاری باید بعد از ساعت شروع کاری باشد"
                 };
             }
 
