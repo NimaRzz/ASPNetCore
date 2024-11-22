@@ -3,92 +3,20 @@
   "WorkspaceRootPath": "C:\\Users\\Asus\\Desktop\\WebApi\\WebApi\\Project\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{4933E939-437D-47D5-AB86-256F713B707D}|Project.Infra.Data\\Project.Infra.Data.csproj|c:\\users\\asus\\desktop\\webapi\\webapi\\project\\project.infra.data\\repositories\\baserepository\\baserepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4933E939-437D-47D5-AB86-256F713B707D}|Project.Infra.Data\\Project.Infra.Data.csproj|solutionrelative:project.infra.data\\repositories\\baserepository\\baserepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{20B127D4-593E-48D3-A4C1-EE82DD59CF10}|Project.Application\\Project.Application.csproj|c:\\users\\asus\\desktop\\webapi\\webapi\\project\\project.application\\services\\offices\\commands\\updateoffice\\updateofficeservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{20B127D4-593E-48D3-A4C1-EE82DD59CF10}|Project.Application\\Project.Application.csproj|solutionrelative:project.application\\services\\offices\\commands\\updateoffice\\updateofficeservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{20B127D4-593E-48D3-A4C1-EE82DD59CF10}|Project.Application\\Project.Application.csproj|c:\\users\\asus\\desktop\\webapi\\webapi\\project\\project.application\\services\\plans\\commands\\addplan\\addplanservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{20B127D4-593E-48D3-A4C1-EE82DD59CF10}|Project.Application\\Project.Application.csproj|solutionrelative:project.application\\services\\plans\\commands\\addplan\\addplanservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{20B127D4-593E-48D3-A4C1-EE82DD59CF10}|Project.Application\\Project.Application.csproj|c:\\users\\asus\\desktop\\webapi\\webapi\\project\\project.application\\common\\validations\\plan\\officeplanvalidator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{20B127D4-593E-48D3-A4C1-EE82DD59CF10}|Project.Application\\Project.Application.csproj|solutionrelative:project.application\\common\\validations\\plan\\officeplanvalidator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{4933E939-437D-47D5-AB86-256F713B707D}|Project.Infra.Data\\Project.Infra.Data.csproj|c:\\users\\asus\\desktop\\webapi\\webapi\\project\\project.infra.data\\contexts\\databasecontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4933E939-437D-47D5-AB86-256F713B707D}|Project.Infra.Data\\Project.Infra.Data.csproj|solutionrelative:project.infra.data\\contexts\\databasecontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{4933E939-437D-47D5-AB86-256F713B707D}|Project.Infra.Data\\Project.Infra.Data.csproj|c:\\users\\asus\\desktop\\webapi\\webapi\\project\\project.infra.data\\repositories\\plan\\planrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4933E939-437D-47D5-AB86-256F713B707D}|Project.Infra.Data\\Project.Infra.Data.csproj|solutionrelative:project.infra.data\\repositories\\plan\\planrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Asus\\Desktop\\WebApi\\WebApi\\Project\\Project.Infra.Data\\Migrations\\20241122184806_Fix.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Project.Infra.Data\\Migrations\\20241122184806_Fix.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{20B127D4-593E-48D3-A4C1-EE82DD59CF10}|Project.Application\\Project.Application.csproj|c:\\users\\asus\\desktop\\webapi\\webapi\\project\\project.application\\services\\offices\\commands\\addoffice\\addofficeservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{20B127D4-593E-48D3-A4C1-EE82DD59CF10}|Project.Application\\Project.Application.csproj|solutionrelative:project.application\\services\\offices\\commands\\addoffice\\addofficeservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{20B127D4-593E-48D3-A4C1-EE82DD59CF10}|Project.Application\\Project.Application.csproj|c:\\users\\asus\\desktop\\webapi\\webapi\\project\\project.application\\common\\validations\\common\\bigidchecker.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{20B127D4-593E-48D3-A4C1-EE82DD59CF10}|Project.Application\\Project.Application.csproj|solutionrelative:project.application\\common\\validations\\common\\bigidchecker.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{20B127D4-593E-48D3-A4C1-EE82DD59CF10}|Project.Application\\Project.Application.csproj|c:\\users\\asus\\desktop\\webapi\\webapi\\project\\project.application\\common\\converter\\converttotimespan.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{20B127D4-593E-48D3-A4C1-EE82DD59CF10}|Project.Application\\Project.Application.csproj|solutionrelative:project.application\\common\\converter\\converttotimespan.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{FFE2E485-38CB-4BB4-A758-D7C9A4EBA275}|Project.Domain\\Project.Domain.csproj|c:\\users\\asus\\desktop\\webapi\\webapi\\project\\project.domain\\entities\\baseentity\\baseentity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{FFE2E485-38CB-4BB4-A758-D7C9A4EBA275}|Project.Domain\\Project.Domain.csproj|solutionrelative:project.domain\\entities\\baseentity\\baseentity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{20B127D4-593E-48D3-A4C1-EE82DD59CF10}|Project.Application\\Project.Application.csproj|c:\\users\\asus\\desktop\\webapi\\webapi\\project\\project.application\\services\\plans\\commands\\addplan\\officeplandto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{20B127D4-593E-48D3-A4C1-EE82DD59CF10}|Project.Application\\Project.Application.csproj|solutionrelative:project.application\\services\\plans\\commands\\addplan\\officeplandto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{4C71AD87-1383-45AB-BAD2-156C5C02129B}|Project.Mvc\\Project.Mvc.csproj|c:\\users\\asus\\desktop\\webapi\\webapi\\project\\project.mvc\\areas\\admin\\models\\dtos\\plan\\plandto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4C71AD87-1383-45AB-BAD2-156C5C02129B}|Project.Mvc\\Project.Mvc.csproj|solutionrelative:project.mvc\\areas\\admin\\models\\dtos\\plan\\plandto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{FFE2E485-38CB-4BB4-A758-D7C9A4EBA275}|Project.Domain\\Project.Domain.csproj|c:\\users\\asus\\desktop\\webapi\\webapi\\project\\project.domain\\entities\\offices\\officeplan.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{FFE2E485-38CB-4BB4-A758-D7C9A4EBA275}|Project.Domain\\Project.Domain.csproj|solutionrelative:project.domain\\entities\\offices\\officeplan.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{FFE2E485-38CB-4BB4-A758-D7C9A4EBA275}|Project.Domain\\Project.Domain.csproj|c:\\users\\asus\\desktop\\webapi\\webapi\\project\\project.domain\\entities\\offices\\office.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{FFE2E485-38CB-4BB4-A758-D7C9A4EBA275}|Project.Domain\\Project.Domain.csproj|solutionrelative:project.domain\\entities\\offices\\office.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{FFE2E485-38CB-4BB4-A758-D7C9A4EBA275}|Project.Domain\\Project.Domain.csproj|c:\\users\\asus\\desktop\\webapi\\webapi\\project\\project.domain\\entities\\plans\\plan.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{FFE2E485-38CB-4BB4-A758-D7C9A4EBA275}|Project.Domain\\Project.Domain.csproj|solutionrelative:project.domain\\entities\\plans\\plan.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{4933E939-437D-47D5-AB86-256F713B707D}|Project.Infra.Data\\Project.Infra.Data.csproj|c:\\users\\asus\\desktop\\webapi\\webapi\\project\\project.infra.data\\repositories\\office\\officerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4933E939-437D-47D5-AB86-256F713B707D}|Project.Infra.Data\\Project.Infra.Data.csproj|solutionrelative:project.infra.data\\repositories\\office\\officerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{FFE2E485-38CB-4BB4-A758-D7C9A4EBA275}|Project.Domain\\Project.Domain.csproj|c:\\users\\asus\\desktop\\webapi\\webapi\\project\\project.domain\\repository\\baserepository\\ibaserepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{FFE2E485-38CB-4BB4-A758-D7C9A4EBA275}|Project.Domain\\Project.Domain.csproj|solutionrelative:project.domain\\repository\\baserepository\\ibaserepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{20B127D4-593E-48D3-A4C1-EE82DD59CF10}|Project.Application\\Project.Application.csproj|c:\\users\\asus\\desktop\\webapi\\webapi\\project\\project.application\\common\\validations\\office\\officevalidator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{20B127D4-593E-48D3-A4C1-EE82DD59CF10}|Project.Application\\Project.Application.csproj|solutionrelative:project.application\\common\\validations\\office\\officevalidator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{20B127D4-593E-48D3-A4C1-EE82DD59CF10}|Project.Application\\Project.Application.csproj|c:\\users\\asus\\desktop\\webapi\\webapi\\project\\project.application\\services\\offices\\commands\\addoffice\\requestaddofficedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{20B127D4-593E-48D3-A4C1-EE82DD59CF10}|Project.Application\\Project.Application.csproj|solutionrelative:project.application\\services\\offices\\commands\\addoffice\\requestaddofficedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{20B127D4-593E-48D3-A4C1-EE82DD59CF10}|Project.Application\\Project.Application.csproj|c:\\users\\asus\\desktop\\webapi\\webapi\\project\\project.application\\services\\offices\\commands\\updateoffice\\requestupdateofficedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{20B127D4-593E-48D3-A4C1-EE82DD59CF10}|Project.Application\\Project.Application.csproj|solutionrelative:project.application\\services\\offices\\commands\\updateoffice\\requestupdateofficedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{4C71AD87-1383-45AB-BAD2-156C5C02129B}|Project.Mvc\\Project.Mvc.csproj|c:\\users\\asus\\desktop\\webapi\\webapi\\project\\project.mvc\\areas\\admin\\models\\dtos\\office\\officedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4C71AD87-1383-45AB-BAD2-156C5C02129B}|Project.Mvc\\Project.Mvc.csproj|solutionrelative:project.mvc\\areas\\admin\\models\\dtos\\office\\officedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{4C71AD87-1383-45AB-BAD2-156C5C02129B}|Project.Mvc\\Project.Mvc.csproj|c:\\users\\asus\\desktop\\webapi\\webapi\\project\\project.mvc\\areas\\admin\\controllers\\officescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4C71AD87-1383-45AB-BAD2-156C5C02129B}|Project.Mvc\\Project.Mvc.csproj|solutionrelative:project.mvc\\areas\\admin\\controllers\\officescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{4933E939-437D-47D5-AB86-256F713B707D}|Project.Infra.Data\\Project.Infra.Data.csproj|c:\\users\\asus\\desktop\\webapi\\webapi\\project\\project.infra.data\\migrations\\20241122082828_fix.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4933E939-437D-47D5-AB86-256F713B707D}|Project.Infra.Data\\Project.Infra.Data.csproj|solutionrelative:project.infra.data\\migrations\\20241122082828_fix.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{20B127D4-593E-48D3-A4C1-EE82DD59CF10}|Project.Application\\Project.Application.csproj|c:\\users\\asus\\desktop\\webapi\\webapi\\project\\project.application\\common\\generateid\\customidgenerator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{20B127D4-593E-48D3-A4C1-EE82DD59CF10}|Project.Application\\Project.Application.csproj|solutionrelative:project.application\\common\\generateid\\customidgenerator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -98,7 +26,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 389,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 4,
           "Children": [
             {
               "$type": "Bookmark",
@@ -106,270 +34,55 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "BaseRepository.cs",
-              "DocumentMoniker": "C:\\Users\\Asus\\Desktop\\WebApi\\WebApi\\Project\\Project.Infra.Data\\Repositories\\BaseRepository\\BaseRepository.cs",
-              "RelativeDocumentMoniker": "Project.Infra.Data\\Repositories\\BaseRepository\\BaseRepository.cs",
-              "ToolTip": "C:\\Users\\Asus\\Desktop\\WebApi\\WebApi\\Project\\Project.Infra.Data\\Repositories\\BaseRepository\\BaseRepository.cs",
-              "RelativeToolTip": "Project.Infra.Data\\Repositories\\BaseRepository\\BaseRepository.cs",
-              "ViewState": "AgIAAHcAAAAAAAAAAAAkwIcAAAA/AAAAAAAAAA==",
+              "DocumentIndex": 2,
+              "Title": "20241122184806_Fix.cs",
+              "DocumentMoniker": "C:\\Users\\Asus\\Desktop\\WebApi\\WebApi\\Project\\Project.Infra.Data\\Migrations\\20241122184806_Fix.cs",
+              "RelativeDocumentMoniker": "Project.Infra.Data\\Migrations\\20241122184806_Fix.cs",
+              "ToolTip": "C:\\Users\\Asus\\Desktop\\WebApi\\WebApi\\Project\\Project.Infra.Data\\Migrations\\20241122184806_Fix.cs",
+              "RelativeToolTip": "Project.Infra.Data\\Migrations\\20241122184806_Fix.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-22T15:50:57.486Z",
+              "WhenOpened": "2024-11-22T18:48:06.438Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "UpdateOfficeService.cs",
-              "DocumentMoniker": "C:\\Users\\Asus\\Desktop\\WebApi\\WebApi\\Project\\Project.Application\\Services\\Offices\\Commands\\UpdateOffice\\UpdateOfficeService.cs",
-              "RelativeDocumentMoniker": "Project.Application\\Services\\Offices\\Commands\\UpdateOffice\\UpdateOfficeService.cs",
-              "ToolTip": "C:\\Users\\Asus\\Desktop\\WebApi\\WebApi\\Project\\Project.Application\\Services\\Offices\\Commands\\UpdateOffice\\UpdateOfficeService.cs",
-              "RelativeToolTip": "Project.Application\\Services\\Offices\\Commands\\UpdateOffice\\UpdateOfficeService.cs",
-              "ViewState": "AgIAAEYAAAAAAAAAAAAAAE8AAAATAAAAAAAAAA==",
+              "Title": "DataBaseContext.cs",
+              "DocumentMoniker": "C:\\Users\\Asus\\Desktop\\WebApi\\WebApi\\Project\\Project.Infra.Data\\Contexts\\DataBaseContext.cs",
+              "RelativeDocumentMoniker": "Project.Infra.Data\\Contexts\\DataBaseContext.cs",
+              "ToolTip": "C:\\Users\\Asus\\Desktop\\WebApi\\WebApi\\Project\\Project.Infra.Data\\Contexts\\DataBaseContext.cs",
+              "RelativeToolTip": "Project.Infra.Data\\Contexts\\DataBaseContext.cs",
+              "ViewState": "AgIAAEQAAAAAAAAAAAAAAGIAAAAxAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-22T15:45:35.754Z",
+              "WhenOpened": "2024-11-22T18:45:32.662Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 3,
-              "Title": "OfficePlanValidator.cs",
-              "DocumentMoniker": "C:\\Users\\Asus\\Desktop\\WebApi\\WebApi\\Project\\Project.Application\\Common\\Validations\\Plan\\OfficePlanValidator.cs",
-              "RelativeDocumentMoniker": "Project.Application\\Common\\Validations\\Plan\\OfficePlanValidator.cs",
-              "ToolTip": "C:\\Users\\Asus\\Desktop\\WebApi\\WebApi\\Project\\Project.Application\\Common\\Validations\\Plan\\OfficePlanValidator.cs",
-              "RelativeToolTip": "Project.Application\\Common\\Validations\\Plan\\OfficePlanValidator.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAARAAAAAAAAAA==",
+              "Title": "CustomIdGenerator.cs",
+              "DocumentMoniker": "C:\\Users\\Asus\\Desktop\\WebApi\\WebApi\\Project\\Project.Application\\Common\\GenerateId\\CustomIdGenerator.cs",
+              "RelativeDocumentMoniker": "Project.Application\\Common\\GenerateId\\CustomIdGenerator.cs",
+              "ToolTip": "C:\\Users\\Asus\\Desktop\\WebApi\\WebApi\\Project\\Project.Application\\Common\\GenerateId\\CustomIdGenerator.cs",
+              "RelativeToolTip": "Project.Application\\Common\\GenerateId\\CustomIdGenerator.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAIAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-22T12:41:52.012Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "BigIdChecker.cs",
-              "DocumentMoniker": "C:\\Users\\Asus\\Desktop\\WebApi\\WebApi\\Project\\Project.Application\\Common\\Validations\\Common\\BigIdChecker.cs",
-              "RelativeDocumentMoniker": "Project.Application\\Common\\Validations\\Common\\BigIdChecker.cs",
-              "ToolTip": "C:\\Users\\Asus\\Desktop\\WebApi\\WebApi\\Project\\Project.Application\\Common\\Validations\\Common\\BigIdChecker.cs",
-              "RelativeToolTip": "Project.Application\\Common\\Validations\\Common\\BigIdChecker.cs",
-              "ViewState": "AgIAAAsAAAAAAAAAAAAAAAkAAAARAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-22T11:52:57.425Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "AddPlanService.cs",
-              "DocumentMoniker": "C:\\Users\\Asus\\Desktop\\WebApi\\WebApi\\Project\\Project.Application\\Services\\Plans\\Commands\\AddPlan\\AddPlanService.cs",
-              "RelativeDocumentMoniker": "Project.Application\\Services\\Plans\\Commands\\AddPlan\\AddPlanService.cs",
-              "ToolTip": "C:\\Users\\Asus\\Desktop\\WebApi\\WebApi\\Project\\Project.Application\\Services\\Plans\\Commands\\AddPlan\\AddPlanService.cs",
-              "RelativeToolTip": "Project.Application\\Services\\Plans\\Commands\\AddPlan\\AddPlanService.cs",
-              "ViewState": "AgIAAEgAAAAAAAAAAAAcwGsAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-22T08:10:05.092Z",
+              "WhenOpened": "2024-11-22T18:26:41.193Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "PlanRepository.cs",
-              "DocumentMoniker": "C:\\Users\\Asus\\Desktop\\WebApi\\WebApi\\Project\\Project.Infra.Data\\Repositories\\Plan\\PlanRepository.cs",
-              "RelativeDocumentMoniker": "Project.Infra.Data\\Repositories\\Plan\\PlanRepository.cs",
-              "ToolTip": "C:\\Users\\Asus\\Desktop\\WebApi\\WebApi\\Project\\Project.Infra.Data\\Repositories\\Plan\\PlanRepository.cs",
-              "RelativeToolTip": "Project.Infra.Data\\Repositories\\Plan\\PlanRepository.cs",
-              "ViewState": "AgIAABMAAAAAAAAAAAAAACsAAAAJAAAAAAAAAA==",
+              "DocumentIndex": 0,
+              "Title": "AddPlanService.cs",
+              "DocumentMoniker": "C:\\Users\\Asus\\Desktop\\WebApi\\WebApi\\Project\\Project.Application\\Services\\Plans\\Commands\\AddPlan\\AddPlanService.cs",
+              "RelativeDocumentMoniker": "Project.Application\\Services\\Plans\\Commands\\AddPlan\\AddPlanService.cs",
+              "ToolTip": "C:\\Users\\Asus\\Desktop\\WebApi\\WebApi\\Project\\Project.Application\\Services\\Plans\\Commands\\AddPlan\\AddPlanService.cs*",
+              "RelativeToolTip": "Project.Application\\Services\\Plans\\Commands\\AddPlan\\AddPlanService.cs*",
+              "ViewState": "AgIAAB0AAAAAAAAAAAAAADMAAABGAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-22T10:36:29.088Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "AddOfficeService.cs",
-              "DocumentMoniker": "C:\\Users\\Asus\\Desktop\\WebApi\\WebApi\\Project\\Project.Application\\Services\\Offices\\Commands\\AddOffice\\AddOfficeService.cs",
-              "RelativeDocumentMoniker": "Project.Application\\Services\\Offices\\Commands\\AddOffice\\AddOfficeService.cs",
-              "ToolTip": "C:\\Users\\Asus\\Desktop\\WebApi\\WebApi\\Project\\Project.Application\\Services\\Offices\\Commands\\AddOffice\\AddOfficeService.cs",
-              "RelativeToolTip": "Project.Application\\Services\\Offices\\Commands\\AddOffice\\AddOfficeService.cs",
-              "ViewState": "AgIAABEAAAAAAAAAAAAAADQAAAAmAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-22T08:12:57.445Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "ConvertToTimeSpan.cs",
-              "DocumentMoniker": "C:\\Users\\Asus\\Desktop\\WebApi\\WebApi\\Project\\Project.Application\\Common\\Converter\\ConvertToTimeSpan.cs",
-              "RelativeDocumentMoniker": "Project.Application\\Common\\Converter\\ConvertToTimeSpan.cs",
-              "ToolTip": "C:\\Users\\Asus\\Desktop\\WebApi\\WebApi\\Project\\Project.Application\\Common\\Converter\\ConvertToTimeSpan.cs",
-              "RelativeToolTip": "Project.Application\\Common\\Converter\\ConvertToTimeSpan.cs",
-              "ViewState": "AgIAAAkAAAAAAAAAAAAAABsAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-22T08:39:34.905Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 16,
-              "Title": "OfficeValidator.cs",
-              "DocumentMoniker": "C:\\Users\\Asus\\Desktop\\WebApi\\WebApi\\Project\\Project.Application\\Common\\Validations\\Office\\OfficeValidator.cs",
-              "RelativeDocumentMoniker": "Project.Application\\Common\\Validations\\Office\\OfficeValidator.cs",
-              "ToolTip": "C:\\Users\\Asus\\Desktop\\WebApi\\WebApi\\Project\\Project.Application\\Common\\Validations\\Office\\OfficeValidator.cs",
-              "RelativeToolTip": "Project.Application\\Common\\Validations\\Office\\OfficeValidator.cs",
-              "ViewState": "AgIAAFMAAAAAAAAAAAAAAGYAAAA6AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-22T08:17:32.504Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 13,
-              "Title": "Plan.cs",
-              "DocumentMoniker": "C:\\Users\\Asus\\Desktop\\WebApi\\WebApi\\Project\\Project.Domain\\Entities\\Plans\\Plan.cs",
-              "RelativeDocumentMoniker": "Project.Domain\\Entities\\Plans\\Plan.cs",
-              "ToolTip": "C:\\Users\\Asus\\Desktop\\WebApi\\WebApi\\Project\\Project.Domain\\Entities\\Plans\\Plan.cs",
-              "RelativeToolTip": "Project.Domain\\Entities\\Plans\\Plan.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAtAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-22T11:25:04.807Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "PlanDto.cs",
-              "DocumentMoniker": "C:\\Users\\Asus\\Desktop\\WebApi\\WebApi\\Project\\Project.Mvc\\Areas\\Admin\\Models\\DTOs\\Plan\\PlanDto.cs",
-              "RelativeDocumentMoniker": "Project.Mvc\\Areas\\Admin\\Models\\DTOs\\Plan\\PlanDto.cs",
-              "ToolTip": "C:\\Users\\Asus\\Desktop\\WebApi\\WebApi\\Project\\Project.Mvc\\Areas\\Admin\\Models\\DTOs\\Plan\\PlanDto.cs",
-              "RelativeToolTip": "Project.Mvc\\Areas\\Admin\\Models\\DTOs\\Plan\\PlanDto.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAhAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-22T11:30:42.386Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "OfficePlanDto.cs",
-              "DocumentMoniker": "C:\\Users\\Asus\\Desktop\\WebApi\\WebApi\\Project\\Project.Application\\Services\\Plans\\Commands\\AddPlan\\OfficePlanDto.cs",
-              "RelativeDocumentMoniker": "Project.Application\\Services\\Plans\\Commands\\AddPlan\\OfficePlanDto.cs",
-              "ToolTip": "C:\\Users\\Asus\\Desktop\\WebApi\\WebApi\\Project\\Project.Application\\Services\\Plans\\Commands\\AddPlan\\OfficePlanDto.cs",
-              "RelativeToolTip": "Project.Application\\Services\\Plans\\Commands\\AddPlan\\OfficePlanDto.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAFAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-22T11:30:56.653Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "BaseEntity.cs",
-              "DocumentMoniker": "C:\\Users\\Asus\\Desktop\\WebApi\\WebApi\\Project\\Project.Domain\\Entities\\BaseEntity\\BaseEntity.cs",
-              "RelativeDocumentMoniker": "Project.Domain\\Entities\\BaseEntity\\BaseEntity.cs",
-              "ToolTip": "C:\\Users\\Asus\\Desktop\\WebApi\\WebApi\\Project\\Project.Domain\\Entities\\BaseEntity\\BaseEntity.cs",
-              "RelativeToolTip": "Project.Domain\\Entities\\BaseEntity\\BaseEntity.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAA0AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-22T11:25:34.25Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 14,
-              "Title": "OfficeRepository.cs",
-              "DocumentMoniker": "C:\\Users\\Asus\\Desktop\\WebApi\\WebApi\\Project\\Project.Infra.Data\\Repositories\\Office\\OfficeRepository.cs",
-              "RelativeDocumentMoniker": "Project.Infra.Data\\Repositories\\Office\\OfficeRepository.cs",
-              "ToolTip": "C:\\Users\\Asus\\Desktop\\WebApi\\WebApi\\Project\\Project.Infra.Data\\Repositories\\Office\\OfficeRepository.cs",
-              "RelativeToolTip": "Project.Infra.Data\\Repositories\\Office\\OfficeRepository.cs",
-              "ViewState": "AgIAABEAAAAAAAAAAAAAAC8AAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-22T08:10:28.885Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 12,
-              "Title": "Office.cs",
-              "DocumentMoniker": "C:\\Users\\Asus\\Desktop\\WebApi\\WebApi\\Project\\Project.Domain\\Entities\\Offices\\Office.cs",
-              "RelativeDocumentMoniker": "Project.Domain\\Entities\\Offices\\Office.cs",
-              "ToolTip": "C:\\Users\\Asus\\Desktop\\WebApi\\WebApi\\Project\\Project.Domain\\Entities\\Offices\\Office.cs",
-              "RelativeToolTip": "Project.Domain\\Entities\\Offices\\Office.cs",
-              "ViewState": "AgIAAAsAAAAAAAAAAAAAwCQAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-22T08:13:20.526Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "OfficePlan.cs",
-              "DocumentMoniker": "C:\\Users\\Asus\\Desktop\\WebApi\\WebApi\\Project\\Project.Domain\\Entities\\Offices\\OfficePlan.cs",
-              "RelativeDocumentMoniker": "Project.Domain\\Entities\\Offices\\OfficePlan.cs",
-              "ToolTip": "C:\\Users\\Asus\\Desktop\\WebApi\\WebApi\\Project\\Project.Domain\\Entities\\Offices\\OfficePlan.cs",
-              "RelativeToolTip": "Project.Domain\\Entities\\Offices\\OfficePlan.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAsAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-22T08:21:05.791Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 17,
-              "Title": "RequestAddOfficeDto.cs",
-              "DocumentMoniker": "C:\\Users\\Asus\\Desktop\\WebApi\\WebApi\\Project\\Project.Application\\Services\\Offices\\Commands\\AddOffice\\RequestAddOfficeDto.cs",
-              "RelativeDocumentMoniker": "Project.Application\\Services\\Offices\\Commands\\AddOffice\\RequestAddOfficeDto.cs",
-              "ToolTip": "C:\\Users\\Asus\\Desktop\\WebApi\\WebApi\\Project\\Project.Application\\Services\\Offices\\Commands\\AddOffice\\RequestAddOfficeDto.cs",
-              "RelativeToolTip": "Project.Application\\Services\\Offices\\Commands\\AddOffice\\RequestAddOfficeDto.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABkAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-22T08:13:02.792Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 15,
-              "Title": "IBaseRepository.cs",
-              "DocumentMoniker": "C:\\Users\\Asus\\Desktop\\WebApi\\WebApi\\Project\\Project.Domain\\Repository\\BaseRepository\\IBaseRepository.cs",
-              "RelativeDocumentMoniker": "Project.Domain\\Repository\\BaseRepository\\IBaseRepository.cs",
-              "ToolTip": "C:\\Users\\Asus\\Desktop\\WebApi\\WebApi\\Project\\Project.Domain\\Repository\\BaseRepository\\IBaseRepository.cs",
-              "RelativeToolTip": "Project.Domain\\Repository\\BaseRepository\\IBaseRepository.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAAAxAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-22T10:28:17.019Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 19,
-              "Title": "OfficeDto.cs",
-              "DocumentMoniker": "C:\\Users\\Asus\\Desktop\\WebApi\\WebApi\\Project\\Project.Mvc\\Areas\\Admin\\Models\\DTOs\\Office\\OfficeDto.cs",
-              "RelativeDocumentMoniker": "Project.Mvc\\Areas\\Admin\\Models\\DTOs\\Office\\OfficeDto.cs",
-              "ToolTip": "C:\\Users\\Asus\\Desktop\\WebApi\\WebApi\\Project\\Project.Mvc\\Areas\\Admin\\Models\\DTOs\\Office\\OfficeDto.cs",
-              "RelativeToolTip": "Project.Mvc\\Areas\\Admin\\Models\\DTOs\\Office\\OfficeDto.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-22T08:14:20.115Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 18,
-              "Title": "RequestUpdateOfficeDto.cs",
-              "DocumentMoniker": "C:\\Users\\Asus\\Desktop\\WebApi\\WebApi\\Project\\Project.Application\\Services\\Offices\\Commands\\UpdateOffice\\RequestUpdateOfficeDto.cs",
-              "RelativeDocumentMoniker": "Project.Application\\Services\\Offices\\Commands\\UpdateOffice\\RequestUpdateOfficeDto.cs",
-              "ToolTip": "C:\\Users\\Asus\\Desktop\\WebApi\\WebApi\\Project\\Project.Application\\Services\\Offices\\Commands\\UpdateOffice\\RequestUpdateOfficeDto.cs",
-              "RelativeToolTip": "Project.Application\\Services\\Offices\\Commands\\UpdateOffice\\RequestUpdateOfficeDto.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABoAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-22T08:15:50.122Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 21,
-              "Title": "20241122082828_Fix.cs",
-              "DocumentMoniker": "C:\\Users\\Asus\\Desktop\\WebApi\\WebApi\\Project\\Project.Infra.Data\\Migrations\\20241122082828_Fix.cs",
-              "RelativeDocumentMoniker": "Project.Infra.Data\\Migrations\\20241122082828_Fix.cs",
-              "ToolTip": "C:\\Users\\Asus\\Desktop\\WebApi\\WebApi\\Project\\Project.Infra.Data\\Migrations\\20241122082828_Fix.cs",
-              "RelativeToolTip": "Project.Infra.Data\\Migrations\\20241122082828_Fix.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-22T08:28:28.929Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 20,
-              "Title": "OfficesController.cs",
-              "DocumentMoniker": "C:\\Users\\Asus\\Desktop\\WebApi\\WebApi\\Project\\Project.Mvc\\Areas\\Admin\\Controllers\\OfficesController.cs",
-              "RelativeDocumentMoniker": "Project.Mvc\\Areas\\Admin\\Controllers\\OfficesController.cs",
-              "ToolTip": "C:\\Users\\Asus\\Desktop\\WebApi\\WebApi\\Project\\Project.Mvc\\Areas\\Admin\\Controllers\\OfficesController.cs",
-              "RelativeToolTip": "Project.Mvc\\Areas\\Admin\\Controllers\\OfficesController.cs",
-              "ViewState": "AgIAABwAAAAAAAAAAAAuwC4AAABVAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-22T08:14:34.432Z"
+              "WhenOpened": "2024-11-22T18:26:02.483Z",
+              "EditorCaption": ""
             }
           ]
         },

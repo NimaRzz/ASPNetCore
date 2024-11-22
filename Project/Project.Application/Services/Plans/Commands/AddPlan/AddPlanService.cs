@@ -37,16 +37,6 @@ namespace Project.Application.Services.Plans.Commands.AddPlan
                 return idChecker;
             }
 
-            var existsResult = await _repository.IsExists<Plan>(request.Id);
-            if (existsResult)
-            {
-                return new ResultDto()
-                {
-                    IsSuccess = false,
-                    Message = "این طرح قبلا ثبت شده"
-                };
-            }
-
             var planValidateResult = await PlanValidator.ValidateRequest(request);
 
             if (!planValidateResult.IsSuccess)
@@ -57,8 +47,18 @@ namespace Project.Application.Services.Plans.Commands.AddPlan
             string officeIdValue = request.OfficePlan.FirstOrDefault().OfficeId;
            
 
-            var planId = await CustomIdGenerator.GenerateId<string, string>(officeIdValue.Substring(2,4), request.Id);
-           
+            var planId = await CustomIdGenerator.GenerateId<string, string>(officeIdValue.Substring(officeIdValue.Length - 2), request.Id);
+
+            var existsResult = await _repository.IsExists<Plan>(planId);
+            if (existsResult)
+            {
+                return new ResultDto()
+                {
+                    IsSuccess = false,
+                    Message = "این طرح قبلا ثبت شده"
+                };
+            }
+
             Plan plan = new()
             {
                 Id = planId,

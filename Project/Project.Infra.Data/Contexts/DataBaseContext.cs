@@ -67,8 +67,6 @@ namespace Project.Infra.Data.Contexts
 
         }
 
-
-
         public override async Task<int> SaveChangesAsync(CancellationToken cancellationToken = default)
         {
             #region Modified Entries
@@ -97,6 +95,8 @@ namespace Project.Infra.Data.Contexts
                 {
                     entity.Id = GenerateNewId();
                 }
+
+                entity.InsertTime = DateTime.Now;
             }
             #endregion
 
@@ -179,10 +179,6 @@ namespace Project.Infra.Data.Contexts
                 .Property(c => c.Id)
                 .ValueGeneratedNever();
 
-            //برایه مقدار دهی خودکار فیلد InsertTime
-            modelBuilder.Entity<Office>()
-                .Property(c => c.InsertTime)
-                .HasDefaultValueSql("GETDATE()");
 
             modelBuilder.Entity<Office>()
                 .Property(o => o.RowVersion)
