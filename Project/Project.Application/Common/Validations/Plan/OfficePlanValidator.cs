@@ -7,12 +7,13 @@ using Project.Domain.Common.Dto;
 using System.Text.RegularExpressions;
 using Project.Application.Services.Plans.Commands.AddPlan;
 using Project.Domain.Repository.Plan;
+using Project.Application.Services.Plans.Commands.DTOs;
 
 namespace Project.Application.Common.Validations.Plan
 {
     public class OfficePlanValidator
     {
-        public static async Task<ResultDto> ValidateRequest(OfficePlanDto request, IPlanRepository repository)
+        public static async Task<ResultDto> ValidateRequest(PlanCommandsOfficePlanDto request, IPlanRepository repository)
         {
 
             if (!await repository.IsExists<Domain.Entities.Offices.Office>(request.OfficeId))

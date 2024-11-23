@@ -3,18 +3,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Project.Application.Services.Offices.Queries.DTOs;
 
 namespace Project.Application.Services.Offices.Queries.GetOffice
 {
-    public class ResultGetOfficeDto
+    public class ResultGetOfficeDto:OfficeQueriesDto
     {
-        public string Id { get; set; }
-        
-        public string Name { get; set; }
-
-        public string Address { get; set; }
-
-        public string Province { get; set; }
+       
 
     }
 }

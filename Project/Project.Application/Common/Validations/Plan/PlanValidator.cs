@@ -7,14 +7,33 @@ using System.Threading.Tasks;
 using Project.Application.Services.Plans.Commands.AddPlan;
 using Project.Application.Common.Validations.Common;
 using System.Text.RegularExpressions;
+using Project.Application.Services.Plans.Commands.UpdatePlan;
 
 namespace Project.Application.Common.Validations.Plan
 {
     public class PlanValidator
     {
-        public static async Task<ResultDto> ValidateRequest(RequestAddPlanDto request)
+
+        public static async Task<ResultDto> ValidatePlanRequest(object request)
         {
-            if (string.IsNullOrEmpty(request.Id))
+            ResultDto result = new();
+
+            if (request is RequestUpdatePlanDto updateRequest)
+            {
+                result = await ValidateRequest(updateRequest.Id, updateRequest.Name, updateRequest.Capacity, updateRequest.StartPlan, updateRequest.EndPlan);
+            }
+            else if (request is RequestAddPlanDto addRequest)
+            {
+                result = await ValidateRequest(addRequest.Id, addRequest.Name, addRequest.Capacity, addRequest.StartPlan, addRequest.EndPlan);
+            }
+
+            return result;
+        }
+
+        public static async Task<ResultDto> ValidateRequest(string id, string name, int capacity, DateTime startPlan, DateTime endPlan)
+        {
+
+            if (string.IsNullOrEmpty(id))
             {
                 return new ResultDto
                 {
@@ -23,10 +42,8 @@ namespace Project.Application.Common.Validations.Plan
                 };
             }
 
-                await BigIdChecker.IsBig(request.Id);
-                
             string pattern = @"^[\u0600-\u06FF0-9]+$";
-            if (!Regex.IsMatch(request.Name, pattern))
+            if (!Regex.IsMatch(name, pattern))
             {
                 return new ResultDto
                 {
@@ -35,7 +52,7 @@ namespace Project.Application.Common.Validations.Plan
                 };
             }
 
-            if (request.Capacity <= 0)
+            if (capacity <= 0)
             {
                 return new ResultDto
                 {
@@ -44,7 +61,7 @@ namespace Project.Application.Common.Validations.Plan
                 };
             }
 
-            if (request.StartPlan >= request.EndPlan)
+            if (startPlan >= endPlan)
             {
                 return new ResultDto()
                 {

@@ -10,5 +10,7 @@ namespace Project.Application.Interfaces.FacadPatterns
     public interface IPlanFacad
     {
         IAddPlanService AddPlanService { get; }
+
+        IUpdatePlanService UpdatePlanService { get; }
     }
 }

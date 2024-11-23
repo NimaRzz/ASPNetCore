@@ -29,15 +29,16 @@ namespace Project.Application.Services.Plans.Commands.AddPlan
 
         public async Task<ResultDto> Execute(RequestAddPlanDto request)
         {
-
-            var idChecker = await BigIdChecker.IsBig<string>(request.Id);
-
-            if (!idChecker.IsSuccess)
+            if (!long.TryParse(request.Id, out var tryId))
             {
-                return idChecker;
+                return new ResultDto()
+                {
+                    IsSuccess = false,
+                    Message = "شناسه طرح باید عدد باشد"
+                };
             }
 
-            var planValidateResult = await PlanValidator.ValidateRequest(request);
+            var planValidateResult = await PlanValidator.ValidatePlanRequest(request);
 
             if (!planValidateResult.IsSuccess)
             {
@@ -47,9 +48,9 @@ namespace Project.Application.Services.Plans.Commands.AddPlan
             string officeIdValue = request.OfficePlan.FirstOrDefault().OfficeId;
            
 
-            var planId = await CustomIdGenerator.GenerateId<string, string>(officeIdValue.Substring(officeIdValue.Length - 2), request.Id);
+            //var planId = await CustomIdGenerator.GenerateId<string, string>(officeIdValue.Substring(officeIdValue.Length - 2), request.Id);
 
-            var existsResult = await _repository.IsExists<Plan>(planId);
+            var existsResult = await _repository.IsExists<Plan>(request.Id);
             if (existsResult)
             {
                 return new ResultDto()
@@ -61,15 +62,12 @@ namespace Project.Application.Services.Plans.Commands.AddPlan
 
             Plan plan = new()
             {
-                Id = planId,
+                Id = request.Id,
                 Name = request.Name,
                 Capacity = request.Capacity,
                 StartPlan = request.StartPlan,
                 EndPlan = request.EndPlan
             };
-
-            await _repository.Add<Plan>(plan);
-            await _repository.SaveAsync();
 
             List<OfficePlan> officePlan = new();
             var officeId = request.OfficePlan.FirstOrDefault();
@@ -86,11 +84,12 @@ namespace Project.Application.Services.Plans.Commands.AddPlan
                     {
                         OfficeId = officeId.OfficeId,
                         Plan = plan,
-                        PlanId = planId
+                        PlanId = request.Id
 
                     });
                 }
 
+            await _repository.Add<Plan>(plan);
             plan.OfficePlans = officePlan;
             await _repository.Add<OfficePlan>(officePlan.FirstOrDefault());
             await _repository.SaveAsync();

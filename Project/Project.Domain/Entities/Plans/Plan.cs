@@ -10,9 +10,12 @@ namespace Project.Domain.Entities.Plans
 {
     public class Plan:BaseEntity.BaseEntity<string>
     {
+        
         public int Capacity { get; set; }
 
         public string Name { get; set; }
+
+        public byte[] RowVersion { get; set; } // فیلد همزمانی
 
         public DateTime StartPlan { get; set; }
       

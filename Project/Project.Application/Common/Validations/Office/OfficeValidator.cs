@@ -17,10 +17,7 @@ namespace Project.Application.Common.Validations.Office
 
         public static async Task<ResultDto> ValidateOfficeRequest(object request)
         {
-            ResultDto result = new ResultDto()
-            {
-                IsSuccess = true
-            };
+            ResultDto result = new();
 
             // بررسی اینکه آیا شماره دفتر وارد شده است یا نه
             if (request is RequestUpdateOfficeDto updateRequest)

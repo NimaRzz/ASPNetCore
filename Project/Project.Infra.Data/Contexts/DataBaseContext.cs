@@ -80,25 +80,31 @@ namespace Project.Infra.Data.Contexts
                     // زمانی که رکورد آپدیت می‌شود، تاریخ و زمان آپدیت را ثبت می‌کنیم
                     office.UpdateTime = DateTime.Now;  // یا DateTime.Now به دلخواه
                 }
+
+                if (entry.Entity is Plan plan)
+                {
+                    plan.UpdateTime = DateTime.Now;
+                }
             }
             #endregion
 
             #region Added Entries
-            var Addeddentries = ChangeTracker.Entries<OfficePlan>()
+            var AddedEntries = ChangeTracker.Entries()
                 .Where(e => e.State == EntityState.Added);
 
-            foreach (var entry in Addeddentries)
+            foreach (var entry in AddedEntries)
             {
-                var entity = entry.Entity;
-
-                if (entity.Id == 0)
+                if (entry.Entity is OfficePlan officePlan)
                 {
-                    entity.Id = GenerateNewId();
+                    if (officePlan.Id == 0)
+                    {
+                        officePlan.Id = GenerateNewId();
+                    }
                 }
 
-                entity.InsertTime = DateTime.Now;
             }
             #endregion
+
 
 
             // فراخوانی SaveChangesAsync اصلی
@@ -107,14 +113,15 @@ namespace Project.Infra.Data.Contexts
 
         private int GenerateNewId()
         {
-           
-                var maxId = this.OfficePlans.Max(op => (int?)op.Id) ?? 0;
-                return maxId + 1;
-            
+
+            var maxId = this.OfficePlans.Max(op => (int?)op.Id) ?? 0;
+            return maxId + 1;
+
         }
         private void ConfigureFluentApi(ModelBuilder modelBuilder)
         {
 
+            //برایه پیکربندی ارتباط ها
 
             modelBuilder.Entity<OfficePlan>()
                 .HasOne(op => op.Office)
@@ -136,39 +143,40 @@ namespace Project.Infra.Data.Contexts
                 .HasForeignKey(op => op.PlanId)
                 .OnDelete(DeleteBehavior.NoAction);
 
-            // پیکربندی روابط یک به چند برای Appointment
+
             modelBuilder.Entity<Appointment>()
                 .HasOne(a => a.Citizen)
                 .WithMany(u => u.Appointments)
                 .HasForeignKey(a => a.CitizenId)
-                .OnDelete(DeleteBehavior.Cascade);  // Cascade Delete برای Citizen
+                .OnDelete(DeleteBehavior.Cascade);
 
             modelBuilder.Entity<Appointment>()
                 .HasOne(a => a.Plan)
                 .WithMany(s => s.Appointments)
                 .HasForeignKey(a => a.PlanId)
-                .OnDelete(DeleteBehavior.Cascade);  // Cascade Delete برای Plan
+                .OnDelete(DeleteBehavior.Cascade);
 
-            // پیکربندی برای ارتباط میان User و UserInRole
+
             modelBuilder.Entity<UserInRole>()
                 .HasOne(ur => ur.User)
                 .WithMany(u => u.UserInRoles)
                 .HasForeignKey(ur => ur.UserId)
-                .OnDelete(DeleteBehavior.Cascade);  // وقتی یک کاربر حذف شود، نقش‌های مربوط به آن نیز حذف شوند
+                .OnDelete(DeleteBehavior.Cascade);
 
-            // پیکربندی برای ارتباط میان Role و UserInRole
+
             modelBuilder.Entity<UserInRole>()
                 .HasOne(ur => ur.Role)
                 .WithMany(r => r.UserInRoles)
                 .HasForeignKey(ur => ur.RoleId)
-                .OnDelete(DeleteBehavior.Cascade);  // وقتی یک نقش حذف شود، کاربران مربوط به آن نقش نیز حذف شوند
+                .OnDelete(DeleteBehavior.Cascade);
 
-            // پیکربندی رابطه یک به چند بین استان و دفتر
+
             modelBuilder.Entity<Office>()
-                .HasOne(o => o.Province) // هر دفتر متعلق به یک استان است
-                .WithMany(p => p.Offices) // هر استان می‌تواند چندین دفتر داشته باشد
-                .HasForeignKey(o => o.ProvinceId) // کلید خارجی دفتر به استان
-                .OnDelete(DeleteBehavior.Cascade); // حذف دفاتر هنگام حذف استان (در صورت نیاز)
+                .HasOne(o => o.Province)
+                .WithMany(p => p.Offices)
+                .HasForeignKey(o => o.ProvinceId)
+                .OnDelete(DeleteBehavior.Cascade);
+
 
             //برای تنظیم ایدی به صورت دستی
             modelBuilder.Entity<Office>()
@@ -180,15 +188,38 @@ namespace Project.Infra.Data.Contexts
                 .ValueGeneratedNever();
 
 
+
+            // پیکربندی فیلد RowVersion برای همزمانی
             modelBuilder.Entity<Office>()
                 .Property(o => o.RowVersion)
-                .IsRowVersion(); // پیکربندی فیلد RowVersion برای همزمانی
+                .IsRowVersion();
+
+            modelBuilder.Entity<Plan>()
+                .Property(o => o.RowVersion)
+                .IsRowVersion();
 
             modelBuilder.Entity<OfficePlan>(entity =>
             {
                 entity.Property(o => o.Id)
                  .ValueGeneratedNever();
             });
+
+            //برایه مقدار دهی خودکار فیلد InsertTime
+            modelBuilder.Entity<Office>()
+                .Property(c => c.InsertTime)
+                .HasDefaultValueSql("GETDATE()");
+
+            //برایه مقدار دهی خودکار فیلد InsertTime
+            modelBuilder.Entity<Plan>()
+                .Property(c => c.InsertTime)
+                .HasDefaultValueSql("GETDATE()");
+
+            //برایه مقدار دهی خودکار فیلد InsertTime
+            modelBuilder.Entity<OfficePlan>()
+                .Property(c => c.InsertTime)
+                .HasDefaultValueSql("GETDATE()");
+
+
         }
 
         private void ApplyQueryFilter(ModelBuilder modelBuilder)

@@ -11,7 +11,7 @@ using Project.Domain.Common.Dto;
 
 namespace Project.Infra.Data.Repositories.BaseRepository
 {
-    public class BaseRepository: IBaseRepository
+    public class BaseRepository : IBaseRepository
     {
         private readonly DataBaseContext _context;
 
@@ -106,11 +106,11 @@ namespace Project.Infra.Data.Repositories.BaseRepository
 
                 // استخراج RowVersion از رکورد قدیمی
                 var rowVersion = entry.Property("RowVersion").CurrentValue;
-             
-                var NewId = entry.Property("NewId");
-                
+
+
                 if (Object is Domain.Entities.Offices.Office office)
                 {
+                    var NewId = entry.Property("NewId");
 
                     if (NewId.CurrentValue != null)
                     {
@@ -131,12 +131,12 @@ namespace Project.Infra.Data.Repositories.BaseRepository
                                 OfficeId = officePlan.OfficeId,
                                 InsertTime = officePlan.InsertTime,
                             };
-                             _context.OfficePlans.Remove(officePlan);
+                            _context.OfficePlans.Remove(officePlan);
 
-                             await _context.SaveChangesAsync();
+                            await _context.SaveChangesAsync();
 
                             await _context.OfficePlans.AddAsync(officePlanUpdate);
-                            
+
                         }
 
                         if (oldEntity != null)
@@ -154,23 +154,21 @@ namespace Project.Infra.Data.Repositories.BaseRepository
 
                         await _context.Set<T>().AddAsync(Object);
                     }
-                    
+
                 }
                 else
                 {
                     entry.CurrentValues.SetValues(Object);
 
                     entry.State = EntityState.Modified;
-                    
-                    
+
+
                 }
-              entry.Property("InsertTime").IsModified = false;
+                entry.Property("InsertTime").IsModified = false;
 
-              NewId.IsModified = false;
-
-              entry.Property("RowVersion").CurrentValue = rowVersion;
+                entry.Property("RowVersion").CurrentValue = rowVersion;
             }
-            
+
         }
 
         public async Task Delete<T>(T Object) where T : class

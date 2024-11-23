@@ -71,17 +71,17 @@ namespace Project.Application.Services.Offices.Commands.UpdateOffice
             }
 
 
-            //var existsResult2 = await _repository.IsExists<Office>(Id);
+            var existsResult2 = await _repository.IsExists<Office>(Id);
 
-            //if (existsResult2)
-            //{
+            if (existsResult2)
+            {
 
-            //    return new ResultDto()
-            //    {
-            //        IsSuccess = false,
-            //        Message = "دفتری در این استان وجود دارد"
-            //    };
-            //}
+                return new ResultDto()
+                {
+                    IsSuccess = false,
+                    Message = "دفتری در این استان وجود دارد"
+                };
+            }
 
             Office office = new()
             {
