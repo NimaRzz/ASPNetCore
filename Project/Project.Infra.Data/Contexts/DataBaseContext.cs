@@ -69,43 +69,55 @@ namespace Project.Infra.Data.Contexts
 
         public override async Task<int> SaveChangesAsync(CancellationToken cancellationToken = default)
         {
-            #region Modified Entries
-            var Modifiedentries = ChangeTracker.Entries()
-                .Where(e => e.State == EntityState.Modified);
+            #region Entries
+            var entries = ChangeTracker.Entries()
+                .Where(e => e.State == EntityState.Modified || e.State == EntityState.Deleted || e.State == EntityState.Added);
 
-            foreach (var entry in Modifiedentries)
+            foreach (var entry in entries)
             {
-                if (entry.Entity is Office office)
+                if (entry.State == EntityState.Modified)
                 {
-                    // زمانی که رکورد آپدیت می‌شود، تاریخ و زمان آپدیت را ثبت می‌کنیم
-                    office.UpdateTime = DateTime.Now;  // یا DateTime.Now به دلخواه
-                }
+                    if (entry.Entity is Office office)
+                    { 
+                        office.UpdateTime = DateTime.Now;
+                    }
 
-                if (entry.Entity is Plan plan)
-                {
-                    plan.UpdateTime = DateTime.Now;
-                }
-            }
-            #endregion
-
-            #region Added Entries
-            var AddedEntries = ChangeTracker.Entries()
-                .Where(e => e.State == EntityState.Added);
-
-            foreach (var entry in AddedEntries)
-            {
-                if (entry.Entity is OfficePlan officePlan)
-                {
-                    if (officePlan.Id == 0)
+                    if (entry.Entity is Plan plan)
                     {
-                        officePlan.Id = GenerateNewId();
+                        plan.UpdateTime = DateTime.Now;
                     }
                 }
 
+                if (entry.State == EntityState.Deleted)
+                {
+                    if (entry.Entity is Office office)
+                    {
+                        office.IsRemoved = true;
+                        office.RemoveTime = DateTime.Now;
+                        entry.State = EntityState.Modified;
+                       
+                    }
+
+                    if (entry.Entity is Plan plan)
+                    {
+                        plan.IsRemoved = true;
+                        plan.RemoveTime = DateTime.Now;
+                        entry.State = EntityState.Modified;
+                    }
+                }
+
+                if (entry.State == EntityState.Added)
+                {
+                    if (entry.Entity is OfficePlan officePlan)
+                    {
+                        if (officePlan.Id == 0)
+                        {
+                            officePlan.Id = GenerateNewId();
+                        }
+                    }
+                }
             }
             #endregion
-
-
 
             // فراخوانی SaveChangesAsync اصلی
             return await base.SaveChangesAsync(cancellationToken);
@@ -187,7 +199,11 @@ namespace Project.Infra.Data.Contexts
                 .Property(c => c.Id)
                 .ValueGeneratedNever();
 
-
+            modelBuilder.Entity<OfficePlan>(entity =>
+            {
+                entity.Property(o => o.Id)
+                 .ValueGeneratedNever();
+            });
 
             // پیکربندی فیلد RowVersion برای همزمانی
             modelBuilder.Entity<Office>()
@@ -198,11 +214,6 @@ namespace Project.Infra.Data.Contexts
                 .Property(o => o.RowVersion)
                 .IsRowVersion();
 
-            modelBuilder.Entity<OfficePlan>(entity =>
-            {
-                entity.Property(o => o.Id)
-                 .ValueGeneratedNever();
-            });
 
             //برایه مقدار دهی خودکار فیلد InsertTime
             modelBuilder.Entity<Office>()

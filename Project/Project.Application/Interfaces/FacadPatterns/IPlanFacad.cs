@@ -12,5 +12,7 @@ namespace Project.Application.Interfaces.FacadPatterns
         IAddPlanService AddPlanService { get; }
 
         IUpdatePlanService UpdatePlanService { get; }
+      
+        IDeletePlanService DeletePlanService { get; }
     }
 }

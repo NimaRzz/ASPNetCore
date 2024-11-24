@@ -44,36 +44,22 @@ namespace Project.Application.Services.Plans.Commands.UpdatePlan
                 return planValidateResult;
             }
 
+            var planRowVersion = await _repository.Get<Plan>(request.Id);
+
             Plan plan = new()
             {
                 Id = request.Id,
                 Name = request.Name,
                 Capacity = request.Capacity,
                 StartPlan = request.StartPlan,
-                EndPlan = request.EndPlan
+                EndPlan = request.EndPlan,
+                RowVersion = planRowVersion.Data.RowVersion,
             };
 
-             List<OfficePlan> officePlan = new();
-            var officeId = request.OfficePlan.FirstOrDefault();
-                var officePlanValidatorResult = await OfficePlanValidator.ValidateRequest(officeId, _repository);
-                if (!officePlanValidatorResult.IsSuccess)
-                {
-                    return officePlanValidatorResult;
-                }
-                var office = await _repository.Get<Office>(officeId.OfficeId);
 
-                if (office != null)
-                {
-                    officePlan.Add(new OfficePlan()
-                    {
-                        OfficeId = officeId.OfficeId,
-                        Plan = plan,
-                        PlanId = request.Id
-
-                    });
-                }
-
+              
             await _repository.Update<Plan>(plan);
+            
             await _repository.SaveAsync();
 
             return new ResultDto()

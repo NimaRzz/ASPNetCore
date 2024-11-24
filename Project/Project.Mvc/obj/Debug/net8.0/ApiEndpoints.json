@@ -97,6 +97,22 @@
   },
   {
     "ContainingType": "Project.Mvc.Areas.Admin.Controllers.PlansController",
+    "Method": "Delete",
+    "RelativePath": "api/Plans/delete",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "Id",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Project.Mvc.Areas.Admin.Controllers.PlansController",
     "Method": "Update",
     "RelativePath": "api/Plans/update",
     "HttpMethod": "POST",
@@ -110,26 +126,5 @@
       }
     ],
     "ReturnTypes": []
-  },
-  {
-    "ContainingType": "Project.Mvc.Controllers.WeatherForecastController",
-    "Method": "Get",
-    "RelativePath": "WeatherForecast",
-    "HttpMethod": "GET",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [],
-    "ReturnTypes": [
-      {
-        "Type": "System.Collections.Generic.IEnumerable\u00601[[Project.Mvc.WeatherForecast, Project.Mvc, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
-        "MediaTypes": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "StatusCode": 200
-      }
-    ],
-    "EndpointName": "GetWeatherForecast"
   }
 ]

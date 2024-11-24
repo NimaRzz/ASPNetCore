@@ -7,6 +7,7 @@ using Project.Application.Interfaces.FacadPatterns;
 using Project.Domain.Repository.Plan;
 using Project.Application.Interfaces.Plans;
 using Project.Application.Services.Plans.Commands.AddPlan;
+using Project.Application.Services.Plans.Commands.DeletePlan;
 using Project.Application.Services.Plans.Commands.UpdatePlan;
 
 namespace Project.Application.Services.Plans.FacadPattern
@@ -40,5 +41,16 @@ namespace Project.Application.Services.Plans.FacadPattern
                 return _updatePlanService = _updatePlanService ?? new UpdatePlanService(_repository);
             }
         }
+
+        private IDeletePlanService _deletePlanService;
+
+        public IDeletePlanService DeletePlanService
+        {
+            get
+            {
+                return _deletePlanService = _deletePlanService ?? new DeletePlanService(_repository);
+            }
+        }
+
     }
 }

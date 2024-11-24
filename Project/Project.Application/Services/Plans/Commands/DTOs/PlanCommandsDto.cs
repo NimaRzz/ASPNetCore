@@ -18,6 +18,5 @@ namespace Project.Application.Services.Plans.Commands.DTOs
 
         public DateTime EndPlan { get; set; }
 
-        public ICollection<PlanCommandsOfficePlanDto> OfficePlan { get; set; }
     }
 }

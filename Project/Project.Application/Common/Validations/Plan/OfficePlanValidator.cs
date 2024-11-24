@@ -13,10 +13,10 @@ namespace Project.Application.Common.Validations.Plan
 {
     public class OfficePlanValidator
     {
-        public static async Task<ResultDto> ValidateRequest(PlanCommandsOfficePlanDto request, IPlanRepository repository)
+        public static async Task<ResultDto> ValidateRequest(object request, IPlanRepository repository)
         {
 
-            if (!await repository.IsExists<Domain.Entities.Offices.Office>(request.OfficeId))
+            if (!await repository.IsExists<Domain.Entities.Offices.Office>(request))
             {
                 return new ResultDto
                 {

@@ -14,6 +14,5 @@ namespace Project.Mvc.Areas.Admin.Models.DTOs.Plan
 
         public DateTime EndPlan { get; set; }
 
-        public ICollection<PlanCommandsOfficePlanDto> OfficePlan { get; set; }
     }
 }

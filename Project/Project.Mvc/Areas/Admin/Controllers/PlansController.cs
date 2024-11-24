@@ -29,7 +29,6 @@ namespace Project.Mvc.Areas.Admin.Controllers
                 Capacity = request.Capacity,
                 StartPlan = request.StartPlan,
                 EndPlan = request.EndPlan,
-                OfficePlan = request.OfficePlan,
             });
 
             return Ok(result);
@@ -45,10 +44,17 @@ namespace Project.Mvc.Areas.Admin.Controllers
                 Capacity = request.Capacity,
                 StartPlan = request.StartPlan,
                 EndPlan = request.EndPlan,
-                OfficePlan = request.OfficePlan,
             });
 
             return Ok(result);
         }
+
+        [HttpPost("delete")]
+        public async Task<IActionResult> Delete([FromBody] string Id)
+        {
+            var result = await _planFacad.DeletePlanService.Execute(Id);
+            return Ok(result);
+        }
+
     }
 }

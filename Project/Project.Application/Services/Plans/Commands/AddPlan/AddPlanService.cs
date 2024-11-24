@@ -44,11 +44,7 @@ namespace Project.Application.Services.Plans.Commands.AddPlan
             {
                 return planValidateResult;
             }
-
-            string officeIdValue = request.OfficePlan.FirstOrDefault().OfficeId;
-           
-
-            //var planId = await CustomIdGenerator.GenerateId<string, string>(officeIdValue.Substring(officeIdValue.Length - 2), request.Id);
+            
 
             var existsResult = await _repository.IsExists<Plan>(request.Id);
             if (existsResult)
@@ -69,29 +65,10 @@ namespace Project.Application.Services.Plans.Commands.AddPlan
                 EndPlan = request.EndPlan
             };
 
-            List<OfficePlan> officePlan = new();
-            var officeId = request.OfficePlan.FirstOrDefault();
-                var officePlanValidatorResult = await OfficePlanValidator.ValidateRequest(officeId, _repository);
-                if (!officePlanValidatorResult.IsSuccess)
-                {
-                    return officePlanValidatorResult;
-                }
-                var office = await _repository.Get<Office>(officeId.OfficeId);
-
-                if (office != null)
-                {
-                    officePlan.Add(new OfficePlan()
-                    {
-                        OfficeId = officeId.OfficeId,
-                        Plan = plan,
-                        PlanId = request.Id
-
-                    });
-                }
+            
+            
 
             await _repository.Add<Plan>(plan);
-            plan.OfficePlans = officePlan;
-            await _repository.Add<OfficePlan>(officePlan.FirstOrDefault());
             await _repository.SaveAsync();
 
 

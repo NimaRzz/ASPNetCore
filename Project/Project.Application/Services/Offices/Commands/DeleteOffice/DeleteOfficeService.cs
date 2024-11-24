@@ -23,9 +23,10 @@ namespace Project.Application.Services.Offices.Commands.DeleteOffice
 
         public async Task<ResultDto> Execute(string Id)
         {
-            var existsResult = await _repository.IsExists<Office>(Id);
 
-            if (!existsResult)
+            var entity = await _repository.Get<Office>(Id);
+
+            if (entity.IsSuccess == false)
             {
 
                 return new ResultDto()
@@ -35,8 +36,8 @@ namespace Project.Application.Services.Offices.Commands.DeleteOffice
                 };
             }
 
-            var entity = await _repository.Get<Office>(Id);
-                await _repository.Delete<Office>(entity.Data);
+
+            await _repository.Delete<Office>(entity.Data);
                 await _repository.SaveAsync();
 
             return new ResultDto()

@@ -65,6 +65,7 @@ namespace Project.Infra.Data.Repositories.BaseRepository
             }
             return new ResultDto<T>()
             {
+                IsSuccess = false
             };
         }
 
@@ -107,6 +108,8 @@ namespace Project.Infra.Data.Repositories.BaseRepository
                 // استخراج RowVersion از رکورد قدیمی
                 var rowVersion = entry.Property("RowVersion").CurrentValue;
 
+               
+
 
                 if (Object is Domain.Entities.Offices.Office office)
                 {
@@ -118,40 +121,37 @@ namespace Project.Infra.Data.Repositories.BaseRepository
 
                         var oldEntity = await _context.Set<T>().FindAsync(pkValue);
 
-                        var officePlan = await _context.OfficePlans.Where(p => p.OfficeId == pkValue).FirstOrDefaultAsync();
+                        //var officePlan = await _context.OfficePlans.Where(p => p.OfficeId == pkValue).FirstOrDefaultAsync();
 
-                        if (officePlan != null)
-                        {
-                            OfficePlan officePlanUpdate = new()
-                            {
-                                Id = officePlan.Id,
-                                Plan = officePlan.Plan,
-                                PlanId = officePlan.PlanId,
-                                Office = officePlan.Office,
-                                OfficeId = officePlan.OfficeId,
-                                InsertTime = officePlan.InsertTime,
-                            };
-                            _context.OfficePlans.Remove(officePlan);
+                        //if (officePlan != null)
+                        //{
+                        //    OfficePlan officePlanUpdate = new()
+                        //    {
+                        //        Id = officePlan.Id,
+                        //        Plan = officePlan.Plan,
+                        //        PlanId = officePlan.PlanId,
+                        //        Office = officePlan.Office,
+                        //        OfficeId = officePlan.OfficeId,
+                        //        InsertTime = officePlan.InsertTime,
+                        //    };
+                            //_context.OfficePlans.Remove(officePlan);
 
-                            await _context.SaveChangesAsync();
+                            //await _context.SaveChangesAsync();
 
-                            await _context.OfficePlans.AddAsync(officePlanUpdate);
+                            //await _context.OfficePlans.AddAsync(officePlanUpdate);
 
-                        }
+                        //}
 
                         if (oldEntity != null)
                         {
                             _context.Set<T>().Remove(oldEntity);
-
-                            await _context.SaveChangesAsync();
                         }
 
                         var InsertTime = _context.Entry(oldEntity).Property("InsertTime").CurrentValue;
                         entry.Property("Id").CurrentValue = NewId.CurrentValue;
                         entry.Property("UpdateTime").CurrentValue = DateTime.Now;
                         entry.Property("InsertTime").CurrentValue = InsertTime;
-                        NewId.IsModified = false;
-
+                        NewId.CurrentValue = null;
                         await _context.Set<T>().AddAsync(Object);
                     }
 
@@ -175,15 +175,8 @@ namespace Project.Infra.Data.Repositories.BaseRepository
         {
 
             if (Object != null)
-            {
-                var isRemoved = Object.GetType().GetProperty("IsRemoved");
-                var removeTime = Object.GetType().GetProperty("RemoveTime");
-                if (isRemoved != null && removeTime != null)
-                {
-                    isRemoved.SetValue(Object, true);
-                    removeTime.SetValue(Object, DateTime.Now);
-                    _context.Entry(Object).State = EntityState.Modified;
-                }
+            { 
+                _context.Remove(Object);
             }
         }
 
