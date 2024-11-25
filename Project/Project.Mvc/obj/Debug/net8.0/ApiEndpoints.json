@@ -113,6 +113,22 @@
   },
   {
     "ContainingType": "Project.Mvc.Areas.Admin.Controllers.PlansController",
+    "Method": "Get",
+    "RelativePath": "api/Plans/getall",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "Project.Mvc.Areas.Admin.Models.DTOs.Common.Pagination.Pagination",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Project.Mvc.Areas.Admin.Controllers.PlansController",
     "Method": "Update",
     "RelativePath": "api/Plans/update",
     "HttpMethod": "POST",

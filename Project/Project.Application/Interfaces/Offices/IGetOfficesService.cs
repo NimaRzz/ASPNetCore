@@ -10,6 +10,6 @@ namespace Project.Application.Interfaces.Offices
 {
     public interface IGetOfficesService
     {
-        Task<ResultDto<ResultGetOfficesDto>> Execute(RequestGetOffices request);
+        Task<ResultDto<ResultGetOfficesDto>> Execute(RequestGetOfficesDto request);
     }
 }

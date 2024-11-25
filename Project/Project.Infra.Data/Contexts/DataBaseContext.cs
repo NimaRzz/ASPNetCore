@@ -66,7 +66,7 @@ namespace Project.Infra.Data.Contexts
             ApplyQueryFilter(modelBuilder);
 
         }
-
+        
         public override async Task<int> SaveChangesAsync(CancellationToken cancellationToken = default)
         {
             #region Entries

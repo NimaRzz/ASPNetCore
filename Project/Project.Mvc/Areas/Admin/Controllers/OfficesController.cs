@@ -79,7 +79,7 @@ namespace Project.Mvc.Areas.Admin.Controllers
         public async Task<IActionResult> Get([FromBody] Pagination request)
         {
 
-            var result = await _officeFacad.GetOfficesService.Execute(new RequestGetOffices
+            var result = await _officeFacad.GetOfficesService.Execute(new RequestGetOfficesDto
             {
                 PageSize = request.PageSize,
                 Page = request.Page,

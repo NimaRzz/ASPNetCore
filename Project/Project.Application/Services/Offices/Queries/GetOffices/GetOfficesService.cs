@@ -8,6 +8,7 @@ using Project.Application.Interfaces.Offices;
 using Project.Domain.Common.Dto;
 using Project.Domain.Entities.Offices;
 using Project.Domain.Repository.Office;
+using Project.Application.Common.Pagination;
 
 namespace Project.Application.Services.Offices.Queries.GetOffices
 {
@@ -21,9 +22,9 @@ namespace Project.Application.Services.Offices.Queries.GetOffices
             _repository = repository;
         }
 
-        public async Task<ResultDto<ResultGetOfficesDto>> Execute(RequestGetOffices request)
+        public async Task<ResultDto<ResultGetOfficesDto>> Execute(RequestGetOfficesDto request)
         {
-            Office office = new();
+
             var offices = await _repository.GetAll<Office>();
 
             if (offices.IsSuccess == false)
@@ -35,29 +36,34 @@ namespace Project.Application.Services.Offices.Queries.GetOffices
                 };
             }
 
-            int totalPages = (int)Math.Ceiling((double)offices.Data.Count / request.PageSize);
+            int totalPages = 0;
 
-            if (totalPages < request.Page)
+            var officeQuery = offices.Data;
+
+            var pagedResult = officeQuery.ToPaged(request.Page, request.PageSize, out totalPages);
+
+            if (!pagedResult.IsSuccess)
             {
                 return new ResultDto<ResultGetOfficesDto>()
                 {
-                    IsSuccess = true,
-                    Message = "در این صفحه هیچ دفتری وجود ندارد"
+                    IsSuccess = false,
+                    Message = pagedResult.Message
                 };
             }
-
-            var returnResult = offices.Data.Skip((request.Page -1) * request.PageSize).Take(request.PageSize).Select((p, index) =>  new GetOfficesDto
+            
+            var officesList = pagedResult.Data.Select((p, index) =>  new GetOfficesDto
             {
                 Id = p.Id,
                 Name = p.Name,
                 Address = p.Address,
                 Province = Enum.GetName(typeof(ProvincesEnum), p.ProvinceId)
             }).ToList();
+
             return new ResultDto<ResultGetOfficesDto>()
             {
                 Data = new ResultGetOfficesDto()
                 {
-                    Offices = returnResult,
+                    Items = officesList,
                     TotalPages = totalPages
                 },
                 IsSuccess = true,

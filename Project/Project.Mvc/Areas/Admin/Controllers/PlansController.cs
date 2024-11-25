@@ -5,6 +5,8 @@ using Project.Application.Interfaces.FacadPatterns;
 using Project.Application.Services.Plans.Commands.AddPlan;
 using Project.Application.Services.Plans.Commands.UpdatePlan;
 using Project.Domain.Entities.Offices;
+using Project.Mvc.Areas.Admin.Models.DTOs.Common.Pagination;
+using Project.Application.Services.Plans.Queries.GetPlans;
 
 namespace Project.Mvc.Areas.Admin.Controllers
 {
@@ -53,6 +55,17 @@ namespace Project.Mvc.Areas.Admin.Controllers
         public async Task<IActionResult> Delete([FromBody] string Id)
         {
             var result = await _planFacad.DeletePlanService.Execute(Id);
+            return Ok(result);
+        }
+
+        [HttpPost("getall")]
+        public async Task<IActionResult> Get([FromBody] Pagination request)
+        {
+            var result = await _planFacad.GetPlansService.Execute(new RequestGetPlansDto()
+            {
+                Page = request.Page,
+                PageSize = request.PageSize,
+            });
             return Ok(result);
         }
 

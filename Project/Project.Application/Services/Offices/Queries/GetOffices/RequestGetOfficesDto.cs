@@ -3,13 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Project.Application.Services.DTOs;
 
 namespace Project.Application.Services.Offices.Queries.GetOffices
 {
-    public class RequestGetOffices
+    public class RequestGetOfficesDto :RequestGetServicesDto
     {
-        public int PageSize { get; set; }
-
-        public int Page { get; set; }
     }
 }
