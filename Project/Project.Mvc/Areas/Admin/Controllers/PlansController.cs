@@ -58,6 +58,14 @@ namespace Project.Mvc.Areas.Admin.Controllers
             return Ok(result);
         }
 
+        [HttpPost("get")]
+        public async Task<IActionResult> Get([FromBody] string Id)
+        {
+            var result = await _planFacad.GetPlanService.Execute(Id);
+            return Ok(result);
+        }
+
+
         [HttpPost("getall")]
         public async Task<IActionResult> Get([FromBody] Pagination request)
         {

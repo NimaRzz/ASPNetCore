@@ -10,6 +10,7 @@ using Project.Application.Services.Plans.Commands.AddPlan;
 using Project.Application.Services.Plans.Commands.DeletePlan;
 using Project.Application.Services.Plans.Commands.UpdatePlan;
 using Project.Application.Services.Plans.Queries.GetPlans;
+using Project.Application.Services.Plans.Queries.GetPlan;
 
 namespace Project.Application.Services.Plans.FacadPattern
 {
@@ -53,6 +54,18 @@ namespace Project.Application.Services.Plans.FacadPattern
             }
         }
 
+
+        private IGetPlanService _getPlanService;
+
+        public IGetPlanService GetPlanService
+        {
+            get
+            {
+                return _getPlanService = _getPlanService ?? new GetPlanService(_repository);
+            }
+        }
+
+
         private IGetPlansService _getPlansService;
 
         public IGetPlansService GetPlansService
@@ -62,5 +75,6 @@ namespace Project.Application.Services.Plans.FacadPattern
                 return _getPlansService = _getPlansService ?? new GetPlansService(_repository);
             }
         }
+
     }
 }

@@ -114,6 +114,22 @@
   {
     "ContainingType": "Project.Mvc.Areas.Admin.Controllers.PlansController",
     "Method": "Get",
+    "RelativePath": "api/Plans/get",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "Id",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Project.Mvc.Areas.Admin.Controllers.PlansController",
+    "Method": "Get",
     "RelativePath": "api/Plans/getall",
     "HttpMethod": "POST",
     "IsController": true,
