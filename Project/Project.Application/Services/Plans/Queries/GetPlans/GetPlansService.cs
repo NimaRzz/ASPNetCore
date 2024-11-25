@@ -45,11 +45,15 @@ namespace Project.Application.Services.Plans.Queries.GetPlans
                 return new ResultDto<ResultGetPlansDto>()
                 {
                     IsSuccess = false,
-                    Message = pagedResult.Message
+                    Message = pagedResult.Message,
+                    Data = new ResultGetPlansDto()
+                    {
+                        TotalPages = totalPages,
+                    }
                 };
             }
 
-            var plansList = pagedResult.Data.Select((p, index) => new GetPlansDto
+            var plansList = pagedResult.Data.Select((p) => new GetPlansDto
             {
              Id = p.Id,
              Name = p.Name,

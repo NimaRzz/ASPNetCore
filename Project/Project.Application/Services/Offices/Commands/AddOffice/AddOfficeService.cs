@@ -56,16 +56,6 @@ namespace Project.Application.Services.Offices.Commands.AddOffice
                     Message = "دفتری با این شماره وجود دارد"
                 };
             }
-            var workStart = await ConvertToTimeSpan.Converter(request.WorkStart);
-            var workEnd = await ConvertToTimeSpan.Converter(request.WorkEnd);
-            if (!workStart.IsSuccess)
-            {
-                return workStart;
-            }
-            if (!workEnd.IsSuccess)
-            {
-                return workStart;
-            }
 
             var validationResult = await OfficeValidator.ValidateOfficeRequest(request);
 
@@ -74,17 +64,47 @@ namespace Project.Application.Services.Offices.Commands.AddOffice
                 return validationResult;
             }
 
+            List<WorkCalendar> workCalendar = new();
+
+            foreach (var item in request.Workdays)
+            {
+                var workStart = await ConvertToTimeSpan.Converter(item.WorkStart);
+                var workEnd = await ConvertToTimeSpan.Converter(item.WorkEnd);
+                if (!workStart.IsSuccess)
+                {
+                    return workStart;
+                }
+                if (!workEnd.IsSuccess)
+                {
+                    return workStart;
+                }
+
+             WorkCalendar wc = new()
+                {
+                    Workday = item.Workday,
+                    WorkStart = workStart.Data,
+                    WorkEnd = workEnd.Data,
+                };
+
+                workCalendar.Add(wc);
+            }
+            
+
+
+
             Office office = new()
             {
                 Id = Id,
                 Name = request.Name,
                 ProvinceId = request.ProvinceId,
                 Address = request.Address,
-                WorkStart = workStart.Data,
-                WorkEnd = workEnd.Data,
+                WorkCalendars = workCalendar
+
             };
 
-            await _repository.Add(office);
+
+
+            await _repository.Add<Office>(office);
             await _repository.SaveAsync();
 
             

@@ -32,10 +32,6 @@ namespace Project.Infra.Data.Contexts
 
         public DbSet<OfficePlan> OfficePlans { get; set; }
 
-        public DbSet<Shift> Shifts { get; set; }
-
-        public DbSet<WorkCalendar> WorkCalendars { get; set; }
-
         public DbSet<Citizen> Citizens { get; set; }
 
         public DbSet<Appointment> Appointments { get; set; }
@@ -47,6 +43,8 @@ namespace Project.Infra.Data.Contexts
         public DbSet<Role> Roles { get; set; }
 
         public DbSet<Province> Provinces { get; set; }
+
+        public DbSet<WorkCalendar> WorkCalendars { get; set; }
 
         #endregion
 
@@ -66,7 +64,7 @@ namespace Project.Infra.Data.Contexts
             ApplyQueryFilter(modelBuilder);
 
         }
-        
+
         public override async Task<int> SaveChangesAsync(CancellationToken cancellationToken = default)
         {
             #region Entries
@@ -78,7 +76,7 @@ namespace Project.Infra.Data.Contexts
                 if (entry.State == EntityState.Modified)
                 {
                     if (entry.Entity is Office office)
-                    { 
+                    {
                         office.UpdateTime = DateTime.Now;
                     }
 
@@ -95,7 +93,7 @@ namespace Project.Infra.Data.Contexts
                         office.IsRemoved = true;
                         office.RemoveTime = DateTime.Now;
                         entry.State = EntityState.Modified;
-                       
+
                     }
 
                     if (entry.Entity is Plan plan)
@@ -142,19 +140,18 @@ namespace Project.Infra.Data.Contexts
                 .OnDelete(DeleteBehavior.NoAction);
 
 
-            modelBuilder.Entity<WorkCalendar>()
-                .HasMany(w => w.Shifts)
-                .WithOne(s => s.WorkCalendar)
-                .HasForeignKey(s => s.WorkCalendarId)
-                .OnDelete(DeleteBehavior.NoAction);
-
-
             modelBuilder.Entity<OfficePlan>()
                 .HasOne(op => op.Plan)
                 .WithMany(p => p.OfficePlans)
                 .HasForeignKey(op => op.PlanId)
                 .OnDelete(DeleteBehavior.NoAction);
 
+
+            modelBuilder.Entity<Office>()
+                .HasMany(o => o.WorkCalendars)
+                .WithOne(wc => wc.Office)
+                .HasForeignKey(wc => wc.OfficeId)
+                .OnDelete(DeleteBehavior.Cascade);
 
             modelBuilder.Entity<Appointment>()
                 .HasOne(a => a.Citizen)

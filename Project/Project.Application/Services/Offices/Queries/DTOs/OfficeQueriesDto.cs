@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Project.Domain.Entities.Offices;
 
 namespace Project.Application.Services.Offices.Queries.DTOs
 {
@@ -15,5 +16,11 @@ namespace Project.Application.Services.Offices.Queries.DTOs
         public string Address { get; set; }
 
         public string Province { get; set; }
+
+        public List<DaysOfTheWeek> Workdays { get; set; }
+
+        public List<DaysOfTheWeek> Holidays { get; set; }
+
+
     }
 }

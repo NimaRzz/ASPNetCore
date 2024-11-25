@@ -9,6 +9,8 @@ using System.Threading.Tasks;
 using Project.Application.Services.Offices.Commands.UpdateOffice;
 using Project.Domain.Repository.Office;
 using Project.Application.Common.Converter;
+using Project.Domain.Entities.Offices;
+using Project.Application.Services.Offices.Commands.DTOs;
 
 namespace Project.Application.Common.Validations.Office
 {
@@ -22,17 +24,17 @@ namespace Project.Application.Common.Validations.Office
             // بررسی اینکه آیا شماره دفتر وارد شده است یا نه
             if (request is RequestUpdateOfficeDto updateRequest)
             {
-                result = await ValidateRequest(updateRequest.Id, updateRequest.Name, updateRequest.ProvinceId, updateRequest.Address, updateRequest.WorkStart, updateRequest.WorkEnd);
+                result = await ValidateRequest(updateRequest.Id, updateRequest.Name, updateRequest.ProvinceId, updateRequest.Address, updateRequest.Workdays);
             }
             else if (request is RequestAddOfficeDto addRequest)
             {
-                result = await ValidateRequest(addRequest.Id, addRequest.Name, addRequest.ProvinceId, addRequest.Address, addRequest.WorkStart, addRequest.WorkEnd);
+                result = await ValidateRequest(addRequest.Id, addRequest.Name, addRequest.ProvinceId, addRequest.Address, addRequest.Workdays);
             }
 
             return result;
         }
 
-        private static async Task<ResultDto> ValidateRequest(string id, string name, long province, string address, string workStart, string workEnd)
+        private static async Task<ResultDto> ValidateRequest(string id, string name, long province, string address, List<OfficeWorkCalendarCommandsDto> workDays)
         {
             // بررسی اینکه شماره دفتر وارد شده باشد
             if (string.IsNullOrEmpty(id))
@@ -84,26 +86,40 @@ namespace Project.Application.Common.Validations.Office
                 };
             }
 
-             var workStartResult = await ConvertToTimeSpan.Converter(workStart);
-            var workEndResult = await ConvertToTimeSpan.Converter(workEnd);
-          
-            if (!workStartResult.IsSuccess)
+            foreach (var item in workDays)
             {
-                return workStartResult;
-            }
-           
-            if (!workEndResult.IsSuccess)
-            {
-                return workEndResult;
-            }
+                var workStartResult = await ConvertToTimeSpan.Converter(item.WorkStart);
+                var workEndResult = await ConvertToTimeSpan.Converter(item.WorkEnd);
 
-            if (workStartResult.Data >= workEndResult.Data)
-            {
-                return new ResultDto
+                if (!workStartResult.IsSuccess)
                 {
-                    IsSuccess = false,
-                    Message = "ساعت پایان کاری باید بعد از ساعت شروع کاری باشد"
-                };
+                    return workStartResult;
+                }
+
+                if (!workEndResult.IsSuccess)
+                {
+                    return workEndResult;
+                }
+
+                if (workStartResult.Data >= workEndResult.Data)
+                {
+                    return new ResultDto
+                    {
+                        IsSuccess = false,
+                        Message = "ساعت پایان کاری باید بعد از ساعت شروع کاری باشد"
+                    };
+                }
+
+                List<DaysOfTheWeek> days = Enum.GetValues(typeof(DaysOfTheWeek)).Cast<DaysOfTheWeek>().ToList();
+
+                if (!days.Contains(item.Workday))
+                {
+                    return new ResultDto
+                    {
+                        IsSuccess = false,
+                        Message = "روز هایه وارد شده باید از روز هایه هفته باشد(از عدد 1 تا 7)"
+                    };
+                }
             }
 
             return new ResultDto()

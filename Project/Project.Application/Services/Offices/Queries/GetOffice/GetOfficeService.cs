@@ -43,7 +43,7 @@ namespace Project.Application.Services.Offices.Queries.GetOffice
                     Id = Id,
                     Address = office.Data.Address,
                     Name = office.Data.Name,
-                    Province = province
+                    Province = province,
                 },
                 IsSuccess = true,
                 Message = "دفتر با موفقیت دریافت شد"

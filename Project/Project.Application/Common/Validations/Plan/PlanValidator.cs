@@ -42,6 +42,17 @@ namespace Project.Application.Common.Validations.Plan
                 };
             }
 
+            long.TryParse(id, out long idResult);
+
+            if (idResult < 1000 || idResult > 9999)
+            {
+                return new ResultDto
+                {
+                    IsSuccess = false,
+                    Message = "شناسه طرح باید بین 1000 و 9999 باشد"
+                };
+            }
+
             string pattern = @"^[\u0600-\u06FF0-9]+$";
             if (!Regex.IsMatch(name, pattern))
             {

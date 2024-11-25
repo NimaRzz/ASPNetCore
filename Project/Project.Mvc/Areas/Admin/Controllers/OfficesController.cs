@@ -32,8 +32,8 @@ namespace Project.Mvc.Areas.Admin.Controllers
                 Name = request.Name,
                 ProvinceId = request.ProvinceId,
                 Address = request.Address,
-                WorkStart = request.WorkStart,
-                WorkEnd = request.WorkEnd,
+                Workdays = request.Workdays,
+               
             });
          
 
@@ -50,8 +50,6 @@ namespace Project.Mvc.Areas.Admin.Controllers
                 Name = request.Name,
                 ProvinceId = request.ProvinceId,
                 Address = request.Address,
-                WorkStart = request.WorkStart,
-                WorkEnd = request.WorkEnd,
             });
 
             return Ok(result);

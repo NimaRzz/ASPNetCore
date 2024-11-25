@@ -90,8 +90,6 @@ namespace Project.Application.Services.Offices.Commands.UpdateOffice
                 Name = request.Name,
                 ProvinceId = request.ProvinceId,
                 Address = request.Address,
-                WorkStart = workStart.Data,
-                WorkEnd = workEnd.Data,
             };
 
             await _repository.Update<Office>(office);

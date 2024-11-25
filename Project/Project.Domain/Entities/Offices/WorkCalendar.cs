@@ -1,19 +1,21 @@
-﻿namespace Project.Domain.Entities.Offices;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
-public class WorkCalendar:BaseEntity.BaseEntity
+namespace Project.Domain.Entities.Offices
 {
-    // تاریخ و زمان شروع و پایان هر روز کاری
-    public DateTime WorkStart { get; set; }
-    public DateTime WorkEnd { get; set; }
+    public class WorkCalendar:BaseEntity.BaseEntity
+    {
+        public DaysOfTheWeek Workday { get; set; }
 
-    // لیست تعطیلات
-    public List<DateTime> Holidays { get; set; }
+        public TimeSpan WorkStart { get; set; }
 
-    // لیست شیفت‌ها (مثال: 9:00 AM - 5:00 PM)
-    public ICollection<Shift> Shifts { get; set; }
+        public TimeSpan WorkEnd { get; set; }
 
-    public Office Office { get; set; }
+        public string OfficeId { get; set; }
 
-    public string OfficeId { get; set; }
-
+        public Office Office { get; set; }
+    }
 }

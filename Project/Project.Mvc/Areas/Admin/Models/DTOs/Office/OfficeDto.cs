@@ -1,4 +1,6 @@
-﻿namespace Project.Mvc.Areas.Admin.Models.DTOs.Office
+﻿using Project.Application.Services.Offices.Commands.DTOs;
+
+namespace Project.Mvc.Areas.Admin.Models.DTOs.Office
 {
     public class OfficeDto
     {
@@ -10,8 +12,6 @@
 
         public string Address { get; set; }
 
-        public string WorkStart { get; set; }
-
-        public string WorkEnd { get; set; }
+        public List<OfficeWorkCalendarCommandsDto> Workdays { get; set; }
     }
 }

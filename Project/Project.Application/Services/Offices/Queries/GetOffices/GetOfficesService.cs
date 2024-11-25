@@ -47,16 +47,20 @@ namespace Project.Application.Services.Offices.Queries.GetOffices
                 return new ResultDto<ResultGetOfficesDto>()
                 {
                     IsSuccess = false,
-                    Message = pagedResult.Message
+                    Message = pagedResult.Message,
+                    Data = new ResultGetOfficesDto()
+                    {
+                        TotalPages = totalPages,
+                    }
                 };
             }
             
-            var officesList = pagedResult.Data.Select((p, index) =>  new GetOfficesDto
+            var officesList = pagedResult.Data.Select((p) =>  new GetOfficesDto
             {
                 Id = p.Id,
                 Name = p.Name,
                 Address = p.Address,
-                Province = Enum.GetName(typeof(ProvincesEnum), p.ProvinceId)
+                Province = Enum.GetName(typeof(ProvincesEnum), p.ProvinceId),
             }).ToList();
 
             return new ResultDto<ResultGetOfficesDto>()
