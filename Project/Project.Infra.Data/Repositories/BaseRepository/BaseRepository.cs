@@ -121,31 +121,15 @@ namespace Project.Infra.Data.Repositories.BaseRepository
 
                         var oldEntity = await _context.Set<T>().FindAsync(pkValue);
 
-                        //var officePlan = await _context.OfficePlans.Where(p => p.OfficeId == pkValue).FirstOrDefaultAsync();
-
-                        //if (officePlan != null)
-                        //{
-                        //    OfficePlan officePlanUpdate = new()
-                        //    {
-                        //        Id = officePlan.Id,
-                        //        Plan = officePlan.Plan,
-                        //        PlanId = officePlan.PlanId,
-                        //        Office = officePlan.Office,
-                        //        OfficeId = officePlan.OfficeId,
-                        //        InsertTime = officePlan.InsertTime,
-                        //    };
-                            //_context.OfficePlans.Remove(officePlan);
-
-                            //await _context.SaveChangesAsync();
-
-                            //await _context.OfficePlans.AddAsync(officePlanUpdate);
-
-                        //}
-
                         if (oldEntity != null)
                         {
                             _context.Set<T>().Remove(oldEntity);
+
+                            var workCalendars = await _context.WorkCalendars.AsNoTracking().Where(p => EF.Property<string>(p, "OfficeId") == pkValue).FirstOrDefaultAsync();
+                           
+                            _context.Remove(workCalendars);
                         }
+
 
                         var InsertTime = _context.Entry(oldEntity).Property("InsertTime").CurrentValue;
                         entry.Property("Id").CurrentValue = NewId.CurrentValue;

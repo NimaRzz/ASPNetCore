@@ -9,6 +9,7 @@ using Project.Domain.Entities.Province;
 using Project.Domain.Repository.BaseRepository;
 using Project.Domain.Repository.Office;
 using Project.Infra.Data.Contexts;
+using Project.Domain.Entities.Offices;
 
 namespace Project.Infra.Data.Repositories.Office
 {
@@ -61,6 +62,10 @@ namespace Project.Infra.Data.Repositories.Office
             await base.SaveAsync();
         }
 
+        public async Task<List<WorkCalendar>> GetAllWorkCalendarsAsync(string OfficeId)
+        {
+          return await _context.WorkCalendars.Where(p => p.OfficeId == OfficeId).ToListAsync();
+        }
 
     }
 }

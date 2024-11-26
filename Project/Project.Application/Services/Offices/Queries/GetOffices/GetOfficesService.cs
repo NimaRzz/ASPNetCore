@@ -9,6 +9,7 @@ using Project.Domain.Common.Dto;
 using Project.Domain.Entities.Offices;
 using Project.Domain.Repository.Office;
 using Project.Application.Common.Pagination;
+using Project.Application.Services.Offices.Commands.DTOs;
 
 namespace Project.Application.Services.Offices.Queries.GetOffices
 {
@@ -54,13 +55,14 @@ namespace Project.Application.Services.Offices.Queries.GetOffices
                     }
                 };
             }
-            
+
             var officesList = pagedResult.Data.Select((p) =>  new GetOfficesDto
             {
                 Id = p.Id,
                 Name = p.Name,
                 Address = p.Address,
                 Province = Enum.GetName(typeof(ProvincesEnum), p.ProvinceId),
+              
             }).ToList();
 
             return new ResultDto<ResultGetOfficesDto>()

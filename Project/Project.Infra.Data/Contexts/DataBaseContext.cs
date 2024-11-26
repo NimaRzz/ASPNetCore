@@ -84,6 +84,11 @@ namespace Project.Infra.Data.Contexts
                     {
                         plan.UpdateTime = DateTime.Now;
                     }
+
+                    if (entry.Entity is WorkCalendar workCalendar)
+                    {
+                        workCalendar.UpdateTime = DateTime.Now;
+                    }
                 }
 
                 if (entry.State == EntityState.Deleted)
@@ -217,13 +222,15 @@ namespace Project.Infra.Data.Contexts
                 .Property(c => c.InsertTime)
                 .HasDefaultValueSql("GETDATE()");
 
-            //برایه مقدار دهی خودکار فیلد InsertTime
             modelBuilder.Entity<Plan>()
                 .Property(c => c.InsertTime)
                 .HasDefaultValueSql("GETDATE()");
 
-            //برایه مقدار دهی خودکار فیلد InsertTime
             modelBuilder.Entity<OfficePlan>()
+                .Property(c => c.InsertTime)
+                .HasDefaultValueSql("GETDATE()");
+
+            modelBuilder.Entity<WorkCalendar>()
                 .Property(c => c.InsertTime)
                 .HasDefaultValueSql("GETDATE()");
 

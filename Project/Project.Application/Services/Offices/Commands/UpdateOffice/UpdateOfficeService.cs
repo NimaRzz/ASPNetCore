@@ -39,18 +39,31 @@ namespace Project.Application.Services.Offices.Commands.UpdateOffice
                 };
             }
 
-            var workStart = await ConvertToTimeSpan.Converter(request.WorkStart);
-            var workEnd = await ConvertToTimeSpan.Converter(request.WorkEnd);
+            List<WorkCalendar> workCalendar = new();
 
-            if (!workStart.IsSuccess)
+            foreach (var item in request.Workdays)
             {
-                return workStart;
+                var workStart = await ConvertToTimeSpan.Converter(item.WorkStart);
+                var workEnd = await ConvertToTimeSpan.Converter(item.WorkEnd);
+                if (!workStart.IsSuccess)
+                {
+                    return workStart;
+                }
+                if (!workEnd.IsSuccess)
+                {
+                    return workStart;
+                }
+
+                WorkCalendar wc = new()
+                {
+                    Workday = item.Workday,
+                    WorkStart = workStart.Data,
+                    WorkEnd = workEnd.Data,
+                };
+
+                workCalendar.Add(wc);
             }
 
-            if (!workEnd.IsSuccess)
-            {
-                return workEnd;
-            }
 
             var validationResult = await OfficeValidator.ValidateOfficeRequest(request);
 
@@ -71,6 +84,11 @@ namespace Project.Application.Services.Offices.Commands.UpdateOffice
             }
 
 
+            if (Id == request.Id)
+            {
+                Id = null;
+            }
+            
             var existsResult2 = await _repository.IsExists<Office>(Id);
 
             if (existsResult2)
@@ -79,7 +97,7 @@ namespace Project.Application.Services.Offices.Commands.UpdateOffice
                 return new ResultDto()
                 {
                     IsSuccess = false,
-                    Message = "دفتری در این استان وجود دارد"
+                    Message = "دفتری با این شماره وجود دارد"
                 };
             }
 
@@ -90,6 +108,7 @@ namespace Project.Application.Services.Offices.Commands.UpdateOffice
                 Name = request.Name,
                 ProvinceId = request.ProvinceId,
                 Address = request.Address,
+                WorkCalendars = workCalendar
             };
 
             await _repository.Update<Office>(office);

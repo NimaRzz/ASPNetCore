@@ -8,6 +8,8 @@ using Project.Application.Interfaces.Offices;
 using Project.Domain.Common.Dto;
 using Project.Domain.Entities.Offices;
 using Project.Domain.Repository.Office;
+using Project.Application.Services.Offices.Commands.DTOs;
+
 
 namespace Project.Application.Services.Offices.Queries.GetOffice
 {
@@ -33,9 +35,28 @@ namespace Project.Application.Services.Offices.Queries.GetOffice
                     Message = "دفتری با این شماره دفتر وجود ندارد"
                 };
             }
+
+
+            var workCalendars = await _repository.GetAllWorkCalendarsAsync(Id);
+          
+            List<OfficeWorkCalendarCommandsDto> calendars = new();
+
+            foreach (var item in workCalendars)
+            {
+                var setItems = new OfficeWorkCalendarCommandsDto()
+                {
+                    Workday = item.Workday,
+                    WorkEnd = item.WorkEnd.ToString(),
+                    WorkStart = item.WorkStart.ToString()
+                };
+               
+                calendars.Add(setItems);
+            }
+
             var provinceId = office.Data.ProvinceId;
 
             string province = Enum.GetName(typeof(ProvincesEnum), provinceId);
+
             return new ResultDto<ResultGetOfficeDto>()
             {
                 Data = new ResultGetOfficeDto()
@@ -44,6 +65,7 @@ namespace Project.Application.Services.Offices.Queries.GetOffice
                     Address = office.Data.Address,
                     Name = office.Data.Name,
                     Province = province,
+                    Workdays = calendars
                 },
                 IsSuccess = true,
                 Message = "دفتر با موفقیت دریافت شد"

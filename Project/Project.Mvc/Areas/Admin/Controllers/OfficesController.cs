@@ -32,7 +32,7 @@ namespace Project.Mvc.Areas.Admin.Controllers
                 Name = request.Name,
                 ProvinceId = request.ProvinceId,
                 Address = request.Address,
-                Workdays = request.Workdays,
+                Workdays = request.Workdays
                
             });
          
@@ -50,6 +50,7 @@ namespace Project.Mvc.Areas.Admin.Controllers
                 Name = request.Name,
                 ProvinceId = request.ProvinceId,
                 Address = request.Address,
+                Workdays = request.Workdays
             });
 
             return Ok(result);
