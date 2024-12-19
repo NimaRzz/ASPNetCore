@@ -18,10 +18,7 @@ namespace Project.Infra.Data.Repositories.Plan
             _context = context;
         }
 
-        public async Task<bool> IsExists<T>(long Id) where T : class
-        {
-            return await base.IsExists<T>(Id);
-        }
+
 
         public async Task<ResultDto<T>> Get<T>(long Id) where T : class
         {

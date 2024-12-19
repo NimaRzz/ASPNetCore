@@ -21,7 +21,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Project.Infra.Data", "Proje
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Project.Infra.IoC", "Project.Infra.IoC\Project.Infra.IoC.csproj", "{BEF0846C-6697-43CE-A188-0BDB14195CAC}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Project.Mvc", "Project.Mvc\Project.Mvc.csproj", "{4C71AD87-1383-45AB-BAD2-156C5C02129B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Project.Presentation", "Project.Mvc\Project.Presentation.csproj", "{4C71AD87-1383-45AB-BAD2-156C5C02129B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

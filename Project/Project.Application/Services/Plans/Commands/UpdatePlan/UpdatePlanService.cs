@@ -26,9 +26,9 @@ namespace Project.Application.Services.Plans.Commands.UpdatePlan
         public async Task<ResultDto> Execute(RequestUpdatePlanDto request)
         {
 
-            var existsResult = await _repository.IsExists<Plan>(request.Id);
+            var existsResult = await _repository.Get<Plan>(request.Id);
 
-            if (!existsResult)
+            if (!existsResult.IsSuccess)
             {
                 return new ResultDto()
                 {

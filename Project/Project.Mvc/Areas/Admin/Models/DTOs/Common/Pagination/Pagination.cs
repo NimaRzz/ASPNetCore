@@ -1,4 +1,4 @@
-﻿namespace Project.Mvc.Areas.Admin.Models.DTOs.Common.Pagination
+﻿namespace Project.Presentation.Areas.Admin.Models.DTOs.Common.Pagination
 {
     public class Pagination
     {

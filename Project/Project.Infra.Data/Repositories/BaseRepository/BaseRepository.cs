@@ -20,26 +20,7 @@ namespace Project.Infra.Data.Repositories.BaseRepository
             _context = context;
         }
 
-        public async Task<bool> IsExists<T>(object Id) where T : class
-        {
-            T entity = null;
-            if (Id is long longId)
-            {
-                entity = await _context.Set<T>().AsNoTracking().FirstOrDefaultAsync(e => EF.Property<long>(e, "Id") == longId);
-            }
-
-            if (Id is string stringId)
-            {
-                entity = await _context.Set<T>().AsNoTracking().FirstOrDefaultAsync(e => EF.Property<string>(e, "Id") == stringId);
-            }
-
-            if (entity != null)
-            {
-                return true;
-            }
-            return false;
-        }
-
+     
         public async Task<ResultDto<T>> Get<T>(object Id) where T : class
         {
 
@@ -107,47 +88,11 @@ namespace Project.Infra.Data.Repositories.BaseRepository
 
                 // استخراج RowVersion از رکورد قدیمی
                 var rowVersion = entry.Property("RowVersion").CurrentValue;
+ 
+                entry.CurrentValues.SetValues(Object);
 
-               
-
-
-                if (Object is Domain.Entities.Offices.Office office)
-                {
-                    var NewId = entry.Property("NewId");
-
-                    if (NewId.CurrentValue != null)
-                    {
-                        var pkValue = entry.Property("Id").CurrentValue;
-
-                        var oldEntity = await _context.Set<T>().FindAsync(pkValue);
-
-                        if (oldEntity != null)
-                        {
-                            _context.Set<T>().Remove(oldEntity);
-
-                            var workCalendars = await _context.WorkCalendars.AsNoTracking().Where(p => EF.Property<string>(p, "OfficeId") == pkValue).FirstOrDefaultAsync();
-                           
-                            _context.Remove(workCalendars);
-                        }
-
-
-                        var InsertTime = _context.Entry(oldEntity).Property("InsertTime").CurrentValue;
-                        entry.Property("Id").CurrentValue = NewId.CurrentValue;
-                        entry.Property("UpdateTime").CurrentValue = DateTime.Now;
-                        entry.Property("InsertTime").CurrentValue = InsertTime;
-                        NewId.CurrentValue = null;
-                        await _context.Set<T>().AddAsync(Object);
-                    }
-
-                }
-                else
-                {
-                    entry.CurrentValues.SetValues(Object);
-
-                    entry.State = EntityState.Modified;
-
-
-                }
+                entry.State = EntityState.Modified;
+                
                 entry.Property("InsertTime").IsModified = false;
 
                 entry.Property("RowVersion").CurrentValue = rowVersion;

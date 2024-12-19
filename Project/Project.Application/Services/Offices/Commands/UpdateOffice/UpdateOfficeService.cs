@@ -27,9 +27,9 @@ namespace Project.Application.Services.Offices.Commands.UpdateOffice
         public async Task<ResultDto> Execute(RequestUpdateOfficeDto request)
         {
 
-            var existsResult = await _repository.IsExists<Office>(request.Id);
+            var existsResult = await _repository.Get<Office>(request.Id);
 
-            if (!existsResult)
+            if (!existsResult.IsSuccess)
             {
 
                 return new ResultDto()
@@ -72,41 +72,15 @@ namespace Project.Application.Services.Offices.Commands.UpdateOffice
                 return validationResult;
             }
 
-            string Id = request.Id.Remove(0, 2);
-           
-            if (request.ProvinceId < 10)
-            {
-                Id = $"0{request.ProvinceId}{Id}";
-            }
-            else if (request.ProvinceId >= 10)
-            {
-                Id = $"{request.ProvinceId}{Id}";
-            }
 
-
-            if (Id == request.Id)
-            {
-                Id = null;
-            }
             
-            var existsResult2 = await _repository.IsExists<Office>(Id);
-
-            if (existsResult2)
-            {
-
-                return new ResultDto()
-                {
-                    IsSuccess = false,
-                    Message = "دفتری با این شماره وجود دارد"
-                };
-            }
+        
 
             Office office = new()
             {
                 Id = request.Id,
-                NewId = Id,
                 Name = request.Name,
-                ProvinceId = request.ProvinceId,
+                ProvinceId = existsResult.Data.ProvinceId,
                 Address = request.Address,
                 WorkCalendars = workCalendar
             };

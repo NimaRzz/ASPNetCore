@@ -1,6 +1,6 @@
 [
   {
-    "ContainingType": "Project.Mvc.Areas.Admin.Controllers.OfficesController",
+    "ContainingType": "Project.Presentation.Areas.Admin.Controllers.OfficesController",
     "Method": "Add",
     "RelativePath": "api/Offices/add",
     "HttpMethod": "POST",
@@ -9,14 +9,14 @@
     "Parameters": [
       {
         "Name": "request",
-        "Type": "Project.Mvc.Areas.Admin.Models.DTOs.Office.OfficeDto",
+        "Type": "Project.Presentation.Areas.Admin.Models.DTOs.Office.AddOfficeDto",
         "IsRequired": true
       }
     ],
     "ReturnTypes": []
   },
   {
-    "ContainingType": "Project.Mvc.Areas.Admin.Controllers.OfficesController",
+    "ContainingType": "Project.Presentation.Areas.Admin.Controllers.OfficesController",
     "Method": "Delete",
     "RelativePath": "api/Offices/delete",
     "HttpMethod": "POST",
@@ -32,7 +32,7 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "Project.Mvc.Areas.Admin.Controllers.OfficesController",
+    "ContainingType": "Project.Presentation.Areas.Admin.Controllers.OfficesController",
     "Method": "Get",
     "RelativePath": "api/Offices/get",
     "HttpMethod": "POST",
@@ -48,7 +48,7 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "Project.Mvc.Areas.Admin.Controllers.OfficesController",
+    "ContainingType": "Project.Presentation.Areas.Admin.Controllers.OfficesController",
     "Method": "Get",
     "RelativePath": "api/Offices/getall",
     "HttpMethod": "POST",
@@ -57,14 +57,14 @@
     "Parameters": [
       {
         "Name": "request",
-        "Type": "Project.Mvc.Areas.Admin.Models.DTOs.Common.Pagination.Pagination",
+        "Type": "Project.Presentation.Areas.Admin.Models.DTOs.Common.Pagination.Pagination",
         "IsRequired": true
       }
     ],
     "ReturnTypes": []
   },
   {
-    "ContainingType": "Project.Mvc.Areas.Admin.Controllers.OfficesController",
+    "ContainingType": "Project.Presentation.Areas.Admin.Controllers.OfficesController",
     "Method": "Update",
     "RelativePath": "api/Offices/update",
     "HttpMethod": "POST",
@@ -73,14 +73,14 @@
     "Parameters": [
       {
         "Name": "request",
-        "Type": "Project.Mvc.Areas.Admin.Models.DTOs.Office.OfficeDto",
+        "Type": "Project.Presentation.Areas.Admin.Models.DTOs.Office.OfficeDto",
         "IsRequired": true
       }
     ],
     "ReturnTypes": []
   },
   {
-    "ContainingType": "Project.Mvc.Areas.Admin.Controllers.PlansController",
+    "ContainingType": "Project.Presentation.Areas.Admin.Controllers.PlansController",
     "Method": "Add",
     "RelativePath": "api/Plans/add",
     "HttpMethod": "POST",
@@ -89,14 +89,14 @@
     "Parameters": [
       {
         "Name": "request",
-        "Type": "Project.Mvc.Areas.Admin.Models.DTOs.Plan.PlanDto",
+        "Type": "Project.Presentation.Areas.Admin.Models.DTOs.Plan.PlanDto",
         "IsRequired": true
       }
     ],
     "ReturnTypes": []
   },
   {
-    "ContainingType": "Project.Mvc.Areas.Admin.Controllers.PlansController",
+    "ContainingType": "Project.Presentation.Areas.Admin.Controllers.PlansController",
     "Method": "Delete",
     "RelativePath": "api/Plans/delete",
     "HttpMethod": "POST",
@@ -112,7 +112,7 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "Project.Mvc.Areas.Admin.Controllers.PlansController",
+    "ContainingType": "Project.Presentation.Areas.Admin.Controllers.PlansController",
     "Method": "Get",
     "RelativePath": "api/Plans/get",
     "HttpMethod": "POST",
@@ -128,7 +128,7 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "Project.Mvc.Areas.Admin.Controllers.PlansController",
+    "ContainingType": "Project.Presentation.Areas.Admin.Controllers.PlansController",
     "Method": "Get",
     "RelativePath": "api/Plans/getall",
     "HttpMethod": "POST",
@@ -137,14 +137,14 @@
     "Parameters": [
       {
         "Name": "request",
-        "Type": "Project.Mvc.Areas.Admin.Models.DTOs.Common.Pagination.Pagination",
+        "Type": "Project.Presentation.Areas.Admin.Models.DTOs.Common.Pagination.Pagination",
         "IsRequired": true
       }
     ],
     "ReturnTypes": []
   },
   {
-    "ContainingType": "Project.Mvc.Areas.Admin.Controllers.PlansController",
+    "ContainingType": "Project.Presentation.Areas.Admin.Controllers.PlansController",
     "Method": "Update",
     "RelativePath": "api/Plans/update",
     "HttpMethod": "POST",
@@ -153,7 +153,7 @@
     "Parameters": [
       {
         "Name": "request",
-        "Type": "Project.Mvc.Areas.Admin.Models.DTOs.Plan.PlanDto",
+        "Type": "Project.Presentation.Areas.Admin.Models.DTOs.Plan.PlanDto",
         "IsRequired": true
       }
     ],

@@ -5,10 +5,10 @@ using Project.Application.Services.Offices.Commands.AddOffice;
 using Project.Application.Services.Offices.Commands.UpdateOffice;
 using Project.Application.Services.Offices.Queries.GetOffices;
 using Project.Domain.Entities.Offices;
-using Project.Mvc.Areas.Admin.Models.DTOs.Common.Pagination;
-using Project.Mvc.Areas.Admin.Models.DTOs.Office;
+using Project.Presentation.Areas.Admin.Models.DTOs.Common.Pagination;
+using Project.Presentation.Areas.Admin.Models.DTOs.Office;
 
-namespace Project.Mvc.Areas.Admin.Controllers
+namespace Project.Presentation.Areas.Admin.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
@@ -23,7 +23,7 @@ namespace Project.Mvc.Areas.Admin.Controllers
         }
 
         [HttpPost("add")]
-        public async Task<IActionResult> Add([FromBody] OfficeDto request)
+        public async Task<IActionResult> Add([FromBody] AddOfficeDto request)
         {
 
             var result = await _officeFacad.AddOfficeService.Execute(new RequestAddOfficeDto()
@@ -48,7 +48,6 @@ namespace Project.Mvc.Areas.Admin.Controllers
             {
                 Id = request.Id,
                 Name = request.Name,
-                ProvinceId = request.ProvinceId,
                 Address = request.Address,
                 Workdays = request.Workdays
             });

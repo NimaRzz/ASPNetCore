@@ -46,8 +46,8 @@ namespace Project.Application.Services.Plans.Commands.AddPlan
             }
             
 
-            var existsResult = await _repository.IsExists<Plan>(request.Id);
-            if (existsResult)
+            var existsResult = await _repository.Get<Plan>(request.Id);
+            if (existsResult.IsSuccess)
             {
                 return new ResultDto()
                 {

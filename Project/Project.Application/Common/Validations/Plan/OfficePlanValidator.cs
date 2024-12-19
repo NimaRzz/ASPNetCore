@@ -16,7 +16,8 @@ namespace Project.Application.Common.Validations.Plan
         public static async Task<ResultDto> ValidateRequest(object request, IPlanRepository repository)
         {
 
-            if (!await repository.IsExists<Domain.Entities.Offices.Office>(request))
+            var result = await repository.Get<Domain.Entities.Offices.Office>(request);
+            if (!result.IsSuccess)
             {
                 return new ResultDto
                 {

@@ -1,14 +1,14 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using Project.Mvc.Areas.Admin.Models.DTOs.Plan;
+using Project.Presentation.Areas.Admin.Models.DTOs.Plan;
 using Project.Application.Interfaces.FacadPatterns;
 using Project.Application.Services.Plans.Commands.AddPlan;
 using Project.Application.Services.Plans.Commands.UpdatePlan;
 using Project.Domain.Entities.Offices;
-using Project.Mvc.Areas.Admin.Models.DTOs.Common.Pagination;
+using Project.Presentation.Areas.Admin.Models.DTOs.Common.Pagination;
 using Project.Application.Services.Plans.Queries.GetPlans;
 
-namespace Project.Mvc.Areas.Admin.Controllers
+namespace Project.Presentation.Areas.Admin.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]

@@ -1,6 +1,6 @@
 ﻿using Project.Application.Services.Plans.Commands.DTOs;
 
-namespace Project.Mvc.Areas.Admin.Models.DTOs.Plan
+namespace Project.Presentation.Areas.Admin.Models.DTOs.Plan
 {
     public class PlanDto
     {

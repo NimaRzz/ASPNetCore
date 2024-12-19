@@ -45,9 +45,9 @@ namespace Project.Application.Services.Offices.Commands.AddOffice
 
            var Id = await CustomIdGenerator.GenerateId<long, long>(request.ProvinceId, id);
 
-            var existsResult = await _repository.IsExists<Office>(Id);
+            var existsResult = await _repository.Get<Office>(Id);
 
-            if (existsResult)
+            if (existsResult.IsSuccess)
             {
 
                 return new ResultDto()
