@@ -27,9 +27,9 @@ namespace Project.Application.Services.Offices.Commands.UpdateOffice
         public async Task<ResultDto> Execute(RequestUpdateOfficeDto request)
         {
 
-            var existsResult = await _repository.Get<Office>(request.Id);
+            var office = await _repository.Get<Office>(request.Id);
 
-            if (!existsResult.IsSuccess)
+            if (!office.IsSuccess)
             {
 
                 return new ResultDto()
@@ -72,20 +72,12 @@ namespace Project.Application.Services.Offices.Commands.UpdateOffice
                 return validationResult;
             }
 
+            office.Data.Id = request.Id;
+            office.Data.Name = request.Name;
+            office.Data.Address = request.Address;
+            office.Data.WorkCalendars = workCalendar;
 
-            
-        
-
-            Office office = new()
-            {
-                Id = request.Id,
-                Name = request.Name,
-                ProvinceId = existsResult.Data.ProvinceId,
-                Address = request.Address,
-                WorkCalendars = workCalendar
-            };
-
-            await _repository.Update<Office>(office);
+            await _repository.Update<Office>(office.Data);
             await _repository.SaveAsync();
 
             return new ResultDto()

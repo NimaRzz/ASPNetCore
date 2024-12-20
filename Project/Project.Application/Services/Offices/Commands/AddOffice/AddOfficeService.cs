@@ -14,6 +14,7 @@ using Project.Application.Services.Offices.Commands.AddOffice;
 using Project.Domain.Entities.Province;
 using Project.Application.Common.Validations.Common;
 using Project.Application.Common.GenerateId;
+using Project.Application.Common.Provinces;
 
 namespace Project.Application.Services.Offices.Commands.AddOffice
 {
@@ -62,6 +63,16 @@ namespace Project.Application.Services.Offices.Commands.AddOffice
             if (!validationResult.IsSuccess)
             {
                 return validationResult;
+            }
+
+            // بررسی استان
+            if (request.ProvinceId > 31 || request.ProvinceId < 1)
+            {
+                return new ResultDto
+                {
+                    IsSuccess = false,
+                    Message = "این استان وجود ندارد. از اعداد 1 تا 31 انتخاب کنید"
+                };
             }
 
             List<WorkCalendar> workCalendar = new();

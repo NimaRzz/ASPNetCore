@@ -14,8 +14,6 @@ namespace Project.Domain.Entities.Offices
 
         public string Address { get; set; }
 
-        public string? NewId { get; set; }
-
         public byte[] RowVersion { get; set; } // فیلد همزمانی
 
         public Province.Province Province { get; set; }

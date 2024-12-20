@@ -3,36 +3,12 @@
   "WorkspaceRootPath": "C:\\Users\\Nima\\Desktop\\WebApi\\Project\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{4C71AD87-1383-45AB-BAD2-156C5C02129B}|Project.Mvc\\Project.Presentation.csproj|c:\\users\\nima\\desktop\\webapi\\project\\project.mvc\\areas\\admin\\controllers\\officescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4C71AD87-1383-45AB-BAD2-156C5C02129B}|Project.Mvc\\Project.Presentation.csproj|solutionrelative:project.mvc\\areas\\admin\\controllers\\officescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{4C71AD87-1383-45AB-BAD2-156C5C02129B}|Project.Mvc\\Project.Presentation.csproj|c:\\users\\nima\\desktop\\webapi\\project\\project.mvc\\areas\\admin\\models\\dtos\\office\\addofficedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4C71AD87-1383-45AB-BAD2-156C5C02129B}|Project.Mvc\\Project.Presentation.csproj|solutionrelative:project.mvc\\areas\\admin\\models\\dtos\\office\\addofficedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{4C71AD87-1383-45AB-BAD2-156C5C02129B}|Project.Mvc\\Project.Presentation.csproj|c:\\users\\nima\\desktop\\webapi\\project\\project.mvc\\areas\\admin\\models\\dtos\\office\\officedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4C71AD87-1383-45AB-BAD2-156C5C02129B}|Project.Mvc\\Project.Presentation.csproj|solutionrelative:project.mvc\\areas\\admin\\models\\dtos\\office\\officedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{4933E939-437D-47D5-AB86-256F713B707D}|Project.Infra.Data\\Project.Infra.Data.csproj|c:\\users\\nima\\desktop\\webapi\\project\\project.infra.data\\repositories\\office\\officerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4933E939-437D-47D5-AB86-256F713B707D}|Project.Infra.Data\\Project.Infra.Data.csproj|solutionrelative:project.infra.data\\repositories\\office\\officerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{4933E939-437D-47D5-AB86-256F713B707D}|Project.Infra.Data\\Project.Infra.Data.csproj|c:\\users\\nima\\desktop\\webapi\\project\\project.infra.data\\repositories\\plan\\planrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4933E939-437D-47D5-AB86-256F713B707D}|Project.Infra.Data\\Project.Infra.Data.csproj|solutionrelative:project.infra.data\\repositories\\plan\\planrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{20B127D4-593E-48D3-A4C1-EE82DD59CF10}|Project.Application\\Project.Application.csproj|c:\\users\\nima\\desktop\\webapi\\project\\project.application\\services\\plans\\commands\\addplan\\addplanservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{20B127D4-593E-48D3-A4C1-EE82DD59CF10}|Project.Application\\Project.Application.csproj|solutionrelative:project.application\\services\\plans\\commands\\addplan\\addplanservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{20B127D4-593E-48D3-A4C1-EE82DD59CF10}|Project.Application\\Project.Application.csproj|c:\\users\\nima\\desktop\\webapi\\project\\project.application\\services\\plans\\commands\\updateplan\\updateplanservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{20B127D4-593E-48D3-A4C1-EE82DD59CF10}|Project.Application\\Project.Application.csproj|solutionrelative:project.application\\services\\plans\\commands\\updateplan\\updateplanservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{20B127D4-593E-48D3-A4C1-EE82DD59CF10}|Project.Application\\Project.Application.csproj|c:\\users\\nima\\desktop\\webapi\\project\\project.application\\services\\offices\\commands\\addoffice\\addofficeservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{20B127D4-593E-48D3-A4C1-EE82DD59CF10}|Project.Application\\Project.Application.csproj|solutionrelative:project.application\\services\\offices\\commands\\addoffice\\addofficeservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{20B127D4-593E-48D3-A4C1-EE82DD59CF10}|Project.Application\\Project.Application.csproj|c:\\users\\nima\\desktop\\webapi\\project\\project.application\\services\\offices\\commands\\updateoffice\\updateofficeservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{20B127D4-593E-48D3-A4C1-EE82DD59CF10}|Project.Application\\Project.Application.csproj|solutionrelative:project.application\\services\\offices\\commands\\updateoffice\\updateofficeservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -42,7 +18,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 389,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 4,
           "Children": [
             {
               "$type": "Bookmark",
@@ -58,106 +34,28 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "OfficesController.cs",
-              "DocumentMoniker": "C:\\Users\\Nima\\Desktop\\WebApi\\Project\\Project.Mvc\\Areas\\Admin\\Controllers\\OfficesController.cs",
-              "RelativeDocumentMoniker": "Project.Mvc\\Areas\\Admin\\Controllers\\OfficesController.cs",
-              "ToolTip": "C:\\Users\\Nima\\Desktop\\WebApi\\Project\\Project.Mvc\\Areas\\Admin\\Controllers\\OfficesController.cs",
-              "RelativeToolTip": "Project.Mvc\\Areas\\Admin\\Controllers\\OfficesController.cs",
-              "ViewState": "AgIAACQAAAAAAAAAAAAAADAAAAAgAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-19T20:57:26.14Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "AddOfficeDto.cs",
-              "DocumentMoniker": "C:\\Users\\Nima\\Desktop\\WebApi\\Project\\Project.Mvc\\Areas\\Admin\\Models\\DTOs\\Office\\AddOfficeDto.cs",
-              "RelativeDocumentMoniker": "Project.Mvc\\Areas\\Admin\\Models\\DTOs\\Office\\AddOfficeDto.cs",
-              "ToolTip": "C:\\Users\\Nima\\Desktop\\WebApi\\Project\\Project.Mvc\\Areas\\Admin\\Models\\DTOs\\Office\\AddOfficeDto.cs",
-              "RelativeToolTip": "Project.Mvc\\Areas\\Admin\\Models\\DTOs\\Office\\AddOfficeDto.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAAAAAAAAAAAA==",
+              "Title": "UpdateOfficeService.cs",
+              "DocumentMoniker": "C:\\Users\\Nima\\Desktop\\WebApi\\Project\\Project.Application\\Services\\Offices\\Commands\\UpdateOffice\\UpdateOfficeService.cs",
+              "RelativeDocumentMoniker": "Project.Application\\Services\\Offices\\Commands\\UpdateOffice\\UpdateOfficeService.cs",
+              "ToolTip": "C:\\Users\\Nima\\Desktop\\WebApi\\Project\\Project.Application\\Services\\Offices\\Commands\\UpdateOffice\\UpdateOfficeService.cs",
+              "RelativeToolTip": "Project.Application\\Services\\Offices\\Commands\\UpdateOffice\\UpdateOfficeService.cs",
+              "ViewState": "AgIAACcAAAAAAAAAAAAAwAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-19T20:56:59.93Z",
+              "WhenOpened": "2024-12-20T04:02:10.561Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "OfficeDto.cs",
-              "DocumentMoniker": "C:\\Users\\Nima\\Desktop\\WebApi\\Project\\Project.Mvc\\Areas\\Admin\\Models\\DTOs\\Office\\OfficeDto.cs",
-              "RelativeDocumentMoniker": "Project.Mvc\\Areas\\Admin\\Models\\DTOs\\Office\\OfficeDto.cs",
-              "ToolTip": "C:\\Users\\Nima\\Desktop\\WebApi\\Project\\Project.Mvc\\Areas\\Admin\\Models\\DTOs\\Office\\OfficeDto.cs",
-              "RelativeToolTip": "Project.Mvc\\Areas\\Admin\\Models\\DTOs\\Office\\OfficeDto.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAoAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-19T20:56:11.252Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "PlanRepository.cs",
-              "DocumentMoniker": "C:\\Users\\Nima\\Desktop\\WebApi\\Project\\Project.Infra.Data\\Repositories\\Plan\\PlanRepository.cs",
-              "RelativeDocumentMoniker": "Project.Infra.Data\\Repositories\\Plan\\PlanRepository.cs",
-              "ToolTip": "C:\\Users\\Nima\\Desktop\\WebApi\\Project\\Project.Infra.Data\\Repositories\\Plan\\PlanRepository.cs",
-              "RelativeToolTip": "Project.Infra.Data\\Repositories\\Plan\\PlanRepository.cs",
-              "ViewState": "AgIAAAgAAAAAAAAAAAAlwBQAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-19T20:53:30.346Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "OfficeRepository.cs",
-              "DocumentMoniker": "C:\\Users\\Nima\\Desktop\\WebApi\\Project\\Project.Infra.Data\\Repositories\\Office\\OfficeRepository.cs",
-              "RelativeDocumentMoniker": "Project.Infra.Data\\Repositories\\Office\\OfficeRepository.cs",
-              "ToolTip": "C:\\Users\\Nima\\Desktop\\WebApi\\Project\\Project.Infra.Data\\Repositories\\Office\\OfficeRepository.cs",
-              "RelativeToolTip": "Project.Infra.Data\\Repositories\\Office\\OfficeRepository.cs",
-              "ViewState": "AgIAAAwAAAAAAAAAAAAlwBcAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-19T20:53:13.122Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "AddPlanService.cs",
-              "DocumentMoniker": "C:\\Users\\Nima\\Desktop\\WebApi\\Project\\Project.Application\\Services\\Plans\\Commands\\AddPlan\\AddPlanService.cs",
-              "RelativeDocumentMoniker": "Project.Application\\Services\\Plans\\Commands\\AddPlan\\AddPlanService.cs",
-              "ToolTip": "C:\\Users\\Nima\\Desktop\\WebApi\\Project\\Project.Application\\Services\\Plans\\Commands\\AddPlan\\AddPlanService.cs",
-              "RelativeToolTip": "Project.Application\\Services\\Plans\\Commands\\AddPlan\\AddPlanService.cs",
-              "ViewState": "AgIAACIAAAAAAAAAAAAlwDQAAAARAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-19T20:52:59.581Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 0,
               "Title": "UpdatePlanService.cs",
               "DocumentMoniker": "C:\\Users\\Nima\\Desktop\\WebApi\\Project\\Project.Application\\Services\\Plans\\Commands\\UpdatePlan\\UpdatePlanService.cs",
               "RelativeDocumentMoniker": "Project.Application\\Services\\Plans\\Commands\\UpdatePlan\\UpdatePlanService.cs",
               "ToolTip": "C:\\Users\\Nima\\Desktop\\WebApi\\Project\\Project.Application\\Services\\Plans\\Commands\\UpdatePlan\\UpdatePlanService.cs",
               "RelativeToolTip": "Project.Application\\Services\\Plans\\Commands\\UpdatePlan\\UpdatePlanService.cs",
-              "ViewState": "AgIAAA4AAAAAAAAAAAAlwCIAAAAmAAAAAAAAAA==",
+              "ViewState": "AgIAACEAAAAAAAAAAAAAwC4AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-19T20:52:36.522Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "AddOfficeService.cs",
-              "DocumentMoniker": "C:\\Users\\Nima\\Desktop\\WebApi\\Project\\Project.Application\\Services\\Offices\\Commands\\AddOffice\\AddOfficeService.cs",
-              "RelativeDocumentMoniker": "Project.Application\\Services\\Offices\\Commands\\AddOffice\\AddOfficeService.cs",
-              "ToolTip": "C:\\Users\\Nima\\Desktop\\WebApi\\Project\\Project.Application\\Services\\Offices\\Commands\\AddOffice\\AddOfficeService.cs",
-              "RelativeToolTip": "Project.Application\\Services\\Offices\\Commands\\AddOffice\\AddOfficeService.cs",
-              "ViewState": "AgIAACIAAAAAAAAAAAAAwDEAAAAnAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-19T20:51:59.047Z",
+              "WhenOpened": "2024-12-20T03:59:24.248Z",
               "EditorCaption": ""
             }
           ]

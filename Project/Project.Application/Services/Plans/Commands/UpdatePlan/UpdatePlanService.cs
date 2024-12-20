@@ -26,9 +26,9 @@ namespace Project.Application.Services.Plans.Commands.UpdatePlan
         public async Task<ResultDto> Execute(RequestUpdatePlanDto request)
         {
 
-            var existsResult = await _repository.Get<Plan>(request.Id);
+            var plan = await _repository.Get<Plan>(request.Id);
 
-            if (!existsResult.IsSuccess)
+            if (!plan.IsSuccess)
             {
                 return new ResultDto()
                 {
@@ -43,22 +43,15 @@ namespace Project.Application.Services.Plans.Commands.UpdatePlan
             {
                 return planValidateResult;
             }
+   
 
-            var planRowVersion = await _repository.Get<Plan>(request.Id);
+            plan.Data.Id = request.Id;
+            plan.Data.Name = request.Name;
+            plan.Data.Capacity = request.Capacity;
+            plan.Data.StartPlan = request.StartPlan;
+            plan.Data.EndPlan = request.EndPlan;
 
-            Plan plan = new()
-            {
-                Id = request.Id,
-                Name = request.Name,
-                Capacity = request.Capacity,
-                StartPlan = request.StartPlan,
-                EndPlan = request.EndPlan,
-                RowVersion = planRowVersion.Data.RowVersion,
-            };
-
-
-              
-            await _repository.Update<Plan>(plan);
+            await _repository.Update<Plan>(plan.Data);
             
             await _repository.SaveAsync();
 
