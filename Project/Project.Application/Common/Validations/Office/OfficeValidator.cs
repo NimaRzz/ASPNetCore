@@ -17,19 +17,13 @@ namespace Project.Application.Common.Validations.Office
     public class OfficeValidator
     {
 
-        public static async Task<ResultDto> ValidateOfficeRequest(object request)
+        public static async Task<ResultDto> ValidateOfficeRequest(OfficeCommandsDto request)
         {
             ResultDto result = new();
 
-            // بررسی اینکه آیا شماره دفتر وارد شده است یا نه
-            if (request is RequestUpdateOfficeDto updateRequest)
-            {
-                result = await ValidateRequest(updateRequest.Id, updateRequest.Name, updateRequest.Address, updateRequest.Workdays);
-            }
-            else if (request is RequestAddOfficeDto addRequest)
-            {
-                result = await ValidateRequest(addRequest.Id, addRequest.Name, addRequest.Address, addRequest.Workdays);
-            }
+          
+           result = await ValidateRequest(request.Id, request.Name, request.Address, request.Workdays);
+            
 
             return result;
         }

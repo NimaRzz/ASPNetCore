@@ -19,6 +19,10 @@ namespace Project.Application.Interfaces.FacadPatterns
 
         IGetOfficesService GetOfficesService { get; }
 
+        IAddPlanToOfficeService AddPlanToOfficeService { get; }
+
+        IDeleteOfficePlanService DeleteOfficePlanService { get; }
+
 
     }
 }

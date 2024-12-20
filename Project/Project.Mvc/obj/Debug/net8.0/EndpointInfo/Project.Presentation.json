@@ -160,6 +160,68 @@
         }
       }
     },
+    "/api/Offices/OfficeOptions-AddPlanToOffice": {
+      "post": {
+        "tags": [
+          "Offices"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/OfficePlansDto"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/OfficePlansDto"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/OfficePlansDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/Offices/OfficeOptions-DeleteOfficePlan": {
+      "post": {
+        "tags": [
+          "Offices"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/OfficePlansDto"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/OfficePlansDto"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/OfficePlansDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
     "/api/Plans/add": {
       "post": {
         "tags": [
@@ -380,6 +442,20 @@
             "items": {
               "$ref": "#/components/schemas/OfficeWorkCalendarCommandsDto"
             },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "OfficePlansDto": {
+        "type": "object",
+        "properties": {
+          "officeId": {
+            "type": "string",
+            "nullable": true
+          },
+          "planId": {
+            "type": "string",
             "nullable": true
           }
         },

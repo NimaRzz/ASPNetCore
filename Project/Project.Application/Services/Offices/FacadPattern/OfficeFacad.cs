@@ -6,7 +6,9 @@ using System.Threading.Tasks;
 using Project.Application.Interfaces.FacadPatterns;
 using Project.Application.Interfaces.Offices;
 using Project.Application.Services.Offices.Commands.AddOffice;
+using Project.Application.Services.Offices.Commands.AddPlanToOffice;
 using Project.Application.Services.Offices.Commands.DeleteOffice;
+using Project.Application.Services.Offices.Commands.DeleteOfficePlan;
 using Project.Application.Services.Offices.Commands.UpdateOffice;
 using Project.Application.Services.Offices.Queries.GetOffice;
 using Project.Application.Services.Offices.Queries.GetOffices;
@@ -72,5 +74,24 @@ namespace Project.Application.Services.Offices.FacadPattern
                 return _getOfficesService = _getOfficesService ?? new GetOfficesService(_repository);
             }
         }
+
+        private IAddPlanToOfficeService _addPlanToOfficeService;
+
+        public IAddPlanToOfficeService AddPlanToOfficeService
+        {
+            get
+            {
+                return _addPlanToOfficeService = _addPlanToOfficeService ?? new AddPlanToOfficeService(_repository);
+            }
+        }
+
+        private IDeleteOfficePlanService _deleteOfficePlanService;
+
+        public IDeleteOfficePlanService DeleteOfficePlanService
+        {
+            get {
+                return _deleteOfficePlanService = _deleteOfficePlanService ?? new DeleteOfficePlanService(_repository);
+            }
+            }
     }
 }

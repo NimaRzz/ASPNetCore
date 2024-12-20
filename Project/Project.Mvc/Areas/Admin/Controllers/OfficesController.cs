@@ -2,11 +2,14 @@
 using Microsoft.AspNetCore.Mvc;
 using Project.Application.Interfaces.FacadPatterns;
 using Project.Application.Services.Offices.Commands.AddOffice;
+using Project.Application.Services.Offices.Commands.AddPlanToOffice;
+using Project.Application.Services.Offices.Commands.DeleteOfficePlan;
 using Project.Application.Services.Offices.Commands.UpdateOffice;
 using Project.Application.Services.Offices.Queries.GetOffices;
 using Project.Domain.Entities.Offices;
 using Project.Presentation.Areas.Admin.Models.DTOs.Common.Pagination;
 using Project.Presentation.Areas.Admin.Models.DTOs.Office;
+using Project.Presentation.Areas.Admin.Models.DTOs.OfficePlans;
 
 namespace Project.Presentation.Areas.Admin.Controllers
 {
@@ -85,6 +88,33 @@ namespace Project.Presentation.Areas.Admin.Controllers
 
             return Ok(result);
         }
+
+        [HttpPost("OfficeOptions-AddPlanToOffice")]
+        public async Task<IActionResult> AddPlanToOffice([FromBody] OfficePlansDto request)
+        {
+
+            var result = await _officeFacad.AddPlanToOfficeService.Execute(new RequestAddPlanToOfficeDto
+            {
+                OfficeId = request.OfficeId,
+                PlanId = request.PlanId,
+            });
+
+            return Ok(result);
+        }
+
+        [HttpPost("OfficeOptions-DeleteOfficePlan")]
+        public async Task<IActionResult> DeleteOfficePlan([FromBody] OfficePlansDto request)
+        {
+
+            var result = await _officeFacad.DeleteOfficePlanService.Execute(new RequestDeleteOfficePlanDto
+            {
+                OfficeId = request.OfficeId,
+                PlanId = request.PlanId,
+            });
+
+            return Ok(result);
+        }
+
     }
 }
 

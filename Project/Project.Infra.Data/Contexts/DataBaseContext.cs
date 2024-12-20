@@ -107,6 +107,15 @@ namespace Project.Infra.Data.Contexts
                         plan.RemoveTime = DateTime.Now;
                         entry.State = EntityState.Modified;
                     }
+
+
+                    if (entry.Entity is OfficePlan officePlan)
+                    {
+                        officePlan.IsRemoved = true;
+                        officePlan.RemoveTime = DateTime.Now;
+                        entry.State = EntityState.Modified;
+                    }
+
                 }
 
                 if (entry.State == EntityState.Added)
@@ -242,6 +251,7 @@ namespace Project.Infra.Data.Contexts
             modelBuilder.Entity<User>().HasQueryFilter(p => !p.IsRemoved);
             modelBuilder.Entity<Citizen>().HasQueryFilter(p => !p.IsRemoved);
             modelBuilder.Entity<Office>().HasQueryFilter(p => !p.IsRemoved);
+            modelBuilder.Entity<OfficePlan>().HasQueryFilter(p => !p.IsRemoved);
             modelBuilder.Entity<Plan>().HasQueryFilter(p => !p.IsRemoved);
             modelBuilder.Entity<Appointment>().HasQueryFilter(p => !p.IsRemoved);
             modelBuilder.Entity<Province>().HasQueryFilter(p => !p.IsRemoved);

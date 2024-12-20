@@ -20,11 +20,11 @@ namespace Project.Domain.Entities.Offices
 
         public long ProvinceId { get; set; }
 
-        public ICollection<OfficePlan> OfficePlans { get; set; }
+        public List<OfficePlan> OfficePlans { get; set; }
 
-        public ICollection<Citizen> Citizens { get; set; }
+        public List<Citizen> Citizens { get; set; }
        
-        public ICollection<WorkCalendar> WorkCalendars { get; set; }
+        public List<WorkCalendar> WorkCalendars { get; set; }
 
 
     }

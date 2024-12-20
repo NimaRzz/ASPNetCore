@@ -3,12 +3,24 @@
   "WorkspaceRootPath": "C:\\Users\\Nima\\Desktop\\WebApi\\Project\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{20B127D4-593E-48D3-A4C1-EE82DD59CF10}|Project.Application\\Project.Application.csproj|c:\\users\\nima\\desktop\\webapi\\project\\project.application\\services\\plans\\commands\\updateplan\\updateplanservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{20B127D4-593E-48D3-A4C1-EE82DD59CF10}|Project.Application\\Project.Application.csproj|solutionrelative:project.application\\services\\plans\\commands\\updateplan\\updateplanservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{FFE2E485-38CB-4BB4-A758-D7C9A4EBA275}|Project.Domain\\Project.Domain.csproj|c:\\users\\nima\\desktop\\webapi\\project\\project.domain\\entities\\offices\\officeplan.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FFE2E485-38CB-4BB4-A758-D7C9A4EBA275}|Project.Domain\\Project.Domain.csproj|solutionrelative:project.domain\\entities\\offices\\officeplan.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{20B127D4-593E-48D3-A4C1-EE82DD59CF10}|Project.Application\\Project.Application.csproj|c:\\users\\nima\\desktop\\webapi\\project\\project.application\\services\\offices\\commands\\updateoffice\\updateofficeservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{20B127D4-593E-48D3-A4C1-EE82DD59CF10}|Project.Application\\Project.Application.csproj|solutionrelative:project.application\\services\\offices\\commands\\updateoffice\\updateofficeservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{4933E939-437D-47D5-AB86-256F713B707D}|Project.Infra.Data\\Project.Infra.Data.csproj|c:\\users\\nima\\desktop\\webapi\\project\\project.infra.data\\repositories\\office\\officerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4933E939-437D-47D5-AB86-256F713B707D}|Project.Infra.Data\\Project.Infra.Data.csproj|solutionrelative:project.infra.data\\repositories\\office\\officerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FFE2E485-38CB-4BB4-A758-D7C9A4EBA275}|Project.Domain\\Project.Domain.csproj|c:\\users\\nima\\desktop\\webapi\\project\\project.domain\\repository\\office\\iofficerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FFE2E485-38CB-4BB4-A758-D7C9A4EBA275}|Project.Domain\\Project.Domain.csproj|solutionrelative:project.domain\\repository\\office\\iofficerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{20B127D4-593E-48D3-A4C1-EE82DD59CF10}|Project.Application\\Project.Application.csproj|c:\\users\\nima\\desktop\\webapi\\project\\project.application\\services\\offices\\queries\\getoffice\\getofficeservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{20B127D4-593E-48D3-A4C1-EE82DD59CF10}|Project.Application\\Project.Application.csproj|solutionrelative:project.application\\services\\offices\\queries\\getoffice\\getofficeservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{20B127D4-593E-48D3-A4C1-EE82DD59CF10}|Project.Application\\Project.Application.csproj|c:\\users\\nima\\desktop\\webapi\\project\\project.application\\services\\offices\\queries\\getoffice\\resultgetofficedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{20B127D4-593E-48D3-A4C1-EE82DD59CF10}|Project.Application\\Project.Application.csproj|solutionrelative:project.application\\services\\offices\\queries\\getoffice\\resultgetofficedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -18,7 +30,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 389,
-          "SelectedChildIndex": 4,
+          "SelectedChildIndex": 3,
           "Children": [
             {
               "$type": "Bookmark",
@@ -34,28 +46,67 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "UpdateOfficeService.cs",
-              "DocumentMoniker": "C:\\Users\\Nima\\Desktop\\WebApi\\Project\\Project.Application\\Services\\Offices\\Commands\\UpdateOffice\\UpdateOfficeService.cs",
-              "RelativeDocumentMoniker": "Project.Application\\Services\\Offices\\Commands\\UpdateOffice\\UpdateOfficeService.cs",
-              "ToolTip": "C:\\Users\\Nima\\Desktop\\WebApi\\Project\\Project.Application\\Services\\Offices\\Commands\\UpdateOffice\\UpdateOfficeService.cs",
-              "RelativeToolTip": "Project.Application\\Services\\Offices\\Commands\\UpdateOffice\\UpdateOfficeService.cs",
-              "ViewState": "AgIAACcAAAAAAAAAAAAAwAAAAAAAAAAAAAAAAA==",
+              "DocumentIndex": 0,
+              "Title": "OfficePlan.cs",
+              "DocumentMoniker": "C:\\Users\\Nima\\Desktop\\WebApi\\Project\\Project.Domain\\Entities\\Offices\\OfficePlan.cs",
+              "RelativeDocumentMoniker": "Project.Domain\\Entities\\Offices\\OfficePlan.cs",
+              "ToolTip": "C:\\Users\\Nima\\Desktop\\WebApi\\Project\\Project.Domain\\Entities\\Offices\\OfficePlan.cs",
+              "RelativeToolTip": "Project.Domain\\Entities\\Offices\\OfficePlan.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-20T04:02:10.561Z",
+              "WhenOpened": "2024-12-20T15:17:43.208Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "UpdatePlanService.cs",
-              "DocumentMoniker": "C:\\Users\\Nima\\Desktop\\WebApi\\Project\\Project.Application\\Services\\Plans\\Commands\\UpdatePlan\\UpdatePlanService.cs",
-              "RelativeDocumentMoniker": "Project.Application\\Services\\Plans\\Commands\\UpdatePlan\\UpdatePlanService.cs",
-              "ToolTip": "C:\\Users\\Nima\\Desktop\\WebApi\\Project\\Project.Application\\Services\\Plans\\Commands\\UpdatePlan\\UpdatePlanService.cs",
-              "RelativeToolTip": "Project.Application\\Services\\Plans\\Commands\\UpdatePlan\\UpdatePlanService.cs",
-              "ViewState": "AgIAACEAAAAAAAAAAAAAwC4AAAAAAAAAAAAAAA==",
+              "DocumentIndex": 2,
+              "Title": "IOfficeRepository.cs",
+              "DocumentMoniker": "C:\\Users\\Nima\\Desktop\\WebApi\\Project\\Project.Domain\\Repository\\Office\\IOfficeRepository.cs",
+              "RelativeDocumentMoniker": "Project.Domain\\Repository\\Office\\IOfficeRepository.cs",
+              "ToolTip": "C:\\Users\\Nima\\Desktop\\WebApi\\Project\\Project.Domain\\Repository\\Office\\IOfficeRepository.cs",
+              "RelativeToolTip": "Project.Domain\\Repository\\Office\\IOfficeRepository.cs",
+              "ViewState": "AgIAAAUAAAAAAAAAAAAIwBIAAAAqAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-20T03:59:24.248Z",
+              "WhenOpened": "2024-12-20T15:05:15.822Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "OfficeRepository.cs",
+              "DocumentMoniker": "C:\\Users\\Nima\\Desktop\\WebApi\\Project\\Project.Infra.Data\\Repositories\\Office\\OfficeRepository.cs",
+              "RelativeDocumentMoniker": "Project.Infra.Data\\Repositories\\Office\\OfficeRepository.cs",
+              "ToolTip": "C:\\Users\\Nima\\Desktop\\WebApi\\Project\\Project.Infra.Data\\Repositories\\Office\\OfficeRepository.cs",
+              "RelativeToolTip": "Project.Infra.Data\\Repositories\\Office\\OfficeRepository.cs",
+              "ViewState": "AgIAAEoAAAAAAAAAAAAiwF4AAAASAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-20T14:51:47.943Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "ResultGetOfficeDto.cs",
+              "DocumentMoniker": "C:\\Users\\Nima\\Desktop\\WebApi\\Project\\Project.Application\\Services\\Offices\\Queries\\GetOffice\\ResultGetOfficeDto.cs",
+              "RelativeDocumentMoniker": "Project.Application\\Services\\Offices\\Queries\\GetOffice\\ResultGetOfficeDto.cs",
+              "ToolTip": "C:\\Users\\Nima\\Desktop\\WebApi\\Project\\Project.Application\\Services\\Offices\\Queries\\GetOffice\\ResultGetOfficeDto.cs",
+              "RelativeToolTip": "Project.Application\\Services\\Offices\\Queries\\GetOffice\\ResultGetOfficeDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAA0AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-20T14:50:24.054Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "GetOfficeService.cs",
+              "DocumentMoniker": "C:\\Users\\Nima\\Desktop\\WebApi\\Project\\Project.Application\\Services\\Offices\\Queries\\GetOffice\\GetOfficeService.cs",
+              "RelativeDocumentMoniker": "Project.Application\\Services\\Offices\\Queries\\GetOffice\\GetOfficeService.cs",
+              "ToolTip": "C:\\Users\\Nima\\Desktop\\WebApi\\Project\\Project.Application\\Services\\Offices\\Queries\\GetOffice\\GetOfficeService.cs",
+              "RelativeToolTip": "Project.Application\\Services\\Offices\\Queries\\GetOffice\\GetOfficeService.cs",
+              "ViewState": "AgIAACMAAAAAAAAAAAAmwCcAAAA+AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-20T14:50:23.17Z",
               "EditorCaption": ""
             }
           ]

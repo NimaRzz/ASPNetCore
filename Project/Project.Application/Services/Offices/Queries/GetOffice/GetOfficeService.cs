@@ -9,6 +9,7 @@ using Project.Domain.Common.Dto;
 using Project.Domain.Entities.Offices;
 using Project.Domain.Repository.Office;
 using Project.Application.Services.Offices.Commands.DTOs;
+using Project.Domain.Entities.Plans;
 
 
 namespace Project.Application.Services.Offices.Queries.GetOffice
@@ -36,6 +37,22 @@ namespace Project.Application.Services.Offices.Queries.GetOffice
                 };
             }
 
+            var officePlans = await _repository.GetOfficePlans(Id);
+           
+            List<string> plans = new();
+
+            if (officePlans.IsSuccess)
+            {
+                foreach (var item in officePlans.Data) { 
+                  
+                        var plan = await _repository.Get<Plan>(item.PlanId);
+                        if (plan.IsSuccess)
+                        {
+                            plans.Add(plan.Data.Name);
+                        }
+                    
+                }
+            }
 
             var workCalendars = await _repository.GetAllWorkCalendarsAsync(Id);
           
@@ -57,16 +74,19 @@ namespace Project.Application.Services.Offices.Queries.GetOffice
 
             string province = Enum.GetName(typeof(ProvincesEnum), provinceId);
 
+            ResultGetOfficeDto result = new()
+            {
+                Id = Id,
+                Address = office.Data.Address,
+                Name = office.Data.Name,
+                Province = province,
+                Workdays = calendars,
+                Plans = plans
+            };
+
             return new ResultDto<ResultGetOfficeDto>()
             {
-                Data = new ResultGetOfficeDto()
-                {
-                    Id = Id,
-                    Address = office.Data.Address,
-                    Name = office.Data.Name,
-                    Province = province,
-                    Workdays = calendars
-                },
+                Data = result,
                 IsSuccess = true,
                 Message = "دفتر با موفقیت دریافت شد"
             };

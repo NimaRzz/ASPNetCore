@@ -17,5 +17,7 @@ namespace Project.Application.Services.Offices.Queries.DTOs
 
         public string Province { get; set; }
 
+        public List<string> Plans { get; set; }
+
     }
 }

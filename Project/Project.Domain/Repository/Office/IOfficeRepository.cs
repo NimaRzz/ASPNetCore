@@ -14,5 +14,8 @@ namespace Project.Domain.Repository.Office
     {
         Task<List<WorkCalendar>> GetAllWorkCalendarsAsync(string OfficeId);
 
+        Task<ResultDto<OfficePlan>> GetOfficePlan(string OfficeId, string PlanId);
+
+        Task<ResultDto<List<OfficePlan>>> GetOfficePlans(string OfficeId);
     }
 }

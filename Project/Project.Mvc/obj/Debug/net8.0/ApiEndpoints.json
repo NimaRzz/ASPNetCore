@@ -65,6 +65,38 @@
   },
   {
     "ContainingType": "Project.Presentation.Areas.Admin.Controllers.OfficesController",
+    "Method": "AddPlanToOffice",
+    "RelativePath": "api/Offices/OfficeOptions-AddPlanToOffice",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "Project.Presentation.Areas.Admin.Models.DTOs.OfficePlans.OfficePlansDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Project.Presentation.Areas.Admin.Controllers.OfficesController",
+    "Method": "DeleteOfficePlan",
+    "RelativePath": "api/Offices/OfficeOptions-DeleteOfficePlan",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "Project.Presentation.Areas.Admin.Models.DTOs.OfficePlans.OfficePlansDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Project.Presentation.Areas.Admin.Controllers.OfficesController",
     "Method": "Update",
     "RelativePath": "api/Offices/update",
     "HttpMethod": "POST",
