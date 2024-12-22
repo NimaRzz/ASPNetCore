@@ -4,7 +4,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
-using Project.Application.Common.Roles;
 using Project.Domain.Entities.Citizens;
 using Project.Domain.Entities.Offices;
 using Project.Domain.Entities.Plans;
@@ -39,8 +38,6 @@ namespace Project.Infra.Data.Contexts
         public DbSet<Plan> Plans { get; set; }
 
         public DbSet<User> Users { get; set; }
-
-        public DbSet<Role> Roles { get; set; }
 
         public DbSet<Province> Provinces { get; set; }
 
@@ -180,20 +177,6 @@ namespace Project.Infra.Data.Contexts
                 .OnDelete(DeleteBehavior.Cascade);
 
 
-            modelBuilder.Entity<UserInRole>()
-                .HasOne(ur => ur.User)
-                .WithMany(u => u.UserInRoles)
-                .HasForeignKey(ur => ur.UserId)
-                .OnDelete(DeleteBehavior.Cascade);
-
-
-            modelBuilder.Entity<UserInRole>()
-                .HasOne(ur => ur.Role)
-                .WithMany(r => r.UserInRoles)
-                .HasForeignKey(ur => ur.RoleId)
-                .OnDelete(DeleteBehavior.Cascade);
-
-
             modelBuilder.Entity<Office>()
                 .HasOne(o => o.Province)
                 .WithMany(p => p.Offices)
@@ -260,10 +243,6 @@ namespace Project.Infra.Data.Contexts
 
         private void SeedData(ModelBuilder modelBuilder)
         {
-            //Roles
-            modelBuilder.Entity<Role>().HasData(new Role { Id = 1, Name = nameof(UserRoles.Citizen) });
-            modelBuilder.Entity<Role>().HasData(new Role { Id = 2, Name = nameof(UserRoles.Admin) });
-            modelBuilder.Entity<Role>().HasData(new Role { Id = 3, Name = nameof(UserRoles.Operator) });
 
             //Provinces
             modelBuilder.Entity<Province>().HasData(new Province { Id = 1, Name = nameof(ProvinceNames.AzarbaijanSharghi), InsertTime = DateTime.Now });

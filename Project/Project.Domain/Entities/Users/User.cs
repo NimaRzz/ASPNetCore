@@ -12,8 +12,6 @@ namespace Project.Domain.Entities.Users
 
         public string Password { get; set; }
 
-        public ICollection<UserInRole> UserInRoles { get; set; }
-
     }
 
 }

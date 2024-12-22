@@ -8,9 +8,7 @@ namespace Project.Domain.Entities.Appointments
 {
     public enum AppointmentStatus
     {
-        Available,  // نوبت آزاد
-        Reserved,   // نوبت رزرو شده
-        Cancelled,  // نوبت لغو شده
-        Completed   // نوبت تکمیل شده
+        Available = 1,  // نوبت آزاد
+        Reserved = 2,   // نوبت رزرو شده
     }
 }

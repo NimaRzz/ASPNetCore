@@ -21,10 +21,6 @@ namespace Project.Domain.Entities.Citizens
 
         public long PersonalizedCode { get; set; }
 
-        public Office Office { get; set; }
-
-        public string OfficeId { get; set; }
-
         public ICollection<Appointment> Appointments { get; set; }
 
     }
