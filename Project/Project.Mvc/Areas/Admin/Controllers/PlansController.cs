@@ -21,7 +21,7 @@ namespace Project.Presentation.Areas.Admin.Controllers
             _planFacad = planFacad;
         }
 
-        [HttpPost("add")]
+        [HttpPost("Add")]
         public async Task<IActionResult> Add([FromBody] PlanDto request)
         {
             var result = await _planFacad.AddPlanService.Execute(new RequestAddPlanDto()
@@ -36,7 +36,7 @@ namespace Project.Presentation.Areas.Admin.Controllers
             return Ok(result);
         }
 
-        [HttpPost("update")]
+        [HttpPost("Update")]
         public async Task<IActionResult> Update([FromBody] PlanDto request)
         {
             var result = await _planFacad.UpdatePlanService.Execute(new RequestUpdatePlanDto()
@@ -51,14 +51,14 @@ namespace Project.Presentation.Areas.Admin.Controllers
             return Ok(result);
         }
 
-        [HttpPost("delete")]
+        [HttpPost("Delete")]
         public async Task<IActionResult> Delete([FromBody] string Id)
         {
             var result = await _planFacad.DeletePlanService.Execute(Id);
             return Ok(result);
         }
 
-        [HttpPost("get")]
+        [HttpPost("Get")]
         public async Task<IActionResult> Get([FromBody] string Id)
         {
             var result = await _planFacad.GetPlanService.Execute(Id);
@@ -66,7 +66,7 @@ namespace Project.Presentation.Areas.Admin.Controllers
         }
 
 
-        [HttpPost("getall")]
+        [HttpPost("GetAll")]
         public async Task<IActionResult> Get([FromBody] Pagination request)
         {
             var result = await _planFacad.GetPlansService.Execute(new RequestGetPlansDto()

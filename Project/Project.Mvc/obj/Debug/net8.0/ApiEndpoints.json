@@ -1,8 +1,24 @@
 [
   {
+    "ContainingType": "Project.Presentation.Areas.Admin.Controllers.CitizensController",
+    "Method": "Add",
+    "RelativePath": "api/Citizens/Add",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "Project.Presentation.Areas.Admin.Models.DTOs.Citizen.CitizenDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "Project.Presentation.Areas.Admin.Controllers.OfficesController",
     "Method": "Add",
-    "RelativePath": "api/Offices/add",
+    "RelativePath": "api/Offices/Add",
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
@@ -18,7 +34,7 @@
   {
     "ContainingType": "Project.Presentation.Areas.Admin.Controllers.OfficesController",
     "Method": "Delete",
-    "RelativePath": "api/Offices/delete",
+    "RelativePath": "api/Offices/Delete",
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
@@ -34,7 +50,7 @@
   {
     "ContainingType": "Project.Presentation.Areas.Admin.Controllers.OfficesController",
     "Method": "Get",
-    "RelativePath": "api/Offices/get",
+    "RelativePath": "api/Offices/Get",
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
@@ -50,7 +66,7 @@
   {
     "ContainingType": "Project.Presentation.Areas.Admin.Controllers.OfficesController",
     "Method": "Get",
-    "RelativePath": "api/Offices/getall",
+    "RelativePath": "api/Offices/GetAll",
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
@@ -98,7 +114,7 @@
   {
     "ContainingType": "Project.Presentation.Areas.Admin.Controllers.OfficesController",
     "Method": "Update",
-    "RelativePath": "api/Offices/update",
+    "RelativePath": "api/Offices/Update",
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
@@ -114,7 +130,7 @@
   {
     "ContainingType": "Project.Presentation.Areas.Admin.Controllers.PlansController",
     "Method": "Add",
-    "RelativePath": "api/Plans/add",
+    "RelativePath": "api/Plans/Add",
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
@@ -130,7 +146,7 @@
   {
     "ContainingType": "Project.Presentation.Areas.Admin.Controllers.PlansController",
     "Method": "Delete",
-    "RelativePath": "api/Plans/delete",
+    "RelativePath": "api/Plans/Delete",
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
@@ -146,7 +162,7 @@
   {
     "ContainingType": "Project.Presentation.Areas.Admin.Controllers.PlansController",
     "Method": "Get",
-    "RelativePath": "api/Plans/get",
+    "RelativePath": "api/Plans/Get",
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
@@ -162,7 +178,7 @@
   {
     "ContainingType": "Project.Presentation.Areas.Admin.Controllers.PlansController",
     "Method": "Get",
-    "RelativePath": "api/Plans/getall",
+    "RelativePath": "api/Plans/GetAll",
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
@@ -178,7 +194,7 @@
   {
     "ContainingType": "Project.Presentation.Areas.Admin.Controllers.PlansController",
     "Method": "Update",
-    "RelativePath": "api/Plans/update",
+    "RelativePath": "api/Plans/Update",
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,

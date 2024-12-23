@@ -5,7 +5,38 @@
     "version": "1.0"
   },
   "paths": {
-    "/api/Offices/add": {
+    "/api/Citizens/Add": {
+      "post": {
+        "tags": [
+          "Citizens"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CitizenDto"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CitizenDto"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/CitizenDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/Offices/Add": {
       "post": {
         "tags": [
           "Offices"
@@ -36,7 +67,7 @@
         }
       }
     },
-    "/api/Offices/update": {
+    "/api/Offices/Update": {
       "post": {
         "tags": [
           "Offices"
@@ -67,7 +98,7 @@
         }
       }
     },
-    "/api/Offices/delete": {
+    "/api/Offices/Delete": {
       "post": {
         "tags": [
           "Offices"
@@ -98,7 +129,7 @@
         }
       }
     },
-    "/api/Offices/get": {
+    "/api/Offices/Get": {
       "post": {
         "tags": [
           "Offices"
@@ -129,7 +160,7 @@
         }
       }
     },
-    "/api/Offices/getall": {
+    "/api/Offices/GetAll": {
       "post": {
         "tags": [
           "Offices"
@@ -222,7 +253,7 @@
         }
       }
     },
-    "/api/Plans/add": {
+    "/api/Plans/Add": {
       "post": {
         "tags": [
           "Plans"
@@ -253,7 +284,7 @@
         }
       }
     },
-    "/api/Plans/update": {
+    "/api/Plans/Update": {
       "post": {
         "tags": [
           "Plans"
@@ -284,7 +315,7 @@
         }
       }
     },
-    "/api/Plans/delete": {
+    "/api/Plans/Delete": {
       "post": {
         "tags": [
           "Plans"
@@ -315,7 +346,7 @@
         }
       }
     },
-    "/api/Plans/get": {
+    "/api/Plans/Get": {
       "post": {
         "tags": [
           "Plans"
@@ -346,7 +377,7 @@
         }
       }
     },
-    "/api/Plans/getall": {
+    "/api/Plans/GetAll": {
       "post": {
         "tags": [
           "Plans"
@@ -403,6 +434,32 @@
             "nullable": true
           },
           "provinceId": {
+            "type": "integer",
+            "format": "int64"
+          }
+        },
+        "additionalProperties": false
+      },
+      "CitizenDto": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string",
+            "nullable": true
+          },
+          "householdCode": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "uniqueCode": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "passportCode": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "personalizedCode": {
             "type": "integer",
             "format": "int64"
           }

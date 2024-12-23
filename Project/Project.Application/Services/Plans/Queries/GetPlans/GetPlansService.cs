@@ -40,11 +40,11 @@ namespace Project.Application.Services.Plans.Queries.GetPlans
 
             var pagedResult = planQuery.ToPaged(request.Page, request.PageSize, out totalPages);
 
-            if (!pagedResult.IsSuccess)
+            if (!string.IsNullOrEmpty(pagedResult.Message))
             {
                 return new ResultDto<ResultGetPlansDto>()
                 {
-                    IsSuccess = false,
+                    IsSuccess = true,
                     Message = pagedResult.Message,
                     Data = new ResultGetPlansDto()
                     {

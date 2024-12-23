@@ -25,7 +25,7 @@ namespace Project.Presentation.Areas.Admin.Controllers
             _officeFacad = officeFacad;
         }
 
-        [HttpPost("add")]
+        [HttpPost("Add")]
         public async Task<IActionResult> Add([FromBody] AddOfficeDto request)
         {
 
@@ -43,7 +43,7 @@ namespace Project.Presentation.Areas.Admin.Controllers
             return Ok(result);
         }
 
-        [HttpPost("update")]
+        [HttpPost("Update")]
         public async Task<IActionResult> Update([FromBody] OfficeDto request)
         {
 
@@ -58,7 +58,7 @@ namespace Project.Presentation.Areas.Admin.Controllers
             return Ok(result);
         }
 
-        [HttpPost("delete")]
+        [HttpPost("Delete")]
         public async Task<IActionResult> Delete([FromBody] string Id)
         {
 
@@ -67,7 +67,7 @@ namespace Project.Presentation.Areas.Admin.Controllers
             return Ok(result);
         }
 
-        [HttpPost("get")]
+        [HttpPost("Get")]
         public async Task<IActionResult> Get([FromBody] string Id)
         {
 
@@ -76,7 +76,7 @@ namespace Project.Presentation.Areas.Admin.Controllers
             return Ok(result);
         }
 
-        [HttpPost("getall")]
+        [HttpPost("GetAll")]
         public async Task<IActionResult> Get([FromBody] Pagination request)
         {
 

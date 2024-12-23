@@ -226,6 +226,10 @@ namespace Project.Infra.Data.Contexts
                 .Property(c => c.InsertTime)
                 .HasDefaultValueSql("GETDATE()");
 
+            //برایه یونیک کردن اطلاعات اتباع
+            modelBuilder.Entity<Citizen>()
+                .HasIndex(p => p.UniqueCode).IsUnique();
+
 
         }
 

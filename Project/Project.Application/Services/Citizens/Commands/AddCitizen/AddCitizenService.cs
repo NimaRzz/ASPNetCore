@@ -3,8 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Project.Application.Common.Validations.Citizen;
 using Project.Application.Interfaces.Citizens;
 using Project.Domain.Common.Dto;
+using Project.Domain.Entities.Citizens;
 using Project.Domain.Repository.Citizen;
 
 namespace Project.Application.Services.Citizens.Commands.AddCitizen
@@ -22,9 +24,27 @@ namespace Project.Application.Services.Citizens.Commands.AddCitizen
 
         public async Task<ResultDto> Execute(RequestAddCitizenDto request)
         {
+           var validate = await CitizenValidator.ValidateRequest(request);
 
+            if (!validate.IsSuccess)
+            {
+                return new ResultDto
+                {
+                    IsSuccess = false,
+                    Message = validate.Message
+                };
+            }
+            Citizen citizen = new()
+            {
+                Name = request.Name,
+                HouseholdCode = request.HouseholdCode,
+                UniqueCode = request.UniqueCode,
+                PassportCode = request.PassportCode,
+                PersonalizedCode = request.PersonalizedCode
+            };
 
-
+            await _repository.Add<Citizen>(citizen);
+            await _repository.SaveAsync();
 
             return new ResultDto
             {

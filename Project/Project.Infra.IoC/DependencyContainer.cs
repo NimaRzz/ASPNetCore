@@ -12,6 +12,10 @@ using Project.Infra.Data.Contexts;
 using Project.Infra.Data.Repositories.Office;
 using Project.Domain.Repository.Plan;
 using Project.Infra.Data.Repositories.Plan;
+using Project.Application.Services.Citizens.FacadPattern;
+using Project.Domain.Repository.Citizen;
+using Project.Infra.Data.Repositories.Citizen;
+
 
 namespace Project.Infra.IoC
 {
@@ -22,11 +26,13 @@ namespace Project.Infra.IoC
             //Application Layer
             services.AddScoped<IOfficeFacad, OfficeFacad>();
             services.AddScoped<IPlanFacad, PlanFacad>();
+            services.AddScoped<ICitizenFacad, CitizenFacad>();
 
             //Infra.Data Layer
             services.AddScoped<DataBaseContext>();
             services.AddScoped<IOfficeRepository, OfficeRepository>();
             services.AddScoped<IPlanRepository, PlanRepository>();
+            services.AddScoped<ICitizenRepository, CitizenRepository>();
         }
     }
 }
