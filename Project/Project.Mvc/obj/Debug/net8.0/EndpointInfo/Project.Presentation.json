@@ -456,8 +456,8 @@
             "format": "int64"
           },
           "passportCode": {
-            "type": "integer",
-            "format": "int64"
+            "type": "string",
+            "nullable": true
           },
           "personalizedCode": {
             "type": "integer",

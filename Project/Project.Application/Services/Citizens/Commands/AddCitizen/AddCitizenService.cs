@@ -24,7 +24,7 @@ namespace Project.Application.Services.Citizens.Commands.AddCitizen
 
         public async Task<ResultDto> Execute(RequestAddCitizenDto request)
         {
-           var validate = await CitizenValidator.ValidateRequest(request);
+           var validate = await CitizenValidator.ValidateRequest(request, _repository);
 
             if (!validate.IsSuccess)
             {

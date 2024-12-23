@@ -17,7 +17,7 @@ namespace Project.Domain.Entities.Citizens
 
         public long UniqueCode { get; set; }
 
-        public long PassportCode { get; set; }
+        public string PassportCode { get; set; }
 
         public long PersonalizedCode { get; set; }
 
