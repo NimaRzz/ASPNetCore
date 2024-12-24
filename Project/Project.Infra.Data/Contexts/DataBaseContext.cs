@@ -72,51 +72,21 @@ namespace Project.Infra.Data.Contexts
             {
                 if (entry.State == EntityState.Modified)
                 {
-                    if (entry.Entity is Office office)
-                    {
-                        office.UpdateTime = DateTime.Now;
-                    }
 
-                    if (entry.Entity is Plan plan)
-                    {
-                        plan.UpdateTime = DateTime.Now;
-                    }
-
-                    if (entry.Entity is WorkCalendar workCalendar)
-                    {
-                        workCalendar.UpdateTime = DateTime.Now;
-                    }
+                    entry.Property("UpdateTime").CurrentValue = DateTime.Now;
                 }
 
                 if (entry.State == EntityState.Deleted)
                 {
-                    if (entry.Entity is Office office)
-                    {
-                        office.IsRemoved = true;
-                        office.RemoveTime = DateTime.Now;
-                        entry.State = EntityState.Modified;
-
-                    }
-
-                    if (entry.Entity is Plan plan)
-                    {
-                        plan.IsRemoved = true;
-                        plan.RemoveTime = DateTime.Now;
-                        entry.State = EntityState.Modified;
-                    }
-
-
-                    if (entry.Entity is OfficePlan officePlan)
-                    {
-                        officePlan.IsRemoved = true;
-                        officePlan.RemoveTime = DateTime.Now;
-                        entry.State = EntityState.Modified;
-                    }
+                    entry.Property("IsRemoved").CurrentValue = true;
+                    entry.Property("RemoveTime").CurrentValue = DateTime.Now;
+                    entry.State = EntityState.Modified;
 
                 }
 
                 if (entry.State == EntityState.Added)
                 {
+                    entry.Property("InsertTime").CurrentValue = DateTime.Now;
                     if (entry.Entity is OfficePlan officePlan)
                     {
                         if (officePlan.Id == 0)
@@ -199,36 +169,19 @@ namespace Project.Infra.Data.Contexts
                  .ValueGeneratedNever();
             });
 
-            // پیکربندی فیلد RowVersion برای همزمانی
-            modelBuilder.Entity<Office>()
-                .Property(o => o.RowVersion)
-                .IsRowVersion();
-
-            modelBuilder.Entity<Plan>()
-                .Property(o => o.RowVersion)
-                .IsRowVersion();
-
-
-            //برایه مقدار دهی خودکار فیلد InsertTime
-            modelBuilder.Entity<Office>()
-                .Property(c => c.InsertTime)
-                .HasDefaultValueSql("GETDATE()");
-
-            modelBuilder.Entity<Plan>()
-                .Property(c => c.InsertTime)
-                .HasDefaultValueSql("GETDATE()");
-
-            modelBuilder.Entity<OfficePlan>()
-                .Property(c => c.InsertTime)
-                .HasDefaultValueSql("GETDATE()");
-
-            modelBuilder.Entity<WorkCalendar>()
-                .Property(c => c.InsertTime)
-                .HasDefaultValueSql("GETDATE()");
 
             //برایه یونیک کردن اطلاعات اتباع
             modelBuilder.Entity<Citizen>()
+                .HasIndex(p => p.HouseholdCode).IsUnique();
+
+            modelBuilder.Entity<Citizen>()
                 .HasIndex(p => p.UniqueCode).IsUnique();
+
+            modelBuilder.Entity<Citizen>()
+                .HasIndex(p => p.PersonalizedCode).IsUnique();
+
+            modelBuilder.Entity<Citizen>()
+                .HasIndex(p => p.PassportCode).IsUnique();
 
 
         }

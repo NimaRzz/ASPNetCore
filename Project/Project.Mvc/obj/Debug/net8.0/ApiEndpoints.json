@@ -16,6 +16,22 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "Project.Presentation.Areas.Admin.Controllers.CitizensController",
+    "Method": "Update",
+    "RelativePath": "api/Citizens/Update",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "Project.Presentation.Areas.Admin.Models.DTOs.Citizen.UpdateCitizenDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "Project.Presentation.Areas.Admin.Controllers.OfficesController",
     "Method": "Add",
     "RelativePath": "api/Offices/Add",

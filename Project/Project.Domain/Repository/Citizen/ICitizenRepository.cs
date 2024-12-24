@@ -12,5 +12,7 @@ namespace Project.Domain.Repository.Citizen
     public interface ICitizenRepository:IBaseRepository
     {
         Task<ResultDto> GetCitizen(CitizenModel requestCode);
+     
+        Task<ResultDto<CitizenModel>> CustomGet(long UniqueCode);
     }
 }

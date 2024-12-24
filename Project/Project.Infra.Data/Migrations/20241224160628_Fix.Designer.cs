@@ -12,8 +12,8 @@ using Project.Infra.Data.Contexts;
 namespace Project.Infra.Data.Migrations
 {
     [DbContext(typeof(DataBaseContext))]
-    [Migration("20241223035926_FixEntity")]
-    partial class FixEntity
+    [Migration("20241224160628_Fix")]
+    partial class Fix
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -37,7 +37,9 @@ namespace Project.Infra.Data.Migrations
                         .HasColumnType("bigint");
 
                     b.Property<DateTime?>("InsertTime")
-                        .HasColumnType("datetime2");
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("datetime2")
+                        .HasDefaultValueSql("GETDATE()");
 
                     b.Property<bool>("IsRemoved")
                         .HasColumnType("bit");
@@ -49,8 +51,9 @@ namespace Project.Infra.Data.Migrations
                     b.Property<string>("OfficeId")
                         .HasColumnType("nvarchar(450)");
 
-                    b.Property<long>("PassportCode")
-                        .HasColumnType("bigint");
+                    b.Property<string>("PassportCode")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(450)");
 
                     b.Property<long>("PersonalizedCode")
                         .HasColumnType("bigint");
@@ -66,7 +69,16 @@ namespace Project.Infra.Data.Migrations
 
                     b.HasKey("Id");
 
+                    b.HasIndex("HouseholdCode")
+                        .IsUnique();
+
                     b.HasIndex("OfficeId");
+
+                    b.HasIndex("PassportCode")
+                        .IsUnique();
+
+                    b.HasIndex("PersonalizedCode")
+                        .IsUnique();
 
                     b.HasIndex("UniqueCode")
                         .IsUnique();
@@ -100,12 +112,6 @@ namespace Project.Infra.Data.Migrations
 
                     b.Property<DateTime?>("RemoveTime")
                         .HasColumnType("datetime2");
-
-                    b.Property<byte[]>("RowVersion")
-                        .IsConcurrencyToken()
-                        .IsRequired()
-                        .ValueGeneratedOnAddOrUpdate()
-                        .HasColumnType("rowversion");
 
                     b.Property<DateTime?>("UpdateTime")
                         .HasColumnType("datetime2");
@@ -221,12 +227,6 @@ namespace Project.Infra.Data.Migrations
                     b.Property<DateTime?>("RemoveTime")
                         .HasColumnType("datetime2");
 
-                    b.Property<byte[]>("RowVersion")
-                        .IsConcurrencyToken()
-                        .IsRequired()
-                        .ValueGeneratedOnAddOrUpdate()
-                        .HasColumnType("rowversion");
-
                     b.Property<DateTime>("StartPlan")
                         .HasColumnType("datetime2");
 
@@ -270,217 +270,217 @@ namespace Project.Infra.Data.Migrations
                         new
                         {
                             Id = 1L,
-                            InsertTime = new DateTime(2024, 12, 23, 7, 29, 26, 73, DateTimeKind.Local).AddTicks(7463),
+                            InsertTime = new DateTime(2024, 12, 24, 19, 36, 28, 95, DateTimeKind.Local).AddTicks(5927),
                             IsRemoved = false,
                             Name = "AzarbaijanSharghi"
                         },
                         new
                         {
                             Id = 2L,
-                            InsertTime = new DateTime(2024, 12, 23, 7, 29, 26, 73, DateTimeKind.Local).AddTicks(7515),
+                            InsertTime = new DateTime(2024, 12, 24, 19, 36, 28, 95, DateTimeKind.Local).AddTicks(5969),
                             IsRemoved = false,
                             Name = "AzarbaijanGharbi"
                         },
                         new
                         {
                             Id = 3L,
-                            InsertTime = new DateTime(2024, 12, 23, 7, 29, 26, 73, DateTimeKind.Local).AddTicks(7533),
+                            InsertTime = new DateTime(2024, 12, 24, 19, 36, 28, 95, DateTimeKind.Local).AddTicks(5980),
                             IsRemoved = false,
                             Name = "Ardabil"
                         },
                         new
                         {
                             Id = 4L,
-                            InsertTime = new DateTime(2024, 12, 23, 7, 29, 26, 73, DateTimeKind.Local).AddTicks(7591),
+                            InsertTime = new DateTime(2024, 12, 24, 19, 36, 28, 95, DateTimeKind.Local).AddTicks(5991),
                             IsRemoved = false,
                             Name = "Isfahan"
                         },
                         new
                         {
                             Id = 5L,
-                            InsertTime = new DateTime(2024, 12, 23, 7, 29, 26, 73, DateTimeKind.Local).AddTicks(7608),
+                            InsertTime = new DateTime(2024, 12, 24, 19, 36, 28, 95, DateTimeKind.Local).AddTicks(6002),
                             IsRemoved = false,
                             Name = "Alborz"
                         },
                         new
                         {
                             Id = 6L,
-                            InsertTime = new DateTime(2024, 12, 23, 7, 29, 26, 73, DateTimeKind.Local).AddTicks(7627),
+                            InsertTime = new DateTime(2024, 12, 24, 19, 36, 28, 95, DateTimeKind.Local).AddTicks(6014),
                             IsRemoved = false,
                             Name = "Ilam"
                         },
                         new
                         {
                             Id = 7L,
-                            InsertTime = new DateTime(2024, 12, 23, 7, 29, 26, 73, DateTimeKind.Local).AddTicks(7642),
+                            InsertTime = new DateTime(2024, 12, 24, 19, 36, 28, 95, DateTimeKind.Local).AddTicks(6023),
                             IsRemoved = false,
                             Name = "Bushehr"
                         },
                         new
                         {
                             Id = 8L,
-                            InsertTime = new DateTime(2024, 12, 23, 7, 29, 26, 73, DateTimeKind.Local).AddTicks(7657),
+                            InsertTime = new DateTime(2024, 12, 24, 19, 36, 28, 95, DateTimeKind.Local).AddTicks(6052),
                             IsRemoved = false,
                             Name = "Tehran"
                         },
                         new
                         {
                             Id = 9L,
-                            InsertTime = new DateTime(2024, 12, 23, 7, 29, 26, 73, DateTimeKind.Local).AddTicks(7671),
+                            InsertTime = new DateTime(2024, 12, 24, 19, 36, 28, 95, DateTimeKind.Local).AddTicks(6062),
                             IsRemoved = false,
                             Name = "ChaharmahaloBakhtiari"
                         },
                         new
                         {
                             Id = 10L,
-                            InsertTime = new DateTime(2024, 12, 23, 7, 29, 26, 73, DateTimeKind.Local).AddTicks(7689),
+                            InsertTime = new DateTime(2024, 12, 24, 19, 36, 28, 95, DateTimeKind.Local).AddTicks(6073),
                             IsRemoved = false,
                             Name = "KhorasanJonubi"
                         },
                         new
                         {
                             Id = 11L,
-                            InsertTime = new DateTime(2024, 12, 23, 7, 29, 26, 73, DateTimeKind.Local).AddTicks(7705),
+                            InsertTime = new DateTime(2024, 12, 24, 19, 36, 28, 95, DateTimeKind.Local).AddTicks(6083),
                             IsRemoved = false,
                             Name = "KhorasanRazavi"
                         },
                         new
                         {
                             Id = 12L,
-                            InsertTime = new DateTime(2024, 12, 23, 7, 29, 26, 73, DateTimeKind.Local).AddTicks(7721),
+                            InsertTime = new DateTime(2024, 12, 24, 19, 36, 28, 95, DateTimeKind.Local).AddTicks(6093),
                             IsRemoved = false,
                             Name = "KhorasanShomali"
                         },
                         new
                         {
                             Id = 13L,
-                            InsertTime = new DateTime(2024, 12, 23, 7, 29, 26, 73, DateTimeKind.Local).AddTicks(7736),
+                            InsertTime = new DateTime(2024, 12, 24, 19, 36, 28, 95, DateTimeKind.Local).AddTicks(6104),
                             IsRemoved = false,
                             Name = "Khuzestan"
                         },
                         new
                         {
                             Id = 14L,
-                            InsertTime = new DateTime(2024, 12, 23, 7, 29, 26, 73, DateTimeKind.Local).AddTicks(7750),
+                            InsertTime = new DateTime(2024, 12, 24, 19, 36, 28, 95, DateTimeKind.Local).AddTicks(6114),
                             IsRemoved = false,
                             Name = "Zanjan"
                         },
                         new
                         {
                             Id = 15L,
-                            InsertTime = new DateTime(2024, 12, 23, 7, 29, 26, 73, DateTimeKind.Local).AddTicks(7765),
+                            InsertTime = new DateTime(2024, 12, 24, 19, 36, 28, 95, DateTimeKind.Local).AddTicks(6124),
                             IsRemoved = false,
                             Name = "Semnan"
                         },
                         new
                         {
                             Id = 16L,
-                            InsertTime = new DateTime(2024, 12, 23, 7, 29, 26, 73, DateTimeKind.Local).AddTicks(7778),
+                            InsertTime = new DateTime(2024, 12, 24, 19, 36, 28, 95, DateTimeKind.Local).AddTicks(6134),
                             IsRemoved = false,
                             Name = "SistanoBaluchestan"
                         },
                         new
                         {
                             Id = 17L,
-                            InsertTime = new DateTime(2024, 12, 23, 7, 29, 26, 73, DateTimeKind.Local).AddTicks(7794),
+                            InsertTime = new DateTime(2024, 12, 24, 19, 36, 28, 95, DateTimeKind.Local).AddTicks(6145),
                             IsRemoved = false,
                             Name = "Fars"
                         },
                         new
                         {
                             Id = 18L,
-                            InsertTime = new DateTime(2024, 12, 23, 7, 29, 26, 73, DateTimeKind.Local).AddTicks(7811),
+                            InsertTime = new DateTime(2024, 12, 24, 19, 36, 28, 95, DateTimeKind.Local).AddTicks(6156),
                             IsRemoved = false,
                             Name = "Qazvin"
                         },
                         new
                         {
                             Id = 19L,
-                            InsertTime = new DateTime(2024, 12, 23, 7, 29, 26, 73, DateTimeKind.Local).AddTicks(7826),
+                            InsertTime = new DateTime(2024, 12, 24, 19, 36, 28, 95, DateTimeKind.Local).AddTicks(6165),
                             IsRemoved = false,
                             Name = "Qom"
                         },
                         new
                         {
                             Id = 20L,
-                            InsertTime = new DateTime(2024, 12, 23, 7, 29, 26, 73, DateTimeKind.Local).AddTicks(7841),
+                            InsertTime = new DateTime(2024, 12, 24, 19, 36, 28, 95, DateTimeKind.Local).AddTicks(6176),
                             IsRemoved = false,
                             Name = "Kurdistan"
                         },
                         new
                         {
                             Id = 21L,
-                            InsertTime = new DateTime(2024, 12, 23, 7, 29, 26, 73, DateTimeKind.Local).AddTicks(7857),
+                            InsertTime = new DateTime(2024, 12, 24, 19, 36, 28, 95, DateTimeKind.Local).AddTicks(6186),
                             IsRemoved = false,
                             Name = "Kerman"
                         },
                         new
                         {
                             Id = 22L,
-                            InsertTime = new DateTime(2024, 12, 23, 7, 29, 26, 73, DateTimeKind.Local).AddTicks(7873),
+                            InsertTime = new DateTime(2024, 12, 24, 19, 36, 28, 95, DateTimeKind.Local).AddTicks(6196),
                             IsRemoved = false,
                             Name = "Kermanshah"
                         },
                         new
                         {
                             Id = 23L,
-                            InsertTime = new DateTime(2024, 12, 23, 7, 29, 26, 73, DateTimeKind.Local).AddTicks(7887),
+                            InsertTime = new DateTime(2024, 12, 24, 19, 36, 28, 95, DateTimeKind.Local).AddTicks(6206),
                             IsRemoved = false,
                             Name = "KohgiluyehoBoyerahmad"
                         },
                         new
                         {
                             Id = 24L,
-                            InsertTime = new DateTime(2024, 12, 23, 7, 29, 26, 73, DateTimeKind.Local).AddTicks(7901),
+                            InsertTime = new DateTime(2024, 12, 24, 19, 36, 28, 95, DateTimeKind.Local).AddTicks(6215),
                             IsRemoved = false,
                             Name = "Golestan"
                         },
                         new
                         {
                             Id = 25L,
-                            InsertTime = new DateTime(2024, 12, 23, 7, 29, 26, 73, DateTimeKind.Local).AddTicks(7916),
+                            InsertTime = new DateTime(2024, 12, 24, 19, 36, 28, 95, DateTimeKind.Local).AddTicks(6225),
                             IsRemoved = false,
                             Name = "Gilan"
                         },
                         new
                         {
                             Id = 26L,
-                            InsertTime = new DateTime(2024, 12, 23, 7, 29, 26, 73, DateTimeKind.Local).AddTicks(7931),
+                            InsertTime = new DateTime(2024, 12, 24, 19, 36, 28, 95, DateTimeKind.Local).AddTicks(6235),
                             IsRemoved = false,
                             Name = "Lorestan"
                         },
                         new
                         {
                             Id = 27L,
-                            InsertTime = new DateTime(2024, 12, 23, 7, 29, 26, 73, DateTimeKind.Local).AddTicks(7984),
+                            InsertTime = new DateTime(2024, 12, 24, 19, 36, 28, 95, DateTimeKind.Local).AddTicks(6244),
                             IsRemoved = false,
                             Name = "Mazandaran"
                         },
                         new
                         {
                             Id = 28L,
-                            InsertTime = new DateTime(2024, 12, 23, 7, 29, 26, 73, DateTimeKind.Local).AddTicks(8001),
+                            InsertTime = new DateTime(2024, 12, 24, 19, 36, 28, 95, DateTimeKind.Local).AddTicks(6253),
                             IsRemoved = false,
                             Name = "Markazi"
                         },
                         new
                         {
                             Id = 29L,
-                            InsertTime = new DateTime(2024, 12, 23, 7, 29, 26, 73, DateTimeKind.Local).AddTicks(8018),
+                            InsertTime = new DateTime(2024, 12, 24, 19, 36, 28, 95, DateTimeKind.Local).AddTicks(6263),
                             IsRemoved = false,
                             Name = "Hormozgan"
                         },
                         new
                         {
                             Id = 30L,
-                            InsertTime = new DateTime(2024, 12, 23, 7, 29, 26, 73, DateTimeKind.Local).AddTicks(8033),
+                            InsertTime = new DateTime(2024, 12, 24, 19, 36, 28, 95, DateTimeKind.Local).AddTicks(6272),
                             IsRemoved = false,
                             Name = "Hamadan"
                         },
                         new
                         {
                             Id = 31L,
-                            InsertTime = new DateTime(2024, 12, 23, 7, 29, 26, 73, DateTimeKind.Local).AddTicks(8050),
+                            InsertTime = new DateTime(2024, 12, 24, 19, 36, 28, 95, DateTimeKind.Local).AddTicks(6282),
                             IsRemoved = false,
                             Name = "Yazd"
                         });

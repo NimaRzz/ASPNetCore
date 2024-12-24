@@ -15,8 +15,6 @@ namespace Project.Domain.Entities.Plans
 
         public string Name { get; set; }
 
-        public byte[] RowVersion { get; set; } // فیلد همزمانی
-
         public DateTime StartPlan { get; set; }
       
         public DateTime EndPlan { get; set; }

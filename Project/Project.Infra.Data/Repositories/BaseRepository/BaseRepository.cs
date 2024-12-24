@@ -83,19 +83,16 @@ namespace Project.Infra.Data.Repositories.BaseRepository
         {
             if (Object != null)
             {
-
                 var entry = _context.Entry(Object);
 
                 // استخراج RowVersion از رکورد قدیمی
-                var rowVersion = entry.Property("RowVersion").CurrentValue;
- 
+
                 entry.CurrentValues.SetValues(Object);
 
                 entry.State = EntityState.Modified;
-                
+
                 entry.Property("InsertTime").IsModified = false;
 
-                entry.Property("RowVersion").CurrentValue = rowVersion;
             }
 
         }

@@ -24,30 +24,12 @@ namespace Project.Application.Common.Validations.Citizen
                     Message = "لطفا تمامی اطلاعات خواسته شده را تکمیل کنید"
                 };
             }
-
-            CitizenModel citizen = new()
-            {
-                HouseholdCode = request.HouseholdCode,
-                UniqueCode = request.UniqueCode,
-                PassportCode = request.PassportCode,
-                PersonalizedCode = request.PersonalizedCode,
-            };
-
-            var IsExists = await _repository.GetCitizen(citizen);
-
-            if (!IsExists.IsSuccess)
-            {
-                return new ResultDto
-                {
-                    IsSuccess = false,
-                    Message = IsExists.Message
-                };
-            }
+           
             string householdCodePattern = @"^\d{10}$";
 
             string uniqueCodePattern = @"^\d{9,}$";
 
-            string passportCodePattern = @"^[a-zA-Z0-9]{6,9}$";
+            string passportCodePattern = @"^(?=.*[A-Za-z])(?=.*\d)[a-zA-Z\d]{6,9}$";
 
             string personalizedCodePattern = @"^\d{12}$";
 

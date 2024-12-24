@@ -20,7 +20,6 @@
 
   <ItemGroup>
     <Folder Include="Services\Citizens\Commands\DeleteCitizen\" />
-    <Folder Include="Services\Citizens\Commands\UpdateCitizen\" />
     <Folder Include="Services\Citizens\Queries\GetCitizen\" />
     <Folder Include="Services\Citizens\Queries\GetCitizens\" />
     <Folder Include="Services\Citizens\Queries\DTOs\" />

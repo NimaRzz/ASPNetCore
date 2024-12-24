@@ -24,6 +24,27 @@ namespace Project.Application.Services.Citizens.Commands.AddCitizen
 
         public async Task<ResultDto> Execute(RequestAddCitizenDto request)
         {
+
+             Citizen citizen = new()
+            {
+                 Name = request.Name,
+                 HouseholdCode = request.HouseholdCode,
+                UniqueCode = request.UniqueCode,
+                PassportCode = request.PassportCode,
+                PersonalizedCode = request.PersonalizedCode,
+            };
+
+            var IsExists = await _repository.GetCitizen(citizen);
+
+            if (!IsExists.IsSuccess)
+            {
+                return new ResultDto
+                {
+                    IsSuccess = false,
+                    Message = IsExists.Message
+                };
+            }
+
            var validate = await CitizenValidator.ValidateRequest(request, _repository);
 
             if (!validate.IsSuccess)
@@ -34,14 +55,6 @@ namespace Project.Application.Services.Citizens.Commands.AddCitizen
                     Message = validate.Message
                 };
             }
-            Citizen citizen = new()
-            {
-                Name = request.Name,
-                HouseholdCode = request.HouseholdCode,
-                UniqueCode = request.UniqueCode,
-                PassportCode = request.PassportCode,
-                PersonalizedCode = request.PersonalizedCode
-            };
 
             await _repository.Add<Citizen>(citizen);
             await _repository.SaveAsync();

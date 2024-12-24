@@ -17,6 +17,7 @@ namespace Project.Domain.Entities.BaseEntity
         public DateTime? RemoveTime { get; set; }
 
         public bool IsRemoved { get; set; } = false;
+      
     }
 
     public class BaseEntity:BaseEntity<long>{}

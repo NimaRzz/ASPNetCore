@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Mvc;
 using Project.Application.Interfaces.FacadPatterns;
 using Project.Application.Services.Citizens.Commands.AddCitizen;
+using Project.Application.Services.Citizens.Commands.UpdateCitizen;
 using Project.Presentation.Areas.Admin.Models.DTOs.Citizen;
 
 namespace Project.Presentation.Areas.Admin.Controllers
@@ -30,5 +31,18 @@ namespace Project.Presentation.Areas.Admin.Controllers
 
             return Ok(result);
         }
+
+        [HttpPost("Update")]
+        public async Task<IActionResult> Update([FromBody] UpdateCitizenDto request)
+        {
+            var result = await _citizenFacad.UpdateCitizenService.Execute(new RequestUpdateCitizenDto()
+            {
+                Name = request.Name,
+                UniqueCode = request.UniqueCode
+            });
+
+            return Ok(result);
+        }
+
     }
 }
