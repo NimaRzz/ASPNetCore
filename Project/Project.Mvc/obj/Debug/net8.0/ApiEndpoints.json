@@ -17,6 +17,22 @@
   },
   {
     "ContainingType": "Project.Presentation.Areas.Admin.Controllers.CitizensController",
+    "Method": "Delete",
+    "RelativePath": "api/Citizens/Delete",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "UniqueCode",
+        "Type": "System.Int64",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Project.Presentation.Areas.Admin.Controllers.CitizensController",
     "Method": "Update",
     "RelativePath": "api/Citizens/Update",
     "HttpMethod": "POST",

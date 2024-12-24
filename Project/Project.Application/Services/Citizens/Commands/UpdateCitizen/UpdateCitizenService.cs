@@ -22,8 +22,9 @@ namespace Project.Application.Services.Citizens.Commands.UpdateCitizen
 
         public async Task<ResultDto> Execute(RequestUpdateCitizenDto request)
         {
-           var citizen = await _repository.CustomGet(request.UniqueCode);
-           
+
+            var citizen = await _repository.CustomGet(request.UniqueCode);
+
 
             if (!citizen.IsSuccess)
             {
@@ -35,17 +36,15 @@ namespace Project.Application.Services.Citizens.Commands.UpdateCitizen
             }
 
             citizen.Data.Name = request.Name;
-          
+
             await _repository.Update<Citizen>(citizen.Data);
             await _repository.SaveAsync();
 
-            return new ResultDto()
+            return new ResultDto
             {
                 IsSuccess = true,
                 Message = "تبعه با موفقیت اپدیت شد"
             };
-
-
         }
     }
 }

@@ -22,7 +22,7 @@ namespace Project.Infra.Data.Migrations
                     Name = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     StartPlan = table.Column<DateTime>(type: "datetime2", nullable: false),
                     EndPlan = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    InsertTime = table.Column<DateTime>(type: "datetime2", nullable: true, defaultValueSql: "GETDATE()"),
+                    InsertTime = table.Column<DateTime>(type: "datetime2", nullable: true),
                     UpdateTime = table.Column<DateTime>(type: "datetime2", nullable: true),
                     RemoveTime = table.Column<DateTime>(type: "datetime2", nullable: true),
                     IsRemoved = table.Column<bool>(type: "bit", nullable: false)
@@ -75,7 +75,7 @@ namespace Project.Infra.Data.Migrations
                     Name = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Address = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     ProvinceId = table.Column<long>(type: "bigint", nullable: false),
-                    InsertTime = table.Column<DateTime>(type: "datetime2", nullable: true, defaultValueSql: "GETDATE()"),
+                    InsertTime = table.Column<DateTime>(type: "datetime2", nullable: true),
                     UpdateTime = table.Column<DateTime>(type: "datetime2", nullable: true),
                     RemoveTime = table.Column<DateTime>(type: "datetime2", nullable: true),
                     IsRemoved = table.Column<bool>(type: "bit", nullable: false)
@@ -100,10 +100,10 @@ namespace Project.Infra.Data.Migrations
                     Name = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     HouseholdCode = table.Column<long>(type: "bigint", nullable: false),
                     UniqueCode = table.Column<long>(type: "bigint", nullable: false),
-                    PassportCode = table.Column<string>(type: "nvarchar(450)", nullable: false),
+                    PassportCode = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     PersonalizedCode = table.Column<long>(type: "bigint", nullable: false),
                     OfficeId = table.Column<string>(type: "nvarchar(450)", nullable: true),
-                    InsertTime = table.Column<DateTime>(type: "datetime2", nullable: true, defaultValueSql: "GETDATE()"),
+                    InsertTime = table.Column<DateTime>(type: "datetime2", nullable: true),
                     UpdateTime = table.Column<DateTime>(type: "datetime2", nullable: true),
                     RemoveTime = table.Column<DateTime>(type: "datetime2", nullable: true),
                     IsRemoved = table.Column<bool>(type: "bit", nullable: false)
@@ -125,7 +125,7 @@ namespace Project.Infra.Data.Migrations
                     Id = table.Column<long>(type: "bigint", nullable: false),
                     OfficeId = table.Column<string>(type: "nvarchar(450)", nullable: false),
                     PlanId = table.Column<string>(type: "nvarchar(450)", nullable: false),
-                    InsertTime = table.Column<DateTime>(type: "datetime2", nullable: true, defaultValueSql: "GETDATE()"),
+                    InsertTime = table.Column<DateTime>(type: "datetime2", nullable: true),
                     UpdateTime = table.Column<DateTime>(type: "datetime2", nullable: true),
                     RemoveTime = table.Column<DateTime>(type: "datetime2", nullable: true),
                     IsRemoved = table.Column<bool>(type: "bit", nullable: false)
@@ -155,7 +155,7 @@ namespace Project.Infra.Data.Migrations
                     WorkStart = table.Column<TimeSpan>(type: "time", nullable: false),
                     WorkEnd = table.Column<TimeSpan>(type: "time", nullable: false),
                     OfficeId = table.Column<string>(type: "nvarchar(450)", nullable: false),
-                    InsertTime = table.Column<DateTime>(type: "datetime2", nullable: true, defaultValueSql: "GETDATE()"),
+                    InsertTime = table.Column<DateTime>(type: "datetime2", nullable: true),
                     UpdateTime = table.Column<DateTime>(type: "datetime2", nullable: true),
                     RemoveTime = table.Column<DateTime>(type: "datetime2", nullable: true),
                     IsRemoved = table.Column<bool>(type: "bit", nullable: false)
@@ -208,37 +208,37 @@ namespace Project.Infra.Data.Migrations
                 columns: new[] { "Id", "InsertTime", "IsRemoved", "Name", "RemoveTime", "UpdateTime" },
                 values: new object[,]
                 {
-                    { 1L, new DateTime(2024, 12, 24, 19, 36, 28, 95, DateTimeKind.Local).AddTicks(5927), false, "AzarbaijanSharghi", null, null },
-                    { 2L, new DateTime(2024, 12, 24, 19, 36, 28, 95, DateTimeKind.Local).AddTicks(5969), false, "AzarbaijanGharbi", null, null },
-                    { 3L, new DateTime(2024, 12, 24, 19, 36, 28, 95, DateTimeKind.Local).AddTicks(5980), false, "Ardabil", null, null },
-                    { 4L, new DateTime(2024, 12, 24, 19, 36, 28, 95, DateTimeKind.Local).AddTicks(5991), false, "Isfahan", null, null },
-                    { 5L, new DateTime(2024, 12, 24, 19, 36, 28, 95, DateTimeKind.Local).AddTicks(6002), false, "Alborz", null, null },
-                    { 6L, new DateTime(2024, 12, 24, 19, 36, 28, 95, DateTimeKind.Local).AddTicks(6014), false, "Ilam", null, null },
-                    { 7L, new DateTime(2024, 12, 24, 19, 36, 28, 95, DateTimeKind.Local).AddTicks(6023), false, "Bushehr", null, null },
-                    { 8L, new DateTime(2024, 12, 24, 19, 36, 28, 95, DateTimeKind.Local).AddTicks(6052), false, "Tehran", null, null },
-                    { 9L, new DateTime(2024, 12, 24, 19, 36, 28, 95, DateTimeKind.Local).AddTicks(6062), false, "ChaharmahaloBakhtiari", null, null },
-                    { 10L, new DateTime(2024, 12, 24, 19, 36, 28, 95, DateTimeKind.Local).AddTicks(6073), false, "KhorasanJonubi", null, null },
-                    { 11L, new DateTime(2024, 12, 24, 19, 36, 28, 95, DateTimeKind.Local).AddTicks(6083), false, "KhorasanRazavi", null, null },
-                    { 12L, new DateTime(2024, 12, 24, 19, 36, 28, 95, DateTimeKind.Local).AddTicks(6093), false, "KhorasanShomali", null, null },
-                    { 13L, new DateTime(2024, 12, 24, 19, 36, 28, 95, DateTimeKind.Local).AddTicks(6104), false, "Khuzestan", null, null },
-                    { 14L, new DateTime(2024, 12, 24, 19, 36, 28, 95, DateTimeKind.Local).AddTicks(6114), false, "Zanjan", null, null },
-                    { 15L, new DateTime(2024, 12, 24, 19, 36, 28, 95, DateTimeKind.Local).AddTicks(6124), false, "Semnan", null, null },
-                    { 16L, new DateTime(2024, 12, 24, 19, 36, 28, 95, DateTimeKind.Local).AddTicks(6134), false, "SistanoBaluchestan", null, null },
-                    { 17L, new DateTime(2024, 12, 24, 19, 36, 28, 95, DateTimeKind.Local).AddTicks(6145), false, "Fars", null, null },
-                    { 18L, new DateTime(2024, 12, 24, 19, 36, 28, 95, DateTimeKind.Local).AddTicks(6156), false, "Qazvin", null, null },
-                    { 19L, new DateTime(2024, 12, 24, 19, 36, 28, 95, DateTimeKind.Local).AddTicks(6165), false, "Qom", null, null },
-                    { 20L, new DateTime(2024, 12, 24, 19, 36, 28, 95, DateTimeKind.Local).AddTicks(6176), false, "Kurdistan", null, null },
-                    { 21L, new DateTime(2024, 12, 24, 19, 36, 28, 95, DateTimeKind.Local).AddTicks(6186), false, "Kerman", null, null },
-                    { 22L, new DateTime(2024, 12, 24, 19, 36, 28, 95, DateTimeKind.Local).AddTicks(6196), false, "Kermanshah", null, null },
-                    { 23L, new DateTime(2024, 12, 24, 19, 36, 28, 95, DateTimeKind.Local).AddTicks(6206), false, "KohgiluyehoBoyerahmad", null, null },
-                    { 24L, new DateTime(2024, 12, 24, 19, 36, 28, 95, DateTimeKind.Local).AddTicks(6215), false, "Golestan", null, null },
-                    { 25L, new DateTime(2024, 12, 24, 19, 36, 28, 95, DateTimeKind.Local).AddTicks(6225), false, "Gilan", null, null },
-                    { 26L, new DateTime(2024, 12, 24, 19, 36, 28, 95, DateTimeKind.Local).AddTicks(6235), false, "Lorestan", null, null },
-                    { 27L, new DateTime(2024, 12, 24, 19, 36, 28, 95, DateTimeKind.Local).AddTicks(6244), false, "Mazandaran", null, null },
-                    { 28L, new DateTime(2024, 12, 24, 19, 36, 28, 95, DateTimeKind.Local).AddTicks(6253), false, "Markazi", null, null },
-                    { 29L, new DateTime(2024, 12, 24, 19, 36, 28, 95, DateTimeKind.Local).AddTicks(6263), false, "Hormozgan", null, null },
-                    { 30L, new DateTime(2024, 12, 24, 19, 36, 28, 95, DateTimeKind.Local).AddTicks(6272), false, "Hamadan", null, null },
-                    { 31L, new DateTime(2024, 12, 24, 19, 36, 28, 95, DateTimeKind.Local).AddTicks(6282), false, "Yazd", null, null }
+                    { 1L, new DateTime(2024, 12, 24, 22, 52, 19, 682, DateTimeKind.Local).AddTicks(5523), false, "AzarbaijanSharghi", null, null },
+                    { 2L, new DateTime(2024, 12, 24, 22, 52, 19, 682, DateTimeKind.Local).AddTicks(5576), false, "AzarbaijanGharbi", null, null },
+                    { 3L, new DateTime(2024, 12, 24, 22, 52, 19, 682, DateTimeKind.Local).AddTicks(5595), false, "Ardabil", null, null },
+                    { 4L, new DateTime(2024, 12, 24, 22, 52, 19, 682, DateTimeKind.Local).AddTicks(5611), false, "Isfahan", null, null },
+                    { 5L, new DateTime(2024, 12, 24, 22, 52, 19, 682, DateTimeKind.Local).AddTicks(5626), false, "Alborz", null, null },
+                    { 6L, new DateTime(2024, 12, 24, 22, 52, 19, 682, DateTimeKind.Local).AddTicks(5644), false, "Ilam", null, null },
+                    { 7L, new DateTime(2024, 12, 24, 22, 52, 19, 682, DateTimeKind.Local).AddTicks(5661), false, "Bushehr", null, null },
+                    { 8L, new DateTime(2024, 12, 24, 22, 52, 19, 682, DateTimeKind.Local).AddTicks(5676), false, "Tehran", null, null },
+                    { 9L, new DateTime(2024, 12, 24, 22, 52, 19, 682, DateTimeKind.Local).AddTicks(5692), false, "ChaharmahaloBakhtiari", null, null },
+                    { 10L, new DateTime(2024, 12, 24, 22, 52, 19, 682, DateTimeKind.Local).AddTicks(5708), false, "KhorasanJonubi", null, null },
+                    { 11L, new DateTime(2024, 12, 24, 22, 52, 19, 682, DateTimeKind.Local).AddTicks(5724), false, "KhorasanRazavi", null, null },
+                    { 12L, new DateTime(2024, 12, 24, 22, 52, 19, 682, DateTimeKind.Local).AddTicks(5740), false, "KhorasanShomali", null, null },
+                    { 13L, new DateTime(2024, 12, 24, 22, 52, 19, 682, DateTimeKind.Local).AddTicks(5756), false, "Khuzestan", null, null },
+                    { 14L, new DateTime(2024, 12, 24, 22, 52, 19, 682, DateTimeKind.Local).AddTicks(5772), false, "Zanjan", null, null },
+                    { 15L, new DateTime(2024, 12, 24, 22, 52, 19, 682, DateTimeKind.Local).AddTicks(5787), false, "Semnan", null, null },
+                    { 16L, new DateTime(2024, 12, 24, 22, 52, 19, 682, DateTimeKind.Local).AddTicks(5802), false, "SistanoBaluchestan", null, null },
+                    { 17L, new DateTime(2024, 12, 24, 22, 52, 19, 682, DateTimeKind.Local).AddTicks(5819), false, "Fars", null, null },
+                    { 18L, new DateTime(2024, 12, 24, 22, 52, 19, 682, DateTimeKind.Local).AddTicks(5835), false, "Qazvin", null, null },
+                    { 19L, new DateTime(2024, 12, 24, 22, 52, 19, 682, DateTimeKind.Local).AddTicks(5850), false, "Qom", null, null },
+                    { 20L, new DateTime(2024, 12, 24, 22, 52, 19, 682, DateTimeKind.Local).AddTicks(5865), false, "Kurdistan", null, null },
+                    { 21L, new DateTime(2024, 12, 24, 22, 52, 19, 682, DateTimeKind.Local).AddTicks(5881), false, "Kerman", null, null },
+                    { 22L, new DateTime(2024, 12, 24, 22, 52, 19, 682, DateTimeKind.Local).AddTicks(5896), false, "Kermanshah", null, null },
+                    { 23L, new DateTime(2024, 12, 24, 22, 52, 19, 682, DateTimeKind.Local).AddTicks(5911), false, "KohgiluyehoBoyerahmad", null, null },
+                    { 24L, new DateTime(2024, 12, 24, 22, 52, 19, 682, DateTimeKind.Local).AddTicks(5949), false, "Golestan", null, null },
+                    { 25L, new DateTime(2024, 12, 24, 22, 52, 19, 682, DateTimeKind.Local).AddTicks(5966), false, "Gilan", null, null },
+                    { 26L, new DateTime(2024, 12, 24, 22, 52, 19, 682, DateTimeKind.Local).AddTicks(5982), false, "Lorestan", null, null },
+                    { 27L, new DateTime(2024, 12, 24, 22, 52, 19, 682, DateTimeKind.Local).AddTicks(5997), false, "Mazandaran", null, null },
+                    { 28L, new DateTime(2024, 12, 24, 22, 52, 19, 682, DateTimeKind.Local).AddTicks(6014), false, "Markazi", null, null },
+                    { 29L, new DateTime(2024, 12, 24, 22, 52, 19, 682, DateTimeKind.Local).AddTicks(6028), false, "Hormozgan", null, null },
+                    { 30L, new DateTime(2024, 12, 24, 22, 52, 19, 682, DateTimeKind.Local).AddTicks(6044), false, "Hamadan", null, null },
+                    { 31L, new DateTime(2024, 12, 24, 22, 52, 19, 682, DateTimeKind.Local).AddTicks(6060), false, "Yazd", null, null }
                 });
 
             migrationBuilder.CreateIndex(
@@ -252,33 +252,9 @@ namespace Project.Infra.Data.Migrations
                 column: "PlanId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Citizens_HouseholdCode",
-                table: "Citizens",
-                column: "HouseholdCode",
-                unique: true);
-
-            migrationBuilder.CreateIndex(
                 name: "IX_Citizens_OfficeId",
                 table: "Citizens",
                 column: "OfficeId");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_Citizens_PassportCode",
-                table: "Citizens",
-                column: "PassportCode",
-                unique: true);
-
-            migrationBuilder.CreateIndex(
-                name: "IX_Citizens_PersonalizedCode",
-                table: "Citizens",
-                column: "PersonalizedCode",
-                unique: true);
-
-            migrationBuilder.CreateIndex(
-                name: "IX_Citizens_UniqueCode",
-                table: "Citizens",
-                column: "UniqueCode",
-                unique: true);
 
             migrationBuilder.CreateIndex(
                 name: "IX_OfficePlans_OfficeId",

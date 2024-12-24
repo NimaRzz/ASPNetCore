@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using Project.Application.Interfaces.Citizens;
 using Project.Application.Interfaces.FacadPatterns;
 using Project.Application.Services.Citizens.Commands.AddCitizen;
+using Project.Application.Services.Citizens.Commands.DeleteCitizen;
 using Project.Application.Services.Citizens.Commands.UpdateCitizen;
 using Project.Domain.Repository.Citizen;
 
@@ -40,6 +41,17 @@ namespace Project.Application.Services.Citizens.FacadPattern
             {
 
                 return _updateCitizenService = _updateCitizenService ?? new UpdateCitizenService(_repository);
+            }
+        }
+
+        private IDeleteCitizenService _deleteCitizenService;
+
+        public IDeleteCitizenService DeleteCitizenService
+        {
+            get
+            {
+
+                return _deleteCitizenService = _deleteCitizenService ?? new DeleteCitizenService(_repository);
             }
         }
     }

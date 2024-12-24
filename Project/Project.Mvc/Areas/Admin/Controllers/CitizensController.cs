@@ -43,6 +43,15 @@ namespace Project.Presentation.Areas.Admin.Controllers
 
             return Ok(result);
         }
+        
+        [HttpPost("Delete")]
+        public async Task<IActionResult> Delete([FromBody] long UniqueCode)
+        {
+            var result = await _citizenFacad.DeleteCitizenService.Execute(UniqueCode);
+         
+
+            return Ok(result);
+        }
 
     }
 }

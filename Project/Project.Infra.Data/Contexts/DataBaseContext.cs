@@ -170,20 +170,6 @@ namespace Project.Infra.Data.Contexts
             });
 
 
-            //برایه یونیک کردن اطلاعات اتباع
-            modelBuilder.Entity<Citizen>()
-                .HasIndex(p => p.HouseholdCode).IsUnique();
-
-            modelBuilder.Entity<Citizen>()
-                .HasIndex(p => p.UniqueCode).IsUnique();
-
-            modelBuilder.Entity<Citizen>()
-                .HasIndex(p => p.PersonalizedCode).IsUnique();
-
-            modelBuilder.Entity<Citizen>()
-                .HasIndex(p => p.PassportCode).IsUnique();
-
-
         }
 
         private void ApplyQueryFilter(ModelBuilder modelBuilder)
