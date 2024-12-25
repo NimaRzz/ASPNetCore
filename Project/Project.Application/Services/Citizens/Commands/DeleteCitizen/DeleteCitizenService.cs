@@ -18,11 +18,11 @@ namespace Project.Application.Services.Citizens.Commands.DeleteCitizen
           _repository = repository;
         }
 
-        public async Task<ResultDto> Execute(long UniqueCode)
+        public async Task<ResultDto> Execute(long Id)
         {
 
 
-            var citizen = await _repository.CustomGet(UniqueCode);
+            var citizen = await _repository.Get<Citizen>(Id);
 
 
             if (!citizen.IsSuccess)
@@ -30,7 +30,7 @@ namespace Project.Application.Services.Citizens.Commands.DeleteCitizen
                 return new ResultDto
                 {
                     IsSuccess = false,
-                    Message = citizen.Message
+                    Message = "تبعه ای با این شناسه وجود ندارد"
                 };
             }
 

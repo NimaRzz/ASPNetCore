@@ -9,6 +9,6 @@ namespace Project.Application.Interfaces.Citizens
 {
     public interface IDeleteCitizenService
     {
-        Task<ResultDto> Execute(long UniqueCode);
+        Task<ResultDto> Execute(long Id);
     }
 }

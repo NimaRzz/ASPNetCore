@@ -8,6 +8,8 @@ using Project.Application.Interfaces.FacadPatterns;
 using Project.Application.Services.Citizens.Commands.AddCitizen;
 using Project.Application.Services.Citizens.Commands.DeleteCitizen;
 using Project.Application.Services.Citizens.Commands.UpdateCitizen;
+using Project.Application.Services.Citizens.Queries.GetCitizen;
+using Project.Application.Services.Citizens.Queries.GetCitizens;
 using Project.Domain.Repository.Citizen;
 
 namespace Project.Application.Services.Citizens.FacadPattern
@@ -52,6 +54,26 @@ namespace Project.Application.Services.Citizens.FacadPattern
             {
 
                 return _deleteCitizenService = _deleteCitizenService ?? new DeleteCitizenService(_repository);
+            }
+        }
+        private IGetCitizensService _getCitizensService;
+
+        public IGetCitizensService GetCitizensService
+        {
+            get
+            {
+
+                return _getCitizensService = _getCitizensService ?? new GetCitizensService(_repository);
+            }
+        } 
+        private IGetCitizenService _getCitizenService;
+
+        public IGetCitizenService GetCitizenService
+        {
+            get
+            {
+
+                return _getCitizenService = _getCitizenService ?? new GetCitizenService(_repository);
             }
         }
     }

@@ -14,5 +14,9 @@ namespace Project.Application.Interfaces.FacadPatterns
         IUpdateCitizenService UpdateCitizenService { get; }
 
         IDeleteCitizenService DeleteCitizenService { get; }
+
+        IGetCitizensService GetCitizensService { get; }
+      
+        IGetCitizenService GetCitizenService { get; }
     }
 }

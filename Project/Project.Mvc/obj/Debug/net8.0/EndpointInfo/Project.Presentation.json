@@ -101,6 +101,71 @@
         }
       }
     },
+    "/api/Citizens/Get": {
+      "post": {
+        "tags": [
+          "Citizens"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "integer",
+                "format": "int64"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "type": "integer",
+                "format": "int64"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "type": "integer",
+                "format": "int64"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/Citizens/GetAll": {
+      "post": {
+        "tags": [
+          "Citizens"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Pagination"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Pagination"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/Pagination"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
     "/api/Offices/Add": {
       "post": {
         "tags": [
@@ -643,7 +708,7 @@
       "UpdateCitizenDto": {
         "type": "object",
         "properties": {
-          "uniqueCode": {
+          "id": {
             "type": "integer",
             "format": "int64"
           },

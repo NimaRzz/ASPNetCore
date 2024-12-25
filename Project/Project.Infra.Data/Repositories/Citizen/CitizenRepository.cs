@@ -44,23 +44,5 @@ namespace Project.Infra.Data.Repositories.Citizen
             };
         }
         
-        public async Task<ResultDto<CitizenModel>> CustomGet(long UniqueCode)
-        {
-  var citizen = await _context.Citizens.AsNoTracking().FirstOrDefaultAsync(p => p.UniqueCode == UniqueCode);
-
-            if (citizen != null)
-            {
-                return new ResultDto<CitizenModel>
-                {
-                     Data = citizen,
-                    IsSuccess = true,
-                };
-            }
-            return new ResultDto<CitizenModel>
-            {
-                IsSuccess = false,
-                Message = "هیچ تبعه ای با این کد یکتا وجود ندارد"
-            };
-        }
     }
 }

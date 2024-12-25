@@ -3,7 +3,9 @@ using Microsoft.AspNetCore.Mvc;
 using Project.Application.Interfaces.FacadPatterns;
 using Project.Application.Services.Citizens.Commands.AddCitizen;
 using Project.Application.Services.Citizens.Commands.UpdateCitizen;
+using Project.Application.Services.Citizens.Queries.GetCitizens;
 using Project.Presentation.Areas.Admin.Models.DTOs.Citizen;
+using Project.Presentation.Areas.Admin.Models.DTOs.Common.Pagination;
 
 namespace Project.Presentation.Areas.Admin.Controllers
 {
@@ -38,7 +40,7 @@ namespace Project.Presentation.Areas.Admin.Controllers
             var result = await _citizenFacad.UpdateCitizenService.Execute(new RequestUpdateCitizenDto()
             {
                 Name = request.Name,
-                UniqueCode = request.UniqueCode
+                Id = request.Id
             });
 
             return Ok(result);
@@ -48,6 +50,27 @@ namespace Project.Presentation.Areas.Admin.Controllers
         public async Task<IActionResult> Delete([FromBody] long UniqueCode)
         {
             var result = await _citizenFacad.DeleteCitizenService.Execute(UniqueCode);
+         
+
+            return Ok(result);
+        }
+
+        [HttpPost("Get")]
+        public async Task<IActionResult> Get([FromBody] long Id)
+        {
+            var result = await _citizenFacad.GetCitizenService.Execute(Id);
+
+            return Ok(result);
+        }
+
+        [HttpPost("GetAll")]
+        public async Task<IActionResult> Get([FromBody] Pagination request)
+        {
+            var result = await _citizenFacad.GetCitizensService.Execute(new RequestGetCitizensDto
+            {
+                PageSize = request.PageSize,
+                Page = request.Page
+            });
          
 
             return Ok(result);

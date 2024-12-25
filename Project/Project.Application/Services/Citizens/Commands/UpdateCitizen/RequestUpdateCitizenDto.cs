@@ -9,5 +9,6 @@ namespace Project.Application.Services.Citizens.Commands.UpdateCitizen
 {
     public class RequestUpdateCitizenDto : CitizenCommandsDto
     {
+        public long Id { get; set; }
     }
 }

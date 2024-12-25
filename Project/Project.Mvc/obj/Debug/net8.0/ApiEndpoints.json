@@ -33,6 +33,38 @@
   },
   {
     "ContainingType": "Project.Presentation.Areas.Admin.Controllers.CitizensController",
+    "Method": "Get",
+    "RelativePath": "api/Citizens/Get",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "Id",
+        "Type": "System.Int64",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Project.Presentation.Areas.Admin.Controllers.CitizensController",
+    "Method": "Get",
+    "RelativePath": "api/Citizens/GetAll",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "Project.Presentation.Areas.Admin.Models.DTOs.Common.Pagination.Pagination",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Project.Presentation.Areas.Admin.Controllers.CitizensController",
     "Method": "Update",
     "RelativePath": "api/Citizens/Update",
     "HttpMethod": "POST",

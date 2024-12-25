@@ -23,7 +23,7 @@ namespace Project.Application.Services.Citizens.Commands.UpdateCitizen
         public async Task<ResultDto> Execute(RequestUpdateCitizenDto request)
         {
 
-            var citizen = await _repository.CustomGet(request.UniqueCode);
+            var citizen = await _repository.Get<Citizen>(request.Id);
 
 
             if (!citizen.IsSuccess)
@@ -31,7 +31,7 @@ namespace Project.Application.Services.Citizens.Commands.UpdateCitizen
                 return new ResultDto
                 {
                     IsSuccess = false,
-                    Message = citizen.Message
+                    Message = "تبعه ای با این شناسه وجود ندارد"
                 };
             }
 

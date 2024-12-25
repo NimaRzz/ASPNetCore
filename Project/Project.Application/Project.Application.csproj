@@ -18,10 +18,4 @@
     <ProjectReference Include="..\Project.Domain\Project.Domain.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Services\Citizens\Queries\GetCitizen\" />
-    <Folder Include="Services\Citizens\Queries\GetCitizens\" />
-    <Folder Include="Services\Citizens\Queries\DTOs\" />
-  </ItemGroup>
-
 </Project>

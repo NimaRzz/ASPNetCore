@@ -38,13 +38,13 @@ namespace Project.Infra.Data.Repositories.BaseRepository
 
             if (entity != null)
             {
-                return new ResultDto<T>()
+                return new ResultDto<T>
                 {
                     Data = entity,
                     IsSuccess = true
                 };
             }
-            return new ResultDto<T>()
+            return new ResultDto<T>
             {
                 IsSuccess = false
             };
