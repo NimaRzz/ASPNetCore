@@ -1,5 +1,7 @@
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
+using Project.Domain.Entities.Users;
 using Project.Infra.Data.Contexts;
 using Project.Infra.IoC;
 
@@ -9,6 +11,10 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddDbContext<DataBaseContext>(options => 
     options.UseSqlServer(builder.Configuration.GetConnectionString("DataBaseContext"))
 );
+
+builder.Services.AddIdentity<User, IdentityRole>().AddEntityFrameworkStores<DataBaseContext>();
+
+builder.Services.AddRazorPages();
 
 RegisterServices(builder.Services);
 
@@ -31,6 +37,8 @@ app.UseHttpsRedirection();
 app.UseAuthorization();
 
 app.MapControllers();
+
+app.MapRazorPages();
 
 app.Run();
 

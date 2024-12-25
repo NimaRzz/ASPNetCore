@@ -11,10 +11,11 @@ using Project.Domain.Entities.Turns;
 using Project.Domain.Entities.Users;
 using Project.Domain.Entities.Province;
 using ProvinceNames = Project.Application.Common.Provinces.Province;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 
 namespace Project.Infra.Data.Contexts
 {
-    public class DataBaseContext : DbContext
+    public class DataBaseContext : IdentityDbContext<User>
     {
         #region ctor
 
@@ -36,8 +37,6 @@ namespace Project.Infra.Data.Contexts
         public DbSet<Appointment> Appointments { get; set; }
 
         public DbSet<Plan> Plans { get; set; }
-
-        public DbSet<User> Users { get; set; }
 
         public DbSet<Province> Provinces { get; set; }
 

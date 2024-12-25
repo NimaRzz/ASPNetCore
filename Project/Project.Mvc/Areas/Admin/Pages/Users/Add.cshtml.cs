@@ -1,0 +1,55 @@
+using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.RazorPages;
+using Project.Domain.Entities.Users;
+
+namespace Project.Presentation.Areas.Admin.Pages.Users
+{
+    public class AddModel : PageModel
+    {
+
+        private readonly UserManager<User> _userManager;
+
+        public AddModel(UserManager<User> userManager)
+        {
+            _userManager = userManager;
+        }
+
+        [BindProperty]
+        public string UserName { get; set; }
+
+        [BindProperty]
+        public string Email { get; set; }
+
+        [BindProperty]
+        public string Password { get; set; }
+
+        public void OnGet()
+        {
+        }
+
+        public async Task<IActionResult> OnPostAsync()
+        {
+            if (ModelState.IsValid)
+            {
+                User user = new()
+                {
+                    UserName = UserName,
+                    Email = Email,
+                   InsertTime = DateTime.Now
+                };
+
+                IdentityResult result = await _userManager.CreateAsync(user, Password);
+                if (result.Succeeded)
+                {
+                    return RedirectToPage();
+                }
+                foreach(var item in result.Errors)
+                {
+                    ModelState.AddModelError("", item.Description);
+                }
+            }
+            return Page();
+        }
+    }
+}
