@@ -10,3 +10,4 @@ C:\Users\Nima\Desktop\WebApi\Project\Project.Domain\obj\Debug\net8.0\Project.Dom
 C:\Users\Nima\Desktop\WebApi\Project\Project.Domain\obj\Debug\net8.0\refint\Project.Domain.dll
 C:\Users\Nima\Desktop\WebApi\Project\Project.Domain\obj\Debug\net8.0\Project.Domain.pdb
 C:\Users\Nima\Desktop\WebApi\Project\Project.Domain\obj\Debug\net8.0\ref\Project.Domain.dll
+C:\Users\Nima\Desktop\WebApi\Project\Project.Domain\obj\Debug\net8.0\Project.Domain.csproj.AssemblyReference.cache

@@ -18,10 +18,10 @@ namespace Project.Presentation.Areas.Admin.Controllers
             _userManager = userManager;
         }
 
-        [HttpPost("Add")]
-        public async Task<IActionResult> Add([FromBody] UserDto request)
-        {
+        //[HttpPost("Add")]
+        //public async Task<IActionResult> Add([FromBody] UserDto request)
+        //{
             
-        }
+        //}
     }
 }

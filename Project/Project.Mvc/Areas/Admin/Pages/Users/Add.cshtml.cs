@@ -1,3 +1,4 @@
+using System.ComponentModel.DataAnnotations;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
@@ -18,15 +19,12 @@ namespace Project.Presentation.Areas.Admin.Pages.Users
         [BindProperty]
         public string UserName { get; set; }
 
+        [EmailAddress(ErrorMessage="Email Format Incorrect")]
         [BindProperty]
         public string Email { get; set; }
 
         [BindProperty]
         public string Password { get; set; }
-
-        public void OnGet()
-        {
-        }
 
         public async Task<IActionResult> OnPostAsync()
         {

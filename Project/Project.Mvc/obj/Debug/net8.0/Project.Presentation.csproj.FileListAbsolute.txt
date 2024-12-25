@@ -265,3 +265,8 @@ C:\Users\Nima\Desktop\WebApi\Project\Project.Mvc\obj\Debug\net8.0\refint\Project
 C:\Users\Nima\Desktop\WebApi\Project\Project.Mvc\obj\Debug\net8.0\Project.Presentation.pdb
 C:\Users\Nima\Desktop\WebApi\Project\Project.Mvc\obj\Debug\net8.0\Project.Presentation.genruntimeconfig.cache
 C:\Users\Nima\Desktop\WebApi\Project\Project.Mvc\obj\Debug\net8.0\ref\Project.Presentation.dll
+C:\Users\Nima\Desktop\WebApi\Project\Project.Mvc\obj\Debug\net8.0\Project.Presentation.RazorAssemblyInfo.cache
+C:\Users\Nima\Desktop\WebApi\Project\Project.Mvc\obj\Debug\net8.0\Project.Presentation.RazorAssemblyInfo.cs
+C:\Users\Nima\Desktop\WebApi\Project\Project.Mvc\bin\Debug\net8.0\libman.json
+C:\Users\Nima\Desktop\WebApi\Project\Project.Mvc\bin\Debug\net8.0\Project.Presentation.staticwebassets.runtime.json
+C:\Users\Nima\Desktop\WebApi\Project\Project.Mvc\bin\Debug\net8.0\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
