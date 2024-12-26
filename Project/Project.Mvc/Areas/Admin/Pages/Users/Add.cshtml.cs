@@ -40,7 +40,7 @@ namespace Project.Presentation.Areas.Admin.Pages.Users
                 IdentityResult result = await _userManager.CreateAsync(user, Password);
                 if (result.Succeeded)
                 {
-                    return RedirectToPage();
+                    return RedirectToPage("List");
                 }
                 foreach(var item in result.Errors)
                 {

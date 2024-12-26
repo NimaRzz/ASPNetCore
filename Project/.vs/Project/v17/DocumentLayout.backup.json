@@ -7,16 +7,36 @@
       "RelativeMoniker": "D:0:0:{4C71AD87-1383-45AB-BAD2-156C5C02129B}|Project.Mvc\\Project.Presentation.csproj|solutionrelative:project.mvc\\areas\\admin\\pages\\users\\list.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{4C71AD87-1383-45AB-BAD2-156C5C02129B}|Project.Mvc\\Project.Presentation.csproj|c:\\users\\nima\\desktop\\webapi\\project\\project.mvc\\areas\\admin\\pages\\users\\add.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{4C71AD87-1383-45AB-BAD2-156C5C02129B}|Project.Mvc\\Project.Presentation.csproj|solutionrelative:project.mvc\\areas\\admin\\pages\\users\\add.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{4C71AD87-1383-45AB-BAD2-156C5C02129B}|Project.Mvc\\Project.Presentation.csproj|c:\\users\\nima\\desktop\\webapi\\project\\project.mvc\\areas\\admin\\pages\\account\\login.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4C71AD87-1383-45AB-BAD2-156C5C02129B}|Project.Mvc\\Project.Presentation.csproj|solutionrelative:project.mvc\\areas\\admin\\pages\\account\\login.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4C71AD87-1383-45AB-BAD2-156C5C02129B}|Project.Mvc\\Project.Presentation.csproj|c:\\users\\nima\\desktop\\webapi\\project\\project.mvc\\areas\\admin\\pages\\users\\update.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4C71AD87-1383-45AB-BAD2-156C5C02129B}|Project.Mvc\\Project.Presentation.csproj|solutionrelative:project.mvc\\areas\\admin\\pages\\users\\update.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4C71AD87-1383-45AB-BAD2-156C5C02129B}|Project.Mvc\\Project.Presentation.csproj|c:\\users\\nima\\desktop\\webapi\\project\\project.mvc\\areas\\admin\\pages\\users\\update.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{4C71AD87-1383-45AB-BAD2-156C5C02129B}|Project.Mvc\\Project.Presentation.csproj|solutionrelative:project.mvc\\areas\\admin\\pages\\users\\update.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4C71AD87-1383-45AB-BAD2-156C5C02129B}|Project.Mvc\\Project.Presentation.csproj|c:\\users\\nima\\desktop\\webapi\\project\\project.mvc\\areas\\admin\\pages\\account\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{4C71AD87-1383-45AB-BAD2-156C5C02129B}|Project.Mvc\\Project.Presentation.csproj|solutionrelative:project.mvc\\areas\\admin\\pages\\account\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{4C71AD87-1383-45AB-BAD2-156C5C02129B}|Project.Mvc\\Project.Presentation.csproj|c:\\users\\nima\\desktop\\webapi\\project\\project.mvc\\areas\\admin\\pages\\users\\list.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{4C71AD87-1383-45AB-BAD2-156C5C02129B}|Project.Mvc\\Project.Presentation.csproj|solutionrelative:project.mvc\\areas\\admin\\pages\\users\\list.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{4C71AD87-1383-45AB-BAD2-156C5C02129B}|Project.Mvc\\Project.Presentation.csproj|c:\\users\\nima\\desktop\\webapi\\project\\project.mvc\\areas\\admin\\pages\\users\\add.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{4C71AD87-1383-45AB-BAD2-156C5C02129B}|Project.Mvc\\Project.Presentation.csproj|solutionrelative:project.mvc\\areas\\admin\\pages\\users\\add.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{4C71AD87-1383-45AB-BAD2-156C5C02129B}|Project.Mvc\\Project.Presentation.csproj|c:\\users\\nima\\desktop\\webapi\\project\\project.mvc\\areas\\admin\\pages\\users\\add.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{4C71AD87-1383-45AB-BAD2-156C5C02129B}|Project.Mvc\\Project.Presentation.csproj|solutionrelative:project.mvc\\areas\\admin\\pages\\users\\add.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4C71AD87-1383-45AB-BAD2-156C5C02129B}|Project.Mvc\\Project.Presentation.csproj|c:\\users\\nima\\desktop\\webapi\\project\\project.mvc\\areas\\admin\\pages\\_viewstart.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{4C71AD87-1383-45AB-BAD2-156C5C02129B}|Project.Mvc\\Project.Presentation.csproj|solutionrelative:project.mvc\\areas\\admin\\pages\\_viewstart.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     }
   ],
   "DocumentGroupContainers": [
@@ -26,22 +46,8 @@
       "DocumentGroups": [
         {
           "DockedWidth": 389,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 3,
           "Children": [
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "List.cshtml",
-              "DocumentMoniker": "C:\\Users\\Nima\\Desktop\\WebApi\\Project\\Project.Mvc\\Areas\\Admin\\Pages\\Users\\List.cshtml",
-              "RelativeDocumentMoniker": "Project.Mvc\\Areas\\Admin\\Pages\\Users\\List.cshtml",
-              "ToolTip": "C:\\Users\\Nima\\Desktop\\WebApi\\Project\\Project.Mvc\\Areas\\Admin\\Pages\\Users\\List.cshtml*",
-              "RelativeToolTip": "Project.Mvc\\Areas\\Admin\\Pages\\Users\\List.cshtml*",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAXAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-12-26T03:49:53.631Z",
-              "IsPinned": true,
-              "EditorCaption": ""
-            },
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
@@ -56,41 +62,119 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "List.cshtml.cs",
-              "DocumentMoniker": "C:\\Users\\Nima\\Desktop\\WebApi\\Project\\Project.Mvc\\Areas\\Admin\\Pages\\Users\\List.cshtml.cs",
-              "RelativeDocumentMoniker": "Project.Mvc\\Areas\\Admin\\Pages\\Users\\List.cshtml.cs",
-              "ToolTip": "C:\\Users\\Nima\\Desktop\\WebApi\\Project\\Project.Mvc\\Areas\\Admin\\Pages\\Users\\List.cshtml.cs",
-              "RelativeToolTip": "Project.Mvc\\Areas\\Admin\\Pages\\Users\\List.cshtml.cs",
-              "ViewState": "AgIAAA0AAAAAAAAAAAAQwBsAAAAMAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-26T03:37:56.887Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "Add.cshtml.cs",
-              "DocumentMoniker": "C:\\Users\\Nima\\Desktop\\WebApi\\Project\\Project.Mvc\\Areas\\Admin\\Pages\\Users\\Add.cshtml.cs",
-              "RelativeDocumentMoniker": "Project.Mvc\\Areas\\Admin\\Pages\\Users\\Add.cshtml.cs",
-              "ToolTip": "C:\\Users\\Nima\\Desktop\\WebApi\\Project\\Project.Mvc\\Areas\\Admin\\Pages\\Users\\Add.cshtml.cs",
-              "RelativeToolTip": "Project.Mvc\\Areas\\Admin\\Pages\\Users\\Add.cshtml.cs",
-              "ViewState": "AgIAAA0AAAAAAAAAAAAzwBUAAAA9AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-26T03:24:30.845Z",
+              "DocumentIndex": 0,
+              "Title": "List.cshtml",
+              "DocumentMoniker": "C:\\Users\\Nima\\Desktop\\WebApi\\Project\\Project.Mvc\\Areas\\Admin\\Pages\\Users\\List.cshtml",
+              "RelativeDocumentMoniker": "Project.Mvc\\Areas\\Admin\\Pages\\Users\\List.cshtml",
+              "ToolTip": "C:\\Users\\Nima\\Desktop\\WebApi\\Project\\Project.Mvc\\Areas\\Admin\\Pages\\Users\\List.cshtml",
+              "RelativeToolTip": "Project.Mvc\\Areas\\Admin\\Pages\\Users\\List.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAHAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-12-26T20:21:39.444Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
+              "Title": "Login.cshtml.cs",
+              "DocumentMoniker": "C:\\Users\\Nima\\Desktop\\WebApi\\Project\\Project.Mvc\\Areas\\Admin\\Pages\\Account\\Login.cshtml.cs",
+              "RelativeDocumentMoniker": "Project.Mvc\\Areas\\Admin\\Pages\\Account\\Login.cshtml.cs",
+              "ToolTip": "C:\\Users\\Nima\\Desktop\\WebApi\\Project\\Project.Mvc\\Areas\\Admin\\Pages\\Account\\Login.cshtml.cs",
+              "RelativeToolTip": "Project.Mvc\\Areas\\Admin\\Pages\\Account\\Login.cshtml.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-26T20:15:54.764Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Login.cshtml",
+              "DocumentMoniker": "C:\\Users\\Nima\\Desktop\\WebApi\\Project\\Project.Mvc\\Areas\\Admin\\Pages\\Account\\Login.cshtml",
+              "RelativeDocumentMoniker": "Project.Mvc\\Areas\\Admin\\Pages\\Account\\Login.cshtml",
+              "ToolTip": "C:\\Users\\Nima\\Desktop\\WebApi\\Project\\Project.Mvc\\Areas\\Admin\\Pages\\Account\\Login.cshtml",
+              "RelativeToolTip": "Project.Mvc\\Areas\\Admin\\Pages\\Account\\Login.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAmAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-12-26T20:15:51.685Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "_ViewStart.cshtml",
+              "DocumentMoniker": "C:\\Users\\Nima\\Desktop\\WebApi\\Project\\Project.Mvc\\Areas\\Admin\\Pages\\_ViewStart.cshtml",
+              "RelativeDocumentMoniker": "Project.Mvc\\Areas\\Admin\\Pages\\_ViewStart.cshtml",
+              "ToolTip": "C:\\Users\\Nima\\Desktop\\WebApi\\Project\\Project.Mvc\\Areas\\Admin\\Pages\\_ViewStart.cshtml",
+              "RelativeToolTip": "Project.Mvc\\Areas\\Admin\\Pages\\_ViewStart.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-12-26T19:55:24.916Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "Add.cshtml.cs",
+              "DocumentMoniker": "C:\\Users\\Nima\\Desktop\\WebApi\\Project\\Project.Mvc\\Areas\\Admin\\Pages\\Users\\Add.cshtml.cs",
+              "RelativeDocumentMoniker": "Project.Mvc\\Areas\\Admin\\Pages\\Users\\Add.cshtml.cs",
+              "ToolTip": "C:\\Users\\Nima\\Desktop\\WebApi\\Project\\Project.Mvc\\Areas\\Admin\\Pages\\Users\\Add.cshtml.cs",
+              "RelativeToolTip": "Project.Mvc\\Areas\\Admin\\Pages\\Users\\Add.cshtml.cs",
+              "ViewState": "AgIAABsAAAAAAAAAAADgvyIAAAAoAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-26T19:34:58.798Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
               "Title": "Add.cshtml",
               "DocumentMoniker": "C:\\Users\\Nima\\Desktop\\WebApi\\Project\\Project.Mvc\\Areas\\Admin\\Pages\\Users\\Add.cshtml",
               "RelativeDocumentMoniker": "Project.Mvc\\Areas\\Admin\\Pages\\Users\\Add.cshtml",
               "ToolTip": "C:\\Users\\Nima\\Desktop\\WebApi\\Project\\Project.Mvc\\Areas\\Admin\\Pages\\Users\\Add.cshtml",
               "RelativeToolTip": "Project.Mvc\\Areas\\Admin\\Pages\\Users\\Add.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-12-26T03:24:26.681Z",
+              "WhenOpened": "2024-12-26T19:34:57.775Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Update.cshtml.cs",
+              "DocumentMoniker": "C:\\Users\\Nima\\Desktop\\WebApi\\Project\\Project.Mvc\\Areas\\Admin\\Pages\\Users\\Update.cshtml.cs",
+              "RelativeDocumentMoniker": "Project.Mvc\\Areas\\Admin\\Pages\\Users\\Update.cshtml.cs",
+              "ToolTip": "C:\\Users\\Nima\\Desktop\\WebApi\\Project\\Project.Mvc\\Areas\\Admin\\Pages\\Users\\Update.cshtml.cs",
+              "RelativeToolTip": "Project.Mvc\\Areas\\Admin\\Pages\\Users\\Update.cshtml.cs",
+              "ViewState": "AgIAACMAAAAAAAAAAAAmwDoAAAApAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-26T19:34:44.192Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Update.cshtml",
+              "DocumentMoniker": "C:\\Users\\Nima\\Desktop\\WebApi\\Project\\Project.Mvc\\Areas\\Admin\\Pages\\Users\\Update.cshtml",
+              "RelativeDocumentMoniker": "Project.Mvc\\Areas\\Admin\\Pages\\Users\\Update.cshtml",
+              "ToolTip": "C:\\Users\\Nima\\Desktop\\WebApi\\Project\\Project.Mvc\\Areas\\Admin\\Pages\\Users\\Update.cshtml",
+              "RelativeToolTip": "Project.Mvc\\Areas\\Admin\\Pages\\Users\\Update.cshtml",
+              "ViewState": "AgIAAAEAAAAAAAAAAAAiwBgAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-12-26T19:33:59.306Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "List.cshtml.cs",
+              "DocumentMoniker": "C:\\Users\\Nima\\Desktop\\WebApi\\Project\\Project.Mvc\\Areas\\Admin\\Pages\\Users\\List.cshtml.cs",
+              "RelativeDocumentMoniker": "Project.Mvc\\Areas\\Admin\\Pages\\Users\\List.cshtml.cs",
+              "ToolTip": "C:\\Users\\Nima\\Desktop\\WebApi\\Project\\Project.Mvc\\Areas\\Admin\\Pages\\Users\\List.cshtml.cs",
+              "RelativeToolTip": "Project.Mvc\\Areas\\Admin\\Pages\\Users\\List.cshtml.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAmAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-26T19:33:11.473Z",
               "EditorCaption": ""
             }
           ]
