@@ -33,8 +33,7 @@ namespace Project.Presentation.Areas.Admin.Pages.Users
                 User user = new()
                 {
                     UserName = UserName,
-                    Email = Email,
-                   InsertTime = DateTime.Now
+                    Email = Email
                 };
 
                 IdentityResult result = await _userManager.CreateAsync(user, Password);

@@ -12,10 +12,11 @@ using Project.Domain.Entities.Users;
 using Project.Domain.Entities.Province;
 using ProvinceNames = Project.Application.Common.Provinces.Province;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+using Project.Domain.Entities.Roles;
 
 namespace Project.Infra.Data.Contexts
 {
-    public class DataBaseContext : IdentityDbContext<User>
+    public class DataBaseContext : IdentityDbContext<User, Role, string>
     {
         #region ctor
 

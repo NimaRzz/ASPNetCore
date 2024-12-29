@@ -15,6 +15,8 @@ using Project.Infra.Data.Repositories.Plan;
 using Project.Application.Services.Citizens.FacadPattern;
 using Project.Domain.Repository.Citizen;
 using Project.Infra.Data.Repositories.Citizen;
+using Project.Domain.Repository.Role;
+using Project.Infra.Data.Repositories.Role;
 
 
 namespace Project.Infra.IoC
@@ -33,6 +35,7 @@ namespace Project.Infra.IoC
             services.AddScoped<IOfficeRepository, OfficeRepository>();
             services.AddScoped<IPlanRepository, PlanRepository>();
             services.AddScoped<ICitizenRepository, CitizenRepository>();
+            services.AddScoped<IRoleRepository, RoleRepository>();
         }
     }
 }

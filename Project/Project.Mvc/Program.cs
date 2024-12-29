@@ -1,6 +1,7 @@
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
+using Project.Domain.Entities.Roles;
 using Project.Domain.Entities.Users;
 using Project.Infra.Data.Contexts;
 using Project.Infra.IoC;
@@ -12,7 +13,12 @@ builder.Services.AddDbContext<DataBaseContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("DataBaseContext"))
 );
 
-builder.Services.AddIdentity<User, IdentityRole>().AddEntityFrameworkStores<DataBaseContext>();
+builder.Services.AddIdentity<User, Role>(c =>
+
+  c.User.RequireUniqueEmail = true
+
+
+).AddEntityFrameworkStores<DataBaseContext>();
 
 builder.Services.AddRazorPages();
 
