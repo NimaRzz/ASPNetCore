@@ -25,6 +25,7 @@
 				<form method="post">
 				<input type="hidden" value="@item.Id" name="Id" />
 					<a asp-page="Update" asp-route-Id="@item.Id" class="btn btn-primary">Update</a>
+					<a asp-page="RoleManagement" asp-route-Id="@item.Id" class="btn btn-info">Role Management</a>
 				<input type="submit" class="btn btn-danger" value="Delete" />
 				</form>
 			</td>

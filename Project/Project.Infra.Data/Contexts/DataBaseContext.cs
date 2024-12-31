@@ -72,21 +72,30 @@ namespace Project.Infra.Data.Contexts
             {
                 if (entry.State == EntityState.Modified)
                 {
-
+                    if (entry.GetType().GetProperty("UpdateTime") != null)
+                    {
                     entry.Property("UpdateTime").CurrentValue = DateTime.Now;
+                    }
                 }
 
                 if (entry.State == EntityState.Deleted)
                 {
+                    if(entry.GetType().GetProperty("IsRmoved") != null && entry.GetType().GetProperty("RemoveTime") != null)
+                    {
                     entry.Property("IsRemoved").CurrentValue = true;
                     entry.Property("RemoveTime").CurrentValue = DateTime.Now;
                     entry.State = EntityState.Modified;
+                    }
 
                 }
 
                 if (entry.State == EntityState.Added)
                 {
-                    entry.Property("InsertTime").CurrentValue = DateTime.Now;
+                    if (entry.GetType().GetProperty("InsertTime") != null)
+                    {
+                       entry.Property("InsertTime").CurrentValue = DateTime.Now;
+                    }
+
                     if (entry.Entity is OfficePlan officePlan)
                     {
                         if (officePlan.Id == 0)

@@ -1,0 +1,26 @@
+﻿@page "{id}"
+@model Project.Presentation.Areas.Admin.Pages.Users.RoleManagementModel
+@{
+}
+
+<h1 class="text-center">User Roles Management</h1>
+
+@if (@Model.Roles.Count() < 1){
+	<tr>
+		<td style="font-size:20px" class="text-center" colspan="4">There is no role in database<br /><a asp-page="../Roles/Add" class="btn btn-success">Add</a></td>
+	</tr>
+}
+else{
+
+<form method="post">
+@foreach (var item in @Model.Roles)
+{
+	@item.Name <input type="checkbox" checked="@Model.UserRoles.Contains(item.Name)" value="@item.Name" name="SelectedRoles"/>
+	<br />
+
+}
+	<br />
+   <input type="submit" class="btn btn-outline-success" value="Update Roles"/>
+</form>
+}
+
