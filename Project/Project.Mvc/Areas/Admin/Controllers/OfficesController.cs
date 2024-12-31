@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Project.Application.Interfaces.FacadPatterns;
 using Project.Application.Services.Offices.Commands.AddOffice;
@@ -13,6 +14,7 @@ using Project.Presentation.Areas.Admin.Models.DTOs.OfficePlans;
 
 namespace Project.Presentation.Areas.Admin.Controllers
 {
+    [Authorize("Admin")]
     [Route("api/[controller]")]
     [ApiController]
     public class OfficesController : ControllerBase

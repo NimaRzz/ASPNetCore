@@ -7,9 +7,11 @@ using Project.Application.Services.Plans.Commands.UpdatePlan;
 using Project.Domain.Entities.Offices;
 using Project.Presentation.Areas.Admin.Models.DTOs.Common.Pagination;
 using Project.Application.Services.Plans.Queries.GetPlans;
+using Microsoft.AspNetCore.Authorization;
 
 namespace Project.Presentation.Areas.Admin.Controllers
 {
+    [Authorize("AdminOrOperator")]
     [Route("api/[controller]")]
     [ApiController]
     public class PlansController : ControllerBase

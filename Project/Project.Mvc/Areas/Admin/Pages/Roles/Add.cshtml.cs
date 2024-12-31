@@ -1,3 +1,4 @@
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
@@ -6,6 +7,7 @@ using Project.Domain.Repository.Role;
 
 namespace Project.Presentation.Areas.Admin.Pages.Roles
 {
+    [Authorize("Admin")]
     public class AddModel : PageModel
     {
         private readonly RoleManager<Role> _roleManager;

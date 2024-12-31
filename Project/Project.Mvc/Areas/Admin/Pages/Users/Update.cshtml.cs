@@ -1,3 +1,4 @@
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
@@ -5,6 +6,7 @@ using Project.Domain.Entities.Users;
 
 namespace Project.Presentation.Areas.Admin.Pages.Users
 {
+    [Authorize("Admin")]
     public class UpdateModel : PageModel
     {
         private readonly UserManager<User> _userManager;

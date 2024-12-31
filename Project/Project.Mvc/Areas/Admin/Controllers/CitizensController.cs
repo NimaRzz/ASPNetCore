@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Project.Application.Interfaces.FacadPatterns;
 using Project.Application.Services.Citizens.Commands.AddCitizen;
@@ -9,6 +10,7 @@ using Project.Presentation.Areas.Admin.Models.DTOs.Common.Pagination;
 
 namespace Project.Presentation.Areas.Admin.Controllers
 {
+    [Authorize("AdminOrOperator")]
     [Route("api/[controller]")]
     [ApiController]
     public class CitizensController : ControllerBase

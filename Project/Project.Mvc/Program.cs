@@ -1,3 +1,4 @@
+using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
@@ -12,6 +13,22 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddDbContext<DataBaseContext>(options => 
     options.UseSqlServer(builder.Configuration.GetConnectionString("DataBaseContext"))
 );
+
+
+builder.Services.AddAuthorization(options =>
+{
+    options.AddPolicy("Admin", policy => policy.RequireRole("Admin"));
+    options.AddPolicy("Operator", policy => policy.RequireRole("Operator"));
+    options.AddPolicy("AdminOrOperator", policy => policy.RequireAssertion(context => context.User.IsInRole("Admin") || context.User.IsInRole("Operator")));
+});
+
+builder.Services.AddAuthentication().AddCookie(options =>
+{
+    options.LoginPath = new PathString("/admin/account/login");
+    options.LogoutPath = new PathString("/admin/account/logout");
+    options.AccessDeniedPath = new PathString("/admin/account/accessdenied");
+    options.ExpireTimeSpan = TimeSpan.FromDays(7);
+});
 
 builder.Services.AddIdentity<User, Role>(c =>
 
@@ -52,13 +69,7 @@ app.MapRazorPages();
 
 app.Run();
 
-app.UseEndpoints(endpoints =>
-{
-    endpoints.MapControllerRoute(
-          name:"areas",
-          pattern:"{area=exists}/{controller=Home}/{action=Index}/{id?}"
-    );
-});
+
 
 static void RegisterServices(IServiceCollection services)
 {

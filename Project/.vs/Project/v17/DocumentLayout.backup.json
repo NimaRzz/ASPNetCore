@@ -1,7 +1,12 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "C:\\Users\\Nima\\Desktop\\WebApi\\Project\\",
-  "Documents": [],
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{4C71AD87-1383-45AB-BAD2-156C5C02129B}|Project.Mvc\\Project.Presentation.csproj|c:\\users\\nima\\desktop\\webapi\\project\\project.mvc\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4C71AD87-1383-45AB-BAD2-156C5C02129B}|Project.Mvc\\Project.Presentation.csproj|solutionrelative:project.mvc\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
@@ -9,7 +14,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 389,
-          "SelectedChildIndex": -1,
+          "SelectedChildIndex": 3,
           "Children": [
             {
               "$type": "Bookmark",
@@ -22,6 +27,19 @@
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{d78612c7-9962-4b83-95d9-268046dad23a}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\Nima\\Desktop\\WebApi\\Project\\Project.Mvc\\Program.cs",
+              "RelativeDocumentMoniker": "Project.Mvc\\Program.cs",
+              "ToolTip": "C:\\Users\\Nima\\Desktop\\WebApi\\Project\\Project.Mvc\\Program.cs",
+              "RelativeToolTip": "Project.Mvc\\Program.cs",
+              "ViewState": "AgIAAAwAAAAAAAAAAAAAABIAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-31T20:44:33.846Z",
+              "EditorCaption": ""
             }
           ]
         }
