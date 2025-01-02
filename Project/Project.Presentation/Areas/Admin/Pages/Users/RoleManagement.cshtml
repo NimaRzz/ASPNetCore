@@ -3,11 +3,9 @@
 @{
 }
 
-<h1 class="text-center">User Roles Management</h1>
-
 @if (@Model.Roles.Count() < 1){
 	<tr>
-		<td style="font-size:20px" class="text-center" colspan="4">There is no role in database<br /><a asp-page="../Roles/Add" class="btn btn-success">Add</a></td>
+		<td style="font-size:20px" class="text-center">هیچ نقشی وجود ندارد<br /><a asp-page="../Roles/Add" class="btn btn-success">افزودن</a></td>
 	</tr>
 }
 else{
@@ -20,7 +18,7 @@ else{
 
 }
 	<br />
-   <input type="submit" class="btn btn-outline-success" value="Update Roles"/>
+		<input type="submit" class="btn btn-outline-success" value="بروزرسانی" />  <a asp-page="List" class="btn btn-danger">لغو</a>
 </form>
 }
 

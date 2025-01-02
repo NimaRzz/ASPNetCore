@@ -2,6 +2,7 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
+using Project.Application.Common.Pagination;
 using Project.Domain.Entities.Users;
 
 namespace Project.Presentation.Areas.Admin.Pages.Users
@@ -20,9 +21,17 @@ namespace Project.Presentation.Areas.Admin.Pages.Users
         public List<User> Users { get; set; }
        
 
-        public void OnGet()
+        public void OnGet(int Page = 1, int PageSize = 20)
         {
-            Users = _userManager.Users.ToList();
+
+            int totalPage = 0;
+          
+            var paginationUsers = _userManager.Users.ToPaged(Page, PageSize, out totalPage);
+          
+            if(paginationUsers.IsSuccess)
+            {
+                Users = paginationUsers.Data.ToList();
+            }
         }
 
         public async Task<IActionResult> OnPostAsync(string Id)

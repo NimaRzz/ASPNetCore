@@ -4,26 +4,45 @@
 	ViewData["Title"] = "Update User";
 }
 
-<div class="input-group">
-	<form method="post">
-		<div asp-validation-summary="All" class="text-danger"></div>
+<div class="row w-100">
+    <div class="col-lg-12">
+        <div class="card">
+            <div class="card-body">
+                <h4 class="mt-0 header-title">بروزرسانی کاربر</h4>
 
-		<label asp-for="UserName">Username: </label>
-		<input type="text" class="form-control col-4" asp-for="UserName" value="@Model.UserName" />
-
-		<br />
-		<label asp-for="Email">Email: </label>
-		<input type="text" class="form-control col-4" asp-for="Email" value="@Model.Email" />
-
-		<br />
-		<label asp-for="Password">Password: </label>
-		<input type="password" class="form-control col-4" asp-for="Password" />
-
-		<br />
-		
-		<button type="submit" class="btn btn-success">Update</button>
-		<a asp-page="List" class="btn btn-info">Back</a>
-	</form>
+                <div class="row">
+                    <div class="col-lg-6">
+                        <form method="post">
+                            <div asp-validation-summary="All" class="text-danger"></div>
 
 
+                            <div class="form-group row">
+                                <label asp-for="UserName" class="col-sm-2 col-form-label text-right">نام کاربری:</label>
+                                <input class="form-control" type="text" asp-for="UserName" value="@Model.UserName">
+                            </div>
+
+                            <div class="form-group row">
+                                <label asp-for="Email" class="col-sm-2 col-form-label text-right">پست الکترونیک:</label>
+                                <input class="form-control" type="email" asp-for="Email" value="@Model.Email">
+                            </div>
+
+                            <div class="form-group row">
+                                <label asp-for="Password" class="col-sm-2 col-form-label text-right">رمز عبور:</label>
+                                <input class="form-control" type="password" asp-for="Password">
+                            </div>
+
+                            <div class="form-group row">
+                                <div class="col-sm-10">
+                                    <button type="submit" class="btn btn-success">بروزرسانی</button> <a asp-page="List" class="btn btn-danger">لغو</a>
+                                </div>
+                            </div>
+                        </form>
+
+                    </div>
+
+
+                </div>
+            </div><!--end card-body-->
+        </div><!--end card-->
+    </div><!--end col-->
 </div>
