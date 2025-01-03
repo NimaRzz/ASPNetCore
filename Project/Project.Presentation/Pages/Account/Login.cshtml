@@ -3,7 +3,8 @@
 @{
 	ViewData["Title"] = "Login";
 }
-<h1 class="text-center">UserLogin</h1>
+
+<div class="container">
 
 <div class="input-group">
 	<form method="post">
@@ -11,12 +12,18 @@
 
 		<input type="hidden" asp-for="ReturnUrl" />
 
-		<label asp-for="UserName">Username: </label>
-		<input type="text" class="form-control col-4" asp-for="UserName" />
+
+		<div class="form-group row">
+			<label asp-for="UserName" class="col-sm-2 col-form-label text-right">نام کاربری:</label>
+			<input class="form-control" type="text" asp-for="UserName">
+		</div>
 
 		<br />
-		<label asp-for="Password">Password: </label>
-		<input type="password" class="form-control col-4" asp-for="Password" />
+
+		<div class="form-group row">
+			<label asp-for="Password" class="col-sm-2 col-form-label text-right">رمز عبور:</label>
+			<input class="form-control" type="password" asp-for="Password">
+		</div>
 
 		<br />
 		<label asp-for="RememberMe">RememberMe: </label>
@@ -28,4 +35,5 @@
 	</form>
 
 
+</div>
 </div>

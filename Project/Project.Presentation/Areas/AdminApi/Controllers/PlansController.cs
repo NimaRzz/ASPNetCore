@@ -11,7 +11,8 @@ using Microsoft.AspNetCore.Authorization;
 
 namespace Project.Presentation.Areas.Admin.Controllers
 {
-    [Authorize("AdminOrOperator")]
+    //[Authorize("AdminOrOperator")]
+
     [Route("api/[controller]")]
     [ApiController]
     public class PlansController : ControllerBase

@@ -7,7 +7,7 @@ using Project.Domain.Repository.Role;
 
 namespace Project.Presentation.Areas.Admin.Pages.Roles
 {
-    [Authorize("Admin")]
+    //[Authorize("Admin")]
     public class AddModel : PageModel
     {
         private readonly RoleManager<Role> _roleManager;

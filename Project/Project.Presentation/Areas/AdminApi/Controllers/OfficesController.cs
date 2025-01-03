@@ -14,7 +14,7 @@ using Project.Presentation.Areas.Admin.Models.DTOs.OfficePlans;
 
 namespace Project.Presentation.Areas.Admin.Controllers
 {
-    [Authorize("Admin")]
+    //[Authorize("Admin")]
     [Route("api/[controller]")]
     [ApiController]
     public class OfficesController : ControllerBase

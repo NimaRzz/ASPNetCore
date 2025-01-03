@@ -6,7 +6,7 @@ using Project.Domain.Entities.Users;
 
 namespace Project.Presentation.Areas.Admin.Pages.Users
 {
-    [Authorize("Admin")]
+    //[Authorize("Admin")]
     public class UpdateModel : PageModel
     {
         private readonly UserManager<User> _userManager;

@@ -520,7 +520,6 @@ C:\Users\Nima\Desktop\WebApi\Project\Project.Presentation\obj\Debug\net8.0\Proje
 C:\Users\Nima\Desktop\WebApi\Project\Project.Presentation\obj\Debug\net8.0\Project.Presentation.AssemblyInfoInputs.cache
 C:\Users\Nima\Desktop\WebApi\Project\Project.Presentation\obj\Debug\net8.0\Project.Presentation.AssemblyInfo.cs
 C:\Users\Nima\Desktop\WebApi\Project\Project.Presentation\obj\Debug\net8.0\Project.Presentation.csproj.CoreCompileInputs.cache
-C:\Users\Nima\Desktop\WebApi\Project\Project.Presentation\obj\Debug\net8.0\Project.Presentation.MvcApplicationPartsAssemblyInfo.cs
 C:\Users\Nima\Desktop\WebApi\Project\Project.Presentation\obj\Debug\net8.0\Project.Presentation.MvcApplicationPartsAssemblyInfo.cache
 C:\Users\Nima\Desktop\WebApi\Project\Project.Presentation\obj\Debug\net8.0\Project.Presentation.RazorAssemblyInfo.cache
 C:\Users\Nima\Desktop\WebApi\Project\Project.Presentation\obj\Debug\net8.0\Project.Presentation.RazorAssemblyInfo.cs
@@ -542,3 +541,4 @@ C:\Users\Nima\Desktop\WebApi\Project\Project.Presentation\obj\Debug\net8.0\refin
 C:\Users\Nima\Desktop\WebApi\Project\Project.Presentation\obj\Debug\net8.0\Project.Presentation.pdb
 C:\Users\Nima\Desktop\WebApi\Project\Project.Presentation\obj\Debug\net8.0\Project.Presentation.genruntimeconfig.cache
 C:\Users\Nima\Desktop\WebApi\Project\Project.Presentation\obj\Debug\net8.0\ref\Project.Presentation.dll
+C:\Users\Nima\Desktop\WebApi\Project\Project.Presentation\obj\Debug\net8.0\Project.Presentation.MvcApplicationPartsAssemblyInfo.cs

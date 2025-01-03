@@ -8,9 +8,10 @@ using Project.Application.Services.Citizens.Queries.GetCitizens;
 using Project.Presentation.Areas.Admin.Models.DTOs.Citizen;
 using Project.Presentation.Areas.Admin.Models.DTOs.Common.Pagination;
 
-namespace Project.Presentation.Areas.Admin.Controllers
+
+namespace Project.Presentation.Areas.AdminApi.Controllers
 {
-    [Authorize("AdminOrOperator")]
+    //[Authorize("AdminOrOperator")]
     [Route("api/[controller]")]
     [ApiController]
     public class CitizensController : ControllerBase

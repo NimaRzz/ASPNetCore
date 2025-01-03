@@ -3,8 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Project.Domain.Entities.Appointments;
 using Project.Domain.Entities.Offices;
-using Project.Domain.Entities.Turns;
 
 namespace Project.Domain.Entities.Citizens
 {

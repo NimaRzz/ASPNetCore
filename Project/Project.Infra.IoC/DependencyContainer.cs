@@ -17,6 +17,9 @@ using Project.Domain.Repository.Citizen;
 using Project.Infra.Data.Repositories.Citizen;
 using Project.Domain.Repository.Role;
 using Project.Infra.Data.Repositories.Role;
+using Project.Application.Services.Appointments.FacadPattern;
+using Project.Infra.Data.Repositories.Appointment;
+using Project.Domain.Repository.Appointment;
 
 
 namespace Project.Infra.IoC
@@ -29,6 +32,7 @@ namespace Project.Infra.IoC
             services.AddScoped<IOfficeFacad, OfficeFacad>();
             services.AddScoped<IPlanFacad, PlanFacad>();
             services.AddScoped<ICitizenFacad, CitizenFacad>();
+            services.AddScoped<IAppointmentFacad, AppointmentFacad>();
 
             //Infra.Data Layer
             services.AddScoped<DataBaseContext>();
@@ -36,6 +40,7 @@ namespace Project.Infra.IoC
             services.AddScoped<IPlanRepository, PlanRepository>();
             services.AddScoped<ICitizenRepository, CitizenRepository>();
             services.AddScoped<IRoleRepository, RoleRepository>();
+            services.AddScoped<IAppointmentRepository, AppointmentRepository>();
         }
     }
 }

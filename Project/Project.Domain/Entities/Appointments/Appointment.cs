@@ -7,23 +7,25 @@ using Project.Domain.Entities.Appointments;
 using Project.Domain.Entities.Citizens;
 using Project.Domain.Entities.Plans;
 
-namespace Project.Domain.Entities.Turns
+namespace Project.Domain.Entities.Appointments
 {
     public class Appointment:BaseEntity.BaseEntity
     {
 
         // تاریخ و ساعت نوبت
-        public DateTime AppointmentDate { get; set; }
+        public DateTime AppointmentDateStart { get; set; }
+      
+        public DateTime AppointmentDateEnd { get; set; }
 
-        // وضعیت نوبت (آزاد یا رزرو شده)
-        public AppointmentStatus Status { get; set; }
+        // اطلاعات ادمینی که نوبت را رزرو کرده
+        public string AdminId { get; set; }
 
         // اطلاعات کاربری که نوبت را رزرو کرده
         public long CitizenId { get; set; }
 
         public Citizen Citizen { get; set; }
 
-        // اطلاعات سرویس یا کاری که برای آن نوبت رزرو شده
+        // اطلاعات طرحی که برای آن نوبت رزرو شده
         public string PlanId { get; set; }
 
         public Plan Plan { get; set; }

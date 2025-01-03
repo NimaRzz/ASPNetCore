@@ -37,6 +37,8 @@ builder.Services.AddIdentity<User, Role>(c =>
 
 builder.Services.AddRazorPages();
 
+builder.Services.AddMvc();
+
 RegisterServices(builder.Services);
 
 builder.Services.AddControllers();
@@ -61,12 +63,23 @@ app.UseAuthentication();
 
 app.UseAuthorization();
 
+app.MapDefaultControllerRoute();
+
 app.MapControllers();
 
 app.MapRazorPages();
 
+
 app.Run();
 
+
+//app.UseEndpoints(endpoints =>
+//{
+//    endpoints.MapControllerRoute(
+//          name: "areas",
+//          pattern: "{area:exists}/{controller=Home}/{action=Index}/{id?}"
+//    );
+//});
 
 
 static void RegisterServices(IServiceCollection services)

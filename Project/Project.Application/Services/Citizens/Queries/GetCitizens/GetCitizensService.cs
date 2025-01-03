@@ -30,7 +30,7 @@ namespace Project.Application.Services.Citizens.Queries.GetCitizens
                 return new ResultDto<ResultGetCitizensDto>
                 {
                     IsSuccess = false,
-                    Message = "داده ای یافت نشد"
+                    Message = "داده ای یافت نشد"           
                 };
             }
 

@@ -1,0 +1,61 @@
+﻿@using Project.Presentation.Areas.Admin.Models.ViewModels.AppointmentViewModel
+@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@model AppointmentViewModel
+@{
+    ViewData["Title"] = "Add Appointment";
+
+}
+
+<div class="row w-100">
+    <div class="col-lg-12">
+        <div class="card">
+            <div class="card-body">
+                <h4 class="mt-0 header-title">افزودن نوبت</h4>
+
+                <div class="row">
+                    <div class="col-lg-6">
+                        <form asp-controller="Appointments" asp-action="Add" method="post">
+                            <div asp-validation-summary="All" class="text-danger"></div>
+
+
+                            <div class="form-group row">
+                                <label asp-for="AppointmentDateStart" class="col-sm-2 col-form-label text-right">شروع نوبت:</label>
+                                <input class="form-control" type="date" asp-for="AppointmentDateStart">
+                            </div>  
+                            
+                            <div class="form-group row">
+                                <label asp-for="AppointmentDateEnd" class="col-sm-2 col-form-label text-right">پایان نوبت:</label>
+                                <input class="form-control" type="date" asp-for="AppointmentDateEnd">
+                            </div>
+
+                            <div class="form-group row">
+                                <label asp-for="CitizenId" class="col-sm-2 col-form-label text-right">تبعه:</label>
+                                <select class="form-select" asp-for="CitizenId" asp-items="@ViewBag.Citizens"></select>
+                            </div>
+                          
+                            <div class="form-group row">
+                                <label asp-for="PlanId" class="col-sm-2 col-form-label text-right">طرح:</label>
+                                <select class="form-select" asp-for="PlanId" asp-items="@ViewBag.Plans"></select>
+                            </div>
+                          
+                            <input type="hidden" asp-for="Page" value="@ViewBag.Page" />
+                            
+                            <input type="hidden" asp-for="PageSize" value="@ViewBag.PageSize"  />
+                           
+                            <div class="form-group row">
+                                <div class="col-sm-10">
+                                    <button type="submit" class="btn btn-success">افزودن</button>
+                                </div>
+                            </div>
+                        </form>
+
+                    </div>
+
+
+                </div>
+            </div><!--end card-body-->
+        </div><!--end card-->
+    </div><!--end col-->
+</div>

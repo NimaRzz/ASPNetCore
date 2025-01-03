@@ -8,17 +8,9 @@
 
   <ItemGroup>
     <Compile Remove="Areas\Admin\Data\**" />
-    <Compile Remove="Areas\Admin\Views\**" />
-    <Compile Remove="Controllers\**" />
     <Content Remove="Areas\Admin\Data\**" />
-    <Content Remove="Areas\Admin\Views\**" />
-    <Content Remove="Controllers\**" />
     <EmbeddedResource Remove="Areas\Admin\Data\**" />
-    <EmbeddedResource Remove="Areas\Admin\Views\**" />
-    <EmbeddedResource Remove="Controllers\**" />
     <None Remove="Areas\Admin\Data\**" />
-    <None Remove="Areas\Admin\Views\**" />
-    <None Remove="Controllers\**" />
   </ItemGroup>
 
   <ItemGroup>
@@ -38,6 +30,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Folder Include="Controllers\" />
     <Folder Include="wwwroot\" />
   </ItemGroup>
 

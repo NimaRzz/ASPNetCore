@@ -7,12 +7,12 @@ using Microsoft.EntityFrameworkCore;
 using Project.Domain.Entities.Citizens;
 using Project.Domain.Entities.Offices;
 using Project.Domain.Entities.Plans;
-using Project.Domain.Entities.Turns;
 using Project.Domain.Entities.Users;
 using Project.Domain.Entities.Province;
 using ProvinceNames = Project.Application.Common.Provinces.Province;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Project.Domain.Entities.Roles;
+using Project.Domain.Entities.Appointments;
 
 namespace Project.Infra.Data.Contexts
 {

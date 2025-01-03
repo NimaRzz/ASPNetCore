@@ -7,7 +7,7 @@ using Project.Domain.Entities.Roles;
 
 namespace Project.Presentation.Areas.Admin.Pages.Roles
 {
-    [Authorize("Admin")]
+    //[Authorize("Admin")]
     public class ListModel : PageModel
     {
         private readonly RoleManager<Role> _roleManager;

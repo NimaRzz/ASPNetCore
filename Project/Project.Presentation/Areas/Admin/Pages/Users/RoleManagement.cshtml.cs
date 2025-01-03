@@ -7,7 +7,7 @@ using Project.Domain.Entities.Users;
 
 namespace Project.Presentation.Areas.Admin.Pages.Users
 {
-    [Authorize("Admin")]
+    //[Authorize("Admin")]
     public class RoleManagementModel : PageModel
     {
         private readonly RoleManager<Role> _roleManager;
