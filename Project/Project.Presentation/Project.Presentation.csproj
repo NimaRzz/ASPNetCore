@@ -30,6 +30,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Folder Include="Areas\Admin\Models\ViewModels\AppointmentViewModel\" />
     <Folder Include="Controllers\" />
     <Folder Include="wwwroot\" />
   </ItemGroup>

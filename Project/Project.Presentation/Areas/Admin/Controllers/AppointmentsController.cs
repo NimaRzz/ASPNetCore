@@ -10,7 +10,7 @@ using Project.Application.Services.Citizens.Queries.GetCitizens;
 using Project.Application.Services.Plans.Queries.GetPlans;
 using Project.Domain.Entities.Users;
 using Project.Presentation.Areas.Admin.Models.DTOs.Common.Pagination;
-using Project.Presentation.Areas.Admin.Models.ViewModels.AppointmentViewModel;
+
 
 namespace Project.Presentation.Areas.Admin.Controllers
 {
@@ -40,74 +40,6 @@ namespace Project.Presentation.Areas.Admin.Controllers
 
         public IActionResult Index()
         {
-            return View();
-        }
-
-
-        [HttpGet("admin/appointments/Add")]
-        public async Task<IActionResult> Add(AppointmentViewModel request, Pagination paginationRequest)
-        {
-
-            ViewBag.Page = paginationRequest.Page;
-
-            ViewBag.PageSize = paginationRequest.PageSize;
-
-            var citizens = await _citizenFacad.GetCitizensService.Execute(new RequestGetCitizensDto
-            {
-                Page = paginationRequest.Page,
-                PageSize = paginationRequest.PageSize
-            });
-
-
-            var plans = await _planFacad.GetPlansService.Execute(new RequestGetPlansDto
-            {
-                Page = paginationRequest.Page,
-                PageSize = paginationRequest.PageSize
-            });
-
-            if (plans.Data.Items != null)
-            {
-                ViewBag.Plans = new SelectList(plans.Data.Items, "Id", "Name");
-            }
-            if (citizens.Data.Items != null)
-            {
-                ViewBag.Citizens = new SelectList(citizens.Data.Items, "Id", "Name");
-            }
-
-            return View();
-        }
-
-
-        [HttpPost("admin/appointments/Add")]
-
-        public async Task<IActionResult> Add(AppointmentViewModel request)
-        {
-            if (ModelState.IsValid)
-            {
-
-
-                var result = await _appointmentFacad.AddAppointmentService.Execute(new RequestAddAppointmentDto()
-                {
-                    AppointmentDateStart = request.AppointmentDateStart,
-                    AppointmentDateEnd = request.AppointmentDateEnd,
-                    CitizenId = request.CitizenId,
-                    PlanId = request.PlanId,
-                    AdminId = _userManager.GetUserId(User)
-                });
-                if (result.IsSuccess)
-                {
-                    return Redirect("/admin/users/list");
-
-                }
-                else
-                {
-
-                    ModelState.AddModelError("", result.Message);
-                   
-                    return View();
-                }
-            }
-            
             return View();
         }
     }

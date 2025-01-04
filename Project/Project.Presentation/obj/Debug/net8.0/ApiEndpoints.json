@@ -1,92 +1,16 @@
 [
   {
-    "ContainingType": "Project.Presentation.Areas.Admin.Controllers.AppointmentsController",
+    "ContainingType": "Project.Presentation.Areas.AdminApi.Controllers.AppointmentsController",
     "Method": "Add",
-    "RelativePath": "admin/appointments/Add",
-    "HttpMethod": "GET",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "AppointmentDateStart",
-        "Type": "System.DateTime",
-        "IsRequired": false
-      },
-      {
-        "Name": "AppointmentDateEnd",
-        "Type": "System.DateTime",
-        "IsRequired": false
-      },
-      {
-        "Name": "CitizenId",
-        "Type": "System.Int64",
-        "IsRequired": false
-      },
-      {
-        "Name": "PlanId",
-        "Type": "System.String",
-        "IsRequired": false
-      },
-      {
-        "Name": "Page",
-        "Type": "System.Int32",
-        "IsRequired": false
-      },
-      {
-        "Name": "PageSize",
-        "Type": "System.Int32",
-        "IsRequired": false
-      },
-      {
-        "Name": "PageSize",
-        "Type": "System.Int32",
-        "IsRequired": false
-      },
-      {
-        "Name": "Page",
-        "Type": "System.Int32",
-        "IsRequired": false
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "Project.Presentation.Areas.Admin.Controllers.AppointmentsController",
-    "Method": "Add",
-    "RelativePath": "admin/appointments/Add",
+    "RelativePath": "api/Appointments/Add",
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
     "Parameters": [
       {
-        "Name": "AppointmentDateStart",
-        "Type": "System.DateTime",
-        "IsRequired": false
-      },
-      {
-        "Name": "AppointmentDateEnd",
-        "Type": "System.DateTime",
-        "IsRequired": false
-      },
-      {
-        "Name": "CitizenId",
-        "Type": "System.Int64",
-        "IsRequired": false
-      },
-      {
-        "Name": "PlanId",
-        "Type": "System.String",
-        "IsRequired": false
-      },
-      {
-        "Name": "Page",
-        "Type": "System.Int32",
-        "IsRequired": false
-      },
-      {
-        "Name": "PageSize",
-        "Type": "System.Int32",
-        "IsRequired": false
+        "Name": "request",
+        "Type": "Project.Presentation.Areas.AdminApi.Models.DTOs.Appointments.AppointmentDto",
+        "IsRequired": true
       }
     ],
     "ReturnTypes": []
