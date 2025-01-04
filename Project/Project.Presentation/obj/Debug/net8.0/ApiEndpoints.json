@@ -16,6 +16,22 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "Project.Presentation.Areas.AdminApi.Controllers.AppointmentsController",
+    "Method": "Delete",
+    "RelativePath": "api/Appointments/Delete",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "Id",
+        "Type": "System.Int64",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "Project.Presentation.Areas.AdminApi.Controllers.CitizensController",
     "Method": "Add",
     "RelativePath": "api/Citizens/Add",

@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using Project.Application.Interfaces.Appointments;
 using Project.Application.Interfaces.FacadPatterns;
 using Project.Application.Services.Appointments.Commands.AddAppointment;
+using Project.Application.Services.Appointments.Commands.DeleteAppointment;
 using Project.Domain.Repository.Appointment;
 
 namespace Project.Application.Services.Appointments.FacadPattern
@@ -26,6 +27,16 @@ namespace Project.Application.Services.Appointments.FacadPattern
             get
             {
                 return _addAppointmentService = _addAppointmentService ?? new AddAppointmentService(_repository);
+            }
+        }
+
+        private IDeleteAppointmentService _deleteAppointmentService;
+
+        public IDeleteAppointmentService DeleteAppointmentService
+        {
+            get
+            {
+                return _deleteAppointmentService = _deleteAppointmentService ?? new DeleteAppointmentService(_repository);
             }
         }
     }

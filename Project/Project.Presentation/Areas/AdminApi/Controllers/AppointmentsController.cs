@@ -38,7 +38,15 @@ namespace Project.Presentation.Areas.AdminApi.Controllers
             });
 
             return Ok(result);
-        
+        }
+
+        [HttpPost("Delete")]
+        public async Task<IActionResult> Delete(long Id)
+        {
+
+            var result = await _appointmentFacad.DeleteAppointmentService.Execute(Id);
+
+            return Ok(result);
         }
     }
 }

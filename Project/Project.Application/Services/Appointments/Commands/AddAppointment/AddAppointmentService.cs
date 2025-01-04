@@ -24,7 +24,15 @@ namespace Project.Application.Services.Appointments.Commands.AddAppointment
 
         public async Task<ResultDto> Execute(RequestAddAppointmentDto request)
         {
-
+            if (request.AppointmentDateStart == request.AppointmentDateEnd || request.AppointmentDateStart > request.AppointmentDateEnd)
+            {
+                return new ResultDto
+                {
+                    IsSuccess = false,
+                    Message = "تاریخ شروع نوبت باید قبل از تاریخ پایان نوبت باشد"
+                };
+            }
+         
             var appointmentIsExists = await _repository.IsExistsAppointment(request.AppointmentDateStart, request.AppointmentDateEnd, request.CitizenId);
             
             if (appointmentIsExists.IsSuccess)
@@ -32,7 +40,7 @@ namespace Project.Application.Services.Appointments.Commands.AddAppointment
                 return new ResultDto
                 {
                     IsSuccess = false,
-                    Message = "قسمت هایه تاریخ نوبت و انتخاب تبعه را با دقت تکمیل کنید"
+                    Message = "قسمت هایه تاریخ نوبت و انتخاب تبعه را با دقت تکمیل کنید، نباید تبعه نوبتی داشته باشد و نباید در تاریخ وارد شده نوبتی باشد"
                 };
             }
 

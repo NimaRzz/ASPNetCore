@@ -10,5 +10,6 @@ namespace Project.Application.Interfaces.FacadPatterns
     public interface IAppointmentFacad
     {
         IAddAppointmentService AddAppointmentService { get; }
+        IDeleteAppointmentService DeleteAppointmentService { get; }
     }
 }

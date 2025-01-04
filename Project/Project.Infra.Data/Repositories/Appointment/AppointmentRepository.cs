@@ -22,7 +22,7 @@ namespace Project.Infra.Data.Repositories.Appointment
 
         public async Task<ResultDto<AppointmentModel>> IsExistsAppointment(DateTime Start, DateTime End, long CitizenId)
         {
-            var result = await _context.Appointments.AsNoTracking().FirstOrDefaultAsync(p => p.AppointmentDateStart == Start || p.AppointmentDateEnd == End || (p.AppointmentDateStart < Start && p.AppointmentDateEnd > Start) || (p.AppointmentDateStart < End && p.AppointmentDateEnd > End) || p.CitizenId == CitizenId);
+            var result = await _context.Appointments.AsNoTracking().FirstOrDefaultAsync(p => p.AppointmentDateStart == Start || p.AppointmentDateEnd == End || (p.AppointmentDateStart < Start && p.AppointmentDateEnd > Start) || (p.AppointmentDateStart < End && p.AppointmentDateEnd > End) || (p.AppointmentDateStart > Start && p.AppointmentDateEnd < End) || p.CitizenId == CitizenId);
             
             if (result == null)
             {
