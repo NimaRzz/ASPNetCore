@@ -32,6 +32,22 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "Project.Presentation.Areas.AdminApi.Controllers.AppointmentsController",
+    "Method": "Get",
+    "RelativePath": "api/Appointments/GetAll",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "pagination",
+        "Type": "Project.Presentation.Areas.Admin.Models.DTOs.Common.Pagination.Pagination",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "Project.Presentation.Areas.AdminApi.Controllers.CitizensController",
     "Method": "Add",
     "RelativePath": "api/Citizens/Add",

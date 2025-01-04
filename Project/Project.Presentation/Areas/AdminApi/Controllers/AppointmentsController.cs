@@ -3,7 +3,9 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Project.Application.Interfaces.FacadPatterns;
 using Project.Application.Services.Appointments.Commands.AddAppointment;
+using Project.Application.Services.Appointments.Queries.GetAppointments;
 using Project.Domain.Entities.Users;
+using Project.Presentation.Areas.Admin.Models.DTOs.Common.Pagination;
 using Project.Presentation.Areas.AdminApi.Models.DTOs.Appointments;
 
 namespace Project.Presentation.Areas.AdminApi.Controllers
@@ -45,6 +47,19 @@ namespace Project.Presentation.Areas.AdminApi.Controllers
         {
 
             var result = await _appointmentFacad.DeleteAppointmentService.Execute(Id);
+
+            return Ok(result);
+        }
+
+        [HttpPost("GetAll")]
+        public async Task<IActionResult> Get(Pagination pagination)
+        {
+
+            var result = await _appointmentFacad.GetAppointmentsService.Execute(new RequestGetAppointmentsDto
+            {
+                Page = pagination.Page,
+                PageSize = pagination.PageSize
+            });
 
             return Ok(result);
         }

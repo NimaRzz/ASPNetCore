@@ -1,7 +1,76 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "C:\\Users\\Nima\\Desktop\\WebApi\\Project\\",
-  "Documents": [],
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{1BDF2A4D-7F65-4D91-A0BA-F4D0D2958F45}|Project.Presentation\\Project.Presentation.csproj|c:\\users\\nima\\desktop\\webapi\\project\\project.presentation\\areas\\adminapi\\controllers\\appointmentscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1BDF2A4D-7F65-4D91-A0BA-F4D0D2958F45}|Project.Presentation\\Project.Presentation.csproj|solutionrelative:project.presentation\\areas\\adminapi\\controllers\\appointmentscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{20B127D4-593E-48D3-A4C1-EE82DD59CF10}|Project.Application\\Project.Application.csproj|c:\\users\\nima\\desktop\\webapi\\project\\project.application\\services\\appointments\\facadpattern\\appointmentfacad.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{20B127D4-593E-48D3-A4C1-EE82DD59CF10}|Project.Application\\Project.Application.csproj|solutionrelative:project.application\\services\\appointments\\facadpattern\\appointmentfacad.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{20B127D4-593E-48D3-A4C1-EE82DD59CF10}|Project.Application\\Project.Application.csproj|c:\\users\\nima\\desktop\\webapi\\project\\project.application\\interfaces\\facadpatterns\\iappointmentfacad.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{20B127D4-593E-48D3-A4C1-EE82DD59CF10}|Project.Application\\Project.Application.csproj|solutionrelative:project.application\\interfaces\\facadpatterns\\iappointmentfacad.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{20B127D4-593E-48D3-A4C1-EE82DD59CF10}|Project.Application\\Project.Application.csproj|c:\\users\\nima\\desktop\\webapi\\project\\project.application\\services\\citizens\\queries\\getcitizens\\getcitizensservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{20B127D4-593E-48D3-A4C1-EE82DD59CF10}|Project.Application\\Project.Application.csproj|solutionrelative:project.application\\services\\citizens\\queries\\getcitizens\\getcitizensservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{20B127D4-593E-48D3-A4C1-EE82DD59CF10}|Project.Application\\Project.Application.csproj|c:\\users\\nima\\desktop\\webapi\\project\\project.application\\services\\appointments\\queries\\getappointments\\getappointmentsservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{20B127D4-593E-48D3-A4C1-EE82DD59CF10}|Project.Application\\Project.Application.csproj|solutionrelative:project.application\\services\\appointments\\queries\\getappointments\\getappointmentsservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{20B127D4-593E-48D3-A4C1-EE82DD59CF10}|Project.Application\\Project.Application.csproj|c:\\users\\nima\\desktop\\webapi\\project\\project.application\\services\\appointments\\queries\\dtos\\appointmentsqueriesdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{20B127D4-593E-48D3-A4C1-EE82DD59CF10}|Project.Application\\Project.Application.csproj|solutionrelative:project.application\\services\\appointments\\queries\\dtos\\appointmentsqueriesdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{20B127D4-593E-48D3-A4C1-EE82DD59CF10}|Project.Application\\Project.Application.csproj|c:\\users\\nima\\desktop\\webapi\\project\\project.application\\services\\appointments\\queries\\getappointments\\getappointmentsdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{20B127D4-593E-48D3-A4C1-EE82DD59CF10}|Project.Application\\Project.Application.csproj|solutionrelative:project.application\\services\\appointments\\queries\\getappointments\\getappointmentsdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{20B127D4-593E-48D3-A4C1-EE82DD59CF10}|Project.Application\\Project.Application.csproj|c:\\users\\nima\\desktop\\webapi\\project\\project.application\\interfaces\\appointments\\igetappointmentsservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{20B127D4-593E-48D3-A4C1-EE82DD59CF10}|Project.Application\\Project.Application.csproj|solutionrelative:project.application\\interfaces\\appointments\\igetappointmentsservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{20B127D4-593E-48D3-A4C1-EE82DD59CF10}|Project.Application\\Project.Application.csproj|c:\\users\\nima\\desktop\\webapi\\project\\project.application\\services\\appointments\\queries\\getappointments\\requestgetappointmentsdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{20B127D4-593E-48D3-A4C1-EE82DD59CF10}|Project.Application\\Project.Application.csproj|solutionrelative:project.application\\services\\appointments\\queries\\getappointments\\requestgetappointmentsdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{20B127D4-593E-48D3-A4C1-EE82DD59CF10}|Project.Application\\Project.Application.csproj|c:\\users\\nima\\desktop\\webapi\\project\\project.application\\services\\appointments\\queries\\getappointments\\resultgetappointmentsdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{20B127D4-593E-48D3-A4C1-EE82DD59CF10}|Project.Application\\Project.Application.csproj|solutionrelative:project.application\\services\\appointments\\queries\\getappointments\\resultgetappointmentsdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{20B127D4-593E-48D3-A4C1-EE82DD59CF10}|Project.Application\\Project.Application.csproj|c:\\users\\nima\\desktop\\webapi\\project\\project.application\\services\\citizens\\queries\\dtos\\citizenqueriesdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{20B127D4-593E-48D3-A4C1-EE82DD59CF10}|Project.Application\\Project.Application.csproj|solutionrelative:project.application\\services\\citizens\\queries\\dtos\\citizenqueriesdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{20B127D4-593E-48D3-A4C1-EE82DD59CF10}|Project.Application\\Project.Application.csproj|c:\\users\\nima\\desktop\\webapi\\project\\project.application\\services\\citizens\\queries\\getcitizen\\getcitizenservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{20B127D4-593E-48D3-A4C1-EE82DD59CF10}|Project.Application\\Project.Application.csproj|solutionrelative:project.application\\services\\citizens\\queries\\getcitizen\\getcitizenservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{20B127D4-593E-48D3-A4C1-EE82DD59CF10}|Project.Application\\Project.Application.csproj|c:\\users\\nima\\desktop\\webapi\\project\\project.application\\services\\citizens\\queries\\getcitizen\\resultgetcitizendto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{20B127D4-593E-48D3-A4C1-EE82DD59CF10}|Project.Application\\Project.Application.csproj|solutionrelative:project.application\\services\\citizens\\queries\\getcitizen\\resultgetcitizendto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{20B127D4-593E-48D3-A4C1-EE82DD59CF10}|Project.Application\\Project.Application.csproj|c:\\users\\nima\\desktop\\webapi\\project\\project.application\\services\\appointments\\commands\\dtos\\appointmentcommandsdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{20B127D4-593E-48D3-A4C1-EE82DD59CF10}|Project.Application\\Project.Application.csproj|solutionrelative:project.application\\services\\appointments\\commands\\dtos\\appointmentcommandsdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{20B127D4-593E-48D3-A4C1-EE82DD59CF10}|Project.Application\\Project.Application.csproj|c:\\users\\nima\\desktop\\webapi\\project\\project.application\\services\\citizens\\queries\\getcitizens\\resultgetcitizensdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{20B127D4-593E-48D3-A4C1-EE82DD59CF10}|Project.Application\\Project.Application.csproj|solutionrelative:project.application\\services\\citizens\\queries\\getcitizens\\resultgetcitizensdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{20B127D4-593E-48D3-A4C1-EE82DD59CF10}|Project.Application\\Project.Application.csproj|c:\\users\\nima\\desktop\\webapi\\project\\project.application\\services\\citizens\\queries\\getcitizens\\getcitizensdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{20B127D4-593E-48D3-A4C1-EE82DD59CF10}|Project.Application\\Project.Application.csproj|solutionrelative:project.application\\services\\citizens\\queries\\getcitizens\\getcitizensdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{20B127D4-593E-48D3-A4C1-EE82DD59CF10}|Project.Application\\Project.Application.csproj|c:\\users\\nima\\desktop\\webapi\\project\\project.application\\services\\citizens\\queries\\getcitizens\\requestgetcitizensdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{20B127D4-593E-48D3-A4C1-EE82DD59CF10}|Project.Application\\Project.Application.csproj|solutionrelative:project.application\\services\\citizens\\queries\\getcitizens\\requestgetcitizensdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
@@ -9,8 +78,34 @@
       "DocumentGroups": [
         {
           "DockedWidth": 389,
-          "SelectedChildIndex": -1,
+          "SelectedChildIndex": 0,
           "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "AppointmentsController.cs",
+              "DocumentMoniker": "C:\\Users\\Nima\\Desktop\\WebApi\\Project\\Project.Presentation\\Areas\\AdminApi\\Controllers\\AppointmentsController.cs",
+              "RelativeDocumentMoniker": "Project.Presentation\\Areas\\AdminApi\\Controllers\\AppointmentsController.cs",
+              "ToolTip": "C:\\Users\\Nima\\Desktop\\WebApi\\Project\\Project.Presentation\\Areas\\AdminApi\\Controllers\\AppointmentsController.cs",
+              "RelativeToolTip": "Project.Presentation\\Areas\\AdminApi\\Controllers\\AppointmentsController.cs",
+              "ViewState": "AgIAACAAAAAAAAAAAAAEwD0AAAAPAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-04T18:22:18.651Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "IAppointmentFacad.cs",
+              "DocumentMoniker": "C:\\Users\\Nima\\Desktop\\WebApi\\Project\\Project.Application\\Interfaces\\FacadPatterns\\IAppointmentFacad.cs",
+              "RelativeDocumentMoniker": "Project.Application\\Interfaces\\FacadPatterns\\IAppointmentFacad.cs",
+              "ToolTip": "C:\\Users\\Nima\\Desktop\\WebApi\\Project\\Project.Application\\Interfaces\\FacadPatterns\\IAppointmentFacad.cs",
+              "RelativeToolTip": "Project.Application\\Interfaces\\FacadPatterns\\IAppointmentFacad.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-04T18:20:24.351Z",
+              "EditorCaption": ""
+            },
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
@@ -22,6 +117,201 @@
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{d78612c7-9962-4b83-95d9-268046dad23a}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "AppointmentFacad.cs",
+              "DocumentMoniker": "C:\\Users\\Nima\\Desktop\\WebApi\\Project\\Project.Application\\Services\\Appointments\\FacadPattern\\AppointmentFacad.cs",
+              "RelativeDocumentMoniker": "Project.Application\\Services\\Appointments\\FacadPattern\\AppointmentFacad.cs",
+              "ToolTip": "C:\\Users\\Nima\\Desktop\\WebApi\\Project\\Project.Application\\Services\\Appointments\\FacadPattern\\AppointmentFacad.cs",
+              "RelativeToolTip": "Project.Application\\Services\\Appointments\\FacadPattern\\AppointmentFacad.cs",
+              "ViewState": "AgIAABkAAAAAAAAAAADgvzYAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-04T18:20:22.659Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "IGetAppointmentsService.cs",
+              "DocumentMoniker": "C:\\Users\\Nima\\Desktop\\WebApi\\Project\\Project.Application\\Interfaces\\Appointments\\IGetAppointmentsService.cs",
+              "RelativeDocumentMoniker": "Project.Application\\Interfaces\\Appointments\\IGetAppointmentsService.cs",
+              "ToolTip": "C:\\Users\\Nima\\Desktop\\WebApi\\Project\\Project.Application\\Interfaces\\Appointments\\IGetAppointmentsService.cs",
+              "RelativeToolTip": "Project.Application\\Interfaces\\Appointments\\IGetAppointmentsService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAuwAoAAAAVAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-04T18:08:36.938Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "GetAppointmentsDto.cs",
+              "DocumentMoniker": "C:\\Users\\Nima\\Desktop\\WebApi\\Project\\Project.Application\\Services\\Appointments\\Queries\\GetAppointments\\GetAppointmentsDto.cs",
+              "RelativeDocumentMoniker": "Project.Application\\Services\\Appointments\\Queries\\GetAppointments\\GetAppointmentsDto.cs",
+              "ToolTip": "C:\\Users\\Nima\\Desktop\\WebApi\\Project\\Project.Application\\Services\\Appointments\\Queries\\GetAppointments\\GetAppointmentsDto.cs",
+              "RelativeToolTip": "Project.Application\\Services\\Appointments\\Queries\\GetAppointments\\GetAppointmentsDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAuwAkAAAA7AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-04T18:01:27.255Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "GetAppointmentsService.cs",
+              "DocumentMoniker": "C:\\Users\\Nima\\Desktop\\WebApi\\Project\\Project.Application\\Services\\Appointments\\Queries\\GetAppointments\\GetAppointmentsService.cs",
+              "RelativeDocumentMoniker": "Project.Application\\Services\\Appointments\\Queries\\GetAppointments\\GetAppointmentsService.cs",
+              "ToolTip": "C:\\Users\\Nima\\Desktop\\WebApi\\Project\\Project.Application\\Services\\Appointments\\Queries\\GetAppointments\\GetAppointmentsService.cs",
+              "RelativeToolTip": "Project.Application\\Services\\Appointments\\Queries\\GetAppointments\\GetAppointmentsService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAgAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-04T17:56:40.975Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "GetCitizensService.cs",
+              "DocumentMoniker": "C:\\Users\\Nima\\Desktop\\WebApi\\Project\\Project.Application\\Services\\Citizens\\Queries\\GetCitizens\\GetCitizensService.cs",
+              "RelativeDocumentMoniker": "Project.Application\\Services\\Citizens\\Queries\\GetCitizens\\GetCitizensService.cs",
+              "ToolTip": "C:\\Users\\Nima\\Desktop\\WebApi\\Project\\Project.Application\\Services\\Citizens\\Queries\\GetCitizens\\GetCitizensService.cs",
+              "RelativeToolTip": "Project.Application\\Services\\Citizens\\Queries\\GetCitizens\\GetCitizensService.cs",
+              "ViewState": "AgIAAAcAAAAAAAAAAAAAABAAAAA4AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-04T17:58:56.897Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "AppointmentsQueriesDto.cs",
+              "DocumentMoniker": "C:\\Users\\Nima\\Desktop\\WebApi\\Project\\Project.Application\\Services\\Appointments\\Queries\\DTOs\\AppointmentsQueriesDto.cs",
+              "RelativeDocumentMoniker": "Project.Application\\Services\\Appointments\\Queries\\DTOs\\AppointmentsQueriesDto.cs",
+              "ToolTip": "C:\\Users\\Nima\\Desktop\\WebApi\\Project\\Project.Application\\Services\\Appointments\\Queries\\DTOs\\AppointmentsQueriesDto.cs",
+              "RelativeToolTip": "Project.Application\\Services\\Appointments\\Queries\\DTOs\\AppointmentsQueriesDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAuwBQAAAAdAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-04T17:57:43.584Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "RequestGetAppointmentsDto.cs",
+              "DocumentMoniker": "C:\\Users\\Nima\\Desktop\\WebApi\\Project\\Project.Application\\Services\\Appointments\\Queries\\GetAppointments\\RequestGetAppointmentsDto.cs",
+              "RelativeDocumentMoniker": "Project.Application\\Services\\Appointments\\Queries\\GetAppointments\\RequestGetAppointmentsDto.cs",
+              "ToolTip": "C:\\Users\\Nima\\Desktop\\WebApi\\Project\\Project.Application\\Services\\Appointments\\Queries\\GetAppointments\\RequestGetAppointmentsDto.cs",
+              "RelativeToolTip": "Project.Application\\Services\\Appointments\\Queries\\GetAppointments\\RequestGetAppointmentsDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAABCAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-04T17:57:08.814Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "ResultGetAppointmentsDto.cs",
+              "DocumentMoniker": "C:\\Users\\Nima\\Desktop\\WebApi\\Project\\Project.Application\\Services\\Appointments\\Queries\\GetAppointments\\ResultGetAppointmentsDto.cs",
+              "RelativeDocumentMoniker": "Project.Application\\Services\\Appointments\\Queries\\GetAppointments\\ResultGetAppointmentsDto.cs",
+              "ToolTip": "C:\\Users\\Nima\\Desktop\\WebApi\\Project\\Project.Application\\Services\\Appointments\\Queries\\GetAppointments\\ResultGetAppointmentsDto.cs",
+              "RelativeToolTip": "Project.Application\\Services\\Appointments\\Queries\\GetAppointments\\ResultGetAppointmentsDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-04T18:05:33.549Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "CitizenQueriesDto.cs",
+              "DocumentMoniker": "C:\\Users\\Nima\\Desktop\\WebApi\\Project\\Project.Application\\Services\\Citizens\\Queries\\DTOs\\CitizenQueriesDto.cs",
+              "RelativeDocumentMoniker": "Project.Application\\Services\\Citizens\\Queries\\DTOs\\CitizenQueriesDto.cs",
+              "ToolTip": "C:\\Users\\Nima\\Desktop\\WebApi\\Project\\Project.Application\\Services\\Citizens\\Queries\\DTOs\\CitizenQueriesDto.cs",
+              "RelativeToolTip": "Project.Application\\Services\\Citizens\\Queries\\DTOs\\CitizenQueriesDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAuwBAAAAAsAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-04T17:58:37.973Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "GetCitizenService.cs",
+              "DocumentMoniker": "C:\\Users\\Nima\\Desktop\\WebApi\\Project\\Project.Application\\Services\\Citizens\\Queries\\GetCitizen\\GetCitizenService.cs",
+              "RelativeDocumentMoniker": "Project.Application\\Services\\Citizens\\Queries\\GetCitizen\\GetCitizenService.cs",
+              "ToolTip": "C:\\Users\\Nima\\Desktop\\WebApi\\Project\\Project.Application\\Services\\Citizens\\Queries\\GetCitizen\\GetCitizenService.cs",
+              "RelativeToolTip": "Project.Application\\Services\\Citizens\\Queries\\GetCitizen\\GetCitizenService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-04T17:58:52.499Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "ResultGetCitizenDto.cs",
+              "DocumentMoniker": "C:\\Users\\Nima\\Desktop\\WebApi\\Project\\Project.Application\\Services\\Citizens\\Queries\\GetCitizen\\ResultGetCitizenDto.cs",
+              "RelativeDocumentMoniker": "Project.Application\\Services\\Citizens\\Queries\\GetCitizen\\ResultGetCitizenDto.cs",
+              "ToolTip": "C:\\Users\\Nima\\Desktop\\WebApi\\Project\\Project.Application\\Services\\Citizens\\Queries\\GetCitizen\\ResultGetCitizenDto.cs",
+              "RelativeToolTip": "Project.Application\\Services\\Citizens\\Queries\\GetCitizen\\ResultGetCitizenDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-04T17:58:51.246Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "AppointmentCommandsDto.cs",
+              "DocumentMoniker": "C:\\Users\\Nima\\Desktop\\WebApi\\Project\\Project.Application\\Services\\Appointments\\Commands\\DTOs\\AppointmentCommandsDto.cs",
+              "RelativeDocumentMoniker": "Project.Application\\Services\\Appointments\\Commands\\DTOs\\AppointmentCommandsDto.cs",
+              "ToolTip": "C:\\Users\\Nima\\Desktop\\WebApi\\Project\\Project.Application\\Services\\Appointments\\Commands\\DTOs\\AppointmentCommandsDto.cs",
+              "RelativeToolTip": "Project.Application\\Services\\Appointments\\Commands\\DTOs\\AppointmentCommandsDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAAqAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-04T18:07:45.997Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "ResultGetCitizensDto.cs",
+              "DocumentMoniker": "C:\\Users\\Nima\\Desktop\\WebApi\\Project\\Project.Application\\Services\\Citizens\\Queries\\GetCitizens\\ResultGetCitizensDto.cs",
+              "RelativeDocumentMoniker": "Project.Application\\Services\\Citizens\\Queries\\GetCitizens\\ResultGetCitizensDto.cs",
+              "ToolTip": "C:\\Users\\Nima\\Desktop\\WebApi\\Project\\Project.Application\\Services\\Citizens\\Queries\\GetCitizens\\ResultGetCitizensDto.cs",
+              "RelativeToolTip": "Project.Application\\Services\\Citizens\\Queries\\GetCitizens\\ResultGetCitizensDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAA7AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-04T17:59:04.06Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "GetCitizensDto.cs",
+              "DocumentMoniker": "C:\\Users\\Nima\\Desktop\\WebApi\\Project\\Project.Application\\Services\\Citizens\\Queries\\GetCitizens\\GetCitizensDto.cs",
+              "RelativeDocumentMoniker": "Project.Application\\Services\\Citizens\\Queries\\GetCitizens\\GetCitizensDto.cs",
+              "ToolTip": "C:\\Users\\Nima\\Desktop\\WebApi\\Project\\Project.Application\\Services\\Citizens\\Queries\\GetCitizens\\GetCitizensDto.cs",
+              "RelativeToolTip": "Project.Application\\Services\\Citizens\\Queries\\GetCitizens\\GetCitizensDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAyAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-04T18:01:34.293Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "RequestGetCitizensDto.cs",
+              "DocumentMoniker": "C:\\Users\\Nima\\Desktop\\WebApi\\Project\\Project.Application\\Services\\Citizens\\Queries\\GetCitizens\\RequestGetCitizensDto.cs",
+              "RelativeDocumentMoniker": "Project.Application\\Services\\Citizens\\Queries\\GetCitizens\\RequestGetCitizensDto.cs",
+              "ToolTip": "C:\\Users\\Nima\\Desktop\\WebApi\\Project\\Project.Application\\Services\\Citizens\\Queries\\GetCitizens\\RequestGetCitizensDto.cs",
+              "RelativeToolTip": "Project.Application\\Services\\Citizens\\Queries\\GetCitizens\\RequestGetCitizensDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAA9AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-04T17:58:44.34Z",
+              "EditorCaption": ""
             }
           ]
         }

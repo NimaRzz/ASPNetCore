@@ -19,9 +19,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Services\Appointments\Queries\DTOs\" />
     <Folder Include="Services\Appointments\Queries\GetAppointment\" />
-    <Folder Include="Services\Appointments\Queries\GetAppointments\" />
   </ItemGroup>
 
 </Project>
